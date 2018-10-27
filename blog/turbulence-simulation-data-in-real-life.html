@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Turbulence simulation data in real-life | Blog
+</title>
+  <link rel="canonical" href="http://lellep.xyz/blog/turbulence-simulation-data-in-real-life.html">
+
+  <link rel="alternate" type="application/atom+xml" href="http://lellep.xyz/blog/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="http://lellep.xyz/blog/feeds/quantitative.atom.xml" title="Categories Atom Feed">
+
+  <link rel="apple-touch-icon" href="http://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="http://lellep.xyz/blog/manifest.json">
+  <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/style.css">
+
+
+<meta name="description" content="3D print and resin cast of a turbulent flow from 3D simulation data.">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="http://lellep.xyz/blog/">
+            <img class="img-fluid" src=http://lellep.xyz/blog/images/logo.svg alt="Blog">
+          </a>
+        </div>
+        <div class="col-sm-8">
+          <h1 class="title"><a href="http://lellep.xyz/blog/">Blog</a></h1>
+          <p class="text-muted">by Martin Lellep</p>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">back to my main website</a></li>
+            <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="http://lellep.xyz/blog/pages/about.html">About</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a class="fa fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>Turbulence simulation data in&nbsp;real-life
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+      <li class="list-inline-item text-muted" title="2017-12-19T00:00:00+01:00">
+        <i class="fa fa-clock-o"></i>
+        Di 19 Dezember 2017
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="http://lellep.xyz/blog/category/quantitative.html">Quantitative</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="http://lellep.xyz/blog/tag/3d-printing.html">#3D Printing</a>,         <a href="http://lellep.xyz/blog/tag/fluid-dynamics.html">#Fluid Dynamics</a>,         <a href="http://lellep.xyz/blog/tag/edinburgh.html">#Edinburgh</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>Amongst others, I developed a code for simulating Newtonian fluids such as water
+during my Master studies. Choosing proper settings, one can easily generate large
+amounts of 3D data that resembles a turbulent flow in a&nbsp;box.</p>
+<p>A snapshot of this data was captured and 3D printed. From that, a silicone mould was
+made and used to cast a resin version of the simulation&nbsp;data.</p>
+<p>Thus, I am able to hold my abstract experiments from my studies in Theoretical
+Physics in my own hands. It took a long way from performing the simulation on a
+powerful super computer to creating a real-life silicone mould with which the data
+can be&nbsp;casted.</p>
+<p>The steps that I performed are the following&nbsp;ones:</p>
+<ol class="arabic simple">
+<li>Generate the turbulent data in a channel flow geometry. The boundary conditions
+are periodic in spanwise and streamwise directions. The wall-normal direction
+uses free-slip boundary&nbsp;conditions.</li>
+<li>The data is exported to the <span class="caps">VTR</span> format which is read by ParaView. From there,
+it is exported as <span class="caps">STL</span>. ParaView is used to find a nice iso surface in the
+time&nbsp;series.</li>
+<li>The raw simulation data is post-processed in Blender to generate a file
+that can be 3D&nbsp;printed.</li>
+<li>The post-processed <span class="caps">STL</span> is 3D&nbsp;printed.</li>
+<li>The 3D print is sanded and subsequently coated with a fill primer to hide the
+3D print specific layer&nbsp;structure.</li>
+<li>A silicone mould is made from the 3D print which is finally used for the resin&nbsp;cast.</li>
+</ol>
+<p>The following video visualizes the simulation from which the 3D printed data is taken.
+The flow in the simulation box is color
+coded where red values are large positive values in the flow  direction and blue values are large negative
+values in the flow direction. The flow direction is the x coordinate. The gray surface at t=0 is the one
+that is 3D printed and resin casted here. The video shows the turbulent evolution of that surface in&nbsp;time.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/videos/turbulentDataCast/turbulence_isosurfaces.mp4"><img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/turbulence_isosurfaces_frontPic.png" style="width: 600px;" /></a>
+<p class="caption">The simulation data that has been used for the&nbsp;cast.</p>
+</div>
+<p>The video is a mp4 file and can either be downloaded or viewed directly in the&nbsp;browser.</p>
+<div class="section" id="the-outcome">
+<h2>The&nbsp;outcome</h2>
+<p>Below, the result of the cast is shown: It is the transparent piece which took
+two days to cure inside the silicone&nbsp;mould.</p>
+<div class="figure">
+<img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/0_3d_prints.jpg" style="width: 400px;" />
+<p class="caption">3D prints in two sizes, colors and&nbsp;resolutions.</p>
+</div>
+<div class="figure">
+<img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/1_mould_box.jpg" style="width: 400px;" />
+<p class="caption">3D print with white fill primer inside its silicone moulding&nbsp;box.</p>
+</div>
+<div class="figure">
+<img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/2_silicone_mould.jpg" style="width: 400px;" />
+<p class="caption">Silicone&nbsp;mould.</p>
+</div>
+<div class="figure">
+<img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/3_resin_cast.jpg" style="width: 400px;" />
+<p class="caption">Resin cast and its&nbsp;template.</p>
+</div>
+</div>
+<div class="section" id="the-details">
+<h2>The&nbsp;details</h2>
+<p>The data is acquired by running the simulation that I wrote for a sufficiently
+long time in the incompressible Navier-Stokes equations&#8217; turbulent regime at
+Re=400. My simulation is based on a pseudo-spectral algorithm so that one
+can reconstruct the full velocity fields from the spectral expansion coefficients
+at arbitrary spatial resolutions. The fields are reconstructed and
+saved as <span class="caps">VTR</span> files (using <a class="reference external" href="https://bitbucket.org/pauloh/pyevtk">PyEVTK</a>).
+These can be opened in <a class="reference external" href="https://www.paraview.org/">ParaView</a> to study how
+the fields evolve over time. After deciding upon one flow field and
+one of its iso surfaces, the spectral coefficients are used to generate a very
+high-resolution spatial field. This data is saved as a <span class="caps">STL</span>&nbsp;file.</p>
+<p>The <span class="caps">STL</span> file is post-processed in Blender: The 2D iso surface is extruded
+downwards to obtain a true 3D structure that can be 3D printed. Furthermore,
+small artifacts or structures that are hard to 3D print are&nbsp;removed.</p>
+<p>The model is 3D printed in black <span class="caps">PLA</span>. I tested multiple sizes and multiple vertical resolutions
+on an UltiMaker 3. After holding all the 3D prints in my hand I decided to pick
+the highest vertical resolution of 0.1mm and a size of 9mm x 6mm x 3mm. This
+model is sanded down and white fill primer is applied to hide the vertical layers. It turns out
+that this last step reduces the visible vertical layers very well.
+That procedure might be an alternative to using an acetone bath for <span class="caps">ABS</span> in
+case <span class="caps">ABS</span> cannot be used but a smooth surface is necessary,&nbsp;though.</p>
+<p>A silicone mould is made in a small paper box. Using release spray is recommended
+to avoid the destruction of the silicone mould while removing the 3D print. Spending some
+time to prepare the 3D print is suggested to polish its look and feel because
+the silicone will capture all its details for all the following resin casts to&nbsp;create.</p>
+<p>This silicone mould is finally used for a resin cast. One can use the silione
+mould many times. The casting should be done in a well ventilated room, believe&nbsp;me!</p>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements</h2>
+<p>Cheers to the <a class="reference external" href="http://www.ucreatestudio.is.ed.ac.uk/">uCreate Studio from the University of Edinburgh</a>  which enabled me to
+test multiple prototypes of the 3D print in various sizes and resolutions.
+Thanks to their Mike Boyd for ideas on how to realize this project.
+This place is truely exceptional and an amazing opportunity for students
+to learn anything! I believe the uCreate Studio is a concept that needs to be copied
+from universities across the&nbsp;world.</p>
+</div>
+
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <ul class="col-sm-6 list-inline">
+          <li class="list-inline-item"><a href="http://lellep.xyz/blog/archives.html">Archives</a></li>
+          <li class="list-inline-item"><a href="http://lellep.xyz/blog/categories.html">Categories</a></li>
+          <li class="list-inline-item"><a href="http://lellep.xyz/blog/tags.html">Tags</a></li>
+        </ul>
+        <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> with modified <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">pelican-alchemy</a> template
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

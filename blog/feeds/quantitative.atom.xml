@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Quantitative</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/quantitative.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2017-12-19T00:00:00+01:00</updated><entry><title>Turbulence simulation data in real-life</title><link href="http://lellep.xyz/blog/turbulence-simulation-data-in-real-life.html" rel="alternate"></link><published>2017-12-19T00:00:00+01:00</published><updated>2017-12-19T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2017-12-19:/blog/turbulence-simulation-data-in-real-life.html</id><summary type="html">&lt;p class="first last"&gt;3D print and resin cast of a turbulent flow from 3D simulation&amp;nbsp;data.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Amongst others, I developed a code for simulating Newtonian fluids such as water
+during my Master studies. Choosing proper settings, one can easily generate large
+amounts of 3D data that resembles a turbulent flow in a&amp;nbsp;box.&lt;/p&gt;
+&lt;p&gt;A snapshot of this data was captured and 3D printed. From that, a silicone mould was
+made and used to cast a resin version of the simulation&amp;nbsp;data.&lt;/p&gt;
+&lt;p&gt;Thus, I am able to hold my abstract experiments from my studies in Theoretical
+Physics in my own hands. It took a long way from performing the simulation on a
+powerful super computer to creating a real-life silicone mould with which the data
+can be&amp;nbsp;casted.&lt;/p&gt;
+&lt;p&gt;The steps that I performed are the following&amp;nbsp;ones:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Generate the turbulent data in a channel flow geometry. The boundary conditions
+are periodic in spanwise and streamwise directions. The wall-normal direction
+uses free-slip boundary&amp;nbsp;conditions.&lt;/li&gt;
+&lt;li&gt;The data is exported to the &lt;span class="caps"&gt;VTR&lt;/span&gt; format which is read by ParaView. From there,
+it is exported as &lt;span class="caps"&gt;STL&lt;/span&gt;. ParaView is used to find a nice iso surface in the
+time&amp;nbsp;series.&lt;/li&gt;
+&lt;li&gt;The raw simulation data is post-processed in Blender to generate a file
+that can be 3D&amp;nbsp;printed.&lt;/li&gt;
+&lt;li&gt;The post-processed &lt;span class="caps"&gt;STL&lt;/span&gt; is 3D&amp;nbsp;printed.&lt;/li&gt;
+&lt;li&gt;The 3D print is sanded and subsequently coated with a fill primer to hide the
+3D print specific layer&amp;nbsp;structure.&lt;/li&gt;
+&lt;li&gt;A silicone mould is made from the 3D print which is finally used for the resin&amp;nbsp;cast.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The following video visualizes the simulation from which the 3D printed data is taken.
+The flow in the simulation box is color
+coded where red values are large positive values in the flow  direction and blue values are large negative
+values in the flow direction. The flow direction is the x coordinate. The gray surface at t=0 is the one
+that is 3D printed and resin casted here. The video shows the turbulent evolution of that surface in&amp;nbsp;time.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/videos/turbulentDataCast/turbulence_isosurfaces.mp4"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/turbulence_isosurfaces_frontPic.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;The simulation data that has been used for the&amp;nbsp;cast.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The video is a mp4 file and can either be downloaded or viewed directly in the&amp;nbsp;browser.&lt;/p&gt;
+&lt;div class="section" id="the-outcome"&gt;
+&lt;h2&gt;The&amp;nbsp;outcome&lt;/h2&gt;
+&lt;p&gt;Below, the result of the cast is shown: It is the transparent piece which took
+two days to cure inside the silicone&amp;nbsp;mould.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/0_3d_prints.jpg" style="width: 400px;" /&gt;
+&lt;p class="caption"&gt;3D prints in two sizes, colors and&amp;nbsp;resolutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/1_mould_box.jpg" style="width: 400px;" /&gt;
+&lt;p class="caption"&gt;3D print with white fill primer inside its silicone moulding&amp;nbsp;box.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/2_silicone_mould.jpg" style="width: 400px;" /&gt;
+&lt;p class="caption"&gt;Silicone&amp;nbsp;mould.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/3_resin_cast.jpg" style="width: 400px;" /&gt;
+&lt;p class="caption"&gt;Resin cast and its&amp;nbsp;template.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-details"&gt;
+&lt;h2&gt;The&amp;nbsp;details&lt;/h2&gt;
+&lt;p&gt;The data is acquired by running the simulation that I wrote for a sufficiently
+long time in the incompressible Navier-Stokes equations&amp;#8217; turbulent regime at
+Re=400. My simulation is based on a pseudo-spectral algorithm so that one
+can reconstruct the full velocity fields from the spectral expansion coefficients
+at arbitrary spatial resolutions. The fields are reconstructed and
+saved as &lt;span class="caps"&gt;VTR&lt;/span&gt; files (using &lt;a class="reference external" href="https://bitbucket.org/pauloh/pyevtk"&gt;PyEVTK&lt;/a&gt;).
+These can be opened in &lt;a class="reference external" href="https://www.paraview.org/"&gt;ParaView&lt;/a&gt; to study how
+the fields evolve over time. After deciding upon one flow field and
+one of its iso surfaces, the spectral coefficients are used to generate a very
+high-resolution spatial field. This data is saved as a &lt;span class="caps"&gt;STL&lt;/span&gt;&amp;nbsp;file.&lt;/p&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;STL&lt;/span&gt; file is post-processed in Blender: The 2D iso surface is extruded
+downwards to obtain a true 3D structure that can be 3D printed. Furthermore,
+small artifacts or structures that are hard to 3D print are&amp;nbsp;removed.&lt;/p&gt;
+&lt;p&gt;The model is 3D printed in black &lt;span class="caps"&gt;PLA&lt;/span&gt;. I tested multiple sizes and multiple vertical resolutions
+on an UltiMaker 3. After holding all the 3D prints in my hand I decided to pick
+the highest vertical resolution of 0.1mm and a size of 9mm x 6mm x 3mm. This
+model is sanded down and white fill primer is applied to hide the vertical layers. It turns out
+that this last step reduces the visible vertical layers very well.
+That procedure might be an alternative to using an acetone bath for &lt;span class="caps"&gt;ABS&lt;/span&gt; in
+case &lt;span class="caps"&gt;ABS&lt;/span&gt; cannot be used but a smooth surface is necessary,&amp;nbsp;though.&lt;/p&gt;
+&lt;p&gt;A silicone mould is made in a small paper box. Using release spray is recommended
+to avoid the destruction of the silicone mould while removing the 3D print. Spending some
+time to prepare the 3D print is suggested to polish its look and feel because
+the silicone will capture all its details for all the following resin casts to&amp;nbsp;create.&lt;/p&gt;
+&lt;p&gt;This silicone mould is finally used for a resin cast. One can use the silione
+mould many times. The casting should be done in a well ventilated room, believe&amp;nbsp;me!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="acknowledgements"&gt;
+&lt;h2&gt;Acknowledgements&lt;/h2&gt;
+&lt;p&gt;Cheers to the &lt;a class="reference external" href="http://www.ucreatestudio.is.ed.ac.uk/"&gt;uCreate Studio from the University of Edinburgh&lt;/a&gt;  which enabled me to
+test multiple prototypes of the 3D print in various sizes and resolutions.
+Thanks to their Mike Boyd for ideas on how to realize this project.
+This place is truely exceptional and an amazing opportunity for students
+to learn anything! I believe the uCreate Studio is a concept that needs to be copied
+from universities across the&amp;nbsp;world.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="3D Printing"></category><category term="Fluid Dynamics"></category><category term="Edinburgh"></category></entry><entry><title>Learning a Neural Network with Genetic Algorithms</title><link href="http://lellep.xyz/blog/learning-a-neural-network-with-genetic-algorithms.html" rel="alternate"></link><published>2017-11-25T00:00:00+01:00</published><updated>2017-11-25T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2017-11-25:/blog/learning-a-neural-network-with-genetic-algorithms.html</id><summary type="html">&lt;p class="first last"&gt;Numerical experiment combining neuroevolution and an old &lt;span class="caps"&gt;SEGA&lt;/span&gt;&amp;nbsp;game.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Genetic algorithms can be used to optimize complex problems by using
+techniques that ressemble genetic evolution. One such complex problem can be the
+learning process of a neural network: Using genetic algorithms for this purpose
+is referred to as&amp;nbsp;&amp;#8220;Neuroevolution&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;I came across nice projects that use genetic algorithms to learn neural networks
+that controll the behaviour of some agents in a simplified&amp;nbsp;world:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Arithmetic snake searching for food: &lt;a class="reference external" href="https://www.youtube.com/watch?v=BBLJFYr7zB8"&gt;https://www.youtube.com/watch?v=BBLJFYr7zB8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Flappy Bird scoring points: &lt;a class="reference external" href="https://www.youtube.com/watch?v=L6bbFgjkqK0"&gt;https://www.youtube.com/watch?v=L6bbFgjkqK0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Car driving along a track: &lt;a class="reference external" href="https://www.youtube.com/watch?v=5lJuEW-5vr8"&gt;https://www.youtube.com/watch?v=5lJuEW-5vr8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="my-project"&gt;
+&lt;h2&gt;My&amp;nbsp;project&lt;/h2&gt;
+&lt;p&gt;I am working on a discrete version of &amp;#8220;Frogger&amp;#8221; (&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Frogger"&gt;https://en.wikipedia.org/wiki/Frogger&lt;/a&gt;)
+that is controlled by a neural network which is learned through a genetic&amp;nbsp;algorithm.&lt;/p&gt;
+&lt;p&gt;With this project, I am covering a few other aspects as&amp;nbsp;well:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Learn C++: The project is developed in C++. The development speed might not be as
+high as when developed in Python but in return I will learn object-oriented programming
+in C++, the compilation tool-chain and modern C++ standards such as&amp;nbsp;2017.&lt;/li&gt;
+&lt;li&gt;Neural network topologies: The concepts of neural networks and their topology is
+part of this project as I implement the neural network from scratch. This is
+particularly simple in this case because only forward evaluations are&amp;nbsp;required.&lt;/li&gt;
+&lt;li&gt;Artificial simplified world and agent-based learning: The idea of individuals who
+live in a simplified world and respond to their environment seems like an exciting
+numerical experiment to&amp;nbsp;me.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-code"&gt;
+&lt;h2&gt;The&amp;nbsp;code&lt;/h2&gt;
+&lt;p&gt;The code can be found here: &lt;a class="reference external" href="https://bitbucket.org/Mc_M/neuroevolution_crossroad"&gt;https://bitbucket.org/Mc_M/neuroevolution_crossroad&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="resources"&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Genetic algorithms: &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Genetic_algorithm"&gt;https://en.wikipedia.org/wiki/Genetic_algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Neuroevolution: &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Neuroevolution"&gt;https://en.wikipedia.org/wiki/Neuroevolution&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content><category term="AI"></category><category term="Edinburgh"></category></entry></feed>
