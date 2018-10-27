@@ -1,10 +1,227 @@
-<html>
-	<head>
-		<title>Hi</title>
-	</head>
-	<body>	
-		<h1>Test</h1>
-		<p>Hallo, how's it going?</p>
-		<a href="d.html">hi</a>
-	</body>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I am Martin Lellep</title>
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/jquery.fancybox.css"> <!-- For opening the Blog pictures -->
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	
+<!-- header section -->
+<section class="banner" role="banner"> 
+  <!--header navigation -->
+  <header id="header">
+    <div class="header-content clearfix"> <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+      <nav class="navigation" role="navigation">
+        <ul class="primary-nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="downloads/lellep.cv.pdf">CV</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  </header>
+  <!--header navigation --> 
+  <!-- banner text -->
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="banner-text text-center">
+        <h1>I am Martin Lellep</h1>
+        <p>M.Sc. Physics student</p>
+<!--
+        <nav role="navigation"> <a href="#services" class="banner-btn"><img src="images/down-arrow.png" alt=""></a></nav>
+-->
+      </div>
+      <!-- banner text --> 
+    </div>
+  </div>
+</section>
+<!-- header section --> 
+
+<!-- about section -->
+<section id="about" class="section intro no-padding">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+		<div class="col-md-6">
+		  <blockquote>
+			<h1 class="text-center">About</h1>
+			<p>
+				I am a Physics Master student at the <a href="https://www.uni-marburg.de/fb13/home?set_language=en">Philipps University of Marburg</a>
+				currently researching at the <a href="https://www.ph.ed.ac.uk/">University of Edinburgh</a>.
+			</p>
+			<p>
+				My current research interests are Fluid Dynamics, Complex Flows and Chaos in Dynamical Systems. What you see as cover picture is the infamous
+				<a href="https://en.wikipedia.org/wiki/Lorenz_system">Lorenz attractor</a>. The colorful picture to the right is a turbulent flow
+				structure that I computed using the novel pseudo-spectral simulation tool that I develop during my Master studies for viscoelastic flows.
+			</p>
+			<p>
+				My spare time interests are artificial intelligences and heuristic algorithms - scientific programming and regular programming after all.
+				Furthermore I like to do sports and to play with projects involving electronics and wood works.
+			</p>
+			<hr style="border-color: #ccc; width: 90%">
+			<p>Please find my CV for a more details:</p>
+			<p class="text-center"><a href="downloads/lellep.cv.pdf" class="btn">CV</a></p>
+		  </blockquote>
+		</div>
+		<div class="col-md-6">
+		  <div class="avatar"> <img src="images/fluid.png" alt="" class="img-responsive"> </div>
+		</div>
+    </div>
+  </div>
+</section>
+<!-- about section --> 
+
+<!-- blog section -->
+<section id="blog" class="section intro no-padding">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="col-md-6">
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/neuroevolution_crossroad.png" class="work-box"> <img src="images/neuroevolution_crossroad.png" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">Genetic Algorithm to train Neural Network</p>
+			  </div>
+			</div>
+			<!-- overlay --> 
+			</a>
+		  </div>
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/igem.png" class="work-box"> <img src="images/igem.png" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">iGEM modeling: "Evolutionary stability of genetic kill switches"</p>
+			  </div>
+			</div>
+			<!-- overlay --> 
+			</a>
+		  </div>
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/3d_printer.jpg" class="work-box"> <img src="images/3d_printer.jpg" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">Do-it-yourself 3D printer & print</p>
+			  </div>
+			</div>
+			<!-- overlay --> 
+			</a>
+		  </div>
+
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/openscad.png" class="work-box"> <img src="images/openscad.png" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">3D design of Raspberry Pi 3 mounting</p>
+			  </div>
+			</div>
+			<!-- overlay --> 
+			</a>
+		  </div>
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/acro.jpg" class="work-box"> <img src="images/acro.jpg" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">Acrobatics</p>
+			  </div>
+			</div>
+			<!-- overlay --> 
+			</a>
+		  </div>
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/web_light.low_res.jpg" class="work-box"> <img src="images/web_light.low_res.jpg" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">Web-controllable lamps</p>
+			  </div>
+			</div>
+			<!-- overlay --> 
+			</a>
+		  </div>
+        </div>
+        <div class="col-md-6">
+          <blockquote>
+            <h1 class="text-center">Blog</h1>
+            <p>
+                If you are interested in what I do, then please visit my blog. It is on everything that keeps me busy:
+                From Theoretical Physics over 3D Printing to Acrobatics and other coding projects. My
+                <a href="https://bitbucket.org/Mc_M/">Git repositories</a> are constantly evolving and you will find
+                some results of my projects there.
+            </p>
+            <p>
+                On the left you can see a couple of my activities. Feel free to explore them on my blog.
+            </p>
+            <p class="text-center"><a href="blog/index.html" class="btn">My blog</a></p>
+          </blockquote>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- blog section --> 
+
+<!-- contact section -->
+<section id="contact" class="section quote">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <h2>Contact</h2>
+      <div style="margin-top: 50px;">
+      <p>
+		  <a href="mailto:martin.lellep@physik.uni-marburg.de" class="contact-btn">martin.lellep@physik.uni-marburg.de</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- contact section --> 
+
+<!-- footer section -->
+<footer class="footer">
+  <div class="footer-top section">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-md-6">
+          <h5>My location</h5>
+          <p>Room 1618, James Clerk Maxwell Building, The University of Edinburgh<br>
+            Edinburgh, UK<br>
+            martin.lellep@physik.uni-marburg.de</p>
+          <p>Made with <i class="fa fa-heart pulse"></i> - design based on <a href="http://www.designstub.com/projects/flosix-minimal-one-page-bootstrap-template-2/">Flosix theme</a>
+          and <a href="https://getbootstrap.com/">Bootstrap</a></p>
+        </div>
+        <div class="footer-col col-md-3">
+            <!-- Make space -->
+        </div>
+        <div class="footer-col col-md-3">
+          <h5>Find me on</h5>
+          <ul class="footer-share">
+            <li><a href="https://bitbucket.org/Mc_M/"><i class="fa fa-bitbucket"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer top --> 
+</footer>
+<!-- footer section -->
+
+<!-- JS FILES --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.fancybox.pack.js"></script> 
+<script src="js/retina.min.js"></script> 
+<script src="js/modernizr.js"></script> 
+<script src="js/main.js"></script>
+</body>
 </html>

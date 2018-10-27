@@ -1,0 +1,139 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I am Martin Lellep</title>
+<link rel="icon" href="../images/favicon.png" type="image/png">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/flexslider.css">
+<link rel="stylesheet" href="../css/jquery.fancybox.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/animate.min.css">
+<link rel="stylesheet" href="../css/font-icon.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	
+<!-- header section -->
+<section class="banner" role="banner"> 
+  <!--header navigation -->
+  <header id="header">
+    <div class="header-content clearfix"> <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+      <nav class="navigation" role="navigation">
+
+      </nav>
+      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  </header>
+  <!--header navigation --> 
+  <!-- banner text -->
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="banner-text text-center">
+        <h1>I am Martin Lellep</h1>
+        <p>M.Sc. Physics student</p>
+<!--
+        <nav role="navigation"> <a href="#services" class="banner-btn"><img src="images/down-arrow.png" alt=""></a></nav>
+-->
+      </div>
+      <!-- banner text --> 
+    </div>
+  </div>
+</section>
+<!-- header section --> 
+
+<section id="contact" class="section quote">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <h2>My blog is not there, yet!</h2>
+      <div style="margin-top: 50px;">
+      <p>
+		  Please come back in December 2017
+      </p>
+      <p>or</p>
+      <p id="demo" style="text-transform: none;"></p>
+      <p>
+		<a class="btn" href="../index.html">Take me back to main page</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer section -->
+<footer class="footer">
+  <div class="footer-top section">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-md-6">
+          <h5>My location</h5>
+          <p>Room 1618, James Clerk Maxwell Building, The University of Edinburgh<br>
+            Edinburgh, UK<br>
+            martin.lellep@physik.uni-marburg.de</p>
+          <p>Made with <i class="fa fa-heart pulse"></i>, design based on <a href="http://www.designstub.com/projects/flosix-minimal-one-page-bootstrap-template-2/">Flosix theme</a>
+          and <a href="https://getbootstrap.com/">Bootstrap</a></p>
+        </div>
+        <div class="footer-col col-md-3">
+            <!-- Make space -->
+        </div>
+        <div class="footer-col col-md-3">
+          <h5>Find me on</h5>
+          <ul class="footer-share">
+            <li><a href="https://bitbucket.org/Mc_M/"><i class="fa fa-bitbucket"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer top --> 
+</footer>
+<!-- footer section -->
+
+<!-- JS FILES --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.flexslider-min.js"></script> 
+<script src="js/jquery.fancybox.pack.js"></script> 
+<script src="js/retina.min.js"></script> 
+<script src="js/modernizr.js"></script> 
+<script src="js/main.js"></script>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 1, 2017 12:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = "IN: " + days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+</body>
+</html>
