@@ -125,28 +125,3 @@ hr {
     margin-right: 10px;
   }
 }
-
-/* -------------------------- Added by Martin Lellep ------------------------ */
-
-/* Figures in articles */
-.figure {
-  color: red;
-  margin: 0 auto;
-}
-
-/* Caption for figures in articles */
-.caption {
-  margin-top: 10px;
-  font-variant: small-caps;
-  font-family: Arial;
-  font-weight: bold;
-  /*color: #bb3333;*/
-  color: #593535;
-  width: 80%;
-}
-
-/* Justify text in articles */
-.content p {
-  text-align: justify;
-  text-justify: inter-word;
-}
