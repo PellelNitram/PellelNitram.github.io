@@ -1,5 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Qualitative</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/qualitative.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2017-05-29T23:00:00+02:00</updated><entry><title>Greasing the groove: Push ups - Results</title><link href="http://lellep.xyz/blog/greasing-the-groove-push-ups-results.html" rel="alternate"></link><published>2017-05-29T23:00:00+02:00</published><updated>2017-05-29T23:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2017-05-29:/blog/greasing-the-groove-push-ups-results.html</id><summary type="html">&lt;p class="first last"&gt;Results of 120 push ups for 30&amp;nbsp;days.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Qualitative</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/qualitative.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2019-09-01T00:00:00+02:00</updated><entry><title>3D printed bike lock mount</title><link href="http://lellep.xyz/blog/3d-printed-bike-lock-mount.html" rel="alternate"></link><published>2019-09-01T00:00:00+02:00</published><updated>2019-09-01T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2019-09-01:/blog/3d-printed-bike-lock-mount.html</id><summary type="html">&lt;p class="first last"&gt;Over are the days of juggling a bike lock while riding my&amp;nbsp;bike!&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;I like my bike and want to protect it from evil thieves. For that, I use an old solid
+lock that comes with the downside of being quite bulky to carry while riding my&amp;nbsp;bike.&lt;/p&gt;
+&lt;p&gt;Of course, there are solutions to this such as putting it in a backpack or holding it in
+my hand while riding. But &amp;#8230; where is the fun with these? In particular, when there is
+my 3D printer waiting eagerly for jobs. The following figure shows the frame of my bike
+from the side. Clearly, there is space for some 3D printed mounting solution&amp;nbsp;:-).&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/0_picture_of_frame.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/0_picture_of_frame.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Side view of my bike&amp;#8217;s frame. The red arrow indicates available space for
+a 3D printed mounting solution for my bike&amp;nbsp;lock.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;With the idea in mind to 3D print my prospective bike lock mount, this task becomes
+a well-defined engineering question. Hence, I model it digitally as a first&amp;nbsp;step.&lt;/p&gt;
+&lt;div class="section" id="modeling-the-problem"&gt;
+&lt;h2&gt;Modeling the&amp;nbsp;problem&lt;/h2&gt;
+&lt;p&gt;My bike&amp;#8217;s frame is modeled in &lt;span class="caps"&gt;CAD&lt;/span&gt;. Subsequently, the same is performed for my old&amp;nbsp;lock.&lt;/p&gt;
+&lt;p&gt;First, I import the above figure into &lt;a class="reference external" href="https://en.wikipedia.org/wiki/ImageJ"&gt;ImageJ&lt;/a&gt;
+to determine the angle between the two major rods accurately. This is shown in the following
+figure. Second, the bike lock is measured and drawn in 3D as&amp;nbsp;well.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/1_measuring_angles.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/1_measuring_angles.png" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Measuring the geometry of my bike&amp;#8217;s&amp;nbsp;frame.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;After modeling the physical system, the fun of designing the bike lock mount itself
+begins. Keeping in mind that this design will be 3D printed, I chose a three-part
+approach: two identical parts are used as attachments to the frame and the third part
+mounts the lock. Without further explaining the design with bare words, please check out
+the video below to see how it works in an animation. The white pieces are 3D printed
+and metal screws (not shown) are used to hold all pieces&amp;nbsp;together.&lt;/p&gt;
+&lt;div style="margin: 0px auto; text-align: center;"&gt;
+    &lt;iframe width="650" height="365" src="https://www.youtube.com/embed/JYmiPLFMNRY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;p&gt;Additionally, the following figure shows a rendering of the whole setup while being
+mounted to the bike&amp;nbsp;frame.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/2_rendering.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/2_rendering.png" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Rendering of the designed 3D&amp;nbsp;model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;This design is printed on my 3D printer in white &lt;span class="caps"&gt;PLA&lt;/span&gt;. It took around 2x 7h plus 1x 9h, accumulating
+to 23h of print time. This long print time arises from the somewhat rigid design and
+the very slow print speed that I used. Prior to the design shown in the video above, there existed a
+previous design that I did not use due to a failed test print which revealed that it was too bulky.
+After the 3D printer finished
+with my final design, it was carefully sanded and tested for proper fitting. The following shows
+the parts layed out on a&amp;nbsp;table.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/3_parts.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/3_parts.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;All parts that are necessary for the assembly. The white parts were 3D printed and the remaining
+items are the metal screws and&amp;nbsp;washers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Finally, the following two images present a test assembly of the design and verify that not only the
+designed parts fit together but also that the lock fits inside. With this, the assembly is ready to be mounted
+to the&amp;nbsp;bike.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/4_half_assembly.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/4_half_assembly.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Half assembled bike lock mount with inserted metal&amp;nbsp;screws.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/5_test_assembly.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/5_test_assembly.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Finished test assembly. The lock does fit inside the&amp;nbsp;design.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mounting-the-3d-print"&gt;
+&lt;h2&gt;Mounting the 3D&amp;nbsp;print&lt;/h2&gt;
+&lt;p&gt;After cleaning the relevant parts of the bike, the bike lock mount is installed.
+First, a rubber band is wrapped around the bike shaft to improve adhesion of
+the mount to the bike in azimuthal direction. This can be seen in the following&amp;nbsp;figure.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/6_rubber.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/6_rubber.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Rubber band wrapped around the bike shaft to increase adhesion of the 3D&amp;nbsp;print.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Second, the two identical parts are screwed around the shaft in order to, finally, screw the last 3D
+printed piece to the two identical parts. The following two figures show these steps in&amp;nbsp;detail.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/7_bike_assembly_1.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/7_bike_assembly_1.jpg" style="height: 400px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;The two identical 3D printed pieces are mounted to the&amp;nbsp;frame.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/8_bike_assembly_2.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/8_bike_assembly_2.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Subsequently, the last piece is mounted to the pieces installed beforehand and the bike lock
+is&amp;nbsp;inserted.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;With this, the build is finished and my bike lock mount is safetly mounted to the bike.
+Finally, no more dangling around of the&amp;nbsp;lock!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Here, I model a part of my bike in &lt;span class="caps"&gt;CAD&lt;/span&gt; and 3D print a plastics mounting assembly for my bike lock.
+The assembly has been in use for one week now and everything continues to work&amp;nbsp;great!&lt;/p&gt;
+&lt;p&gt;A few lessons have been learned along the&amp;nbsp;way:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;span class="caps"&gt;CAD&lt;/span&gt; modeling for such pieces is incredibly useful. One can avoid improper prototypes
+by creating good models, e.g. ensuring that all moving parts will behave as&amp;nbsp;desired.&lt;/li&gt;
+&lt;li&gt;Model as much as possible. I forgot to model a minute section of the bike lock which
+later required heavy manual post&amp;nbsp;processing.&lt;/li&gt;
+&lt;li&gt;There is no engineering without ideas on how to improve the part. I do not plan to
+3D print another version of this design but in case I had to, the following two
+improvements would be integrated: (1) A hole inside the housing of the bike lock mount
+body in order to drain water and (2) a design that is a little bit less massive. The
+latter comes from the fact that I tend to design my functional 3D prints too massive
+in their first iteration because I underestimate the strength of 3D printed &lt;span class="caps"&gt;PLA&lt;/span&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Last but not least, the obligatory evidence of the bike lock mount in wildlife - as found
+at places that might be familiar to people from&amp;nbsp;Marburg.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/9_evidence_1.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/9_evidence_1.jpg" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;The first&amp;nbsp;evidence.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/10_evidence_2.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/10_evidence_2.jpg" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;The second&amp;nbsp;evidence.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="3D Printing"></category></entry><entry><title>Greasing the groove: Push ups - Results</title><link href="http://lellep.xyz/blog/greasing-the-groove-push-ups-results.html" rel="alternate"></link><published>2017-05-29T23:00:00+02:00</published><updated>2017-05-29T23:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2017-05-29:/blog/greasing-the-groove-push-ups-results.html</id><summary type="html">&lt;p class="first last"&gt;Results of 120 push ups for 30&amp;nbsp;days.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;I did 120 push ups, 6 times 20 repetitions spread arbitrarily over the day, for 30 days
 starting the 04/24/2017. The last of these workouts has been done the 23rd of May 2017 without
 skipping any repetition during the 30 days. After all, I performed 3600 push&amp;nbsp;ups.&lt;/p&gt;
