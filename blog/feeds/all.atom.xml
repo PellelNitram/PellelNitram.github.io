@@ -15,7 +15,8 @@ a 3D printed mounting solution for my bike&amp;nbsp;lock.&lt;/p&gt;
 a well-defined engineering question. Hence, I model it digitally as a first&amp;nbsp;step.&lt;/p&gt;
 &lt;div class="section" id="modeling-the-problem"&gt;
 &lt;h2&gt;Modeling the&amp;nbsp;problem&lt;/h2&gt;
-&lt;p&gt;My bike&amp;#8217;s frame is modeled in &lt;span class="caps"&gt;CAD&lt;/span&gt;. Subsequently, the same is performed for my old&amp;nbsp;lock.&lt;/p&gt;
+&lt;p&gt;My bike&amp;#8217;s frame is modeled in &lt;span class="caps"&gt;CAD&lt;/span&gt; with &lt;em&gt;Autodesk Fusion 360&lt;/em&gt;. Subsequently, the
+same is performed for my old&amp;nbsp;lock.&lt;/p&gt;
 &lt;p&gt;First, I import the above figure into &lt;a class="reference external" href="https://en.wikipedia.org/wiki/ImageJ"&gt;ImageJ&lt;/a&gt;
 to determine the angle between the two major rods accurately. This is shown in the following
 figure. Second, the bike lock is measured and drawn in 3D as&amp;nbsp;well.&lt;/p&gt;
@@ -102,6 +103,11 @@ body in order to drain water and (2) a design that is a little bit less massive.
 latter comes from the fact that I tend to design my functional 3D prints too massive
 in their first iteration because I underestimate the strength of 3D printed &lt;span class="caps"&gt;PLA&lt;/span&gt;.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;Don&amp;#8217;t hesitate to contact me via email if you have any questions that remain, I would be very happy
+to assist you in a similar process or give extra information about my own experiences. I don&amp;#8217;t provide the model
+files of the 3D print here because they are very specific to my particular bike and therefore probably
+useless for anybody else. Nevertheless, drop me an email if you would like to get the &lt;span class="caps"&gt;STL&lt;/span&gt; files of
+my&amp;nbsp;model.&lt;/p&gt;
 &lt;p&gt;Last but not least, the obligatory evidence of the bike lock mount in wildlife - as found
 at places that might be familiar to people from&amp;nbsp;Marburg.&lt;/p&gt;
 &lt;div class="figure"&gt;
