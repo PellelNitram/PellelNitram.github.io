@@ -1,388 +1,269 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
 <head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I am Martin Lellep</title>
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/jquery.fancybox.css"> <!-- For opening the Blog pictures -->
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Laser Cutting von Martin Lellep">
-  <meta name="author" content="Martin Lellep">
+<!-- ==================================== -->
+<!-- ======== Google Analytics ========== -->
+<!-- ==================================== -->
 
-  <title>Laser Cutting - Martin Lellep</title>
+<!-- ------- Opt out functionality ------ -->
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script>
+// ===
+// Taken from: https://developers.google.com/analytics/devguides/collection/gajs/?hl=de&authuser=0#disable
+// ===
 
-  <!-- ==================================== -->
-  <!-- ======== Google Analytics ========== -->
-  <!-- ==================================== -->
+// Set to the same value as the web property used on the site
+var gaProperty = 'UA-142575904-2'; // Attention: Needs to be maintained manually!
 
-  <!-- ------- Opt out functionality ------ -->
+// Disable tracking if the opt-out cookie exists.
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+window[disableStr] = true;
+}
 
-  <script>
+// Opt-out function
+function gaOptout() {
+document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+window[disableStr] = true;
+}
+</script>
 
-    // ===
-    // Taken from: https://developers.google.com/analytics/devguides/collection/gajs/?hl=de&authuser=0#disable
-    // ===
+<!-- ------------ GA core --------------- -->
 
-    // Set to the same value as the web property used on the site
-    var gaProperty = 'UA-142575904-2'; // Attention: Needs to be maintained manually!
-
-    // Disable tracking if the opt-out cookie exists.
-    var disableStr = 'ga-disable-' + gaProperty;
-    if (document.cookie.indexOf(disableStr + '=true') > -1) {
-      window[disableStr] = true;
-    }
-
-    // Opt-out function
-    function gaOptout() {
-      document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-      window[disableStr] = true;
-    }
-
-  </script>
-
-  <!-- ------------ GA core --------------- -->
-
-  <script>
-    (function(i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o);
-      a.async = 1;
-      a.src = g;
-      m = s.getElementsByTagName(o)[0];
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-142575904-2', 'auto'); // Attention: Needs to be maintained manually!
-    ga('send', 'pageview');
-  </script>
+<script>
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o);
+    a.async = 1;
+    a.src = g;
+    m = s.getElementsByTagName(o)[0];
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-142575904-2', 'auto'); // Attention: Needs to be maintained manually!
+ga('send', 'pageview');
+</script>
 
 </head>
 
 <body>
 
-  <!-- Headline -->
+<!-- header section -->
+<section class="banner" role="banner">
+  <!--header navigation -->
+  <header id="header">
+    <div class="header-content clearfix"> <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+      <nav class="navigation" role="navigation">
+        <ul class="primary-nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  </header>
+  <!--header navigation -->
+  <!-- banner text -->
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h1 class="mt-5">Laser Cutting</h1>
-        <p class="lead mt-5">Beispiel-Arbeiten von Martin Lellep (<a href="mailto:martin.lellep@gmail.com">E-Mail</a>)</p>
+    <div class="col-md-10 col-md-offset-1">
+      <div class="banner-text text-center">
+        <h1>I am Martin Lellep</h1>
+        <p>Physics PhD student</p>
+<!--
+        <nav role="navigation"> <a href="#services" class="banner-btn"><img src="images/down-arrow.png" alt=""></a></nav>
+-->
+      </div>
+      <!-- banner text -->
+    </div>
+  </div>
+</section>
+<!-- header section -->
+
+<!-- about section -->
+<section id="about" class="section intro no-padding">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+		<div class="col-md-6">
+		  <blockquote>
+			<h1 class="text-center">About</h1>
+			<p>
+				I am a Physics PhD student at the <a href="https://www.uni-marburg.de/fb13/home?set_language=en">Philipps University of Marburg</a> with <a href="https://www.uni-marburg.de/fb13/forschungsgruppen/komplexe-systeme/gruppe-eckhardt/index">Prof. Dr. Bruno Eckhardt</a>.
+			</p>
+			<p>
+				My current research interests are Fluid Dynamics, Complex Flows and Chaos in Dynamical Systems on the one hand and machine learning applications on the other hand. What you see as cover picture is the infamous
+				<a href="https://en.wikipedia.org/wiki/Lorenz_system">Lorenz attractor</a>. The colorful picture to the right is a turbulent flow
+				structure that I computed using the novel pseudo-spectral simulation tool that I develop during my Master studies at the <a href="https://www.ed.ac.uk/">University of Edinburgh</a>.
+			</p>
+			<p>
+				My spare time interests are artificial intelligences and heuristic algorithms - scientific programming and regular programming after all.
+				Furthermore I like to do sports and to play with projects involving electronics and wood works.
+			</p>
+		  </blockquote>
+		</div>
+		<div class="col-md-6">
+		  <div class="avatar"> <img src="images/fluid.png" alt="" class="img-responsive"> </div>
+		</div>
+    </div>
+  </div>
+</section>
+<!-- about section -->
+
+<!-- blog section -->
+<section id="blog" class="section intro no-padding">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="col-md-6">
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/neuroevolution_crossroad.png" class="work-box"> <img src="images/neuroevolution_crossroad.png" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">Genetic Algorithm to train Neural Network</p>
+			  </div>
+			</div>
+			<!-- overlay -->
+			</a>
+		  </div>
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/igem.png" class="work-box"> <img src="images/igem.png" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">iGEM modeling: "Evolutionary stability of genetic kill switches"</p>
+			  </div>
+			</div>
+			<!-- overlay -->
+			</a>
+		  </div>
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/3d_printer.jpg" class="work-box"> <img src="images/3d_printer.jpg" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">Do-it-yourself 3D printer & print</p>
+			  </div>
+			</div>
+			<!-- overlay -->
+			</a>
+		  </div>
+
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/openscad.png" class="work-box"> <img src="images/openscad.png" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">3D design of Raspberry Pi 3 mounting</p>
+			  </div>
+			</div>
+			<!-- overlay -->
+			</a>
+		  </div>
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/acro.jpg" class="work-box"> <img src="images/acro.jpg" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">Acrobatics</p>
+			  </div>
+			</div>
+			<!-- overlay -->
+			</a>
+		  </div>
+		  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 work"> <a href="images/web_light.low_res.jpg" class="work-box"> <img src="images/web_light.low_res.jpg" alt="">
+			<div class="overlay">
+			  <div class="overlay-caption">
+				<p><span class="icon icon-magnifying-glass"></span></p>
+				<p style="margin-top: 25px;">Web-controllable lamps</p>
+			  </div>
+			</div>
+			<!-- overlay -->
+			</a>
+		  </div>
+        </div>
+        <div class="col-md-6">
+          <blockquote>
+            <h1 class="text-center">Blog</h1>
+            <p>
+                If you are interested in what I do, then please visit my blog. It is on everything that keeps me busy:
+                From Theoretical Physics over 3D Printing to Acrobatics and other coding projects. My
+                <a href="https://bitbucket.org/Mc_M/">Git repositories</a> are constantly evolving and you will find
+                some results of my projects there.
+            </p>
+            <p>
+                On the left you can see a couple of my activities. Feel free to explore them on my blog.
+            </p>
+            <p class="text-center"><a href="blog/index.html" class="btn">My blog</a></p>
+          </blockquote>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- blog section -->
+
+<!-- contact section -->
+<section id="contact" class="section quote">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <h2>Contact</h2>
+      <div style="margin-top: 50px;">
+      <p>
+		  <a href="mailto:martin.lellep@physik.uni-marburg.de" class="contact-btn">martin.lellep@physik.uni-marburg.de</a>
+      </p>
       </div>
     </div>
   </div>
+</section>
+<!-- contact section -->
 
-  <!-- Pictures -->
-  <div class="container">
-
-    <div class="row mt-4">
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/todo_magnet.jpg" title="">
-              <img src="img/lr/todo_magnet.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Magnet</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/super_dad.jpg" title="">
-              <img src="img/lr/super_dad.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Magnet</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/souvenir_staender.jpg" title="">
-              <img src="img/lr/souvenir_staender.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Ausstellungsständer</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/souvenir_plakette.jpg" title="">
-              <img src="img/lr/souvenir_plakette.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Ausstellungsständer</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/rose_magnet.jpg" title="">
-              <img src="img/lr/rose_magnet.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Magnet</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/mandala.jpg" title="">
-              <img src="img/lr/mandala.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Anhänger</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/kassel_gefaellt_mir.jpg" title="">
-              <img src="img/lr/kassel_gefaellt_mir.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Anhänger</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/kanten_magnet.jpg" title="">
-              <img src="img/lr/kanten_magnet.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Magnet</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/asia_lili.jpg" title="">
-              <img src="img/lr/asia_lili.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Magnet</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/business_card.jpg" title="">
-              <img src="img/lr/business_card.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Visitenkarte</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/heart_puzzle.jpg" title="">
-              <img src="img/lr/heart_puzzle.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Puzzle Stück</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/herz_box.jpg" title="">
-              <img src="img/lr/herz_box.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Box</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/your_decision.jpg" title="">
-              <img src="img/lr/your_decision.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Magnet</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/bierdeckel.jpg" title="">
-              <img src="img/lr/bierdeckel.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Bierdeckel</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/box_geklebt.jpg" title="">
-              <img src="img/lr/box_geklebt.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Box</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/flex.jpg" title="">
-              <img src="img/lr/flex.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Flexible Teile</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/glueckskeks_untersetzer.jpg" title="">
-              <img src="img/lr/glueckskeks_untersetzer.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Untersetzer</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/handy_staender.jpg" title="">
-              <img src="img/lr/handy_staender.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Handy Kamera Ständer</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/holz_sorten.jpg" title="">
-              <img src="img/lr/holz_sorten.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Holz Sorten</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/GV_logo.jpg" title="">
-              <img src="img/lr/GV_logo.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Logo</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/mikroelektronik_behausung.jpg" title="">
-              <img src="img/lr/mikroelektronik_behausung.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Mikroelektronik Behausung</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/multi_material.jpg" title="">
-              <img src="img/lr/multi_material.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Palette an Materialien</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/puzzle_dreieck.jpg" title="">
-              <img src="img/lr/puzzle_dreieck.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Puzzle</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/puzzle_eckig.jpg" title="">
-              <img src="img/lr/puzzle_eckig.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Puzzle</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/schrauben_box.jpg" title="">
-              <img src="img/lr/schrauben_box.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Box</figcaption>
-          </figure>
-        </center>
-      </div>
-
-      <div class="col-md-3 col-sm-4 col-6">
-        <center>
-          <figure class="figure">
-            <a href="img/hr/zahnraeder.jpg" title="">
-              <img src="img/lr/zahnraeder.jpg" alt="" class="img-fluid rounded figure-img"/>
-            </a>
-            <figcaption class="figure-caption text-center">Mechaniken</figcaption>
-          </figure>
-        </center>
-      </div>
-
-    </div> <!-- Row -->
-
-  </div>
-
-  <div class="container border-top mt-2"> <!-- Footer -->
-    <div class="row mt-3">
-      <div class="col-12">
-        <p class="text-center">
-          <a href="javascript:gaOptout()" class="text-muted small">Cookies ablehnen</a>
-        </p>
+<!-- footer section -->
+<footer class="footer">
+  <div class="footer-top section">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-md-6">
+          <h5>My location</h5>
+          <p>Room 01/010, Renthof 6, Philipps University Marburg<br>
+            Marburg, Germany<br>
+            martin.lellep@physik.uni-marburg.de</p>
+          <p>Made with <i class="fa fa-heart pulse"></i> - design based on <a href="http://www.designstub.com/projects/flosix-minimal-one-page-bootstrap-template-2/">Flosix theme</a>
+          and <a href="https://getbootstrap.com/">Bootstrap</a></p>
+          <p><a href="javascript:gaOptout()">Refuse analytics cookies</a></p>
+        </div>
+        <div class="footer-col col-md-3">
+            <!-- Make space -->
+        </div>
+        <div class="footer-col col-md-3">
+          <h5>Find me on</h5>
+          <ul class="footer-share">
+            <li><a href="https://bitbucket.org/Mc_M/"><i class="fa fa-bitbucket"></i></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+  <!-- footer top -->
+</footer>
+<!-- footer section -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<!-- JS FILES -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/retina.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/main.js"></script>
 </body>
-
 </html>
