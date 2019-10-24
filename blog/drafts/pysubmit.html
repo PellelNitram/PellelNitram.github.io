@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  PySubmit | Blog
+</title>
+  <link rel="canonical" href="/drafts/pysubmit.html">
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  
+  <meta name="description" content="3D print and resin cast from 3D simulation of a turbulent flow.">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/logo.svg alt="Blog">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">Blog</a></h1>
+      <p class="text-muted">by Martin Lellep</p>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">back to my main website</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="/pages/about.html">About</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fa fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  PySubmit
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2017-12-16T00:00:00+01:00">
+          <i class="fa fa-clock-o"></i>
+          Sa 16 Dezember 2017
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="/category/quantitative.html">Quantitative</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-files-o"></i>
+              <a href="/tag/3d-printing.html">#3D Printing</a>,               <a href="/tag/fluid-dynamics.html">#Fluid Dynamics</a>,               <a href="/tag/edinburgh.html">#Edinburgh</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p><span class="caps">TODO</span>: Cover pic from htop with running&nbsp;computations!!!</p>
+<p>Amongst others, I developed a code for simulating Newtonian fluids such as water
+for my Master studies. Choosing proper settings, one can easily generate large
+amounts of 3D data that resembles a turbulent flow in a&nbsp;box.</p>
+<p>Since I am experienced in 3D printing and modeling, I took a snapshot of this
+data and 3D printed it after post-processing the data in Blender. The 3D
+print is post-processed with sandpaper and spray primer to smooth out the print
+layer structure. Finally, a silicone mold is created from the 3D print and
+a resin cast is produced from the silicone&nbsp;mold.</p>
+<p>The steps that I performed are the following&nbsp;ones:</p>
+<ol class="arabic simple">
+<li>Generate the turbulent data in a channel flow geometry. The boundary conditions
+are periodic in spanwise and streamwise directions. The wall-normal direction
+uses free-slip boundary&nbsp;conditions.</li>
+<li>The data is exported to the <span class="caps">VTR</span> format which is read by ParaView. From there,
+it is exported as <span class="caps">STL</span>. ParaView is used to find a nice iso surface in the
+time&nbsp;series.</li>
+<li>The raw simulation data <span class="caps">STL</span> is post-processed to generate a 3D print from it.
+I use Blender for that&nbsp;purpose.</li>
+<li>The post-processed <span class="caps">STL</span> is 3D&nbsp;printed.</li>
+<li>The 3D print is coated with a fill primer to hide the 3D print specific layer&nbsp;structure.</li>
+<li>A silicone mold is made from the 3D print which is used for a resin&nbsp;cast.</li>
+</ol>
+<p><span class="caps">TD</span>;<span class="caps">DR</span>: Please refer to here to see the final&nbsp;result.</p>
+<p>The data is acquired by running the simulation that I wrote for a sufficiently
+long time in the incompressible Navier-Stokes equations&#8217; turbulent regime at
+Re=400. My simulation is based on a pseudo-spectral algorithm so that one
+can reconstruct the full velocity fields from the spectral expansion coefficients
+that are saved during the simulation run. The fields are reconstructed and
+saved as <span class="caps">VTR</span> (using PyEVTK [<span class="caps">TODO</span>: link]) files to be able to inspect them
+against simulation time in ParaView. After deciding upon one flow field and
+one iso surface, the spectral coefficients are used to generate a high-resolution spatial field
+to get a nicer 3D print out of it. This data is finally saved as <span class="caps">STL</span>.</p>
+<p>The <span class="caps">STL</span> file is post-processed in Blender: The 2D iso surface is extruded
+downwards to obtain a true 3D structure that can be 3D&nbsp;printed.</p>
+<p>This model is 3D printed in <span class="caps">PLA</span>. I tested multiple sizes and multiple vertical resolutions
+on a UltiMaker 3. After holding all the 3D prints in my hand I decided to pick
+the highest vertical resolution of 0.6mm and a size of 9mm x 6mm x 3mm. This
+model is sanded down and white fill primer is sprayed onto it. It turns out
+that this laster step reduces the visible vertical layers quite sufficiently.
+That procedure might be an alternative to using <span class="caps">ABS</span> with an acetone bath in
+case <span class="caps">ABS</span> cannot be&nbsp;used.</p>
+<p>A silicone mold is made in a small paper box. Using release spray is recommended
+to avoid destroying the silicone mold after removing the 3D&nbsp;print.</p>
+<p>This silicone mold is finally used for a resin cast. One can use the silione
+mold as many time as it is still&nbsp;intact.</p>
+<div class="section" id="the-outcome">
+<h2>The&nbsp;outcome</h2>
+<p><span class="caps">TODO</span>: Show pictures of the&nbsp;object.</p>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements</h2>
+<p>Cheers to the University of Edinburgh uCreate Studio which enabled me to
+test multiple prototypes of the 3D pring in various sizes and resolutions!
+This studio is truely exceptional and thanks Mike Boyd for his&nbsp;help!</p>
+</div>
+<div class="section" id="the-code">
+<h2>The&nbsp;code</h2>
+<p>The code can be found here: <a class="reference external" href="https://bitbucket.org/Mc_M/neuroevolution_crossroad">https://bitbucket.org/Mc_M/neuroevolution_crossroad</a>.</p>
+</div>
+<div class="section" id="resources">
+<h2>Resources</h2>
+<ul class="simple">
+<li>Genetic algorithms: <a class="reference external" href="https://en.wikipedia.org/wiki/Genetic_algorithm">https://en.wikipedia.org/wiki/Genetic_algorithm</a></li>
+<li>Neuroevolution: <a class="reference external" href="https://en.wikipedia.org/wiki/Neuroevolution">https://en.wikipedia.org/wiki/Neuroevolution</a></li>
+</ul>
+</div>
+
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="/tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>
