@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Parking in Marburg: a quantitative study | Blog
+</title>
+  <link rel="canonical" href="http://lellep.xyz/blog/parking-in-marburg.html">
+
+    <link rel="apple-touch-icon" href="http://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="http://lellep.xyz/blog/manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="http://lellep.xyz/blog/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="http://lellep.xyz/blog/feeds/%s.atom.xml">  
+  <meta name="description" content="The parking demand in Marburg is analysed quantiatively based on publicly available data. In addition, Gaussian Processes are used for spatial predictions.">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="http://lellep.xyz/blog/">
+        <img class="img-fluid rounded" src=http://lellep.xyz/blog/images/logo.svg alt="Blog">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="http://lellep.xyz/blog/">Blog</a></h1>
+      <p class="text-muted">by Martin Lellep</p>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">◄ back to my main website</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="http://lellep.xyz/blog/pages/about.html">About</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Parking in Marburg: a quantitative&nbsp;study
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2020-02-26T00:00:00+01:00">
+          <i class="fas fa-clock"></i>
+          Mi 26 Februar 2020
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="http://lellep.xyz/blog/category/data.html">data</a>
+        </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>In this text, I attempt to analyse the parking situation in Marburg - the city I am currently living in. Moving through cities
+these days, traffic is a big aspect as one is surrounded by cars at all times. When traffic is not flowing, this traffic
+typically parks. Hence, my motivation to study the parking situation in Marburg: what are the cars in Marburg doing when not&nbsp;driving?</p>
+<p>This article is mostly about quantitative analyses based on (sort of) publicly available data. The city of Marburg maintains a system that
+summarises the currently free parking spots on a website. This system can be accessed under the following website: <a class="reference external" href="https://pls.marburg.de/">https://pls.marburg.de/</a>.</p>
+<p>If you are curious about the analyses and corresponding figures, then please read on: first I give an overview
+about the data acquisition process. This is for you to understand what data I am actually using and how I got it. Second, I
+continue with the actual analyses that covers analytics as well as&nbsp;predictions.</p>
+<div class="section" id="data-acquisition">
+<h2>Data&nbsp;acquisition</h2>
+<p>I acquired the parking data in Marburg with a set of programming tools. The official &#8220;Parkleitsystem Marburg&#8221;,
+roughly translated as &#8220;parking direction system Marburg&#8221;, is used as data source. It is available online at <a class="reference external" href="https://pls.marburg.de/">https://pls.marburg.de/</a>
+and shown below in Fig. 1 for&nbsp;reference.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/pls_website.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/pls_website.png" style="width: 600px;" /></a>
+<p class="caption">Figure 1: Screenshot of the official website maintained by the city of Marburg, <a class="reference external" href="https://pls.marburg.de/">https://pls.marburg.de/</a>,
+as of 02/26/2020. This website serves as my data source. This screenshot shows the available data: the free parking spots
+for all parking decks, links to the positions of the parking decks, the maximal vehicle height allowances and the current
+data timestamp. The data is updated every five&nbsp;minutes.</p>
+</div>
+<p>The city website is updated every five minutes and lists parking decks spread across Marburg. These parking decks
+comprise popular shopping locations and places, such&nbsp;as:</p>
+<ul class="simple">
+<li>Ahrens</li>
+<li>City parking&nbsp;deck</li>
+<li>Erlenring-Center</li>
+<li>Furthstraße</li>
+<li>Furthstraße -&nbsp;Parkdeck</li>
+<li>Hauptbahnhof</li>
+<li>Lahncenter</li>
+<li>Marktdreieck</li>
+<li>Marktdreieck -&nbsp;Parkdeck</li>
+<li>Oberstadt</li>
+</ul>
+<p>For each of the parking decks, a number of data is&nbsp;given:</p>
+<ul class="simple">
+<li>Column &#8220;<span class="caps">PARKHAUS</span>&#8221;: The name of the parking&nbsp;deck.</li>
+<li>Column &#8220;<span class="caps">FREI</span>&#8221;: The number of free parking&nbsp;spots.</li>
+<li>Column &#8220;<span class="caps">ROUTE</span>&#8221;: A Google Maps link to the parking deck&nbsp;location.</li>
+<li>Column &#8220;max. Einfahrtshöhe&#8221;: The permitted vehicle&nbsp;height.</li>
+</ul>
+<p>This website and its content is used as data source for this study. The software used for data acquisition is written
+in <a class="reference external" href="https://www.python.org">Python</a> and uses <a class="reference external" href="https://scrapy.org">Scrapy</a> to download the data from the website.
+Scrapy also stores the data in a machine readable format to facilitate the post processing and analysis steps. The whole
+software stack runs as a <a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software)">Docker container</a> on a small
+<a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a> server. The data is saved every three minutes in order to subsample
+the website update interval of five minutes. Note that this time scale is chosen as to have sufficiently dense
+data points but not to overload the website servers - in particular the latter aspect should be given high priority
+when working on projects as the one in this study. Since only the table given on the city website is processed and
+stored, the storage requirements for the Linux server are minimal. Figure 2 summarises the data acquisition&nbsp;pipeline.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/download_structure.svg"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/download_structure.png" style="width: 600px;" /></a>
+<p class="caption">Figure 2: The data acquisition pipeline as described in the main text. The &#8220;data for analysis&#8221;, marked by a green
+rectangle, is used for all subsequent data analysis&nbsp;steps.</p>
+</div>
+<p>The analysis pipeline is also written in Python. It uses the <a class="reference external" href="https://www.scipy.org/about.html">Scientific computing Python stack</a>.
+In particular, the <a class="reference external" href="https://pandas.pydata.org">Pandas</a> Python package has been used extensively to arrange and evaluate
+the data. The &#8220;data for analysis&#8221; shown in Fig. 2 is exactly one such
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">Pandas DataFrame</a>. The data structure for the
+analysis is a table with timestamps along the rows and the parking decks along the columns, as shown in Fig. 3. Over the course
+of the data acquisition period, I accumulated around 100,000 snapshots of the&nbsp;website.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/data_format.svg"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/data_format.png" style="width: 350px;" /></a>
+<p class="caption">Figure 3: The data format that is used for the analysis. The data is appended to the table as time passes. The table cells
+contain the number of free parking spots at a given time and for a given parking deck. The red arrow shows how the
+accumulative data is obtained: all values per row are added up to get the overall number of free parking spots per&nbsp;timestamp.</p>
+</div>
+</div>
+<div class="section" id="analysis-of-parking-situation-in-marburg">
+<h2>Analysis of parking situation in&nbsp;Marburg</h2>
+<p>The data analysis is divided into four parts. We start with an introduction to verify that our data is reasonable. The second and
+third parts analyse the parking demand as summed over all parking decks in Marburg and for each parking deck separately, respectively.
+While the second part only takes temporal information into account, the third part also takes spatio-temporal information into
+account. Finally, the last part uses a machine learning prediction method for spatial interpolation that comes with the benefit of
+returning uncertainty measures about its&nbsp;predictions.</p>
+<div class="section" id="introduction">
+<h3>Introduction</h3>
+<p>This introduction serves the purpose of getting a very first hold of the acquired data. Here, we will look into the parking deck locations
+and how the metric that quantifies &#8220;parking demand&#8221; is&nbsp;computed.</p>
+<p>Each of the snapshots consists of a timestamp, the number of free spots, the corresponding colour, the maximal vehicle height and a
+Google Maps link. The latter two are confirmed to remain unchanged throughout the whole dataset for each parking deck and the link is
+used to derive the parking deck locations. The locations that are linked in the table are parsed from the correponding <span class="caps">URL</span> and shown in
+Fig. 4 by the red markers. It turns out that the coordinates obtained from the links on the website are wrong. It seems that Google Maps
+corrects for that automatically and redirects to the correct coordinates. I searched for the correct coordinates and indicated them by
+green markers in Fig.&nbsp;4.</p>
+<div>
+    <iframe src="images/parking_in_marburg/1_data_analysis/0_intro/0_parkhaus_locations.html"
+            width="800"
+            height="450"
+            frameborder="0"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen="">
+    </iframe>
+</div>
+<div class="figure">
+    <p class="caption">
+        Figure 4: The parking deck locations. The incorrect locations as given on the website
+        are marked as red markers. Dashed lines connect these incorrect locations to their
+        correct locations, indicated as green&nbsp;markers.
+    </p>
+</div><p>These correct coordinates are used for a quick experiment to warm up a little bit more. Using the <a class="reference external" href="https://www.openstreetmap.org/#map=17/48.80418/2.12230">OpenStreetMap</a>, I compile a list of all restaurants, pubs, <a class="reference external" href="https://en.wikipedia.org/wiki/Beer_garden">Biergarten</a>
+and <a class="reference external" href="https://de.wikipedia.org/wiki/Kneipe">Kneipen</a> in Marburg. The list comprises of classical pubs in Marburg like the &#8220;Sudhaus&#8221;
+and &#8220;Quod&#8221; but also incoporates the &#8220;Mensa&#8221;, taking a whopping 153 items into account. For each of the parking decks, the distance to all of the
+restaurants/pubs is computed and summed up. The accumulated distances are shown in Fig. 5 and guide you to the parking deck that you
+should choose whenever you are hungry: pick &#8220;oberstadt&#8221;, &#8220;lahncenter&#8221;, &#8220;city&#8221; or &#8220;ahrens&#8221; if you are particularly hungry as they have
+the smallest accumulated distance to restaurants and&nbsp;pubs.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/0_intro/1_POIs.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/0_intro/1_POIs.png" style="width: 600px;" /></a>
+<p class="caption">Figure 5: The accumulated distances to places like restaurants and pubs for each of the parking decks. The type of place is encoded
+as colour. The parking decks with the smallest accumulated distances to restaurants and pubs are &#8220;oberstadt&#8221;, &#8220;lahncenter&#8221;, &#8220;city&#8221;
+and&nbsp;&#8220;ahrens&#8221;.</p>
+</div>
+<p>With the parking deck positions in place, let&#8217;s focus on the metric. The measure of &#8220;parking demand&#8221; is quantified here as the number of
+used parking spots. However, the website only states the number of free parking spots. The capacity of each parking deck is calculated
+as maximum of the free parking spots. To obtain the number of used parking spots, the number of free parking spots are subtracted from
+the capacity. The capacities determined by this procedure are shown in the corresponding column of the following&nbsp;table:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Parking deck</th>
+<th class="head">Determined capacity</th>
+<th class="head">Documented capacity</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>ahrens</td>
+<td>213</td>
+<td>225</td>
+</tr>
+<tr><td>city</td>
+<td>195</td>
+<td>160</td>
+</tr>
+<tr><td>erlenring-center</td>
+<td>402</td>
+<td>409</td>
+</tr>
+<tr><td>furthstraße</td>
+<td>118</td>
+<td>204</td>
+</tr>
+<tr><td>furthstraße - parkdeck</td>
+<td>97</td>
+<td>n.a.</td>
+</tr>
+<tr><td>hauptbahnhof</td>
+<td>264</td>
+<td>288</td>
+</tr>
+<tr><td>lahncenter</td>
+<td>170</td>
+<td>168</td>
+</tr>
+<tr><td>marktdreieck</td>
+<td>190</td>
+<td>280</td>
+</tr>
+<tr><td>marktdreieck - parkdeck</td>
+<td>97</td>
+<td>n.a.</td>
+</tr>
+<tr><td>oberstadt</td>
+<td>209</td>
+<td>235</td>
+</tr>
+</tbody>
+</table>
+<p>These empirically determined values can be compared to the ones
+<a class="reference external" href="https://www.marburg-tourismus.de/portal/seiten/parken-900000695-1000000.html">documented officially</a>, as shown in the table column
+&#8220;documented capacity&#8221;. Apparently, the two sets of numbers are close to each other. Since the empirically computed parking capacities
+are more granular (e.g. they distinguish between &#8220;Marktdreieck&#8221; and &#8220;Marktdreieck - Parkdeck&#8221;) and seem to be more up-to-date (empirically,
+the &#8220;City&#8221; parking deck was found to have had 195 free parking spots at maximum despite only having 160 parking spots as documented
+officially), I will be using the empirically determined capacities for the analyses that I show in the&nbsp;following.</p>
+<p>With the coordinates and used parking spots determined, we turn towards the main analysis. This main analysis begins with the accumulative&nbsp;signal.</p>
+</div>
+<div class="section" id="accumulative-parking-analysis">
+<h3>Accumulative parking&nbsp;analysis</h3>
+<p>The accumulative data is obtained as shown by the red arrow in Fig. 3: the columns for all parking decks are summed up to yield the accumulated
+number of used parking&nbsp;spots.</p>
+<p>Given the timestamps of the data, the number of used parking spots can be plotted against time. Since the data acqusition time of 3min is
+quite fast on the scale of the data collection process - namely month -, the data is resampled to hours, days and weeks, as shown in Fig.&nbsp;6.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/0_cumulative_signal.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/0_cumulative_signal.png" style="width: 600px;" /></a>
+<p class="caption">Figure 6: The used parking spots as summed over all parking decks against time. The data is resampled to hours, days and weeks, as
+shown by the three lines. These resamples highlight trends in the&nbsp;data.</p>
+</div>
+<p>The green line shows the weekly average. It drops during the time between Christmas and New Year&#8217;s Eve. Furthermore, the regularity of the
+data becomes obvious. There seem to be two types of periodicity: first, the periodicity per day (as hardly visible
+by the data resampled to one hour) and second, periodicity per week (as clearly visible by the data resampled to one day). Despite these obvious
+facts, the figure might be nice to look at but doesn&#8217;t quantify the periodicities&nbsp;further.</p>
+<p>The autocorrelation of Fig. 6 is computed to quantify the periodicity. The <a class="reference external" href="https://en.wikipedia.org/wiki/Autocorrelation">autocorrelation</a>
+function measures how similar a signal is to itself by shifting it by some time delay that make up the x-axis of autocorrelation plots.
+For time delays at which the autocorrelation function has maxima, the signal is similar to itself. Hence,
+periodicity can be quantified by exactly these maxima of the autocorrelation function. Figure 7 shows the autocorrelation function of the parking
+demand in&nbsp;Marburg.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png" style="width: 600px;" /></a>
+<p class="caption">Figure 7: The autocorrelation of the accumulatively used parking spots. The period of seven days is marked by a red&nbsp;line.</p>
+</div>
+<p>As suggested by the accumulative signal in Fig. 6, the autocorrelation peaks at seven days. This confirms that the signal has a period
+of seven days. The daily periodicity is not visible in this plot as it is based on the daily resample of the&nbsp;data.</p>
+<p>Finally, to understand the full scope of the periodicity of the signal, I evaluated the day-hour-histogram. This type of histogram is used to visualise
+the number of used parking spots in Marburg against time and day of the week. This makes up a two dimensional matrix, as shown in Fig.&nbsp;8.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/2_day_time_histogram.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/2_day_time_histogram.png" style="width: 600px;" /></a>
+<p class="caption">Figure 8: The average of the used parking spots against time and day. Summing along rows and columns results in the daily and hourly
+usage histograms, respectively. Yellow corresponds to high and blue corresponds to low values, as quantified by the&nbsp;colourbar.</p>
+</div>
+<p>It becomes obvious that the peak hours of parking demand during the working week are between 11am and 4pm. Also, notably, the weekends are
+less busy as people are probably not going into the city by car. On Saturdays, the peak hours in parking demand are shorter, only from around 12pm to
+3pm. On Sundays, there is significantly less parking demand in Marburg as compared to all other six days. Interestingly, the relaxed Sunday mood
+smears into Monday mornings, as these are much less busy than regular mornings during the working week. Finally, it can be observed that even at
+late nights, like 10pm to 4am, there are still cars using the parking&nbsp;decks.</p>
+<p>Now that we know the periodicity of the parking demand in Marburg, let&#8217;s focus on all of the parking decks&nbsp;separately.</p>
+</div>
+<div class="section" id="separate-parking-deck-analysis">
+<h3>Separate parking deck&nbsp;analysis</h3>
+<p>Now we turn to the more detailed analyses that take the different parking decks into account. First, Fig. 9 shows the parking demand against
+time for each parking deck&nbsp;separately.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/0_single_signals.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/0_single_signals.png" style="width: 600px;" /></a>
+<p class="caption">Figure 9: The parking demand against time, similar to Fig. 6. Here, however, the accumulative signal is split into the contributions from
+each parking&nbsp;deck.</p>
+</div>
+<p>Despite being overloaded with information, there are a few aspects that this figure points towards. First, the signals seem to be periodic as well
+and second, the parking decks seem to vary significantly in how many parking spots are used. The integral parking demand quantifies exactly that:
+it measures how many parking spots have been provided by a parking deck throughout the whole measurement period. Figure 10 shows the results&nbsp;thereof.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/2_integral_parking_demand.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/2_integral_parking_demand.png" style="width: 600px;" /></a>
+<p class="caption">Figure 10: Integral parking demand of all parking decks. These numbers are obtained by summing up the number of used parking spots per each
+parking deck over the whole measurement period. The blue bars in the bottom show the integral parking demand during working days and the stacked
+orange bars show the parking demand during the weekends for each parking deck. The integral parking demand is normalised to the maximal
+integral parking demand across all parking&nbsp;decks.</p>
+</div>
+<p>The integral parking demand shows that the &#8220;Erlenring&#8221; parking deck is by far the most used parking deck. The second most important parking deck,
+&#8220;Lahncenter&#8221;, provides around half of the parking spots that &#8220;Erlenring&#8221; provides. The proportion of parking spots provided on weekends compared
+to the overall number of provided parking decks is roughly equal for almost all parking decks. Here, only &#8220;Marktdreieck - Parkdeck&#8221; differs as
+this parking deck provides significantly fewer parking spots on&nbsp;weekends.</p>
+<p>The integral parking demand can be given an additional temporal information by rendering a video that takes time into account. The following video
+shows the parking deck usage against passing hours. The video shows the ratio of parking spots that are used with the hour and date running in the
+title of the figure. As before, the number of used parking decks is normalised to the maximal usage across all parking decks and, additionally,
+all&nbsp;times.</p>
+<div style="margin: 0px auto; text-align: center;">
+    <iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/GvyMukqKLM4"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen>
+    </iframe>
+</div>
+<br/><p>Clearly, this video visualises the periodicity in the signal. The parking deck bars disappear when there is no data - certain parking decks close
+down during the night and some days of the weekend. Most of the parking decks reach 100% occupancy and then decrease to smaller values below 5%
+during the night. The notable exceptions to this observation are the parking decks &#8220;Lahncenter&#8221; and &#8220;Erlenring&#8221; which only decrease to around 40%
+to 50% occupancy at night. That might explain the previous observation in Fig. 8 of cars that remain parked during night. In the beginning of the
+video there is some data missing as my data acquisition pipeline broke down during that&nbsp;time.</p>
+<p>The dependence on time is studied further. Figure 11 shows the histograms of used parking spots for each parking decks separately. Not only that,
+it also shows histograms thereof that depend on the time of the&nbsp;day.</p>
+<div class="figure">
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/1_temporal_histograms.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/1_temporal_histograms.png" style="width: 600px;" /></a>
+<p class="caption">Figure 11: Histograms of used parkings spots conditioned on time of the day. Each subplot corresponds to one parking deck. The time-independent
+histogram is shown in blue. The histograms of colours yellow, green and red correspond to mornings, noons and evenings as defined by the hours
+between 7am to 9am, 11am to 1pm and 4:30pm to 6:30pm, respectively. Each histogram is normalised independently for a better visual&nbsp;appearance.</p>
+</div>
+<p>The temporal histograms shown in Fig. 11 visualises a number of results. For some of the parking decks it is clearly visible how the peak of parking demand
+shifts with time: parking decks like &#8220;ahrens&#8221;, &#8220;oberstadt&#8221;, &#8220;marktdreieck&#8221;, &#8220;marktdreieck - parkdeck&#8221;, &#8220;furthstraße&#8221; or &#8220;hauptbahnhof&#8221; all show how
+there is little parking demand in the mornings, a maximal parking demand around noon and a decaying parking demand in the evening. Contrary, parking
+decks like &#8220;city&#8221;, &#8220;ehrlenring-center&#8221; or &#8220;lahncenter&#8221; do not seem to depend on time as&nbsp;much.</p>
+<p>After these analyses about the acquired data, we finally turn towards&nbsp;predictions.</p>
+</div>
+<div class="section" id="predictive-analysis">
+<h3>Predictive&nbsp;analysis</h3>
+<p>As last part of this article, I attempt a predictive analysis of the parking data in Marburg. The parking decks indicate parking
+demand at their locations. With the following spatial prediction, I would like to forecast parking demand where there are no parking decks&nbsp;available.</p>
+<p>Since I am also interested in the uncertainties in the predictions, I use <a class="reference external" href="http://www.gaussianprocess.org/gpml/chapters/RW2.pdf">Gaussian Process Regression</a>
+(<span class="caps">GPR</span>) for the spatial predictions. <span class="caps">GPR</span> uses <a class="reference external" href="https://en.wikipedia.org/wiki/Gaussian_process">Gaussian Processes</a> (GPs), which themselves generalise
+<a class="reference external" href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">multivariate Gaussian distributions</a> to function space. Being a Bayesian method,
+they return not only a prediction but also the uncertainty of the&nbsp;prediction.</p>
+<p>Despite that <span class="caps">GPR</span> is a non-parametric statistical method, it needs hypterparameters though. While I do not want to give an introduction to <span class="caps">GPR</span> in this
+article, the analysis details are noted here for the sake of a transparent analysis. Please consult the links provided before and make sure to focus
+on the amazing book by <em>Rasmussen et al</em> to understand the following technial&nbsp;details:</p>
+<ul class="simple">
+<li>Contrary to the typically chosen zero-mean <span class="caps">GP</span> prior, I use the mean of the data as <span class="caps">GP</span> prior&nbsp;mean.</li>
+<li>A <a class="reference external" href="https://en.wikipedia.org/wiki/Radial_basis_function_kernel">radial basis function kernel</a> is used as correlation function of the <span class="caps">GP</span>&nbsp;prior.</li>
+<li>The kernel hyperparameters, magnitude and length scale, are set heuristically based on visual fit quality and the characteristic length scale of&nbsp;Marburg.</li>
+<li>Very nearby parking decks (&#8220;marktdreieck&#8221; and &#8220;marktdreieck - parkdeck&#8221; as well as &#8220;furthstraße&#8221; and &#8220;furthstraße - parkdeck&#8221;) are merged in order
+to avoid&nbsp;discontinuities.</li>
+<li>I use a noise-free <span class="caps">GP</span> prior as the interger measurements from the website do not come with&nbsp;noise.</li>
+</ul>
+<p>With these technical details in place, it is time to look at the <span class="caps">GPR</span> results. The following video shows the parking deck usage averaged over the whole
+measurement period. It is a 3D plot with the plane as geographical coordinates of Marburg, the height of the upper subplot as predicted parking deck
+usage and the height of the lower subplot as prediction uncertainty of the parking deck&nbsp;usage.</p>
+<div style="margin: 0px auto; text-align: center;">
+    <iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/lg4zYv09nxA"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen>
+    </iframe>
+</div>
+<br/><p>The usage values of the parking decks are indicated with black dots. The maximum of the prediction, indicated as height as well as in yellow colour, is
+located close to the erlenring parking deck. As expected on account of the <span class="caps">GPR</span> algorithm, the prediction uncertainties decrease close to the measurement
+positions. In order to fully see the spatial predictions, the 3D plots are rotated. At the end of the video, the viewport is rotated to the top&nbsp;view.</p>
+<p>The second video uses exactly that top down view to visualise the spatial predictions. However, it also introduces a temporal component by showing
+the spatial predictions as days pass. The data shown is the daily average. On the left of the following video, the colour encoded top-down view as
+introduced in the previous video is shown. The black dots correspond to the locations of the parking decks that served as training data. The red dots,
+however, correspond to
+points-of-interest (POIs) between the parking decks. Hence, the <span class="caps">GPR</span> is used to compute the predicted parking demand at these POIs. The right subplot
+shows the corresponding values of these POIs together with their names: I evaluated the parking demand as fitted by the <span class="caps">GPR</span> at the &#8220;mensa&#8221;, &#8220;physik&#8221;,
+&#8220;<span class="caps">UB</span>&#8221; (university library), &#8220;bahnhof&#8221; and &#8220;kino&#8221; in Marburg. These predictions do come with uncertainies, but they are very small. If you look very
+closely, you might spot the error bars in right&nbsp;subplot.</p>
+<div style="margin: 0px auto; text-align: center;">
+    <iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/axSnq4vRl_E"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen>
+    </iframe>
+</div>
+<br/><p>This video shows that the location &#8220;mensa&#8221; is the place with the highest parking demand. &#8220;Physik&#8221;, &#8220;<span class="caps">UB</span>&#8221; and &#8220;bahnhof&#8221; have roughly the same parking
+demand and &#8220;kino&#8221; fluctuates the most across the days that are&nbsp;shown.</p>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion</h2>
+<p>In this article I showed how publicly available parking data in Marburg is saved, analysed and finally used for spatial predictions. The
+statistical analysis comprises a few aspects that are interesting for both, people looking for free parking spots as well as the city of Marburg.
+This analysis is interesting for the city of Marburg because the usage statistics of
+the parking decks could be utilised to ultimately improve the parking situation in Marburg, e.g. by incorporating load balancing or by re-thinking
+the necessity of more or less parking decks. The spatial prediction yields statements about where particularly many or particularly few parking spots
+in Marburg are&nbsp;required.</p>
+<p>You might ask why I compiled this study. First, I like to do such things. Second, I believe that <a class="reference external" href="https://en.wikipedia.org/wiki/Open_data">open data</a>
+can contribute to a better quality of the
+lives of all of us as existing systems can be analysed and optimised. This is daily business in the corporate sector but has not reached the public sector, yet. This article is to foster the spirit of open data in Marburg in the hope that open data improves the quality of lives in Marburg in the&nbsp;future.</p>
+<p>The more open data there is available, the more open data fans such as me can help to compile similar analyses for the city of Marburg. Dear Marburg,
+start to provide us with exciting open data!&nbsp;:-)</p>
+</div>
+
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="http://lellep.xyz/blog/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="http://lellep.xyz/blog/categories.html">Categories</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
