@@ -79,7 +79,8 @@ returning uncertainty measures about its&amp;nbsp;predictions.&lt;/p&gt;
 &lt;div class="section" id="introduction"&gt;
 &lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;This introduction serves the purpose of getting a very first hold of the acquired data. Here, we will look into the parking deck locations
-and how the metric that quantifies &amp;#8220;parking demand&amp;#8221; is&amp;nbsp;computed.&lt;/p&gt;
+and how the metric that quantifies &amp;#8220;parking demand&amp;#8221; is computed. It turns out that the data preprocessing steps that I present in this section
+are necessary in order to correct corrupted data from the&amp;nbsp;website.&lt;/p&gt;
 &lt;p&gt;Each of the snapshots consists of a timestamp, the number of free spots, the corresponding colour, the maximal vehicle height and a
 Google Maps link. The latter two are confirmed to remain unchanged throughout the whole dataset for each parking deck and the link is
 used to derive the parking deck locations. The locations that are linked in the table are parsed from the correponding &lt;span class="caps"&gt;URL&lt;/span&gt; and shown in
@@ -204,8 +205,10 @@ demand in&amp;nbsp;Marburg.&lt;/p&gt;
 &lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png" style="width: 600px;" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Figure 7: The autocorrelation of the accumulatively used parking spots. The period of seven days is marked by a red&amp;nbsp;line.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;As suggested by the accumulative signal in Fig. 6, the autocorrelation peaks at seven days. This confirms that the signal has a period
-of seven days. The daily periodicity is not visible in this plot as it is based on the daily resample of the&amp;nbsp;data.&lt;/p&gt;
+&lt;p&gt;As suggested by the accumulative signal in Fig. 6, the autocorrelation shown in Fig. 7 peaks at seven days. This confirms that the signal has a period
+of seven days. The daily periodicity is not visible in this plot as it is based on the daily resample of the data; the initial small peak at the shift
+value of one in Fig. 7 is due to the fact that this value corresponds exactly to the sampling frequency of the resampled signal and, by that, does not
+carry any relevant information regarding the periodicity in the signal. All other peaks correspond to multiples of the identified 7-day&amp;nbsp;periodicity.&lt;/p&gt;
 &lt;p&gt;Finally, to understand the full scope of the periodicity of the signal, I evaluated the day-hour-histogram. This type of histogram is used to visualise
 the number of used parking spots in Marburg against time and day of the week. This makes up a two dimensional matrix, as shown in Fig.&amp;nbsp;8.&lt;/p&gt;
 &lt;div class="figure"&gt;
@@ -284,7 +287,7 @@ demand at their locations. With the following spatial prediction, I would like t
 (&lt;span class="caps"&gt;GPR&lt;/span&gt;) for the spatial predictions. &lt;span class="caps"&gt;GPR&lt;/span&gt; uses &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Gaussian_process"&gt;Gaussian Processes&lt;/a&gt; (GPs), which themselves generalise
 &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution"&gt;multivariate Gaussian distributions&lt;/a&gt; to function space. Being a Bayesian method,
 they return not only a prediction but also the uncertainty of the&amp;nbsp;prediction.&lt;/p&gt;
-&lt;p&gt;Despite that &lt;span class="caps"&gt;GPR&lt;/span&gt; is a non-parametric statistical method, it needs hypterparameters though. While I do not want to give an introduction to &lt;span class="caps"&gt;GPR&lt;/span&gt; in this
+&lt;p&gt;Despite that &lt;span class="caps"&gt;GPR&lt;/span&gt; is a non-parametric statistical method, it needs hyperparameters. While I do not want to give an introduction to &lt;span class="caps"&gt;GPR&lt;/span&gt; in this
 article, the analysis details are noted here for the sake of a transparent analysis. Please consult the links provided before and make sure to focus
 on the amazing book by &lt;em&gt;Rasmussen et al&lt;/em&gt; to understand the following technial&amp;nbsp;details:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -293,7 +296,7 @@ on the amazing book by &lt;em&gt;Rasmussen et al&lt;/em&gt; to understand the fo
 &lt;li&gt;The kernel hyperparameters, magnitude and length scale, are set heuristically based on visual fit quality and the characteristic length scale of&amp;nbsp;Marburg.&lt;/li&gt;
 &lt;li&gt;Very nearby parking decks (&amp;#8220;marktdreieck&amp;#8221; and &amp;#8220;marktdreieck - parkdeck&amp;#8221; as well as &amp;#8220;furthstraße&amp;#8221; and &amp;#8220;furthstraße - parkdeck&amp;#8221;) are merged in order
 to avoid&amp;nbsp;discontinuities.&lt;/li&gt;
-&lt;li&gt;I use a noise-free &lt;span class="caps"&gt;GP&lt;/span&gt; prior as the interger measurements from the website do not come with&amp;nbsp;noise.&lt;/li&gt;
+&lt;li&gt;I use a noise-free &lt;span class="caps"&gt;GP&lt;/span&gt; prior as the integer measurements from the website do not come with&amp;nbsp;noise.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;With these technical details in place, it is time to look at the &lt;span class="caps"&gt;GPR&lt;/span&gt; results. The following video shows the parking deck usage averaged over the whole
 measurement period. It is a 3D plot with the plane as geographical coordinates of Marburg, the height of the upper subplot as predicted parking deck
@@ -346,6 +349,8 @@ can contribute to a better quality of the
 lives of all of us as existing systems can be analysed and optimised. This is daily business in the corporate sector but has not reached the public sector, yet. This article is to foster the spirit of open data in Marburg in the hope that open data improves the quality of lives in Marburg in the&amp;nbsp;future.&lt;/p&gt;
 &lt;p&gt;The more open data there is available, the more open data fans such as me can help to compile similar analyses for the city of Marburg. Dear Marburg,
 start to provide us with exciting open data!&amp;nbsp;:-)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you have questions about this article or would like to know more about the analyses, please feel free to contact me via&lt;/em&gt;
+&lt;a class="reference external" href="mailto:martin.lellep+blog&amp;#64;gmail.com"&gt;email&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 </content></entry><entry><title>Learning a Neural Network with Genetic Algorithms</title><link href="http://lellep.xyz/blog/learning-a-neural-network-with-genetic-algorithms.html" rel="alternate"></link><published>2017-11-25T00:00:00+01:00</published><updated>2017-11-25T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2017-11-25:/blog/learning-a-neural-network-with-genetic-algorithms.html</id><summary type="html">&lt;p class="first last"&gt;Numerical experiment combining neuroevolution and an old &lt;span class="caps"&gt;SEGA&lt;/span&gt;&amp;nbsp;game.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Genetic algorithms can be used to optimize complex problems by using
