@@ -800,46 +800,6 @@ This place is truely exceptional and an amazing opportunity for students
 to learn anything! I believe the uCreate Studio is a concept that needs to be copied
 from universities across the&amp;nbsp;world.&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Learning a Neural Network with Genetic Algorithms</title><link href="http://lellep.xyz/blog/learning-a-neural-network-with-genetic-algorithms.html" rel="alternate"></link><published>2017-11-25T00:00:00+01:00</published><updated>2017-11-25T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2017-11-25:/blog/learning-a-neural-network-with-genetic-algorithms.html</id><summary type="html">&lt;p class="first last"&gt;Numerical experiment combining neuroevolution and an old &lt;span class="caps"&gt;SEGA&lt;/span&gt;&amp;nbsp;game.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;Genetic algorithms can be used to optimize complex problems by using
-techniques that ressemble genetic evolution. One such complex problem can be the
-learning process of a neural network: Using genetic algorithms for this purpose
-is referred to as&amp;nbsp;&amp;#8220;Neuroevolution&amp;#8221;.&lt;/p&gt;
-&lt;p&gt;I came across nice projects that use genetic algorithms to learn neural networks
-that controll the behaviour of some agents in a simplified&amp;nbsp;world:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;Arithmetic snake searching for food: &lt;a class="reference external" href="https://www.youtube.com/watch?v=BBLJFYr7zB8"&gt;https://www.youtube.com/watch?v=BBLJFYr7zB8&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Flappy Bird scoring points: &lt;a class="reference external" href="https://www.youtube.com/watch?v=L6bbFgjkqK0"&gt;https://www.youtube.com/watch?v=L6bbFgjkqK0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Car driving along a track: &lt;a class="reference external" href="https://www.youtube.com/watch?v=5lJuEW-5vr8"&gt;https://www.youtube.com/watch?v=5lJuEW-5vr8&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="section" id="my-project"&gt;
-&lt;h2&gt;My&amp;nbsp;project&lt;/h2&gt;
-&lt;p&gt;I am working on a discrete version of &amp;#8220;Frogger&amp;#8221; (&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Frogger"&gt;https://en.wikipedia.org/wiki/Frogger&lt;/a&gt;)
-that is controlled by a neural network which is learned through a genetic&amp;nbsp;algorithm.&lt;/p&gt;
-&lt;p&gt;With this project, I am covering a few other aspects as&amp;nbsp;well:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;Learn C++: The project is developed in C++. The development speed might not be as
-high as when developed in Python but in return I will learn object-oriented programming
-in C++, the compilation tool-chain and modern C++ standards such as&amp;nbsp;2017.&lt;/li&gt;
-&lt;li&gt;Neural network topologies: The concepts of neural networks and their topology is
-part of this project as I implement the neural network from scratch. This is
-particularly simple in this case because only forward evaluations are&amp;nbsp;required.&lt;/li&gt;
-&lt;li&gt;Artificial simplified world and agent-based learning: The idea of individuals who
-live in a simplified world and respond to their environment seems like an exciting
-numerical experiment to&amp;nbsp;me.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="section" id="the-code"&gt;
-&lt;h2&gt;The&amp;nbsp;code&lt;/h2&gt;
-&lt;p&gt;The code can be found here: &lt;a class="reference external" href="https://bitbucket.org/Mc_M/neuroevolution_crossroad"&gt;https://bitbucket.org/Mc_M/neuroevolution_crossroad&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="resources"&gt;
-&lt;h2&gt;Resources&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;Genetic algorithms: &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Genetic_algorithm"&gt;https://en.wikipedia.org/wiki/Genetic_algorithm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Neuroevolution: &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Neuroevolution"&gt;https://en.wikipedia.org/wiki/Neuroevolution&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
 </content></entry><entry><title>Greasing the groove: Push ups - Results</title><link href="http://lellep.xyz/blog/greasing-the-groove-push-ups-results.html" rel="alternate"></link><published>2017-05-29T23:00:00+02:00</published><updated>2017-05-29T23:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2017-05-29:/blog/greasing-the-groove-push-ups-results.html</id><summary type="html">&lt;p class="first last"&gt;Results of 120 push ups for 30&amp;nbsp;days.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;I did 120 push ups, 6 times 20 repetitions spread arbitrarily over the day, for 30 days
 starting the 04/24/2017. The last of these workouts has been done the 23rd of May 2017 without
