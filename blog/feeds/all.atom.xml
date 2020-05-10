@@ -52,14 +52,14 @@ the photos is&amp;nbsp;feature-rich.&lt;/p&gt;
 removed later on again. Additionally, I drew random symbols on that painter&amp;#8217;s tape to assist the photogrammetry software to find
 distinct features that can be matched throughout the set of&amp;nbsp;pictures.&lt;/p&gt;
 &lt;div&gt;
-    &lt;video id="pelican-installation" class="video-js vjs-default-skin" controls
-           preload="auto"
-           width="683"
-           height="384"
-           data-setup="{}"
-           style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"&gt;
-           &lt;source src="/images/how_to_use_3D_scanning_for_CAD_modeling/images_stop_motion.mp4" type='video/mp4'&gt;
-    &lt;/video&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/G-UAAbKWsxk"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
     &lt;p class="caption"&gt;
@@ -154,14 +154,14 @@ box around it. In order to take advantage of having the organic shape of my mous
 ensure that the mouse does not move around inside the box while carrying it&amp;nbsp;on-the-go.&lt;/p&gt;
 &lt;p&gt;To have the full capabilities of Fusion at hand for my mouse 3D scan, I converted it into the native Fusion data format as mentioned in the previous section. With this, I was able to use my scan with all joints and features inside Fusion. My finished &lt;span class="caps"&gt;CAD&lt;/span&gt; model is shown in Vid.&amp;nbsp;2.&lt;/p&gt;
 &lt;div&gt;
-    &lt;video id="pelican-installation" class="video-js vjs-default-skin" controls
-           preload="auto"
-           width="683"
-           height="384"
-           data-setup="{}"
-           style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"&gt;
-           &lt;source src="/images/how_to_use_3D_scanning_for_CAD_modeling/CAD_animation_with_copyright.mp4" type='video/mp4'&gt;
-    &lt;/video&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/69HpqAb9VaY"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
     &lt;p class="caption"&gt;
@@ -210,14 +210,14 @@ the leather pieces serve as closing mechanism of the lid that uses a velcro, hin
 &lt;/div&gt;
 &lt;p&gt;Lastly, let&amp;#8217;s check out how the mouse itself likes its new box - see Vid.&amp;nbsp;3.&lt;/p&gt;
 &lt;div&gt;
-    &lt;video id="pelican-installation" class="video-js vjs-default-skin" controls
-           preload="auto"
-           width="683"
-           height="384"
-           data-setup="{}"
-           style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"&gt;
-           &lt;source src="/images/how_to_use_3D_scanning_for_CAD_modeling/product_stop_motion.mp4" type='video/mp4'&gt;
-    &lt;/video&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/j21O3ZNyunM"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
     &lt;p class="caption"&gt;
