@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2020-05-10T00:00:00+02:00</updated><entry><title>How to use 3D scanning for CAD modeling</title><link href="http://lellep.xyz/blog/how-to-use-3d-scanning-for-cad-modeling.html" rel="alternate"></link><published>2020-05-10T00:00:00+02:00</published><updated>2020-05-10T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-10:/blog/how-to-use-3d-scanning-for-cad-modeling.html</id><summary type="html">&lt;p class="first last"&gt;I show how to use 3D scanning for &lt;span class="caps"&gt;CAD&lt;/span&gt; modeling and how I built a custom &lt;span class="caps"&gt;PC&lt;/span&gt; mouse box with the method that I present here.
 Neither do you need a &lt;span class="caps"&gt;GPU&lt;/span&gt; nor a powerful &lt;span class="caps"&gt;PC&lt;/span&gt; to follow along this tutorial. Also, the 3D scanning software is for&amp;nbsp;free.&lt;/p&gt;
-</summary><content type="html">&lt;!-- .. raw:: html --&gt;
-&lt;!--  --&gt;
-&lt;!-- &lt;div style="margin: 0px auto; text-align: center; border: 2px solid #d93200; border-radius: 25px; padding: 20px; width: 80%;"&gt; --&gt;
-&lt;!-- &lt;p style="margin-bottom: 10px;"&gt; --&gt;
-&lt;!-- You ask: "What is this article good for"? Then check out this teaser trailer to see what you can build with the method presented here. --&gt;
-&lt;!-- &lt;/p&gt; --&gt;
-&lt;!-- &lt;iframe width="560" --&gt;
-&lt;!-- height="315" --&gt;
-&lt;!-- src="https://www.youtube.com/embed/GvyMukqKLM4" --&gt;
-&lt;!-- frameborder="0" --&gt;
-&lt;!-- allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" --&gt;
-&lt;!-- style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%" --&gt;
-&lt;!-- allowfullscreen&gt; --&gt;
-&lt;!-- &lt;/iframe&gt; --&gt;
-&lt;!-- &lt;/div&gt; --&gt;
-&lt;!-- &lt;br/&gt; --&gt;
-&lt;!--  --&gt;
-&lt;!-- TODO: Teaser video. x) TODO: Show video abstract that advertises what I did with this scanning idea and as last point --&gt;
-&lt;!-- refers to this blog article here if ppl want to use it for their own projects. x) Show the final product, with caption --&gt;
-&lt;!-- explaining what it is, roughly. x) what I will do here: not repeating all existing tutorials but rather link them here and comparing their results --&gt;
-&lt;div class="section" id="introduction"&gt;
+</summary><content type="html">&lt;div style="margin: 0px auto; text-align: center; border: 4px solid #d93200; border-radius: 25px; padding: 20px; width: 80%;"&gt;
+    &lt;h3&gt;Teaser&amp;nbsp;trailer&lt;/h3&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/aft_jvATzFQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Computer-aided_design"&gt;&lt;span class="caps"&gt;CAD&lt;/span&gt; modeling&lt;/a&gt; for building things is awesome! However, when it comes to organic shapes,
 that cannot be made up of the typical squares and circles, even designers with an intermediate skill level start to&amp;nbsp;struggle.&lt;/p&gt;
