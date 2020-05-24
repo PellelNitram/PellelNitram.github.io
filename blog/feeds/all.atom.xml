@@ -1,5 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2020-05-23T00:00:00+02:00</updated><entry><title>Xournal++ Community Gift</title><link href="http://lellep.xyz/blog/xournalpp-community-gift.html" rel="alternate"></link><published>2020-05-23T00:00:00+02:00</published><updated>2020-05-23T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-23:/blog/xournalpp-community-gift.html</id><summary type="html">&lt;p class="first last"&gt;A laser cut community gift for Xournal++&amp;nbsp;developers.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2020-05-24T00:00:00+02:00</updated><entry><title>Running list of designs</title><link href="http://lellep.xyz/blog/running-list-of-designs.html" rel="alternate"></link><published>2020-05-24T00:00:00+02:00</published><updated>2020-05-24T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-24:/blog/running-list-of-designs.html</id><summary type="html">&lt;p class="first last"&gt;A list of small designs like 3D prints, laser cuts and other constructions. Most of them serve a functional purpose. This list is continuously&amp;nbsp;updated.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Here, I show a continuously updated list of small constructions. Most of them solve a specific problem so that the majority of the designs can be considered &lt;em&gt;functional designs&lt;/em&gt;.
+Each section starts with the functional design&amp;#8217;s name as headline and documents the design with a short description, a date and&amp;nbsp;pictures.&lt;/p&gt;
+&lt;p&gt;If you are interested in any of construction files, e.g. &lt;span class="caps"&gt;STL&lt;/span&gt;, &lt;span class="caps"&gt;SVG&lt;/span&gt; or any other format, then please contact me. I am happy to look for the files and to send them to&amp;nbsp;you!&lt;/p&gt;
+&lt;p&gt;Here comes the list of all&amp;nbsp;objects:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#diy-video-light"&gt;&lt;span class="caps"&gt;DIY&lt;/span&gt; video&amp;nbsp;light&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#wooden-phone-tripod-mount"&gt;Wooden phone tripod&amp;nbsp;mount&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#wooden-camera-rig"&gt;Wooden camera&amp;nbsp;rig&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#photo-box"&gt;Photo&amp;nbsp;box&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="diy-video-light"&gt;
+&lt;h2&gt;&lt;span class="caps"&gt;DIY&lt;/span&gt; video&amp;nbsp;light&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;05/23/2020&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A light constructed around 12V &lt;span class="caps"&gt;LED&lt;/span&gt; strips and controlled with a simple switch. This light will help me to illuminate videos and photos better. It is driven by a 12V power source. To diffuse the set of discrete light sources of the &lt;span class="caps"&gt;LED&lt;/span&gt; strip, a sanded piece of transparent acrylic is attached to the front. It turns out that the light quality is very decent and the brightness is very&amp;nbsp;good.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/diy_video_light/overview.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/diy_video_light/overview.jpg" style="width: 700px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;&lt;span class="caps"&gt;DIY&lt;/span&gt; video light. (a) Front picture of the &lt;span class="caps"&gt;DIY&lt;/span&gt; video light. (b) Close-up of the switch and 12V plug&amp;nbsp;adapter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Rf8XJOXHsWg"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="wooden-phone-tripod-mount"&gt;
+&lt;h2&gt;Wooden phone tripod&amp;nbsp;mount&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;05/23/2020&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A mount for attaching a smartphone to a tripod for photo and video purposes. The mount comes with a standard 1/4 inch photo screw and uses a spring loaded clamping mechanism to cover a wide range of phone widths. Fleece and small stop blocks ensure that the phone is not&amp;nbsp;damaged.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/wooden_phone_tripod_mount/summary.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/wooden_phone_tripod_mount/summary.jpg" style="width: 700px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Wooden phone tripod mount. (a) Project overview. (b) Adjustment screw to set the desired phone mounting width. (c) The fleece pads and stop blocks to protect the phone from being damaged. Also, view on the spring loaded adjustment mechanism. (d) 1/4 inch photo thread in the top and functional part of the spring loaded adjustment mechanism in the&amp;nbsp;bottom.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/n7bs4HeCHFc"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="wooden-camera-rig"&gt;
+&lt;h2&gt;Wooden camera&amp;nbsp;rig&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;05/20/2020&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: Although the video quality of modern smartphones is very good, the resulting shots can be shaky. This wooden camera rig adds proper handles and weight to the phone in its role as video camera and thereby solves the issue of shaky phone videos. Of course, it can be used with any camera as it offers the standard 1/4 inch screw. I got information on these standard photography parts &lt;a class="reference external" href="https://www.fotoschraubenshop.de/info-1/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/wooden_camera_rig/summary.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/wooden_camera_rig/summary.jpg" style="width: 700px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Wooden camera rig. (a) Project overview. The holes in the top can be used to mount extra video gear, such as video lights or microphones. (b) 3D printed assembly that uses the 1/4 inch screw from a cheap 1€ tripod with a screwing mechanism to ensure a tight bond between camera rig and video camera. (c) Holes in the bottom of the rig allow extra weight to be added as to make the shots even more smooth. (d) Fleece pads on the&amp;nbsp;bottom.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/CTRx8avhNWU"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="photo-box"&gt;
+&lt;h2&gt;Photo&amp;nbsp;box&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;03/28/2020&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A place that can be used to take pictures with proper illumination. The box consists of 1cm diameter &lt;span class="caps"&gt;PVC&lt;/span&gt; pipes that are connected with 3D printed corner
+pieces. The sides are covered by cardboard with baking paper insert that serves as&amp;nbsp;diffusor.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/1.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/1.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Finished photo box with installed &amp;#8220;infinity background&amp;#8221;, the three lamps and side panels that include the&amp;nbsp;diffusors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/2.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/2.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Photo box without side panels in order to show the &lt;span class="caps"&gt;PVC&lt;/span&gt; pipe frame. Surprisingly, it is quite&amp;nbsp;rigid.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/3.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/3.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Close-up of the 3D printed corners that hold together the &lt;span class="caps"&gt;PVC&lt;/span&gt; pipe edges. The corners are attached to the pipes with 3mm metal&amp;nbsp;screws.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Xournal++ Community Gift</title><link href="http://lellep.xyz/blog/xournalpp-community-gift.html" rel="alternate"></link><published>2020-05-23T00:00:00+02:00</published><updated>2020-05-23T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-23:/blog/xournalpp-community-gift.html</id><summary type="html">&lt;p class="first last"&gt;A laser cut community gift for Xournal++&amp;nbsp;developers.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;I really like open-source software! Daily, I use amazing open-source software for all kinds of&amp;nbsp;tasks.&lt;/p&gt;
 &lt;p&gt;Two such applications are &lt;a class="reference external" href="http://xournal.sourceforge.net/"&gt;Xournal&lt;/a&gt; and its successor &lt;a class="reference external" href="https://github.com/xournalpp/xournalpp"&gt;Xournal++&lt;/a&gt;. I use it for taking handwritten notes on my &lt;span class="caps"&gt;PC&lt;/span&gt; for many of my professional and private projects. Already Xournal is amazing but Xournal++ adds on top of that many useful&amp;nbsp;features.&lt;/p&gt;
 &lt;p&gt;Back in 2017, when I was trying to install Xournal++ from its &lt;a class="reference external" href="https://github.com/xournalpp/xournalpp"&gt;git repository&lt;/a&gt;, there was little development going on for the Xournal++ project. Over the course of the last two to three years, Xournal++ regained popularity and the open-source community continued to develop Xournal++ very actively. I think that&amp;#8217;s a great community effort and I hope that this will&amp;nbsp;continue!&lt;/p&gt;
