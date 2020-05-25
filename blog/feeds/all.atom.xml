@@ -9,6 +9,7 @@ Each section starts with the functional design&amp;#8217;s name as headline and 
 &lt;li&gt;&lt;a class="reference internal" href="#wooden-phone-tripod-mount"&gt;Wooden phone tripod&amp;nbsp;mount&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#wooden-camera-rig"&gt;Wooden camera&amp;nbsp;rig&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#photo-box"&gt;Photo&amp;nbsp;box&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#office-headphone-hook"&gt;Office headphone&amp;nbsp;hook&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="section" id="diy-video-light"&gt;
 &lt;h2&gt;&lt;span class="caps"&gt;DIY&lt;/span&gt; video&amp;nbsp;light&lt;/h2&gt;
@@ -79,6 +80,15 @@ pieces. The sides are covered by cardboard with baking paper insert that serves 
 &lt;p class="caption"&gt;Close-up of the 3D printed corners that hold together the &lt;span class="caps"&gt;PVC&lt;/span&gt; pipe edges. The corners are attached to the pipes with 3mm metal&amp;nbsp;screws.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="section" id="office-headphone-hook"&gt;
+&lt;h2&gt;Office headphone&amp;nbsp;hook&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;2018/2019&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: This plastic hook, which screws into the office desk with an M6 screw, provides a place for me to hang my headphones at work. This helps to avoid damaging my headphones as they fell on the ground&amp;nbsp;previously.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/office_headphone_hook/overview.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/office_headphone_hook/overview.jpg" style="width: 700px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Office headphone hook. (a) Headphones hanged to the hook while I don&amp;#8217;t use the headphones. (b) Hook as I use the headphones so that they are not hanging&amp;nbsp;there.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </content></entry><entry><title>Xournal++ Community Gift</title><link href="http://lellep.xyz/blog/xournalpp-community-gift.html" rel="alternate"></link><published>2020-05-23T00:00:00+02:00</published><updated>2020-05-23T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-23:/blog/xournalpp-community-gift.html</id><summary type="html">&lt;p class="first last"&gt;A laser cut community gift for Xournal++&amp;nbsp;developers.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;I really like open-source software! Daily, I use amazing open-source software for all kinds of&amp;nbsp;tasks.&lt;/p&gt;
 &lt;p&gt;Two such applications are &lt;a class="reference external" href="http://xournal.sourceforge.net/"&gt;Xournal&lt;/a&gt; and its successor &lt;a class="reference external" href="https://github.com/xournalpp/xournalpp"&gt;Xournal++&lt;/a&gt;. I use it for taking handwritten notes on my &lt;span class="caps"&gt;PC&lt;/span&gt; for many of my professional and private projects. Already Xournal is amazing but Xournal++ adds on top of that many useful&amp;nbsp;features.&lt;/p&gt;
@@ -137,9 +147,9 @@ This will help me to carry my &lt;span class="caps"&gt;PC&lt;/span&gt; mouse in 
 &lt;/div&gt;
 &lt;div class="section" id="scan-preparations"&gt;
 &lt;h2&gt;Scan&amp;nbsp;preparations&lt;/h2&gt;
-&lt;p&gt;Since we use photogrammetry here, the texture of the the object to be scanned should be as feature-rich and dull as possible.
+&lt;p&gt;Since we use photogrammetry here, the texture of the object to be scanned should be as feature-rich and dull as possible.
 If the object you plan to scan is shiny, you have to make sure to cover it in some non-shiny material: Some people use
-painter&amp;#8217;s tape, special powder or simply flour if your objects permits. Furthermore, as photogrammetry identifies features
+painter&amp;#8217;s tape, special powder or simply flour if your object permits. Furthermore, as photogrammetry identifies features
 of your object, or generally speaking your whole scene, you should also make sure that the whole scene in which you take
 the photos is&amp;nbsp;feature-rich.&lt;/p&gt;
 &lt;p&gt;As an example, I am scanning my portable computer mouse here. Since it is shiny, I covered it in painter&amp;#8217;s tape that I
@@ -201,7 +211,7 @@ notebook off publicly available information, such as &lt;a class="reference exte
 &lt;li&gt;My notebook is quite straightforward and well documented. Therefore, check out my comments and texts in
 &lt;a class="reference external" href="http://lellep.xyz/blog/3D_scanning_colab_notebook.ipynb"&gt;the Jupyter notebook&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The 3D scan is saved by Meshroom as an &lt;span class="caps"&gt;OBJ&lt;/span&gt; file that includes both, 3D mesh information as well as the texture of the object. Figure 2 shows the results
+&lt;p&gt;The 3D scan is saved by Meshroom as an &lt;span class="caps"&gt;OBJ&lt;/span&gt; file that includes both 3D mesh information as well as the texture of the object. Figure 2 shows the results
 of the 3D scan for both of the approaches, with and without &lt;span class="caps"&gt;GPU&lt;/span&gt;,&amp;nbsp;respectively.&lt;/p&gt;
 &lt;div class="figure"&gt;
 &lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png" style="width: 700px;" /&gt;&lt;/a&gt;
@@ -213,7 +223,7 @@ the quality of the 3D scan significantly. They require a &lt;span class="caps"&g
 might not be able to convey the detailed differences between the models, as it is just an image, but the &lt;span class="caps"&gt;GPU&lt;/span&gt;-enabled scan is much more detailed than the &lt;span class="caps"&gt;CPU&lt;/span&gt;-only scan: The &lt;span class="caps"&gt;CPU&lt;/span&gt;-only
 model consists of 43,512 scanned faces while the &lt;span class="caps"&gt;GPU&lt;/span&gt;-enabled scan consists of 1,043,705 scanned faces. Hence, the &lt;span class="caps"&gt;GPU&lt;/span&gt;-enabled scan detected almost 20x more
 faces than the &lt;span class="caps"&gt;CPU&lt;/span&gt;-only model using the exact same pictures of the &lt;span class="caps"&gt;PC&lt;/span&gt;&amp;nbsp;mouse.&lt;/p&gt;
-&lt;p&gt;Hence, I recommend to always use a &lt;span class="caps"&gt;GPU&lt;/span&gt; to compute Meshroom 3D scans, in particular taking Google Colab into account as it offers free &lt;span class="caps"&gt;GPU&lt;/span&gt; compute&amp;nbsp;power.&lt;/p&gt;
+&lt;p&gt;Therefore, I recommend to always use a &lt;span class="caps"&gt;GPU&lt;/span&gt; to compute Meshroom 3D scans, in particular taking Google Colab into account as it offers free &lt;span class="caps"&gt;GPU&lt;/span&gt; compute&amp;nbsp;power.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="d-model-post-processing"&gt;
 &lt;h2&gt;3D model post&amp;nbsp;processing&lt;/h2&gt;
@@ -229,7 +239,7 @@ scan that comes out of Meshroom using the &lt;span class="caps"&gt;GPU&lt;/span&
 Reducing the complexity of the 3D model by removing vertices. The original model as shown in Fig. 3 (a) consists of 1,043,705 faces and the trimmed
 model in Fig. 3 (b) consists of only 423,706 faces without reducing the model quality at all as only the excess parts of the scan were removed.
 For many applications though, even these 400k faces are too many. One such application being (consumer-grade) CADs (on a consumer-grade &lt;span class="caps"&gt;PC&lt;/span&gt;), I removed
-the number of faces even further before exporting the model to a &lt;span class="caps"&gt;STL&lt;/span&gt; file. Figure 4 shows exactly&amp;nbsp;that.&lt;/p&gt;
+the number of faces even further before exporting the model to an &lt;span class="caps"&gt;STL&lt;/span&gt; file. Figure 4 shows exactly&amp;nbsp;that.&lt;/p&gt;
 &lt;div class="figure"&gt;
 &lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png" style="width: 800px;" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Figure 4: &lt;span class="caps"&gt;STL&lt;/span&gt; models of my scanned &lt;span class="caps"&gt;PC&lt;/span&gt; mouse after reducing the number of faces. (a) The original file as shown in Fig. 3 (b) after exporting it
@@ -237,8 +247,8 @@ to &lt;span class="caps"&gt;STL&lt;/span&gt; (and, hence, without texture) with 
 number of faces reduced to 0.15% of the original model. Subfigures (b) and (c) were generated with Blender by using its
 &lt;a class="reference external" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/decimate.html"&gt;decimate modifier&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;Since I wanted to use the model to design a box around it, I needed it in &lt;span class="caps"&gt;CAD&lt;/span&gt;. Most of the &lt;span class="caps"&gt;CAD&lt;/span&gt; softwares support generic model formats like &lt;span class="caps"&gt;STL&lt;/span&gt; or &lt;span class="caps"&gt;OBJ&lt;/span&gt;
-but can also transform these formats to their native data format. &lt;a class="reference external" href="https://www.youtube.com/watch?v=m5v8JO7pEAk"&gt;These&lt;/a&gt; &lt;a class="reference external" href="https://toglefritz.com/convert-a-simple-stl-into-a-body-in-fusion-360/"&gt;two&lt;/a&gt; resources show how to transform a &lt;span class="caps"&gt;STL&lt;/span&gt; to Fusion 360&amp;#8217;s native data format. This is very useful for all subsequent design steps but it comes at a high computational cost when the model is too detailed. Hence, I used the model shown in Fig. 4 (c) for being converted to a
+&lt;p&gt;Since I wanted to use the model to design a box around it, I needed it in &lt;span class="caps"&gt;CAD&lt;/span&gt;. Most of the &lt;span class="caps"&gt;CAD&lt;/span&gt; software support generic model formats like &lt;span class="caps"&gt;STL&lt;/span&gt; or &lt;span class="caps"&gt;OBJ&lt;/span&gt;
+but can also transform these formats to their native data format. &lt;a class="reference external" href="https://www.youtube.com/watch?v=m5v8JO7pEAk"&gt;These&lt;/a&gt; &lt;a class="reference external" href="https://toglefritz.com/convert-a-simple-stl-into-a-body-in-fusion-360/"&gt;two&lt;/a&gt; resources show how to transform an &lt;span class="caps"&gt;STL&lt;/span&gt; to Fusion 360&amp;#8217;s native data format. This is very useful for all subsequent design steps but it comes at a high computational cost when the model is too detailed. Hence, I used the model shown in Fig. 4 (c) for being converted to a
 native Fusion 360 object and to model my &lt;span class="caps"&gt;PC&lt;/span&gt; mouse box&amp;nbsp;around.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="building-a-cad-model-around-the-3d-scan"&gt;
@@ -268,8 +278,8 @@ ensure that the mouse does not move around inside the box while carrying it&amp;
 &lt;h2&gt;Fabrication and assembly of the mouse&amp;nbsp;box&lt;/h2&gt;
 &lt;p&gt;I made use of my private 3D printer to fabricate the organically shaped custom inner blocks for the wooden box. The wooden box itself,
 I fabricated on my small hobby laser&amp;nbsp;cutter.&lt;/p&gt;
-&lt;p&gt;The assembly is achieved step-wise: First, I glued the 3D printed plastic pieces to the wooden sides of the box, see Fig. 5 (a). These,
-I glued together with painter&amp;#8217;s tape at first to ensure that everything fits together, see Fig. 5&amp;nbsp;(b).&lt;/p&gt;
+&lt;p&gt;The assembly is achieved step-wise: First, I glued the 3D printed plastic pieces to the wooden sides of the box, see Fig. 5 (a). Subsequently,
+I glued these wooden sides together with painter&amp;#8217;s tape, see Fig. 5 (b), to ensure that everything fits together before doing the final&amp;nbsp;glue-up.&lt;/p&gt;
 &lt;div class="figure"&gt;
 &lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png" style="width: 700px;" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Figure 5: First two steps of assembly process. (a) Plastic pieces are glued to the wooden box sides and pads are attached to
@@ -300,7 +310,7 @@ the leather pieces serve as closing mechanism of the lid that uses a velcro, hin
 &lt;p&gt;The finished product is shown in Fig.&amp;nbsp;8.&lt;/p&gt;
 &lt;div class="figure"&gt;
 &lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg" style="width: 500px;" /&gt;&lt;/a&gt;
-&lt;p class="caption"&gt;Figure 8: My &lt;span class="caps"&gt;PC&lt;/span&gt; mouse next to its new custom&amp;nbsp;box.&lt;/p&gt;
+&lt;p class="caption"&gt;Figure 8: My &lt;span class="caps"&gt;PC&lt;/span&gt; mouse next to its new custom box. This is what I will use daily in my backpack from now&amp;nbsp;on.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Lastly, let&amp;#8217;s check out how the mouse itself likes its new box - see Vid.&amp;nbsp;3.&lt;/p&gt;
 &lt;div&gt;
@@ -325,7 +335,7 @@ the leather pieces serve as closing mechanism of the lid that uses a velcro, hin
 and &lt;em&gt;Google Colab&lt;/em&gt;. Subsequently, I showed how the 3D model can be used for &lt;span class="caps"&gt;CAD&lt;/span&gt; modeling.
 My demonstration use case was a transportation box for my &lt;span class="caps"&gt;PC&lt;/span&gt; mouse because it is a suitable object to be scanned and used in &lt;span class="caps"&gt;CAD&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;The steps for obtaining a 3D scan that can be used for &lt;span class="caps"&gt;CAD&lt;/span&gt; modeling are shown in Fig. 9. While I explain the &lt;span class="caps"&gt;CAD&lt;/span&gt;-specific steps with
-&lt;em&gt;Autodesk Fusion 360&lt;/em&gt;, similar steps apply for most &lt;span class="caps"&gt;CAD&lt;/span&gt; softwares that are on the&amp;nbsp;market.&lt;/p&gt;
+&lt;em&gt;Autodesk Fusion 360&lt;/em&gt;, similar steps apply for most &lt;span class="caps"&gt;CAD&lt;/span&gt; software that are on the&amp;nbsp;market.&lt;/p&gt;
 &lt;div class="figure"&gt;
 &lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png" style="width: 600px;" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Figure 9: 3D scanning pipeline for obtaining a 3D model that can be used in &lt;span class="caps"&gt;CAD&lt;/span&gt;.&lt;/p&gt;

@@ -140,9 +140,9 @@ This will help me to carry my <span class="caps">PC</span> mouse in my backpack 
 </div>
 <div class="section" id="scan-preparations">
 <h2>Scan&nbsp;preparations</h2>
-<p>Since we use photogrammetry here, the texture of the the object to be scanned should be as feature-rich and dull as possible.
+<p>Since we use photogrammetry here, the texture of the object to be scanned should be as feature-rich and dull as possible.
 If the object you plan to scan is shiny, you have to make sure to cover it in some non-shiny material: Some people use
-painter&#8217;s tape, special powder or simply flour if your objects permits. Furthermore, as photogrammetry identifies features
+painter&#8217;s tape, special powder or simply flour if your object permits. Furthermore, as photogrammetry identifies features
 of your object, or generally speaking your whole scene, you should also make sure that the whole scene in which you take
 the photos is&nbsp;feature-rich.</p>
 <p>As an example, I am scanning my portable computer mouse here. Since it is shiny, I covered it in painter&#8217;s tape that I
@@ -204,7 +204,7 @@ notebook off publicly available information, such as <a class="reference externa
 <li>My notebook is quite straightforward and well documented. Therefore, check out my comments and texts in
 <a class="reference external" href="http://lellep.xyz/blog/3D_scanning_colab_notebook.ipynb">the Jupyter notebook</a>.</li>
 </ul>
-<p>The 3D scan is saved by Meshroom as an <span class="caps">OBJ</span> file that includes both, 3D mesh information as well as the texture of the object. Figure 2 shows the results
+<p>The 3D scan is saved by Meshroom as an <span class="caps">OBJ</span> file that includes both 3D mesh information as well as the texture of the object. Figure 2 shows the results
 of the 3D scan for both of the approaches, with and without <span class="caps">GPU</span>,&nbsp;respectively.</p>
 <div class="figure">
 <a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png" style="width: 700px;" /></a>
@@ -216,7 +216,7 @@ the quality of the 3D scan significantly. They require a <span class="caps">GPU<
 might not be able to convey the detailed differences between the models, as it is just an image, but the <span class="caps">GPU</span>-enabled scan is much more detailed than the <span class="caps">CPU</span>-only scan: The <span class="caps">CPU</span>-only
 model consists of 43,512 scanned faces while the <span class="caps">GPU</span>-enabled scan consists of 1,043,705 scanned faces. Hence, the <span class="caps">GPU</span>-enabled scan detected almost 20x more
 faces than the <span class="caps">CPU</span>-only model using the exact same pictures of the <span class="caps">PC</span>&nbsp;mouse.</p>
-<p>Hence, I recommend to always use a <span class="caps">GPU</span> to compute Meshroom 3D scans, in particular taking Google Colab into account as it offers free <span class="caps">GPU</span> compute&nbsp;power.</p>
+<p>Therefore, I recommend to always use a <span class="caps">GPU</span> to compute Meshroom 3D scans, in particular taking Google Colab into account as it offers free <span class="caps">GPU</span> compute&nbsp;power.</p>
 </div>
 <div class="section" id="d-model-post-processing">
 <h2>3D model post&nbsp;processing</h2>
@@ -232,7 +232,7 @@ scan that comes out of Meshroom using the <span class="caps">GPU</span>-enabled 
 Reducing the complexity of the 3D model by removing vertices. The original model as shown in Fig. 3 (a) consists of 1,043,705 faces and the trimmed
 model in Fig. 3 (b) consists of only 423,706 faces without reducing the model quality at all as only the excess parts of the scan were removed.
 For many applications though, even these 400k faces are too many. One such application being (consumer-grade) CADs (on a consumer-grade <span class="caps">PC</span>), I removed
-the number of faces even further before exporting the model to a <span class="caps">STL</span> file. Figure 4 shows exactly&nbsp;that.</p>
+the number of faces even further before exporting the model to an <span class="caps">STL</span> file. Figure 4 shows exactly&nbsp;that.</p>
 <div class="figure">
 <a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png" style="width: 800px;" /></a>
 <p class="caption">Figure 4: <span class="caps">STL</span> models of my scanned <span class="caps">PC</span> mouse after reducing the number of faces. (a) The original file as shown in Fig. 3 (b) after exporting it
@@ -240,8 +240,8 @@ to <span class="caps">STL</span> (and, hence, without texture) with 423,706 face
 number of faces reduced to 0.15% of the original model. Subfigures (b) and (c) were generated with Blender by using its
 <a class="reference external" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/decimate.html">decimate modifier</a>.</p>
 </div>
-<p>Since I wanted to use the model to design a box around it, I needed it in <span class="caps">CAD</span>. Most of the <span class="caps">CAD</span> softwares support generic model formats like <span class="caps">STL</span> or <span class="caps">OBJ</span>
-but can also transform these formats to their native data format. <a class="reference external" href="https://www.youtube.com/watch?v=m5v8JO7pEAk">These</a> <a class="reference external" href="https://toglefritz.com/convert-a-simple-stl-into-a-body-in-fusion-360/">two</a> resources show how to transform a <span class="caps">STL</span> to Fusion 360&#8217;s native data format. This is very useful for all subsequent design steps but it comes at a high computational cost when the model is too detailed. Hence, I used the model shown in Fig. 4 (c) for being converted to a
+<p>Since I wanted to use the model to design a box around it, I needed it in <span class="caps">CAD</span>. Most of the <span class="caps">CAD</span> software support generic model formats like <span class="caps">STL</span> or <span class="caps">OBJ</span>
+but can also transform these formats to their native data format. <a class="reference external" href="https://www.youtube.com/watch?v=m5v8JO7pEAk">These</a> <a class="reference external" href="https://toglefritz.com/convert-a-simple-stl-into-a-body-in-fusion-360/">two</a> resources show how to transform an <span class="caps">STL</span> to Fusion 360&#8217;s native data format. This is very useful for all subsequent design steps but it comes at a high computational cost when the model is too detailed. Hence, I used the model shown in Fig. 4 (c) for being converted to a
 native Fusion 360 object and to model my <span class="caps">PC</span> mouse box&nbsp;around.</p>
 </div>
 <div class="section" id="building-a-cad-model-around-the-3d-scan">
@@ -271,8 +271,8 @@ ensure that the mouse does not move around inside the box while carrying it&nbsp
 <h2>Fabrication and assembly of the mouse&nbsp;box</h2>
 <p>I made use of my private 3D printer to fabricate the organically shaped custom inner blocks for the wooden box. The wooden box itself,
 I fabricated on my small hobby laser&nbsp;cutter.</p>
-<p>The assembly is achieved step-wise: First, I glued the 3D printed plastic pieces to the wooden sides of the box, see Fig. 5 (a). These,
-I glued together with painter&#8217;s tape at first to ensure that everything fits together, see Fig. 5&nbsp;(b).</p>
+<p>The assembly is achieved step-wise: First, I glued the 3D printed plastic pieces to the wooden sides of the box, see Fig. 5 (a). Subsequently,
+I glued these wooden sides together with painter&#8217;s tape, see Fig. 5 (b), to ensure that everything fits together before doing the final&nbsp;glue-up.</p>
 <div class="figure">
 <a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png" style="width: 700px;" /></a>
 <p class="caption">Figure 5: First two steps of assembly process. (a) Plastic pieces are glued to the wooden box sides and pads are attached to
@@ -303,7 +303,7 @@ the leather pieces serve as closing mechanism of the lid that uses a velcro, hin
 <p>The finished product is shown in Fig.&nbsp;8.</p>
 <div class="figure">
 <a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg" style="width: 500px;" /></a>
-<p class="caption">Figure 8: My <span class="caps">PC</span> mouse next to its new custom&nbsp;box.</p>
+<p class="caption">Figure 8: My <span class="caps">PC</span> mouse next to its new custom box. This is what I will use daily in my backpack from now&nbsp;on.</p>
 </div>
 <p>Lastly, let&#8217;s check out how the mouse itself likes its new box - see Vid.&nbsp;3.</p>
 <div>
@@ -328,7 +328,7 @@ the leather pieces serve as closing mechanism of the lid that uses a velcro, hin
 and <em>Google Colab</em>. Subsequently, I showed how the 3D model can be used for <span class="caps">CAD</span> modeling.
 My demonstration use case was a transportation box for my <span class="caps">PC</span> mouse because it is a suitable object to be scanned and used in <span class="caps">CAD</span>.</p>
 <p>The steps for obtaining a 3D scan that can be used for <span class="caps">CAD</span> modeling are shown in Fig. 9. While I explain the <span class="caps">CAD</span>-specific steps with
-<em>Autodesk Fusion 360</em>, similar steps apply for most <span class="caps">CAD</span> softwares that are on the&nbsp;market.</p>
+<em>Autodesk Fusion 360</em>, similar steps apply for most <span class="caps">CAD</span> software that are on the&nbsp;market.</p>
 <div class="figure">
 <a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png" style="width: 600px;" /></a>
 <p class="caption">Figure 9: 3D scanning pipeline for obtaining a 3D model that can be used in <span class="caps">CAD</span>.</p>
