@@ -8,21 +8,59 @@
 
   <title>  Parking in Marburg: a quantitative study | Blog
 </title>
-  <link rel="canonical" href="/parking-in-marburg.html">
+  <link rel="canonical" href="http://lellep.xyz/blog/parking-in-marburg.html">
 
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="http://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="http://lellep.xyz/blog/manifest.json">
     <meta name="theme-color" content="#333333">
 
-  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
-  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
-  <link rel="stylesheet" href="/theme/css/theme.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/theme.css">
 
-  
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="http://lellep.xyz/blog/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="http://lellep.xyz/blog/feeds/%s.atom.xml">  
   <meta name="description" content="The parking demand in Marburg is analysed quantiatively based on publicly available data. In addition, Gaussian Processes are used for spatial predictions.">
+  <script>
+  // ===
+  // Taken from: https://developers.google.com/analytics/devguides/collection/gajs/?hl=de&authuser=0#disable
+  // ===
+
+  // Set to the same value as the web property used on the site
+  var gaProperty = 'UA-142575904-2';
+
+  // Disable tracking if the opt-out cookie exists.
+  var disableStr = 'ga-disable-' + gaProperty;
+  if (document.cookie.indexOf(disableStr + '=true') > -1) {
+    window[disableStr] = true;
+  }
+
+  // Opt-out function
+  function gaOptout() {
+    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+  }
+  </script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-142575904-2', 'auto');
+    ga('send', 'pageview');
+  </script>
 
 
 </head>
@@ -32,17 +70,17 @@
     <div class="container">
 <div class="row">
     <div class="col-sm-4">
-      <a href="/">
-        <img class="img-fluid rounded" src=/images/logo.svg alt="Blog">
+      <a href="http://lellep.xyz/blog/">
+        <img class="img-fluid rounded" src=http://lellep.xyz/blog/images/logo.svg alt="Blog">
       </a>
     </div>
   <div class="col-sm-8">
-    <h1 class="title"><a href="/">Blog</a></h1>
+    <h1 class="title"><a href="http://lellep.xyz/blog/">Blog</a></h1>
       <p class="text-muted">by Martin Lellep</p>
       <ul class="list-inline">
           <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">◄ back to my main website</a></li>
               <li class="list-inline-item text-muted">|</li>
-            <li class="list-inline-item"><a href="/pages/about.html">About</a></li>
+            <li class="list-inline-item"><a href="http://lellep.xyz/blog/pages/about.html">About</a></li>
             <li class=" list-inline-item text-muted">|</li>
           <li class="list-inline-item"><a class="fab fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
       </ul>
@@ -64,7 +102,7 @@
         </li>
         <li class="list-inline-item">
           <i class="fas fa-folder-open"></i>
-          <a href="/category/data.html">data</a>
+          <a href="http://lellep.xyz/blog/category/data.html">data</a>
         </li>
       </ul>
     </header>
@@ -83,7 +121,7 @@ continue with the actual analyses that covers analytics as well as&nbsp;predicti
 roughly translated as &#8220;parking direction system Marburg&#8221;, is used as data source. It is available online at <a class="reference external" href="https://pls.marburg.de/">https://pls.marburg.de/</a>
 and shown below in Fig. 1 for&nbsp;reference.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/0_data_acquisition/pls_website.png"><img alt="" src="/images/parking_in_marburg/0_data_acquisition/pls_website.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/pls_website.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/pls_website.png" style="width: 600px;" /></a>
 <p class="caption">Figure 1: Screenshot of the official website maintained by the city of Marburg, <a class="reference external" href="https://pls.marburg.de/">https://pls.marburg.de/</a>,
 as of 02/26/2020. This website serves as my data source. This screenshot shows the available data: the free parking spots
 for all parking decks, links to the positions of the parking decks, the maximal vehicle height allowances and the current
@@ -120,7 +158,7 @@ data points but not to overload the website servers - in particular the latter a
 when working on projects as the one in this study. Since only the table given on the city website is processed and
 stored, the storage requirements for the Linux server are minimal. Figure 2 summarises the data acquisition&nbsp;pipeline.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/0_data_acquisition/download_structure.svg"><img alt="" src="/images/parking_in_marburg/0_data_acquisition/download_structure.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/download_structure.svg"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/download_structure.png" style="width: 600px;" /></a>
 <p class="caption">Figure 2: The data acquisition pipeline as described in the main text. The &#8220;data for analysis&#8221;, marked by a green
 rectangle, is used for all subsequent data analysis&nbsp;steps.</p>
 </div>
@@ -131,7 +169,7 @@ the data. The &#8220;data for analysis&#8221; shown in Fig. 2 is exactly one suc
 analysis is a table with timestamps along the rows and the parking decks along the columns, as shown in Fig. 3. Over the course
 of the data acquisition period, I accumulated around 100,000 snapshots of the&nbsp;website.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/0_data_acquisition/data_format.svg"><img alt="" src="/images/parking_in_marburg/0_data_acquisition/data_format.png" style="width: 350px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/data_format.svg"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/data_format.png" style="width: 350px;" /></a>
 <p class="caption">Figure 3: The data format that is used for the analysis. The data is appended to the table as time passes. The table cells
 contain the number of free parking spots at a given time and for a given parking deck. The red arrow shows how the
 accumulative data is obtained: all values per row are added up to get the overall number of free parking spots per&nbsp;timestamp.</p>
@@ -177,7 +215,7 @@ restaurants/pubs is computed and summed up. The accumulated distances are shown 
 should choose whenever you are hungry: pick &#8220;oberstadt&#8221;, &#8220;lahncenter&#8221;, &#8220;city&#8221; or &#8220;ahrens&#8221; if you are particularly hungry as they have
 the smallest accumulated distance to restaurants and&nbsp;pubs.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/1_data_analysis/0_intro/1_POIs.png"><img alt="" src="/images/parking_in_marburg/1_data_analysis/0_intro/1_POIs.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/0_intro/1_POIs.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/0_intro/1_POIs.png" style="width: 600px;" /></a>
 <p class="caption">Figure 5: The accumulated distances to places like restaurants and pubs for each of the parking decks. The type of place is encoded
 as colour. The parking decks with the smallest accumulated distances to restaurants and pubs are &#8220;oberstadt&#8221;, &#8220;lahncenter&#8221;, &#8220;city&#8221;
 and&nbsp;&#8220;ahrens&#8221;.</p>
@@ -256,7 +294,7 @@ number of used parking&nbsp;spots.</p>
 <p>Given the timestamps of the data, the number of used parking spots can be plotted against time. Since the data acqusition time of 3min is
 quite fast on the scale of the data collection process - namely month -, the data is resampled to hours, days and weeks, as shown in Fig.&nbsp;6.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/1_data_analysis/1_joint/0_cumulative_signal.png"><img alt="" src="/images/parking_in_marburg/1_data_analysis/1_joint/0_cumulative_signal.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/0_cumulative_signal.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/0_cumulative_signal.png" style="width: 600px;" /></a>
 <p class="caption">Figure 6: The used parking spots as summed over all parking decks against time. The data is resampled to hours, days and weeks, as
 shown by the three lines. These resamples highlight trends in the&nbsp;data.</p>
 </div>
@@ -270,7 +308,7 @@ For time delays at which the autocorrelation function has maxima, the signal is 
 periodicity can be quantified by exactly these maxima of the autocorrelation function. Figure 7 shows the autocorrelation function of the parking
 demand in&nbsp;Marburg.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png"><img alt="" src="/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png" style="width: 600px;" /></a>
 <p class="caption">Figure 7: The autocorrelation of the accumulatively used parking spots. The period of seven days is marked by a red&nbsp;line.</p>
 </div>
 <p>As suggested by the accumulative signal in Fig. 6, the autocorrelation shown in Fig. 7 peaks at seven days. This confirms that the signal has a period
@@ -280,7 +318,7 @@ carry any relevant information regarding the periodicity in the signal. All othe
 <p>Finally, to understand the full scope of the periodicity of the signal, I evaluated the day-hour-histogram. This type of histogram is used to visualise
 the number of used parking spots in Marburg against time and day of the week. This makes up a two dimensional matrix, as shown in Fig.&nbsp;8.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/1_data_analysis/1_joint/2_day_time_histogram.png"><img alt="" src="/images/parking_in_marburg/1_data_analysis/1_joint/2_day_time_histogram.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/2_day_time_histogram.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/2_day_time_histogram.png" style="width: 600px;" /></a>
 <p class="caption">Figure 8: The average of the used parking spots against time and day. Summing along rows and columns results in the daily and hourly
 usage histograms, respectively. Yellow corresponds to high and blue corresponds to low values, as quantified by the&nbsp;colourbar.</p>
 </div>
@@ -296,7 +334,7 @@ late nights, like 10pm to 4am, there are still cars using the parking&nbsp;decks
 <p>Now we turn to the more detailed analyses that take the different parking decks into account. First, Fig. 9 shows the parking demand against
 time for each parking deck&nbsp;separately.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/1_data_analysis/2_separately/0_single_signals.png"><img alt="" src="/images/parking_in_marburg/1_data_analysis/2_separately/0_single_signals.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/0_single_signals.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/0_single_signals.png" style="width: 600px;" /></a>
 <p class="caption">Figure 9: The parking demand against time, similar to Fig. 6. Here, however, the accumulative signal is split into the contributions from
 each parking&nbsp;deck.</p>
 </div>
@@ -304,7 +342,7 @@ each parking&nbsp;deck.</p>
 and second, the parking decks seem to vary significantly in how many parking spots are used. The integral parking demand quantifies exactly that:
 it measures how many parking spots have been provided by a parking deck throughout the whole measurement period. Figure 10 shows the results&nbsp;thereof.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/1_data_analysis/2_separately/2_integral_parking_demand.png"><img alt="" src="/images/parking_in_marburg/1_data_analysis/2_separately/2_integral_parking_demand.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/2_integral_parking_demand.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/2_integral_parking_demand.png" style="width: 600px;" /></a>
 <p class="caption">Figure 10: Integral parking demand of all parking decks. These numbers are obtained by summing up the number of used parking spots per each
 parking deck over the whole measurement period. The blue bars in the bottom show the integral parking demand during working days and the stacked
 orange bars show the parking demand during the weekends for each parking deck. The integral parking demand is normalised to the maximal
@@ -336,7 +374,7 @@ video there is some data missing as my data acquisition pipeline broke down duri
 <p>The dependence on time is studied further. Figure 11 shows the histograms of used parking spots for each parking decks separately. Not only that,
 it also shows histograms thereof that depend on the time of the&nbsp;day.</p>
 <div class="figure">
-<a class="reference external image-reference" href="/images/parking_in_marburg/1_data_analysis/2_separately/1_temporal_histograms.png"><img alt="" src="/images/parking_in_marburg/1_data_analysis/2_separately/1_temporal_histograms.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/1_temporal_histograms.png"><img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/1_temporal_histograms.png" style="width: 600px;" /></a>
 <p class="caption">Figure 11: Histograms of used parkings spots conditioned on time of the day. Each subplot corresponds to one parking deck. The time-independent
 histogram is shown in blue. The histograms of colours yellow, green and red correspond to mornings, noons and evenings as defined by the hours
 between 7am to 9am, 11am to 1pm and 4:30pm to 6:30pm, respectively. Each histogram is normalised independently for a better visual&nbsp;appearance.</p>
@@ -430,8 +468,11 @@ start to provide us with exciting open data!&nbsp;:-)</p>
     <div class="container">
 <div class="row">
   <ul class="col-sm-6 list-inline">
-    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
-    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+    <li class="list-inline-item"><a href="http://lellep.xyz/blog/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="http://lellep.xyz/blog/categories.html">Categories</a></li>
+    <li class="list-inline-item">
+        <a href="javascript:gaOptout()">Refuse analytics cookies</a>
+    </li>
   </ul>
   <p class="col-sm-6 text-sm-right text-muted">
     Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>

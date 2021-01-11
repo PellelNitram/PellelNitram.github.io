@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - data</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/data.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2020-12-09T00:00:00+01:00</updated><entry><title>Parking in Marburg: Corona update</title><link href="http://lellep.xyz/blog/parking-in-marburg-corona-update.html" rel="alternate"></link><published>2020-12-09T00:00:00+01:00</published><updated>2020-12-09T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-12-09:/blog/parking-in-marburg-corona-update.html</id><summary type="html">&lt;p class="first last"&gt;A quantitative update of the parking demand in Marburg during the Corona pandemic&amp;nbsp;2020.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;In the beginning of 2020, I analysed the parking demand in Marburg using publicly available data &lt;a class="reference external" href="http://lellep.xyz/blog/parking-in-marburg.html"&gt;here&lt;/a&gt;. This article now is an update to &lt;a class="reference external" href="http://lellep.xyz/blog/parking-in-marburg.html"&gt;my previous study&lt;/a&gt; to account for the Corona pandemic&amp;nbsp;2020.&lt;/p&gt;
+&lt;p&gt;Figure 1 shows the number of used parking spots against time and compares the pre and during Corona&amp;nbsp;numbers.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg_corona_update/1_cumulative_signal.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg_corona_update/1_cumulative_signal.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 1: Used parking spots in Marburg against time. Black corresponds to the time before Corona and red corresponds to the time during&amp;nbsp;Corona.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Less parking spots were used during Corona times when compared to the pre Corona situation. On average, around 130 parking spots less are used which is a &lt;strong&gt;20% decrease in the number of used parking spots in Marburg&lt;/strong&gt;. Figure 2 shows the number of parking spots that each of the parking decks provided&amp;nbsp;separately.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg_corona_update/2_integral_parking_demand.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg_corona_update/2_integral_parking_demand.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 2: Parking spots supplied by each parking deck. Again black corresponds to the time before Corona and red corresponds to the time during Corona. Orange corresponds to the months of March to May and October to December - times of large increases in Corona&amp;nbsp;cases.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Almost all parking decks were used less. Interestingly, the &lt;em&gt;Marktdreieck - Parkdeck&lt;/em&gt; showed no difference to before. That is probably because this particular parking deck is almost exclusively used for parking during medical doctor visits. Clearly, the Corona virus did not decrease the demand in going to the medical doctor. Interestingly, the parking decks are influenced differently by the Corona pandemic: For example, the &lt;em&gt;city&lt;/em&gt; parking deck shows little decrease while the &lt;em&gt;ahrens&lt;/em&gt; parking deck was used much less. The latter is probably due to &lt;em&gt;ahrens&lt;/em&gt; being the parking deck of a large mall that suffers economically due to Corona and online sellers in&amp;nbsp;general.&lt;/p&gt;
+&lt;p&gt;Concluding, the Corona pandemic lead to a decrease in the number of used parking spots of around &lt;strong&gt;20%&lt;/strong&gt;. In particular, the number of used parking spots connected to retail decreased significantly during the pandemic. Personally, I am surprised that the number of used parking spots did not decrease even more during the Corona pandemic. One reason for that might be financial aid programs by the city council, e.g. the &lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/stadt-geld-900006621-23001.html"&gt;Stadt Geld&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Cycling in Marburg (4/4): Machine learning predictions</title><link href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html" rel="alternate"></link><published>2020-12-06T00:00:00+01:00</published><updated>2020-12-06T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-12-06:/blog/cycling-in-marburg-4-ml.html</id><summary type="html">&lt;p class="first last"&gt;In this article, I use machine learning to predict the number of parked bikes in two&amp;nbsp;ways.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;This article is the last article in the series of articles on Nextbikes in Marburg. So far, I covered the following topics in the&amp;nbsp;series:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Article 1 of 4: &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html"&gt;Project introduction, data source and first&amp;nbsp;analyses&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Article 2 of 4: &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;Analyses from the perspective of Nextbike&amp;nbsp;users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Article 3 of 4: &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html"&gt;Analyses from the perspective of Marburg the city&amp;nbsp;council&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this article, I turn towards a slightly more technical perspective: I apply machine learning to predict the number of parked bikes in two ways. In the first way, I fit a Markov chain to the transition matrix and derive the Markov steady state bike distribution. In the second way, I train a &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Random_forest"&gt;random forest&lt;/a&gt; to predict the number of parked bikes in the Nextbike ecosystem of Marburg based on the hour of the day, day of the week and&amp;nbsp;temperature.&lt;/p&gt;
+&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title first"&gt;Table of&amp;nbsp;Contents:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#markov-chain-and-steady-state" id="id1"&gt;Markov chain and steady&amp;nbsp;state&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#prediction-of-the-number-of-parked-bikes-using-a-random-forest" id="id2"&gt;Prediction of the number of parked bikes using a random&amp;nbsp;forest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#outlook" id="id3"&gt;Outlook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="markov-chain-and-steady-state"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Markov chain and steady&amp;nbsp;state&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Here, I will fit a &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Markov_chain"&gt;Markov chain&lt;/a&gt; to the dynamics of Nextbikes in Marburg and find the steady state of the corresponding dynamical&amp;nbsp;system.&lt;/p&gt;
+&lt;p&gt;For that, the corresponding &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Stochastic_matrix"&gt;stochastic matrix&lt;/a&gt;, \(\mathbf{P}\), is obtained from the transition matrix \(\mathbf{T}\). The transition matrix stores the numbers of transitions between all pairs of stations. The number of transitions between stations \(t\) (for &amp;#8220;to&amp;#8221;) and \(f\) (for &amp;#8220;from&amp;#8221;) is stored as \(T_{f,t}\). The transition matrix has been introduced and shown in &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html"&gt;the article intended for the city council&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;With the stochastic matrix \(\mathbf{P}\), the state of Nextbikes in Marburg, \(\vec{x}\), can be advanced in time&amp;nbsp;with&lt;/p&gt;
+&lt;p&gt;\[\vec{x}^{(i+1)} = \mathbf{P} \cdot&amp;nbsp;\vec{x}^{(i)}\]&lt;/p&gt;
+&lt;p&gt;or in component&amp;nbsp;notation&lt;/p&gt;
+&lt;p&gt;\[x^{(i+1)}_{t} = \sum_{f=1}^{36} P_{t, f}&amp;nbsp;x^{(i)}_{f}.\]&lt;/p&gt;
+&lt;p&gt;The vector \(\vec{x}^{(i)}\) stores the number of bikes at each station at time \(i\). Since the probability to move to one of the other stations is 1, the stochastic matrix has to&amp;nbsp;fulfill&lt;/p&gt;
+&lt;p&gt;\[\sum_{t=1}^{36} P_{t,f} = 1 \quad \forall&amp;nbsp;f.\]&lt;/p&gt;
+&lt;p&gt;Finally, we can compute \(\mathbf{P}\) using the following&amp;nbsp;relation&lt;/p&gt;
+&lt;p&gt;\[P_{t,f} = \frac{T_{f, t}}{\sum_{j=1}^{36}&amp;nbsp;T_{f,j}}.\]&lt;/p&gt;
+&lt;p&gt;This framework can be used to find the temporal steady state \(\vec{x}^{(S)}\), which&amp;nbsp;satisfies&lt;/p&gt;
+&lt;p&gt;\[\vec{x}^{(S)} = \mathbf{P} \cdot&amp;nbsp;\vec{x}^{(S)}.\]&lt;/p&gt;
+&lt;p&gt;Hence, \(\vec{x}^{(S)}\) is a state that does not change upon time stepping forwards. This condition translates into an eigenvalue problem with eigenvalue&amp;nbsp;1,&lt;/p&gt;
+&lt;p&gt;\[\lambda \cdot \vec{x}_{(S)} = \mathbf{P} \cdot&amp;nbsp;\vec{x}_{(S)}\]&lt;/p&gt;
+&lt;p&gt;with \(\lambda=1\). After solving the eigenvalue problem and selecting the eigenvector with eigenvalue 1, the steady state is obtained. The steady state yields suggestions for where bikes will accumulate and, potentially, need to be carried around&amp;nbsp;manually.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png" style="width: 700px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Hence, also the steady state computation confirms that the &lt;em&gt;Hauptbahnhof&lt;/em&gt; and &lt;em&gt;Elisabeth-Blochmann-Platz&lt;/em&gt; are the largest stations. Note that the steady state is only determined up to a constant due to the linearity of the underlying eigenvalue&amp;nbsp;problem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="prediction-of-the-number-of-parked-bikes-using-a-random-forest"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Prediction of the number of parked bikes using a random&amp;nbsp;forest&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now I come to a classical regression machine learning task. The task is to predict the accumulative number of bikes in Marburg given the hour of the day, the day of the week and the&amp;nbsp;temperature.&lt;/p&gt;
+&lt;p&gt;Since I was not able to find temperature data for Marburg, I used temperature data from Giessen, which is a city nearby. The data is obtained from the &lt;a class="reference external" href="https://www.dwd.de/DE/Home/home_node.html"&gt;German weather service&lt;/a&gt; (in German: &lt;span class="caps"&gt;DWD&lt;/span&gt;). Let&amp;#8217;s see how the temperature varies during the time of data&amp;nbsp;collection.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;The different resamples of the raw data show how the temperature rises towards summer and declines towards&amp;nbsp;winter.&lt;/p&gt;
+&lt;p&gt;With the weather and the number of parked bikes in the whole Marburg Nextbike ecosystem (introduced &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html"&gt;earlier&lt;/a&gt;), the training data can be constructed. The training&amp;nbsp;data,&lt;/p&gt;
+&lt;p&gt;\[(\text{hour}, \text{weekday}, \text{temperature}) \rightarrow \text{number of parked&amp;nbsp;bikes},\]&lt;/p&gt;
+&lt;p&gt;maps the triplet of the hour, the weekday and the temperature to the number of parked bikes in the Marburg Nextbike ecosystem. Since the training data here is 3 dimensional, I follow the best practise of visualising the training data prior to training. The target variable, i.e. the number of parked bikes, is colour coded in the following&amp;nbsp;figure.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png" style="width: 800px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;The two perspectives of the same underlying data show that there is little variation of the number of bikes parked with day, a little more variation with hour and most variation with temperature. That&amp;#8217;s reasonable: People prefer to ride bikes when it is warm and when it is not too late or early on a&amp;nbsp;day.&lt;/p&gt;
+&lt;p&gt;This visual understanding is confirmed by the three &lt;a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html"&gt;pearson correlation coefficients&lt;/a&gt; between the target variable and all three dependent&amp;nbsp;variables:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Correlation between &lt;strong&gt;parked bikes&lt;/strong&gt; and &lt;strong&gt;temperature&lt;/strong&gt;:&amp;nbsp;-0.74.&lt;/li&gt;
+&lt;li&gt;Correlation between &lt;strong&gt;parked bikes&lt;/strong&gt; and &lt;strong&gt;hour&lt;/strong&gt;:&amp;nbsp;-0.14.&lt;/li&gt;
+&lt;li&gt;Correlation between &lt;strong&gt;parked bikes&lt;/strong&gt; and &lt;strong&gt;day&lt;/strong&gt;:&amp;nbsp;0.02.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hence, the temperature is the variable that is (anti)correlated the strongest with the target&amp;nbsp;variable.&lt;/p&gt;
+&lt;p&gt;As machine learning model, I use a &lt;a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html"&gt;random forest regressor&lt;/a&gt;. The hyperparameters are optimised using a &lt;a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"&gt;cross-validated grid search&lt;/a&gt; with 5 folds. This ensures that the limited training data of around \(\mathcal{O}(10^4)\) samples is used most efficiently to find the best possible&amp;nbsp;hyperparameters.&lt;/p&gt;
+&lt;p&gt;The classifier reaches a &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Mean_squared_error"&gt;mean squared error&lt;/a&gt; (&lt;span class="caps"&gt;MSE&lt;/span&gt;) of around 137 on the test data set. To evaluate if this is a good result, the square root of the &lt;span class="caps"&gt;MSE&lt;/span&gt; is computed and compared to the average of the target variable: The square root of the &lt;span class="caps"&gt;MSE&lt;/span&gt; is around 11.7 and the average number of parked bikes is 118 (with minimal value being 62 and maximal value 163). I consider this a decent result because the mean error is a factor of 10 smaller than typical values of the variable that is predicted. There is a multitude of ways to improve this result even further - see the outlook of this article for further&amp;nbsp;information.&lt;/p&gt;
+&lt;p&gt;Lastly, let&amp;#8217;s compare the measured data that served as training data and the predicted data side-by-side using a dense covering of the phase&amp;nbsp;space.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png" style="width: 800px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;The predicted data shows the same characteristics as the underlying training data: The warmer it gets, the fewer bikes are parked in the Nextbike ecosystem in Marburg. Hence, I obtained a decent&amp;nbsp;regressor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="outlook"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Outlook&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This article demonstrates how machine learning can be applied to obtain additional information from the Nextbike&amp;nbsp;data.&lt;/p&gt;
+&lt;p&gt;There&amp;#8217;s a myriad of possible technical extensions to improve the quality of the&amp;nbsp;regressor:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Use humidity for predicting the number of parked&amp;nbsp;bikes.&lt;/li&gt;
+&lt;li&gt;Perform a sine transformation of the day of the week and the hour of the day to obtain periodic&amp;nbsp;features.&lt;/li&gt;
+&lt;li&gt;Use one hot encodings of day of the week and hour of the&amp;nbsp;day.&lt;/li&gt;
+&lt;li&gt;Experiment with different machine learning&amp;nbsp;models.&lt;/li&gt;
+&lt;li&gt;Collect and use more&amp;nbsp;data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Not only the number of parked bikes can be predicted. There is also a large spectrum of additional tasks that could be performed,&amp;nbsp;e.g.:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Predict the number of parked bikes for each station&amp;nbsp;separately.&lt;/li&gt;
+&lt;li&gt;Predictive maintenance: When do bikes break? Are there&amp;nbsp;precursors?&lt;/li&gt;
+&lt;li&gt;Predict the number of transitions of bikes to find instances when Nextbikes might hinder smooth car traffic in&amp;nbsp;Marburg.&lt;/li&gt;
+&lt;li&gt;Spatial interpolation of bike demand. For example with Gaussian Processes - similar to &lt;a class="reference external" href="http://lellep.xyz/blog/parking-in-marburg.html"&gt;what I did previously for the parking demand in Marburg&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These tasks might be useful for either the cities that host bike sharing systems or even the companies&amp;nbsp;themselves.&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;This article belongs to a series of articles. This is the list of all&amp;nbsp;articles:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cycling in Marburg (1/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html"&gt;Project introduction and data&amp;nbsp;source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (2/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;For Nextbike&amp;nbsp;users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (3/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html"&gt;For the city&amp;nbsp;council&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (4/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html"&gt;Machine learning&amp;nbsp;predictions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Cycling in Marburg (3/4): For the city council</title><link href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html" rel="alternate"></link><published>2020-11-29T00:00:00+01:00</published><updated>2020-11-29T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-11-29:/blog/cycling-in-marburg-3-city.html</id><summary type="html">&lt;p class="first last"&gt;I use quantitative analyses to derive social and environmental benefits of the Nextbike system in Marburg.
+Also, I investigate which routes in Marburg are popular among Nextbike users. Hence, I offer quantitative
+arguments as to why bikes are good for Marburg and how to improve the biking experience in Marburg even&amp;nbsp;further.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;I already expressed my excitement about bikes in the &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;previous article in this series&lt;/a&gt;, where I dealt with the Nextbike system from the perspective of a Nextbike user. In this article, however, I will evaluate the data from the perspective of a city council. The results cover two of the most important aspects in public life: Social and environmental aspects. We will see quantitative results that indicate social and environmental benefits of shareable bikes in a city. Also, we will find the most popular routes as well as the most active&amp;nbsp;stations.&lt;/p&gt;
+&lt;p&gt;Hopefully, this article motivates action from the city council. For example, larger bike capacities for popular bike routes or programs to foster the adaption of bikes as daily means of transportation to increase the health of the residents in&amp;nbsp;Marburg.&lt;/p&gt;
+&lt;div style="margin: 0px auto; border: 4px solid #d93200; border-radius: 10px; padding: 10px; width: 100%;"&gt;
+    &lt;p&gt;Let me summarise my findings here for the busy&amp;nbsp;reader:&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;There are 36 bike stations and 196 Nextbikes in&amp;nbsp;Marburg.&lt;/li&gt;
+        &lt;li&gt;Social benefit of Nextbikes: Cyclists burned around 4.5 million&amp;nbsp;kcal.&lt;/li&gt;
+        &lt;li&gt;Environmental benefits of&amp;nbsp;Nextbikes:&lt;/li&gt;
+        &lt;ul&gt;
+            &lt;li&gt;13,554 litres of fuel&amp;nbsp;saved.&lt;/li&gt;
+            &lt;li&gt;21,178 kg of &lt;span class="caps"&gt;CO2&lt;/span&gt;&amp;nbsp;saved.&lt;/li&gt;
+            &lt;li&gt;17,620 Euros of fuel&amp;nbsp;saved.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;li&gt;Stations involved in most used routes: &lt;i&gt;Hauptbahnhof&lt;/i&gt;, &lt;i&gt;Neue Universitaetsbibliothek&lt;/i&gt;, &lt;i&gt;Elisabeth-Blochmann-Platz&lt;/i&gt;.&lt;/li&gt;
+        &lt;li&gt;Most active stations: &lt;i&gt;Hauptbahnhof&lt;/i&gt;, &lt;i&gt;Elisabeth-Blochmann-Platz&lt;/i&gt;, &lt;i&gt;Biegenstrasse/Cineplex&lt;/i&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;p&gt;Let&amp;#8217;s first get our head around some numbers that express how actively the Nextbikes are used in Marburg. There are 36 stations and 196 bikes in the Nextbike ecosystem in&amp;nbsp;Marburg.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/0_station_and_bike_nrs.svg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/0_station_and_bike_nrs.png" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Are these numbers large or not? Let&amp;#8217;s compare the Marburg numbers to those of New York City (&lt;span class="caps"&gt;NYC&lt;/span&gt;)! In &lt;span class="caps"&gt;NYC&lt;/span&gt;, they have 605 stations and 10,000 bikes (source: Sobolevsky, Stanislav, et al. &amp;#8220;Impact Of Bike Sharing In New York City.&amp;#8221; &lt;em&gt;arXiv preprint arXiv:1808.06606&lt;/em&gt; (2018); see &lt;a class="reference external" href="https://arxiv.org/abs/1808.06606"&gt;here&lt;/a&gt;). To make the numbers comparable to the 36 stations and 196 bikes in Marburg, I divide these numbers by the respective population&amp;nbsp;sizes.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/1__marburg_vs_nyc.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/1__marburg_vs_nyc.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Relative to the population size, Marburg has more bikes and bike stations than the glorious (&amp;amp; beloved!) New York&amp;nbsp;City!&lt;/p&gt;
+&lt;p&gt;In order to make progress towards the results regarding the social and environmental benefits of having a bike sharing system in the city, we need to know a few details about how the bikes are set up in Marburg and how they are&amp;nbsp;used.&lt;/p&gt;
+&lt;p&gt;First, we need the distances between the stations. For that, I used the coordinates of the stations together with the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/OpenStreetMap"&gt;OpenStreetMap&lt;/a&gt; (&amp;amp; &lt;a class="reference external" href="https://github.com/MKuranowski/pyroutelib3"&gt;this&lt;/a&gt;) &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; the &lt;a class="reference external" href="https://developers.google.com/maps/documentation/distance-matrix/start"&gt;Google Distance Matrix &lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt; to compute the pairwise distances between all 36 stations. The following figure shows the pairwise distances plotted as a&amp;nbsp;matrix.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/2__distance_matrix.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/2__distance_matrix.png" style="width: 700px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Second, we need the number of bike trips between the stations. Luckily, the data that I colleced, as described in &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html"&gt;a previous article&lt;/a&gt;, allows to track individual bikes at stations. Hence, I can detect when bikes transition from one to another station. From this, I can compute a 36x36 dimensional matrix that stores the transitions between the stations. The following figure shows exactly this&amp;nbsp;matrix.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/3__transition_matrix.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/3__transition_matrix.png" style="width: 700px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Summing up all entries, we can determine the number of overall bike trips that have been performed with Nextbikes in Marburg. It is a stunning &lt;strong&gt;107,428&lt;/strong&gt; bike&amp;nbsp;trips!&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/1_trips.svg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/1_trips.png" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;When weighted with the distances between the stations, this number translates into the overall number of kilometers covered by Nextbike trips in Marburg: Nextbikes traveled &lt;strong&gt;169424&lt;/strong&gt; kilometers in&amp;nbsp;Marburg!&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/2_distance_covered.svg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/2_distance_covered.png" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;This makes an average of &lt;strong&gt;1.58&lt;/strong&gt; km per&amp;nbsp;trip.&lt;/p&gt;
+&lt;p&gt;When we assume a relaxed average velocity of &lt;strong&gt;15&lt;/strong&gt; km/h, then this distance translates into an overall travel time of &lt;strong&gt;11,295&lt;/strong&gt; hours in Marburg with the Nextbike&amp;nbsp;system.&lt;/p&gt;
+&lt;p&gt;Now we can turn towards the social and environmental benefits of the Nextbike system in&amp;nbsp;Marburg!&lt;/p&gt;
+&lt;p&gt;I quantify the social benefit of the system by estimating the calories burned through people cycling on Nextbikes. The calorie consumption of cycling is taken from &lt;a class="reference external" href="https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-of-leisure-and-routine-activities"&gt;this study&lt;/a&gt; (see &amp;#8220;Bicycling, Stationary: moderate&amp;#8221;). With these values, &lt;strong&gt;4,517,974&lt;/strong&gt; kilocalories have been burned in Marburg through cycling on&amp;nbsp;Nextbikes.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/3_kcal_burned.svg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/3_kcal_burned.png" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;This corresponds to around &lt;strong&gt;1,670&lt;/strong&gt; jars of Nutella - a unit we are all familiar&amp;nbsp;with.&lt;/p&gt;
+&lt;p&gt;Next, I come to the environmental benefit. For that, I compute the fuel and &lt;span class="caps"&gt;CO2&lt;/span&gt; that has been saved compared to when the trips would have been taken with a car. Also, I compute the cost of the fuel that has been&amp;nbsp;saved.&lt;/p&gt;
+&lt;p&gt;I assume three numbers based on public&amp;nbsp;information:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The average car needs 8 litres of fuel per 100 km in an urban context; &lt;a class="reference external" href="https://www.umweltbundesamt.de/bild/durchschnittlicher-kraftstoffverbrauch-von-pkw"&gt;source 1&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The average car produces 125 grams of &lt;span class="caps"&gt;CO2&lt;/span&gt; per kilometer; &lt;a class="reference external" href="https://de.statista.com/statistik/daten/studie/37413/umfrage/durchschnittlicher-co2-ausstoss-von-pkw-ausgewaehlter-marken/"&gt;source 2&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;On average, a litre of fuel costs 1.3 Euros; &lt;a class="reference external" href="https://de.statista.com/statistik/daten/studie/776/umfrage/durchschnittspreis-fuer-superbenzin-seit-dem-jahr-1972/"&gt;source 3&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With these numbers, we arrive at the following environmental&amp;nbsp;benefits:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The number of saved litres of fuel in Marburg through Nextbikes is &lt;strong&gt;13,554&lt;/strong&gt;&amp;nbsp;litres.&lt;/li&gt;
+&lt;li&gt;The amount of saved &lt;span class="caps"&gt;CO2&lt;/span&gt; in Marburg through Nextbikes in kg is &lt;strong&gt;21,178&lt;/strong&gt;. The German &lt;span class="caps"&gt;CO2&lt;/span&gt; foot print per capita is around 9.6 tons per year (see &lt;a class="reference external" href="https://www.worldometers.info/co2-emissions/germany-co2-emissions"&gt;this website&lt;/a&gt; and &lt;a class="reference external" href="https://www.bmu.de/fileadmin/Daten_BMU/Pools/Broschueren/klimaschutz_in_zahlen_2018_en_bf.pdf"&gt;that &lt;span class="caps"&gt;PDF&lt;/span&gt; on p8&lt;/a&gt;). Therefore, the Nextbike trips are worth around two years of German&amp;nbsp;lifestyle.&lt;/li&gt;
+&lt;li&gt;The amount of money saved in fuel through Nextbikes in Euro is &lt;strong&gt;17,620&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/4_ecological_benefits.svg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/4_ecological_benefits.png" style="width: 400px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;These social and environmental benefits are significant. They not only increase the public health but also reduce the environmental foot print of&amp;nbsp;Marburg.&lt;/p&gt;
+&lt;p&gt;We can do even more with the transition matrix. For cities, it is important to know the load of streets as to adapt their capacities appropriately. I will answer the question&amp;nbsp;here:&lt;/p&gt;
+&lt;div style="margin-bottom: 15px; text-align: center;"&gt;
+    &lt;b&gt;What are the routes that are used the most by bikes (as measured by Nextbikes)?&lt;/b&gt;
+&lt;/div&gt;&lt;p&gt;We find the most used routes by determining the entries in the transition matrix that are the largest. The following figure shows the most popular bike routes in&amp;nbsp;Marburg.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/4__popular_routes.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/4__popular_routes.png" style="width: 800px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;We can see that the &lt;em&gt;Hauptbahnhof&lt;/em&gt; is involved in most of the popular routes. Hence, it should be ensured that the &lt;em&gt;Hauptbahnhof&lt;/em&gt; offers suitable bike lane capacities. Also, the &lt;em&gt;Neue Universitaetsbibliothek&lt;/em&gt; and &lt;em&gt;Elisabeth-Blochmann-Platz&lt;/em&gt; are stations that belong to popular routes. Therefore, it is also worth setting up more and better bike lanes&amp;nbsp;there.&lt;/p&gt;
+&lt;p&gt;Lastly, with this matrix I can also determine the activity of each station. For that, I define the activity of a station as the sum of incoming and outgoing bikes. The following figure shows the activities against the stations and also how the activity is composed of incoming and outgoing&amp;nbsp;bikes.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/5__station_activity.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/5__station_activity.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;We can see that the &lt;em&gt;Hauptbahnhof&lt;/em&gt; and &lt;em&gt;Elisabeth-Blochmann-Platz&lt;/em&gt; are the most active bike stations by a large margin. This is in agreement with &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;my previous finding that these two are also the largest stations&lt;/a&gt;. The second plot shows how much of the station&amp;#8217;s activity comes through incoming bikes. This number is relevant because when it differs significantly from 50%, this indicates that a station could either fill up or run emtpy. The fact that they do not overflow or run out of bikes (see &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;the previous blog post&lt;/a&gt; to find out which do!), respectively, might indicate that Nextbike transports bikes manually to and from these stations. Note the &lt;em&gt;Uferstrasse&lt;/em&gt; as outlier - this is because that station has been introduced only&amp;nbsp;recently.&lt;/p&gt;
+&lt;div class="section" id="summary-for-the-city-council"&gt;
+&lt;h2&gt;Summary for the city&amp;nbsp;council&lt;/h2&gt;
+&lt;p&gt;I evaluated Nextbike usage data from the perspective of a city council and found that cycling has &lt;strong&gt;huge&lt;/strong&gt; social and environmental benefits for a city - the calorie equivalent of more than 1600 Nutella jars is burned and the &lt;span class="caps"&gt;CO2&lt;/span&gt; foot print that is avoided when compared to cars is worth around two years of German lifestyle. These benefits motivate the promotion of bikes as means of transport in Marburg. Lastly, I found that the &lt;em&gt;Hauptbahnhof&lt;/em&gt;, &lt;em&gt;Neue Universitaetsbibliothek&lt;/em&gt; and &lt;em&gt;Elisabeth-Blochmann-Platz&lt;/em&gt; belong to the most popular Nextbike routes. This motivates action to improve the bike conditions for these&amp;nbsp;routes.&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;This article belongs to a series of articles. This is the list of all&amp;nbsp;articles:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cycling in Marburg (1/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html"&gt;Project introduction and data&amp;nbsp;source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (2/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;For Nextbike&amp;nbsp;users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (3/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html"&gt;For the city&amp;nbsp;council&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (4/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html"&gt;Machine learning&amp;nbsp;predictions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Cycling in Marburg (2/4): For Nextbike users</title><link href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html" rel="alternate"></link><published>2020-11-22T00:00:00+01:00</published><updated>2020-11-22T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-11-22:/blog/cycling-in-marburg-2-users.html</id><summary type="html">&lt;p class="first last"&gt;In this article, I draw quantitative conclusions for cyclists who use Nextbikes
+in Marburg. For these quantitative conclusions, I use Nextbike data that I previously&amp;nbsp;scraped.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;The Nextbike service is an amazing addition to the public transport in Marburg. In particular the fact that all university students can use the bikes free of charge motivates its usage. In this article, I will derive a few quantitative conclusions for people who use Nextbikes to travel around&amp;nbsp;Marburg.&lt;/p&gt;
+&lt;div style="margin: 0px auto; border: 4px solid #d93200; border-radius: 10px; padding: 10px; width: 100%;"&gt;
+    &lt;p&gt;Let me summarise my findings here for the busy&amp;nbsp;reader:&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Largest stations: &lt;i&gt;Hauptbahnhof&lt;/i&gt; and &lt;i&gt;Elisabeth-Blochmann-Platz&lt;/i&gt;.&lt;/li&gt;
+        &lt;li&gt;Stations likely to be empty: &lt;i&gt;Am Plan/Wirtschaftswissenschaften&lt;/i&gt; and &lt;i&gt;Brunnenstrasse&lt;/i&gt;. Hence, don&amp;#8217;t go there if you really need a&amp;nbsp;bike.&lt;/li&gt;
+        &lt;li&gt;Generally: Large stations are not as prone to running out of bikes as small stations. Hence, avoid small stations if you really need a&amp;nbsp;bike.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;p&gt;Now off to the article. First of all, it is relevant to know where the stations are located. The following interactive map shows the bike stations in Marburg. Click on the markers to see the station&amp;nbsp;name.&lt;/p&gt;
+&lt;div&gt;
+    &lt;iframe src="images/cycling_in_marburg_2/1__station_map.html"
+            width="800"
+            height="450"
+            frameborder="0"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen=""&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;&lt;p&gt;When walking through Marburg, though, not only the location of the station is relevant. Most important is the question if one will find free bikes at the station of&amp;nbsp;choice.&lt;/p&gt;
+&lt;p&gt;I will answer this question in the following. Let me prepare the answer by first showing the same interactive map again but this time with the marker size scaled by the average occupancy of the station - hence, the average number of bikes standing at a station is represented by the marker size. Additionally, the size of each marker is represented by its colour: Yellow denotes large values and violet denotes small values. You can click on the markers to see the station name and the average&amp;nbsp;occupancy.&lt;/p&gt;
+&lt;div&gt;
+    &lt;iframe src="images/cycling_in_marburg_2/2__average_occupation_map.html"
+            width="800"
+            height="450"
+            frameborder="0"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen=""&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;&lt;p&gt;Apparently, the stations &lt;em&gt;Hauptbahnhof&lt;/em&gt; (German for &amp;#8220;train station&amp;#8221;) and &lt;em&gt;Elisabeth-Blochmann-Platz&lt;/em&gt; are two most occupied stations. Let&amp;#8217;s investigate that a bit deeper with a chart that shows the average occupation numbers of each station next to each other. The following graph uses the same colour scheme as the previous interactive&amp;nbsp;map.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_2/3__average_occupation.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_2/3__average_occupation.png" style="width: 800px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;The &lt;em&gt;Hauptbahnhof&lt;/em&gt; is the most popular station by a large margin with well over 10 bikes on average. Behind that, the &lt;em&gt;Elisabeth-Blochmann-Platz&lt;/em&gt; and &lt;em&gt;Cafe Trauma/Affoellerwiesen&lt;/em&gt; with 9 and 6, respectively. The station &lt;em&gt;Am Plan/Wirtschaftswissenschaften&lt;/em&gt; is with around 0.5 bikes on average the smallest station in&amp;nbsp;Marburg.&lt;/p&gt;
+&lt;p&gt;Now that we know where the stations are in Marburg and which ones are the largest and smallest, respectively, I come to the most important question for a Nextbike&amp;nbsp;cyclist:&lt;/p&gt;
+&lt;div style="margin-bottom: 15px; text-align: center;"&gt;
+    &lt;b&gt;Is the bike station empty?&lt;/b&gt;
+&lt;/div&gt;&lt;p&gt;In order to quantify this question, we look at the probability of a station to be empty over time. Again, yellow denotes large values and violet denotes small&amp;nbsp;values.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_2/4__empty_probability.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_2/4__empty_probability.png" style="width: 800px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Unsurprisingly, the smallest bike station in terms of average occupation, &lt;em&gt;Am Plan/Wirtschaftswissenschaften&lt;/em&gt;, is also the one that is often empty: Since the station only offers a small number of bikes, the station easily runs out of bikes. Hence, it might be worth to increase the number of bikes to supply the demand&amp;nbsp;there.&lt;/p&gt;
+&lt;p&gt;The careful reader will notice that the last two charts are almost identical but mirrored. That means that the small stations are typically more prone to running out of bikes and that larger stations, such as the &lt;em&gt;Hauptbahnhof&lt;/em&gt; or other large stations, do not have the issue of running out of&amp;nbsp;bikes.&lt;/p&gt;
+&lt;p&gt;Therefore my advice to Nextbike users in Marburg: When in dire need for a Nextbike, try to walk to one of the larger stations that are shown above as they won&amp;#8217;t disappoint you with a lack of bikes to&amp;nbsp;rent.&lt;/p&gt;
+&lt;p&gt;To test the hypothesis that larger stations run out of bikes less frequently, I plot the probability to find the station empty against its average&amp;nbsp;occupancy.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_2/5__empty_probability_vs_mean_occupancy.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_2/5__empty_probability_vs_mean_occupancy.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;The points collapse nicely on a curve which reveals that, indeed, smaller stations are more likely to run out of bikes and vice versa. The only two marginal outliers to that are the two largest stations, &lt;em&gt;Hauptbahnhof&lt;/em&gt; and &lt;em&gt;Elisabeth-Blochmann-Platz&lt;/em&gt;. They seem to be more prone to running out of bikes bikes than the other large&amp;nbsp;stations.&lt;/p&gt;
+&lt;p&gt;In conclusion, there is quite a number of Nextbike stations spread over Marburg - 36 to be precise. I first investigated the average number of bikes at each station. Then, I asked the question how likely it is for a station to run out of bikes. This is an important question for Nextbike users. Interestingly, I find the probability that a station runs out of bikes is anti proportional to its average occupation. Hence, Nextbike users should avoid small stations when they desperately search for a&amp;nbsp;bike.&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;This article belongs to a series of articles. This is the list of all&amp;nbsp;articles:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cycling in Marburg (1/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html"&gt;Project introduction and data&amp;nbsp;source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (2/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;For Nextbike&amp;nbsp;users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (3/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html"&gt;For the city&amp;nbsp;council&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (4/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html"&gt;Machine learning&amp;nbsp;predictions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>Cycling in Marburg (1/4): Project introduction and data source</title><link href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html" rel="alternate"></link><published>2020-11-15T00:00:00+01:00</published><updated>2020-11-15T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-11-15:/blog/cycling-in-marburg-1-intro.html</id><summary type="html">&lt;p class="first last"&gt;I collected Nextbike data in Marburg and introduce my plan to evaluate the data in
+this article. Also, I present what the data is made up of and how it is obtained in
+detail. Lastly, a first temporal analysis of the bike usage in Marburg is&amp;nbsp;presented.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Cycling comes with a number of benefits for health and the environment. People get fitter when cycling, spend less money on fuel for their cars and thereby save &lt;span class="caps"&gt;CO2&lt;/span&gt;. Based on these benefits, cycling becomes more and more popular: Let it be e-bikes that drastically increase the range of usability, heavy duty bikes to carry large things around or cities installing more and more bike lanes.
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/jetzt-mitmachen-beim-fahrradklimatest-2020-900007047-23001.html?rubrik=900000004"&gt;The&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/ob-beantwortet-fragen-zu-mobilitaet-und-bauplaenen-900007183-23001.html?rubrik=900000004"&gt;list&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/manfred-fuhrmann-gewinnt-fotowettbewerb-zum-stadtradeln-900007030-23001.html?rubrik=900000004"&gt;of&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/das-siegerfoto-des-fotowettbewerb-statdtradeln-steht-fest--900007006-23001.html?rubrik=900000054"&gt;news&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/beteiligung-der-buerger-innen-zu-neuen-markierungen-fuer-radwege-gefragt-900006906-23001.html?rubrik=900000004"&gt;in&lt;/a&gt;
+&lt;a class="reference external" href="https://marburgmachtmit.de/page/radverkehrsmarkierungen"&gt;the city of Marburg&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/auf-e-bike-um-steigen-und-gutscheine-sichern-900006901-23001.html?rubrik=900000004"&gt;which&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/uferstrasse-ist-jetzt-eine-fahrradzone-900007178-23001.html?rubrik=900000004"&gt;are&lt;/a&gt;
+&lt;a class="reference external" href="https://umfragen.werdenktwas.de/index.php/598765?lang=de"&gt;concerned&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/interkulturelle-radtour-am-23-august-fuehrt-durch-das-ohmtal-900006842-23001.html?rubrik=900000004"&gt;with&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/alltagstipps-fuer-einen-nachhaltigen-lebensstil-900006779-23001.html?rubrik=900000004"&gt;bikes&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/gruenpfeile-und-neue-schutzstreifen-900006765-23001.html?rubrik=900000004"&gt;is&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/radstreifen-in-der-neuen-kasseler-strasse-900006757-23001.html?rubrik=900000004"&gt;so&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/live-stream-der-zweiten-marburger-verkehrsdialoge-900006742-23001.html?rubrik=900000004"&gt;long&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/aussenstadtteile-laden-zur-tour-der-mobilitaet-2020-nach-gisselberg-ein-900006717-23001.html?rubrik=900000004"&gt;that&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/radverkehr-stadt-setzt-weitere-verbesserungen-um-900006686-23001.html?rubrik=900000004"&gt;I&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/klimaneutral-2030-marburger-aktionsplan-steht-900006661-23001.html?rubrik=900000004"&gt;cannot&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/fahrradwege-unter-der-weidenhaeuser-bruecke-wieder-frei-brueckenpruefung-am-26-november-900006011-23001.html?rubrik=900000004"&gt;even&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/fahrradabstellplatz-vor-dem-hauptbahnhof-wird-gereinigt-900004924-23001.html?rubrik=900000004"&gt;remotely&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/fahrradabstellplatzes-am-pilgrimstein-wird-gereinigt-900004532-23001.html?rubrik=900000004"&gt;replicate&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/mitmachen-und-fahrradfreundlichkeit-bewerten-900004505-23001.html?rubrik=900000004"&gt;it&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/meldungen/sicherheitsempfinden-staerken-stadt-veroeffentlicht-bauliche-und-soziale-tipps-900006580-23001.html?rubrik=900000004"&gt;here&lt;/a&gt;
+&lt;a class="reference external" href="https://www.marburg.de/portal/suche.html?suchbegriff=fahrrad&amp;amp;x=0&amp;amp;y=0"&gt;.&lt;/a&gt;
+Each word in the previous sentence links to one official news article that is concerned with bikes in Marburg, demonstrating the large interest in bikes as means of&amp;nbsp;transportation.&lt;/p&gt;
+&lt;p&gt;This blog post is the first article in a series of articles that cover the usage of rent-able bikes in an urban context. I use the city of &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Marburg"&gt;Marburg&lt;/a&gt; as a demonstration case to tell you a story about bike usages using quantitative analyses. Ultimately, this article is motivated by the current trend of using bikes to travel around a city and my personal interest of doing so safely - hopefully this series of articles motivates the city council to improve the status quo of traveling with bikes in Marburg even&amp;nbsp;further.&lt;/p&gt;
+&lt;p&gt;I analyse data from the company &lt;a class="reference external" href="https://de.wikipedia.org/wiki/Nextbike"&gt;Nextbike&lt;/a&gt; for the scope of this series of&amp;nbsp;articles.&lt;/p&gt;
+&lt;p&gt;After this series you know how people ride bikes in the city of Marburg. There is a number of facts that you will have learned after reading through the articles. Let me state a few of these learnings&amp;nbsp;here:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;What are the most occupied stations and how are the stations distributed across &lt;span class="caps"&gt;MR&lt;/span&gt;?&lt;/li&gt;
+&lt;li&gt;How do the bikes move between the stations? What is the typical distribution of bikes in &lt;span class="caps"&gt;MR&lt;/span&gt;?&lt;/li&gt;
+&lt;li&gt;What is the social and ecological impact of cycling in&amp;nbsp;Marburg?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This first blog article introduces the underlying data, i.e. where it comes from, how I obtained it and what kind of data is available. The data is obtained as&amp;nbsp;follows:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.svg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;I query the Nextbike &lt;span class="caps"&gt;API&lt;/span&gt; regularly using a scraper written in &lt;a class="reference external" href="https://www.python.org/"&gt;Python&lt;/a&gt; that runs inside a &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software)"&gt;Docker container&lt;/a&gt;. This data is parsed and saved on disk for subsequent&amp;nbsp;analyses.&lt;/p&gt;
+&lt;p&gt;The data that is obtained contains a number of information that I will make use of in the next articles of this series. At each point in time, the number of bikes at each Nextbike station - including the specific bike numbers - is saved. Also, all bikes that are parked outside the regular Nextbike stations are saved. I use this data later on to compute bike trajectories as well as the occupation levels of each station. Over the course of a few months, I collected well over 600,000 data&amp;nbsp;points.&lt;/p&gt;
+&lt;p&gt;To get a very first impression of the data, let me present two small analyses upfront&amp;nbsp;already.&lt;/p&gt;
+&lt;p&gt;First, I show the number of parked bikes across the whole Nextbike system in Marburg against&amp;nbsp;time.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;One can see that the number of parked bikes starts out large in the beginning of the year and decreases towards the summer. The smallest number of bikes can be found mid-summer at the end of August. The reasons for this behaviour can be manifold and ultimately not solved solely based on statistics. Let me guess some explanations: The beginning of the Corona crisis in March 2020 has maybe increased the number of parked bikes in the beginning of the year. Then, as Corona became less of an issue in the summer - and also because of the warm temperatures -, the number of parked bikes decreased in the warm months. Lastly, with the cold temperatures and a second Corona wave, the number of parked bikes increases again at the end of&amp;nbsp;2020.&lt;/p&gt;
+&lt;p&gt;Now that we know of the yearly behaviour, let&amp;#8217;s focus on how bikes are parked depending on day and hour of the day. The following figure shows the difference to the average number of parked&amp;nbsp;bikes.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png" style="width: 800px;" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Many bikes are parked during the early hours of the day and fewer are parked during the later hours of the day. Also, fewer bikes are parked during weekends in general. Fewest bikes are parked on Saturday afternoon. All these statements are reasonable and make sense at first&amp;nbsp;glance.&lt;/p&gt;
+&lt;p&gt;These were two very first analyses that showed you what kind of conclusions can be drawn based on the data at hand. There is much much more in the data, though! Read on to the next articles in the series if you are interested in more specific questions that are interesting for users of Nextbikes, the city council or people interested in machine learning based predictions,&amp;nbsp;respectively.&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;This article belongs to a series of articles. This is the list of all&amp;nbsp;articles:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cycling in Marburg (1/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html"&gt;Project introduction and data&amp;nbsp;source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (2/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;For Nextbike&amp;nbsp;users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (3/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html"&gt;For the city&amp;nbsp;council&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (4/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html"&gt;Machine learning&amp;nbsp;predictions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>Parking in Marburg: a quantitative study</title><link href="http://lellep.xyz/blog/parking-in-marburg.html" rel="alternate"></link><published>2020-02-26T00:00:00+01:00</published><updated>2020-02-26T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-02-26:/blog/parking-in-marburg.html</id><summary type="html">&lt;p class="first last"&gt;The parking demand in Marburg is analysed quantiatively based on publicly available data. In addition, Gaussian Processes
+are used for spatial&amp;nbsp;predictions.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;In this text, I attempt to analyse the parking situation in Marburg - the city I am currently living in. Moving through cities
+these days, traffic is a big aspect as one is surrounded by cars at all times. When traffic is not flowing, this traffic
+typically parks. Hence, my motivation to study the parking situation in Marburg: what are the cars in Marburg doing when not&amp;nbsp;driving?&lt;/p&gt;
+&lt;p&gt;This article is mostly about quantitative analyses based on (sort of) publicly available data. The city of Marburg maintains a system that
+summarises the currently free parking spots on a website. This system can be accessed under the following website: &lt;a class="reference external" href="https://pls.marburg.de/"&gt;https://pls.marburg.de/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are curious about the analyses and corresponding figures, then please read on: first I give an overview
+about the data acquisition process. This is for you to understand what data I am actually using and how I got it. Second, I
+continue with the actual analyses that covers analytics as well as&amp;nbsp;predictions.&lt;/p&gt;
+&lt;div class="section" id="data-acquisition"&gt;
+&lt;h2&gt;Data&amp;nbsp;acquisition&lt;/h2&gt;
+&lt;p&gt;I acquired the parking data in Marburg with a set of programming tools. The official &amp;#8220;Parkleitsystem Marburg&amp;#8221;,
+roughly translated as &amp;#8220;parking direction system Marburg&amp;#8221;, is used as data source. It is available online at &lt;a class="reference external" href="https://pls.marburg.de/"&gt;https://pls.marburg.de/&lt;/a&gt;
+and shown below in Fig. 1 for&amp;nbsp;reference.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/pls_website.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/pls_website.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 1: Screenshot of the official website maintained by the city of Marburg, &lt;a class="reference external" href="https://pls.marburg.de/"&gt;https://pls.marburg.de/&lt;/a&gt;,
+as of 02/26/2020. This website serves as my data source. This screenshot shows the available data: the free parking spots
+for all parking decks, links to the positions of the parking decks, the maximal vehicle height allowances and the current
+data timestamp. The data is updated every five&amp;nbsp;minutes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The city website is updated every five minutes and lists parking decks spread across Marburg. These parking decks
+comprise popular shopping locations and places, such&amp;nbsp;as:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Ahrens&lt;/li&gt;
+&lt;li&gt;City parking&amp;nbsp;deck&lt;/li&gt;
+&lt;li&gt;Erlenring-Center&lt;/li&gt;
+&lt;li&gt;Furthstraße&lt;/li&gt;
+&lt;li&gt;Furthstraße -&amp;nbsp;Parkdeck&lt;/li&gt;
+&lt;li&gt;Hauptbahnhof&lt;/li&gt;
+&lt;li&gt;Lahncenter&lt;/li&gt;
+&lt;li&gt;Marktdreieck&lt;/li&gt;
+&lt;li&gt;Marktdreieck -&amp;nbsp;Parkdeck&lt;/li&gt;
+&lt;li&gt;Oberstadt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For each of the parking decks, a number of data is&amp;nbsp;given:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Column &amp;#8220;&lt;span class="caps"&gt;PARKHAUS&lt;/span&gt;&amp;#8221;: The name of the parking&amp;nbsp;deck.&lt;/li&gt;
+&lt;li&gt;Column &amp;#8220;&lt;span class="caps"&gt;FREI&lt;/span&gt;&amp;#8221;: The number of free parking&amp;nbsp;spots.&lt;/li&gt;
+&lt;li&gt;Column &amp;#8220;&lt;span class="caps"&gt;ROUTE&lt;/span&gt;&amp;#8221;: A Google Maps link to the parking deck&amp;nbsp;location.&lt;/li&gt;
+&lt;li&gt;Column &amp;#8220;max. Einfahrtshöhe&amp;#8221;: The permitted vehicle&amp;nbsp;height.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This website and its content is used as data source for this study. The software used for data acquisition is written
+in &lt;a class="reference external" href="https://www.python.org"&gt;Python&lt;/a&gt; and uses &lt;a class="reference external" href="https://scrapy.org"&gt;Scrapy&lt;/a&gt; to download the data from the website.
+Scrapy also stores the data in a machine readable format to facilitate the post processing and analysis steps. The whole
+software stack runs as a &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software)"&gt;Docker container&lt;/a&gt; on a small
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Linux"&gt;Linux&lt;/a&gt; server. The data is saved every three minutes in order to subsample
+the website update interval of five minutes. Note that this time scale is chosen as to have sufficiently dense
+data points but not to overload the website servers - in particular the latter aspect should be given high priority
+when working on projects as the one in this study. Since only the table given on the city website is processed and
+stored, the storage requirements for the Linux server are minimal. Figure 2 summarises the data acquisition&amp;nbsp;pipeline.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/download_structure.svg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/download_structure.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 2: The data acquisition pipeline as described in the main text. The &amp;#8220;data for analysis&amp;#8221;, marked by a green
+rectangle, is used for all subsequent data analysis&amp;nbsp;steps.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The analysis pipeline is also written in Python. It uses the &lt;a class="reference external" href="https://www.scipy.org/about.html"&gt;Scientific computing Python stack&lt;/a&gt;.
+In particular, the &lt;a class="reference external" href="https://pandas.pydata.org"&gt;Pandas&lt;/a&gt; Python package has been used extensively to arrange and evaluate
+the data. The &amp;#8220;data for analysis&amp;#8221; shown in Fig. 2 is exactly one such
+&lt;a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html"&gt;Pandas DataFrame&lt;/a&gt;. The data structure for the
+analysis is a table with timestamps along the rows and the parking decks along the columns, as shown in Fig. 3. Over the course
+of the data acquisition period, I accumulated around 100,000 snapshots of the&amp;nbsp;website.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/data_format.svg"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/0_data_acquisition/data_format.png" style="width: 350px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 3: The data format that is used for the analysis. The data is appended to the table as time passes. The table cells
+contain the number of free parking spots at a given time and for a given parking deck. The red arrow shows how the
+accumulative data is obtained: all values per row are added up to get the overall number of free parking spots per&amp;nbsp;timestamp.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="analysis-of-parking-situation-in-marburg"&gt;
+&lt;h2&gt;Analysis of parking situation in&amp;nbsp;Marburg&lt;/h2&gt;
+&lt;p&gt;The data analysis is divided into four parts. We start with an introduction to verify that our data is reasonable. The second and
+third parts analyse the parking demand as summed over all parking decks in Marburg and for each parking deck separately, respectively.
+While the second part only takes temporal information into account, the third part also takes spatio-temporal information into
+account. Finally, the last part uses a machine learning prediction method for spatial interpolation that comes with the benefit of
+returning uncertainty measures about its&amp;nbsp;predictions.&lt;/p&gt;
+&lt;div class="section" id="introduction"&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This introduction serves the purpose of getting a very first hold of the acquired data. Here, we will look into the parking deck locations
+and how the metric that quantifies &amp;#8220;parking demand&amp;#8221; is computed. It turns out that the data preprocessing steps that I present in this section
+are necessary in order to correct corrupted data from the&amp;nbsp;website.&lt;/p&gt;
+&lt;p&gt;Each of the snapshots consists of a timestamp, the number of free spots, the corresponding colour, the maximal vehicle height and a
+Google Maps link. The latter two are confirmed to remain unchanged throughout the whole dataset for each parking deck and the link is
+used to derive the parking deck locations. The locations that are linked in the table are parsed from the correponding &lt;span class="caps"&gt;URL&lt;/span&gt; and shown in
+Fig. 4 by the red markers. It turns out that the coordinates obtained from the links on the website are wrong. It seems that Google Maps
+corrects for that automatically and redirects to the correct coordinates. I searched for the correct coordinates and indicated them by
+green markers in Fig.&amp;nbsp;4.&lt;/p&gt;
+&lt;div&gt;
+    &lt;iframe src="images/parking_in_marburg/1_data_analysis/0_intro/0_parkhaus_locations.html"
+            width="800"
+            height="450"
+            frameborder="0"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen=""&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+    &lt;p class="caption"&gt;
+        Figure 4: The parking deck locations. The incorrect locations as given on the website
+        are marked as red markers. Dashed lines connect these incorrect locations to their
+        correct locations, indicated as green&amp;nbsp;markers.
+    &lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;These correct coordinates are used for a quick experiment to warm up a little bit more. Using the &lt;a class="reference external" href="https://www.openstreetmap.org/#map=17/48.80418/2.12230"&gt;OpenStreetMap&lt;/a&gt;, I compile a list of all restaurants, pubs, &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Beer_garden"&gt;Biergarten&lt;/a&gt;
+and &lt;a class="reference external" href="https://de.wikipedia.org/wiki/Kneipe"&gt;Kneipen&lt;/a&gt; in Marburg. The list comprises of classical pubs in Marburg like the &amp;#8220;Sudhaus&amp;#8221;
+and &amp;#8220;Quod&amp;#8221; but also incoporates the &amp;#8220;Mensa&amp;#8221;, taking a whopping 153 items into account. For each of the parking decks, the distance to all of the
+restaurants/pubs is computed and summed up. The accumulated distances are shown in Fig. 5 and guide you to the parking deck that you
+should choose whenever you are hungry: pick &amp;#8220;oberstadt&amp;#8221;, &amp;#8220;lahncenter&amp;#8221;, &amp;#8220;city&amp;#8221; or &amp;#8220;ahrens&amp;#8221; if you are particularly hungry as they have
+the smallest accumulated distance to restaurants and&amp;nbsp;pubs.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/0_intro/1_POIs.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/0_intro/1_POIs.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 5: The accumulated distances to places like restaurants and pubs for each of the parking decks. The type of place is encoded
+as colour. The parking decks with the smallest accumulated distances to restaurants and pubs are &amp;#8220;oberstadt&amp;#8221;, &amp;#8220;lahncenter&amp;#8221;, &amp;#8220;city&amp;#8221;
+and&amp;nbsp;&amp;#8220;ahrens&amp;#8221;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;With the parking deck positions in place, let&amp;#8217;s focus on the metric. The measure of &amp;#8220;parking demand&amp;#8221; is quantified here as the number of
+used parking spots. However, the website only states the number of free parking spots. The capacity of each parking deck is calculated
+as maximum of the free parking spots. To obtain the number of used parking spots, the number of free parking spots are subtracted from
+the capacity. The capacities determined by this procedure are shown in the corresponding column of the following&amp;nbsp;table:&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="37%" /&gt;
+&lt;col width="31%" /&gt;
+&lt;col width="31%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;Parking deck&lt;/th&gt;
+&lt;th class="head"&gt;Determined capacity&lt;/th&gt;
+&lt;th class="head"&gt;Documented capacity&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;ahrens&lt;/td&gt;
+&lt;td&gt;213&lt;/td&gt;
+&lt;td&gt;225&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;city&lt;/td&gt;
+&lt;td&gt;195&lt;/td&gt;
+&lt;td&gt;160&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;erlenring-center&lt;/td&gt;
+&lt;td&gt;402&lt;/td&gt;
+&lt;td&gt;409&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;furthstraße&lt;/td&gt;
+&lt;td&gt;118&lt;/td&gt;
+&lt;td&gt;204&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;furthstraße - parkdeck&lt;/td&gt;
+&lt;td&gt;97&lt;/td&gt;
+&lt;td&gt;n.a.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;hauptbahnhof&lt;/td&gt;
+&lt;td&gt;264&lt;/td&gt;
+&lt;td&gt;288&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;lahncenter&lt;/td&gt;
+&lt;td&gt;170&lt;/td&gt;
+&lt;td&gt;168&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;marktdreieck&lt;/td&gt;
+&lt;td&gt;190&lt;/td&gt;
+&lt;td&gt;280&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;marktdreieck - parkdeck&lt;/td&gt;
+&lt;td&gt;97&lt;/td&gt;
+&lt;td&gt;n.a.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;oberstadt&lt;/td&gt;
+&lt;td&gt;209&lt;/td&gt;
+&lt;td&gt;235&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;These empirically determined values can be compared to the ones
+&lt;a class="reference external" href="https://www.marburg-tourismus.de/portal/seiten/parken-900000695-1000000.html"&gt;documented officially&lt;/a&gt;, as shown in the table column
+&amp;#8220;documented capacity&amp;#8221;. Apparently, the two sets of numbers are close to each other. Since the empirically computed parking capacities
+are more granular (e.g. they distinguish between &amp;#8220;Marktdreieck&amp;#8221; and &amp;#8220;Marktdreieck - Parkdeck&amp;#8221;) and seem to be more up-to-date (empirically,
+the &amp;#8220;City&amp;#8221; parking deck was found to have had 195 free parking spots at maximum despite only having 160 parking spots as documented
+officially), I will be using the empirically determined capacities for the analyses that I show in the&amp;nbsp;following.&lt;/p&gt;
+&lt;p&gt;With the coordinates and used parking spots determined, we turn towards the main analysis. This main analysis begins with the accumulative&amp;nbsp;signal.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="accumulative-parking-analysis"&gt;
+&lt;h3&gt;Accumulative parking&amp;nbsp;analysis&lt;/h3&gt;
+&lt;p&gt;The accumulative data is obtained as shown by the red arrow in Fig. 3: the columns for all parking decks are summed up to yield the accumulated
+number of used parking&amp;nbsp;spots.&lt;/p&gt;
+&lt;p&gt;Given the timestamps of the data, the number of used parking spots can be plotted against time. Since the data acqusition time of 3min is
+quite fast on the scale of the data collection process - namely month -, the data is resampled to hours, days and weeks, as shown in Fig.&amp;nbsp;6.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/0_cumulative_signal.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/0_cumulative_signal.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 6: The used parking spots as summed over all parking decks against time. The data is resampled to hours, days and weeks, as
+shown by the three lines. These resamples highlight trends in the&amp;nbsp;data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The green line shows the weekly average. It drops during the time between Christmas and New Year&amp;#8217;s Eve. Furthermore, the regularity of the
+data becomes obvious. There seem to be two types of periodicity: first, the periodicity per day (as hardly visible
+by the data resampled to one hour) and second, periodicity per week (as clearly visible by the data resampled to one day). Despite these obvious
+facts, the figure might be nice to look at but doesn&amp;#8217;t quantify the periodicities&amp;nbsp;further.&lt;/p&gt;
+&lt;p&gt;The autocorrelation of Fig. 6 is computed to quantify the periodicity. The &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Autocorrelation"&gt;autocorrelation&lt;/a&gt;
+function measures how similar a signal is to itself by shifting it by some time delay that make up the x-axis of autocorrelation plots.
+For time delays at which the autocorrelation function has maxima, the signal is similar to itself. Hence,
+periodicity can be quantified by exactly these maxima of the autocorrelation function. Figure 7 shows the autocorrelation function of the parking
+demand in&amp;nbsp;Marburg.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/1_autocorrelation.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 7: The autocorrelation of the accumulatively used parking spots. The period of seven days is marked by a red&amp;nbsp;line.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;As suggested by the accumulative signal in Fig. 6, the autocorrelation shown in Fig. 7 peaks at seven days. This confirms that the signal has a period
+of seven days. The daily periodicity is not visible in this plot as it is based on the daily resample of the data; the initial small peak at the shift
+value of one in Fig. 7 is due to the fact that this value corresponds exactly to the sampling frequency of the resampled signal and, by that, does not
+carry any relevant information regarding the periodicity in the signal. All other peaks correspond to multiples of the identified 7-day&amp;nbsp;periodicity.&lt;/p&gt;
+&lt;p&gt;Finally, to understand the full scope of the periodicity of the signal, I evaluated the day-hour-histogram. This type of histogram is used to visualise
+the number of used parking spots in Marburg against time and day of the week. This makes up a two dimensional matrix, as shown in Fig.&amp;nbsp;8.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/2_day_time_histogram.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/1_joint/2_day_time_histogram.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 8: The average of the used parking spots against time and day. Summing along rows and columns results in the daily and hourly
+usage histograms, respectively. Yellow corresponds to high and blue corresponds to low values, as quantified by the&amp;nbsp;colourbar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;It becomes obvious that the peak hours of parking demand during the working week are between 11am and 4pm. Also, notably, the weekends are
+less busy as people are probably not going into the city by car. On Saturdays, the peak hours in parking demand are shorter, only from around 12pm to
+3pm. On Sundays, there is significantly less parking demand in Marburg as compared to all other six days. Interestingly, the relaxed Sunday mood
+smears into Monday mornings, as these are much less busy than regular mornings during the working week. Finally, it can be observed that even at
+late nights, like 10pm to 4am, there are still cars using the parking&amp;nbsp;decks.&lt;/p&gt;
+&lt;p&gt;Now that we know the periodicity of the parking demand in Marburg, let&amp;#8217;s focus on all of the parking decks&amp;nbsp;separately.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="separate-parking-deck-analysis"&gt;
+&lt;h3&gt;Separate parking deck&amp;nbsp;analysis&lt;/h3&gt;
+&lt;p&gt;Now we turn to the more detailed analyses that take the different parking decks into account. First, Fig. 9 shows the parking demand against
+time for each parking deck&amp;nbsp;separately.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/0_single_signals.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/0_single_signals.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 9: The parking demand against time, similar to Fig. 6. Here, however, the accumulative signal is split into the contributions from
+each parking&amp;nbsp;deck.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Despite being overloaded with information, there are a few aspects that this figure points towards. First, the signals seem to be periodic as well
+and second, the parking decks seem to vary significantly in how many parking spots are used. The integral parking demand quantifies exactly that:
+it measures how many parking spots have been provided by a parking deck throughout the whole measurement period. Figure 10 shows the results&amp;nbsp;thereof.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/2_integral_parking_demand.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/2_integral_parking_demand.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 10: Integral parking demand of all parking decks. These numbers are obtained by summing up the number of used parking spots per each
+parking deck over the whole measurement period. The blue bars in the bottom show the integral parking demand during working days and the stacked
+orange bars show the parking demand during the weekends for each parking deck. The integral parking demand is normalised to the maximal
+integral parking demand across all parking&amp;nbsp;decks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The integral parking demand shows that the &amp;#8220;Erlenring&amp;#8221; parking deck is by far the most used parking deck. The second most important parking deck,
+&amp;#8220;Lahncenter&amp;#8221;, provides around half of the parking spots that &amp;#8220;Erlenring&amp;#8221; provides. The proportion of parking spots provided on weekends compared
+to the overall number of provided parking decks is roughly equal for almost all parking decks. Here, only &amp;#8220;Marktdreieck - Parkdeck&amp;#8221; differs as
+this parking deck provides significantly fewer parking spots on&amp;nbsp;weekends.&lt;/p&gt;
+&lt;p&gt;The integral parking demand can be given an additional temporal information by rendering a video that takes time into account. The following video
+shows the parking deck usage against passing hours. The video shows the ratio of parking spots that are used with the hour and date running in the
+title of the figure. As before, the number of used parking decks is normalised to the maximal usage across all parking decks and, additionally,
+all&amp;nbsp;times.&lt;/p&gt;
+&lt;div style="margin: 0px auto; text-align: center;"&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/GvyMukqKLM4"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;p&gt;Clearly, this video visualises the periodicity in the signal. The parking deck bars disappear when there is no data - certain parking decks close
+down during the night and some days of the weekend. Most of the parking decks reach 100% occupancy and then decrease to smaller values below 5%
+during the night. The notable exceptions to this observation are the parking decks &amp;#8220;Lahncenter&amp;#8221; and &amp;#8220;Erlenring&amp;#8221; which only decrease to around 40%
+to 50% occupancy at night. That might explain the previous observation in Fig. 8 of cars that remain parked during night. In the beginning of the
+video there is some data missing as my data acquisition pipeline broke down during that&amp;nbsp;time.&lt;/p&gt;
+&lt;p&gt;The dependence on time is studied further. Figure 11 shows the histograms of used parking spots for each parking decks separately. Not only that,
+it also shows histograms thereof that depend on the time of the&amp;nbsp;day.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/1_temporal_histograms.png"&gt;&lt;img alt="" src="http://lellep.xyz/blog/images/parking_in_marburg/1_data_analysis/2_separately/1_temporal_histograms.png" style="width: 600px;" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Figure 11: Histograms of used parkings spots conditioned on time of the day. Each subplot corresponds to one parking deck. The time-independent
+histogram is shown in blue. The histograms of colours yellow, green and red correspond to mornings, noons and evenings as defined by the hours
+between 7am to 9am, 11am to 1pm and 4:30pm to 6:30pm, respectively. Each histogram is normalised independently for a better visual&amp;nbsp;appearance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The temporal histograms shown in Fig. 11 visualises a number of results. For some of the parking decks it is clearly visible how the peak of parking demand
+shifts with time: parking decks like &amp;#8220;ahrens&amp;#8221;, &amp;#8220;oberstadt&amp;#8221;, &amp;#8220;marktdreieck&amp;#8221;, &amp;#8220;marktdreieck - parkdeck&amp;#8221;, &amp;#8220;furthstraße&amp;#8221; or &amp;#8220;hauptbahnhof&amp;#8221; all show how
+there is little parking demand in the mornings, a maximal parking demand around noon and a decaying parking demand in the evening. Contrary, parking
+decks like &amp;#8220;city&amp;#8221;, &amp;#8220;ehrlenring-center&amp;#8221; or &amp;#8220;lahncenter&amp;#8221; do not seem to depend on time as&amp;nbsp;much.&lt;/p&gt;
+&lt;p&gt;After these analyses about the acquired data, we finally turn towards&amp;nbsp;predictions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="predictive-analysis"&gt;
+&lt;h3&gt;Predictive&amp;nbsp;analysis&lt;/h3&gt;
+&lt;p&gt;As last part of this article, I attempt a predictive analysis of the parking data in Marburg. The parking decks indicate parking
+demand at their locations. With the following spatial prediction, I would like to forecast parking demand where there are no parking decks&amp;nbsp;available.&lt;/p&gt;
+&lt;p&gt;Since I am also interested in the uncertainties in the predictions, I use &lt;a class="reference external" href="http://www.gaussianprocess.org/gpml/chapters/RW2.pdf"&gt;Gaussian Process Regression&lt;/a&gt;
+(&lt;span class="caps"&gt;GPR&lt;/span&gt;) for the spatial predictions. &lt;span class="caps"&gt;GPR&lt;/span&gt; uses &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Gaussian_process"&gt;Gaussian Processes&lt;/a&gt; (GPs), which themselves generalise
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution"&gt;multivariate Gaussian distributions&lt;/a&gt; to function space. Being a Bayesian method,
+they return not only a prediction but also the uncertainty of the&amp;nbsp;prediction.&lt;/p&gt;
+&lt;p&gt;Despite that &lt;span class="caps"&gt;GPR&lt;/span&gt; is a non-parametric statistical method, it needs hyperparameters. While I do not want to give an introduction to &lt;span class="caps"&gt;GPR&lt;/span&gt; in this
+article, the analysis details are noted here for the sake of a transparent analysis. Please consult the links provided before and make sure to focus
+on the amazing book by &lt;em&gt;Rasmussen et al&lt;/em&gt; to understand the following technial&amp;nbsp;details:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Contrary to the typically chosen zero-mean &lt;span class="caps"&gt;GP&lt;/span&gt; prior, I use the mean of the data as &lt;span class="caps"&gt;GP&lt;/span&gt; prior&amp;nbsp;mean.&lt;/li&gt;
+&lt;li&gt;A &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Radial_basis_function_kernel"&gt;radial basis function kernel&lt;/a&gt; is used as correlation function of the &lt;span class="caps"&gt;GP&lt;/span&gt;&amp;nbsp;prior.&lt;/li&gt;
+&lt;li&gt;The kernel hyperparameters, magnitude and length scale, are set heuristically based on visual fit quality and the characteristic length scale of&amp;nbsp;Marburg.&lt;/li&gt;
+&lt;li&gt;Very nearby parking decks (&amp;#8220;marktdreieck&amp;#8221; and &amp;#8220;marktdreieck - parkdeck&amp;#8221; as well as &amp;#8220;furthstraße&amp;#8221; and &amp;#8220;furthstraße - parkdeck&amp;#8221;) are merged in order
+to avoid&amp;nbsp;discontinuities.&lt;/li&gt;
+&lt;li&gt;I use a noise-free &lt;span class="caps"&gt;GP&lt;/span&gt; prior as the integer measurements from the website do not come with&amp;nbsp;noise.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With these technical details in place, it is time to look at the &lt;span class="caps"&gt;GPR&lt;/span&gt; results. The following video shows the parking deck usage averaged over the whole
+measurement period. It is a 3D plot with the plane as geographical coordinates of Marburg, the height of the upper subplot as predicted parking deck
+usage and the height of the lower subplot as prediction uncertainty of the parking deck&amp;nbsp;usage.&lt;/p&gt;
+&lt;div style="margin: 0px auto; text-align: center;"&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/lg4zYv09nxA"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;p&gt;The usage values of the parking decks are indicated with black dots. The maximum of the prediction, indicated as height as well as in yellow colour, is
+located close to the erlenring parking deck. As expected on account of the &lt;span class="caps"&gt;GPR&lt;/span&gt; algorithm, the prediction uncertainties decrease close to the measurement
+positions. In order to fully see the spatial predictions, the 3D plots are rotated. At the end of the video, the viewport is rotated to the top&amp;nbsp;view.&lt;/p&gt;
+&lt;p&gt;The second video uses exactly that top down view to visualise the spatial predictions. However, it also introduces a temporal component by showing
+the spatial predictions as days pass. The data shown is the daily average. On the left of the following video, the colour encoded top-down view as
+introduced in the previous video is shown. The black dots correspond to the locations of the parking decks that served as training data. The red dots,
+however, correspond to
+points-of-interest (POIs) between the parking decks. Hence, the &lt;span class="caps"&gt;GPR&lt;/span&gt; is used to compute the predicted parking demand at these POIs. The right subplot
+shows the corresponding values of these POIs together with their names: I evaluated the parking demand as fitted by the &lt;span class="caps"&gt;GPR&lt;/span&gt; at the &amp;#8220;mensa&amp;#8221;, &amp;#8220;physik&amp;#8221;,
+&amp;#8220;&lt;span class="caps"&gt;UB&lt;/span&gt;&amp;#8221; (university library), &amp;#8220;bahnhof&amp;#8221; and &amp;#8220;kino&amp;#8221; in Marburg. These predictions do come with uncertainies, but they are very small. If you look very
+closely, you might spot the error bars in right&amp;nbsp;subplot.&lt;/p&gt;
+&lt;div style="margin: 0px auto; text-align: center;"&gt;
+    &lt;iframe width="560"
+            height="315"
+            src="https://www.youtube.com/embed/axSnq4vRl_E"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;p&gt;This video shows that the location &amp;#8220;mensa&amp;#8221; is the place with the highest parking demand. &amp;#8220;Physik&amp;#8221;, &amp;#8220;&lt;span class="caps"&gt;UB&lt;/span&gt;&amp;#8221; and &amp;#8220;bahnhof&amp;#8221; have roughly the same parking
+demand and &amp;#8220;kino&amp;#8221; fluctuates the most across the days that are&amp;nbsp;shown.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this article I showed how publicly available parking data in Marburg is saved, analysed and finally used for spatial predictions. The
+statistical analysis comprises a few aspects that are interesting for both, people looking for free parking spots as well as the city of Marburg.
+This analysis is interesting for the city of Marburg because the usage statistics of
+the parking decks could be utilised to ultimately improve the parking situation in Marburg, e.g. by incorporating load balancing or by re-thinking
+the necessity of more or less parking decks. The spatial prediction yields statements about where particularly many or particularly few parking spots
+in Marburg are&amp;nbsp;required.&lt;/p&gt;
+&lt;p&gt;You might ask why I compiled this study. First, I like to do such things. Second, I believe that &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Open_data"&gt;open data&lt;/a&gt;
+can contribute to a better quality of the
+lives of all of us as existing systems can be analysed and optimised. This is daily business in the corporate sector but has not reached the public sector, yet. This article is to foster the spirit of open data in Marburg in the hope that open data improves the quality of lives in Marburg in the&amp;nbsp;future.&lt;/p&gt;
+&lt;p&gt;The more open data there is available, the more open data fans such as me can help to compile similar analyses for the city of Marburg. Dear Marburg,
+start to provide us with exciting open data!&amp;nbsp;:-)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you have questions about this article or would like to know more about the analyses, please feel free to contact me via&lt;/em&gt;
+&lt;a class="reference external" href="mailto:martin.lellep+blog&amp;#64;gmail.com"&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry></feed>
