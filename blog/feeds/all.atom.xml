@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2020-12-09T00:00:00+01:00</updated><entry><title>Parking in Marburg: Corona update</title><link href="http://lellep.xyz/blog/parking-in-marburg-corona-update.html" rel="alternate"></link><published>2020-12-09T00:00:00+01:00</published><updated>2020-12-09T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-12-09:/blog/parking-in-marburg-corona-update.html</id><summary type="html">&lt;p class="first last"&gt;A quantitative update of the parking demand in Marburg during the Corona pandemic&amp;nbsp;2020.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2021-01-23T00:00:00+01:00</updated><entry><title>Cycling in Marburg: Interactive transition matrix figures</title><link href="http://lellep.xyz/blog/cycling-in-marburg-5-interactive-transition-matrix.html" rel="alternate"></link><published>2021-01-23T00:00:00+01:00</published><updated>2021-01-23T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2021-01-23:/blog/cycling-in-marburg-5-interactive-transition-matrix.html</id><summary type="html">&lt;p class="first last"&gt;Interactive versions of the Nextbike transition matrix figure from previous blog&amp;nbsp;articles.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;This article is an extension of my series of blog articles that deals with a quantitative analysis of Nextbikes in Marburg. This series&amp;nbsp;covers:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Article 1 of 4: &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html"&gt;Project introduction, data source and first&amp;nbsp;analyses&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Article 2 of 4: &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;Analyses from the perspective of Nextbike&amp;nbsp;users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Article 3 of 4: &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html"&gt;Analyses from the perspective of Marburg the city&amp;nbsp;council&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Article 4 of 4: &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html"&gt;Machine learning&amp;nbsp;predictions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This article adds interactive graphics of the Nextbike transition matrix to the series. This matrix is a major result from the series of articles and is therefore worth to be explorable&amp;nbsp;interactively.&lt;/p&gt;
+&lt;p&gt;First, I show the &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html"&gt;previously shown&lt;/a&gt; transition matrix &lt;em&gt;without&lt;/em&gt; diagonal&amp;nbsp;elements.&lt;/p&gt;
+&lt;div&gt;
+    &lt;iframe src="images/cycling_in_marburg_5/0__interactive_transition_matrix.html"
+            width="600"
+            height="600"
+            frameborder="0"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 5px; max-width: 100%"
+            allowfullscreen=""&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;&lt;p&gt;Second, I show the transition matrix &lt;em&gt;with&lt;/em&gt; diagonal elements which hasn&amp;#8217;t been shown before. It becomes apparent that the number of bikes returning to their original stations is larger than the number of bikes that transition between&amp;nbsp;stations.&lt;/p&gt;
+&lt;div&gt;
+    &lt;iframe src="images/cycling_in_marburg_5/1__interactive_transition_matrix_with_diagonal.html"
+            width="600"
+            height="600"
+            frameborder="0"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 5px; max-width: 100%"
+            allowfullscreen=""&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;&lt;p&gt;Have fun exploring the interactive&amp;nbsp;figures!&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;This article is an extension to a series of articles. This is the list of all&amp;nbsp;articles:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cycling in Marburg (1/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html"&gt;Project introduction and data&amp;nbsp;source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (2/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html"&gt;For Nextbike&amp;nbsp;users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (3/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html"&gt;For the city&amp;nbsp;council&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cycling in Marburg (4/4): &lt;a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html"&gt;Machine learning&amp;nbsp;predictions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>Parking in Marburg: Corona update</title><link href="http://lellep.xyz/blog/parking-in-marburg-corona-update.html" rel="alternate"></link><published>2020-12-09T00:00:00+01:00</published><updated>2020-12-09T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-12-09:/blog/parking-in-marburg-corona-update.html</id><summary type="html">&lt;p class="first last"&gt;A quantitative update of the parking demand in Marburg during the Corona pandemic&amp;nbsp;2020.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;In the beginning of 2020, I analysed the parking demand in Marburg using publicly available data &lt;a class="reference external" href="http://lellep.xyz/blog/parking-in-marburg.html"&gt;here&lt;/a&gt;. This article now is an update to &lt;a class="reference external" href="http://lellep.xyz/blog/parking-in-marburg.html"&gt;my previous study&lt;/a&gt; to account for the Corona pandemic&amp;nbsp;2020.&lt;/p&gt;
 &lt;p&gt;Figure 1 shows the number of used parking spots against time and compares the pre and during Corona&amp;nbsp;numbers.&lt;/p&gt;
 &lt;div class="figure"&gt;
