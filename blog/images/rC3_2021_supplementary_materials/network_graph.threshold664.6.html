@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Alte Kasseler Stra\u00dfe/J\u00e4gertunnel", "label": "Alte Kasseler Stra\u00dfe/J\u00e4gertunnel", "shape": "dot", "size": 10}, {"id": "Biegenstra\u00dfe/Cineplex", "label": "Biegenstra\u00dfe/Cineplex", "shape": "dot", "size": 10}, {"id": "Elisabeth-Blochmann-Platz", "label": "Elisabeth-Blochmann-Platz", "shape": "dot", "size": 10}, {"id": "Hauptbahnhof", "label": "Hauptbahnhof", "shape": "dot", "size": 10}, {"id": "Neue Universit\u00e4tsbibliothek", "label": "Neue Universit\u00e4tsbibliothek", "shape": "dot", "size": 10}, {"id": "Frankfurter Stra\u00dfe/Theater", "label": "Frankfurter Stra\u00dfe/Theater", "shape": "dot", "size": 10}, {"id": "Georg-Ga\u00dfmann-Stadion", "label": "Georg-Ga\u00dfmann-Stadion", "shape": "dot", "size": 10}, {"id": "Ginseldorfer Weg", "label": "Ginseldorfer Weg", "shape": "dot", "size": 10}, {"id": "An den Siecheng\u00e4rten", "label": "An den Siecheng\u00e4rten", "shape": "dot", "size": 10}, {"id": "Biegenstra\u00dfe/Volkshochschule", "label": "Biegenstra\u00dfe/Volkshochschule", "shape": "dot", "size": 10}, {"id": "Caf\u00e9 Trauma/Aff\u00f6llerwiesen", "label": "Caf\u00e9 Trauma/Aff\u00f6llerwiesen", "shape": "dot", "size": 10}, {"id": "Frankfurter Stra\u00dfe/Psychologie", "label": "Frankfurter Stra\u00dfe/Psychologie", "shape": "dot", "size": 10}, {"id": "Friedrichplatz", "label": "Friedrichplatz", "shape": "dot", "size": 10}, {"id": "Universit\u00e4tsstra\u00dfe/Bibliothek Jura", "label": "Universit\u00e4tsstra\u00dfe/Bibliothek Jura", "shape": "dot", "size": 10}, {"id": "Audimax", "label": "Audimax", "shape": "dot", "size": 10}, {"id": "Wilhelmsplatz", "label": "Wilhelmsplatz", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Alte Kasseler Stra\u00dfe/J\u00e4gertunnel", "to": "Alte Kasseler Stra\u00dfe/J\u00e4gertunnel", "transitions": 1591, "weight": 1}, {"from": "Alte Kasseler Stra\u00dfe/J\u00e4gertunnel", "to": "Biegenstra\u00dfe/Cineplex", "transitions": 1245, "weight": 1}, {"from": "Alte Kasseler Stra\u00dfe/J\u00e4gertunnel", "to": "Elisabeth-Blochmann-Platz", "transitions": 1378, "weight": 1}, {"from": "Alte Kasseler Stra\u00dfe/J\u00e4gertunnel", "to": "Hauptbahnhof", "transitions": 1845, "weight": 1}, {"from": "Alte Kasseler Stra\u00dfe/J\u00e4gertunnel", "to": "Neue Universit\u00e4tsbibliothek", "transitions": 1258, "weight": 1}, {"from": "Biegenstra\u00dfe/Cineplex", "to": "Biegenstra\u00dfe/Cineplex", "transitions": 1725, "weight": 1}, {"from": "Biegenstra\u00dfe/Cineplex", "to": "Frankfurter Stra\u00dfe/Theater", "transitions": 847, "weight": 1}, {"from": "Biegenstra\u00dfe/Cineplex", "to": "Georg-Ga\u00dfmann-Stadion", "transitions": 1092, "weight": 1}, {"from": "Biegenstra\u00dfe/Cineplex", "to": "Ginseldorfer Weg", "transitions": 690, "weight": 1}, {"from": "Biegenstra\u00dfe/Cineplex", "to": "Hauptbahnhof", "transitions": 2174, "weight": 1}, {"from": "Elisabeth-Blochmann-Platz", "to": "An den Siecheng\u00e4rten", "transitions": 885, "weight": 1}, {"from": "Elisabeth-Blochmann-Platz", "to": "Biegenstra\u00dfe/Volkshochschule", "transitions": 855, "weight": 1}, {"from": "Elisabeth-Blochmann-Platz", "to": "Caf\u00e9 Trauma/Aff\u00f6llerwiesen", "transitions": 870, "weight": 1}, {"from": "Elisabeth-Blochmann-Platz", "to": "Elisabeth-Blochmann-Platz", "transitions": 2608, "weight": 1}, {"from": "Elisabeth-Blochmann-Platz", "to": "Frankfurter Stra\u00dfe/Theater", "transitions": 811, "weight": 1}, {"from": "Elisabeth-Blochmann-Platz", "to": "Hauptbahnhof", "transitions": 2022, "weight": 1}, {"from": "Elisabeth-Blochmann-Platz", "to": "Neue Universit\u00e4tsbibliothek", "transitions": 1968, "weight": 1}, {"from": "Elisabeth-Blochmann-Platz", "to": "Ginseldorfer Weg", "transitions": 802, "weight": 1}, {"from": "Hauptbahnhof", "to": "An den Siecheng\u00e4rten", "transitions": 738, "weight": 1}, {"from": "Hauptbahnhof", "to": "Frankfurter Stra\u00dfe/Psychologie", "transitions": 681, "weight": 1}, {"from": "Hauptbahnhof", "to": "Friedrichplatz", "transitions": 725, "weight": 1}, {"from": "Hauptbahnhof", "to": "Ginseldorfer Weg", "transitions": 2192, "weight": 1}, {"from": "Hauptbahnhof", "to": "Hauptbahnhof", "transitions": 3323, "weight": 1}, {"from": "Hauptbahnhof", "to": "Neue Universit\u00e4tsbibliothek", "transitions": 1328, "weight": 1}, {"from": "Hauptbahnhof", "to": "Universit\u00e4tsstra\u00dfe/Bibliothek Jura", "transitions": 1283, "weight": 1}, {"from": "Neue Universit\u00e4tsbibliothek", "to": "Frankfurter Stra\u00dfe/Psychologie", "transitions": 742, "weight": 1}, {"from": "Neue Universit\u00e4tsbibliothek", "to": "Frankfurter Stra\u00dfe/Theater", "transitions": 700, "weight": 1}, {"from": "Neue Universit\u00e4tsbibliothek", "to": "Georg-Ga\u00dfmann-Stadion", "transitions": 676, "weight": 1}, {"from": "Neue Universit\u00e4tsbibliothek", "to": "Neue Universit\u00e4tsbibliothek", "transitions": 1862, "weight": 1}, {"from": "Neue Universit\u00e4tsbibliothek", "to": "Universit\u00e4tsstra\u00dfe/Bibliothek Jura", "transitions": 1001, "weight": 1}, {"from": "An den Siecheng\u00e4rten", "to": "An den Siecheng\u00e4rten", "transitions": 722, "weight": 1}, {"from": "Audimax", "to": "Audimax", "transitions": 770, "weight": 1}, {"from": "Frankfurter Stra\u00dfe/Theater", "to": "Frankfurter Stra\u00dfe/Psychologie", "transitions": 788, "weight": 1}, {"from": "Frankfurter Stra\u00dfe/Theater", "to": "Frankfurter Stra\u00dfe/Theater", "transitions": 1546, "weight": 1}, {"from": "Frankfurter Stra\u00dfe/Theater", "to": "Universit\u00e4tsstra\u00dfe/Bibliothek Jura", "transitions": 722, "weight": 1}, {"from": "Georg-Ga\u00dfmann-Stadion", "to": "Georg-Ga\u00dfmann-Stadion", "transitions": 1048, "weight": 1}, {"from": "Georg-Ga\u00dfmann-Stadion", "to": "Universit\u00e4tsstra\u00dfe/Bibliothek Jura", "transitions": 995, "weight": 1}, {"from": "Ginseldorfer Weg", "to": "Ginseldorfer Weg", "transitions": 1418, "weight": 1}, {"from": "Biegenstra\u00dfe/Volkshochschule", "to": "Biegenstra\u00dfe/Volkshochschule", "transitions": 948, "weight": 1}, {"from": "Frankfurter Stra\u00dfe/Psychologie", "to": "Frankfurter Stra\u00dfe/Psychologie", "transitions": 1204, "weight": 1}, {"from": "Friedrichplatz", "to": "Friedrichplatz", "transitions": 1051, "weight": 1}, {"from": "Universit\u00e4tsstra\u00dfe/Bibliothek Jura", "to": "Universit\u00e4tsstra\u00dfe/Bibliothek Jura", "transitions": 1213, "weight": 1}, {"from": "Wilhelmsplatz", "to": "Wilhelmsplatz", "transitions": 711, "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
