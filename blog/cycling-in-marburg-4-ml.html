@@ -24,7 +24,7 @@
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
         href="http://lellep.xyz/blog/feeds/all.atom.xml">
   <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
-        href="http://lellep.xyz/blog/feeds/%s.atom.xml">  
+        href="http://lellep.xyz/blog/feeds/data.atom.xml">  
   <meta name="description" content="In this article, I use machine learning to predict the number of parked bikes in two ways.">
   <script>
   // ===
@@ -63,8 +63,6 @@
   </script>
 
 
-  <script data-goatcounter="https://lellep.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
   <!-- Mathjax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
@@ -122,11 +120,11 @@
 </ul>
 <p>In this article, I turn towards a slightly more technical perspective: I apply machine learning to predict the number of parked bikes in two ways. In the first way, I fit a Markov chain to the transition matrix and derive the Markov steady state bike distribution. In the second way, I train a <a class="reference external" href="https://en.wikipedia.org/wiki/Random_forest">random forest</a> to predict the number of parked bikes in the Nextbike ecosystem of Marburg based on the hour of the day, day of the week and&nbsp;temperature.</p>
 <div class="contents topic" id="table-of-contents">
-<p class="topic-title first">Table of&nbsp;Contents:</p>
+<p class="topic-title"><a class="reference internal" href="#top">Table of&nbsp;Contents:</a></p>
 <ul class="simple">
-<li><a class="reference internal" href="#markov-chain-and-steady-state" id="id1">Markov chain and steady&nbsp;state</a></li>
-<li><a class="reference internal" href="#prediction-of-the-number-of-parked-bikes-using-a-random-forest" id="id2">Prediction of the number of parked bikes using a random&nbsp;forest</a></li>
-<li><a class="reference internal" href="#outlook" id="id3">Outlook</a></li>
+<li><a class="reference internal" href="#markov-chain-and-steady-state" id="toc-entry-1">Markov chain and steady&nbsp;state</a></li>
+<li><a class="reference internal" href="#prediction-of-the-number-of-parked-bikes-using-a-random-forest" id="toc-entry-2">Prediction of the number of parked bikes using a random&nbsp;forest</a></li>
+<li><a class="reference internal" href="#outlook" id="toc-entry-3">Outlook</a></li>
 </ul>
 </div>
 <div class="section" id="markov-chain-and-steady-state">
@@ -147,7 +145,9 @@
 <p>\[\lambda \cdot \vec{x}_{(S)} = \mathbf{P} \cdot&nbsp;\vec{x}_{(S)}\]</p>
 <p>with \(\lambda=1\). After solving the eigenvalue problem and selecting the eigenvector with eigenvalue 1, the steady state is obtained. The steady state yields suggestions for where bikes will accumulate and, potentially, need to be carried around&nbsp;manually.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png" style="width: 700px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png" style="width: 700px;" />
+</a>
 </div>
 <p>Hence, also the steady state computation confirms that the <em>Hauptbahnhof</em> and <em>Elisabeth-Blochmann-Platz</em> are the largest stations. Note that the steady state is only determined up to a constant due to the linearity of the underlying eigenvalue&nbsp;problem.</p>
 </div>
@@ -156,14 +156,18 @@
 <p>Now I come to a classical regression machine learning task. The task is to predict the accumulative number of bikes in Marburg given the hour of the day, the day of the week and the&nbsp;temperature.</p>
 <p>Since I was not able to find temperature data for Marburg, I used temperature data from Giessen, which is a city nearby. The data is obtained from the <a class="reference external" href="https://www.dwd.de/DE/Home/home_node.html">German weather service</a> (in German: <span class="caps">DWD</span>). Let&#8217;s see how the temperature varies during the time of data&nbsp;collection.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png" style="width: 600px;" />
+</a>
 </div>
 <p>The different resamples of the raw data show how the temperature rises towards summer and declines towards&nbsp;winter.</p>
 <p>With the weather and the number of parked bikes in the whole Marburg Nextbike ecosystem (introduced <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html">earlier</a>), the training data can be constructed. The training&nbsp;data,</p>
 <p>\[(\text{hour}, \text{weekday}, \text{temperature}) \rightarrow \text{number of parked&nbsp;bikes},\]</p>
 <p>maps the triplet of the hour, the weekday and the temperature to the number of parked bikes in the Marburg Nextbike ecosystem. Since the training data here is 3 dimensional, I follow the best practise of visualising the training data prior to training. The target variable, i.e. the number of parked bikes, is colour coded in the following&nbsp;figure.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png" style="width: 800px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png" style="width: 800px;" />
+</a>
 </div>
 <p>The two perspectives of the same underlying data show that there is little variation of the number of bikes parked with day, a little more variation with hour and most variation with temperature. That&#8217;s reasonable: People prefer to ride bikes when it is warm and when it is not too late or early on a&nbsp;day.</p>
 <p>This visual understanding is confirmed by the three <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html">pearson correlation coefficients</a> between the target variable and all three dependent&nbsp;variables:</p>
@@ -177,7 +181,9 @@
 <p>The classifier reaches a <a class="reference external" href="https://en.wikipedia.org/wiki/Mean_squared_error">mean squared error</a> (<span class="caps">MSE</span>) of around 137 on the test data set. To evaluate if this is a good result, the square root of the <span class="caps">MSE</span> is computed and compared to the average of the target variable: The square root of the <span class="caps">MSE</span> is around 11.7 and the average number of parked bikes is 118 (with minimal value being 62 and maximal value 163). I consider this a decent result because the mean error is a factor of 10 smaller than typical values of the variable that is predicted. There is a multitude of ways to improve this result even further - see the outlook of this article for further&nbsp;information.</p>
 <p>Lastly, let&#8217;s compare the measured data that served as training data and the predicted data side-by-side using a dense covering of the phase&nbsp;space.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png" style="width: 800px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png" style="width: 800px;" />
+</a>
 </div>
 <p>The predicted data shows the same characteristics as the underlying training data: The warmer it gets, the fewer bikes are parked in the Nextbike ecosystem in Marburg. Hence, I obtained a decent&nbsp;regressor.</p>
 </div>

@@ -24,7 +24,7 @@
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
         href="http://lellep.xyz/blog/feeds/all.atom.xml">
   <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
-        href="http://lellep.xyz/blog/feeds/%s.atom.xml">  
+        href="http://lellep.xyz/blog/feeds/data.atom.xml">  
   <meta name="description" content="I collected Nextbike data in Marburg and introduce my plan to evaluate the data in this article. Also, I present what the data is made up of and how it is obtained in detail. Lastly, a first temporal analysis of the bike usage in Marburg is presented.">
   <script>
   // ===
@@ -63,8 +63,6 @@
   </script>
 
 
-  <script data-goatcounter="https://lellep.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
   <!-- Mathjax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
@@ -149,19 +147,25 @@ Each word in the previous sentence links to one official news article that is co
 </ul>
 <p>This first blog article introduces the underlying data, i.e. where it comes from, how I obtained it and what kind of data is available. The data is obtained as&nbsp;follows:</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.svg"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.svg">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.png" style="width: 600px;" />
+</a>
 </div>
 <p>I query the Nextbike <span class="caps">API</span> regularly using a scraper written in <a class="reference external" href="https://www.python.org/">Python</a> that runs inside a <a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software)">Docker container</a>. This data is parsed and saved on disk for subsequent&nbsp;analyses.</p>
 <p>The data that is obtained contains a number of information that I will make use of in the next articles of this series. At each point in time, the number of bikes at each Nextbike station - including the specific bike numbers - is saved. Also, all bikes that are parked outside the regular Nextbike stations are saved. I use this data later on to compute bike trajectories as well as the occupation levels of each station. Over the course of a few months, I collected well over 600,000 data&nbsp;points.</p>
 <p>To get a very first impression of the data, let me present two small analyses upfront&nbsp;already.</p>
 <p>First, I show the number of parked bikes across the whole Nextbike system in Marburg against&nbsp;time.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png" style="width: 600px;" />
+</a>
 </div>
 <p>One can see that the number of parked bikes starts out large in the beginning of the year and decreases towards the summer. The smallest number of bikes can be found mid-summer at the end of August. The reasons for this behaviour can be manifold and ultimately not solved solely based on statistics. Let me guess some explanations: The beginning of the Corona crisis in March 2020 has maybe increased the number of parked bikes in the beginning of the year. Then, as Corona became less of an issue in the summer - and also because of the warm temperatures -, the number of parked bikes decreased in the warm months. Lastly, with the cold temperatures and a second Corona wave, the number of parked bikes increases again at the end of&nbsp;2020.</p>
 <p>Now that we know of the yearly behaviour, let&#8217;s focus on how bikes are parked depending on day and hour of the day. The following figure shows the difference to the average number of parked&nbsp;bikes.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png" style="width: 800px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png" style="width: 800px;" />
+</a>
 </div>
 <p>Many bikes are parked during the early hours of the day and fewer are parked during the later hours of the day. Also, fewer bikes are parked during weekends in general. Fewest bikes are parked on Saturday afternoon. All these statements are reasonable and make sense at first&nbsp;glance.</p>
 <p>These were two very first analyses that showed you what kind of conclusions can be drawn based on the data at hand. There is much much more in the data, though! Read on to the next articles in the series if you are interested in more specific questions that are interesting for users of Nextbikes, the city council or people interested in machine learning based predictions,&nbsp;respectively.</p>

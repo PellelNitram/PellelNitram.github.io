@@ -24,7 +24,7 @@
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
         href="http://lellep.xyz/blog/feeds/all.atom.xml">
   <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
-        href="http://lellep.xyz/blog/feeds/%s.atom.xml">  
+        href="http://lellep.xyz/blog/feeds/data.atom.xml">  
   <meta name="description" content="In this article, I draw quantitative conclusions for cyclists who use Nextbikes in Marburg. For these quantitative conclusions, I use Nextbike data that I previously scraped.">
   <script>
   // ===
@@ -63,8 +63,6 @@
   </script>
 
 
-  <script data-goatcounter="https://lellep.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
   <!-- Mathjax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
@@ -144,7 +142,9 @@
     </iframe>
 </div><p>Apparently, the stations <em>Hauptbahnhof</em> (German for &#8220;train station&#8221;) and <em>Elisabeth-Blochmann-Platz</em> are two most occupied stations. Let&#8217;s investigate that a bit deeper with a chart that shows the average occupation numbers of each station next to each other. The following graph uses the same colour scheme as the previous interactive&nbsp;map.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_2/3__average_occupation.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_2/3__average_occupation.png" style="width: 800px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_2/3__average_occupation.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_2/3__average_occupation.png" style="width: 800px;" />
+</a>
 </div>
 <p>The <em>Hauptbahnhof</em> is the most popular station by a large margin with well over 10 bikes on average. Behind that, the <em>Elisabeth-Blochmann-Platz</em> and <em>Cafe Trauma/Affoellerwiesen</em> with 9 and 6, respectively. The station <em>Am Plan/Wirtschaftswissenschaften</em> is with around 0.5 bikes on average the smallest station in&nbsp;Marburg.</p>
 <p>Now that we know where the stations are in Marburg and which ones are the largest and smallest, respectively, I come to the most important question for a Nextbike&nbsp;cyclist:</p>
@@ -152,14 +152,18 @@
     <b>Is the bike station empty?</b>
 </div><p>In order to quantify this question, we look at the probability of a station to be empty over time. Again, yellow denotes large values and violet denotes small&nbsp;values.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_2/4__empty_probability.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_2/4__empty_probability.png" style="width: 800px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_2/4__empty_probability.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_2/4__empty_probability.png" style="width: 800px;" />
+</a>
 </div>
 <p>Unsurprisingly, the smallest bike station in terms of average occupation, <em>Am Plan/Wirtschaftswissenschaften</em>, is also the one that is often empty: Since the station only offers a small number of bikes, the station easily runs out of bikes. Hence, it might be worth to increase the number of bikes to supply the demand&nbsp;there.</p>
 <p>The careful reader will notice that the last two charts are almost identical but mirrored. That means that the small stations are typically more prone to running out of bikes and that larger stations, such as the <em>Hauptbahnhof</em> or other large stations, do not have the issue of running out of&nbsp;bikes.</p>
 <p>Therefore my advice to Nextbike users in Marburg: When in dire need for a Nextbike, try to walk to one of the larger stations that are shown above as they won&#8217;t disappoint you with a lack of bikes to&nbsp;rent.</p>
 <p>To test the hypothesis that larger stations run out of bikes less frequently, I plot the probability to find the station empty against its average&nbsp;occupancy.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_2/5__empty_probability_vs_mean_occupancy.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_2/5__empty_probability_vs_mean_occupancy.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_2/5__empty_probability_vs_mean_occupancy.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_2/5__empty_probability_vs_mean_occupancy.png" style="width: 600px;" />
+</a>
 </div>
 <p>The points collapse nicely on a curve which reveals that, indeed, smaller stations are more likely to run out of bikes and vice versa. The only two marginal outliers to that are the two largest stations, <em>Hauptbahnhof</em> and <em>Elisabeth-Blochmann-Platz</em>. They seem to be more prone to running out of bikes bikes than the other large&nbsp;stations.</p>
 <p>In conclusion, there is quite a number of Nextbike stations spread over Marburg - 36 to be precise. I first investigated the average number of bikes at each station. Then, I asked the question how likely it is for a station to run out of bikes. This is an important question for Nextbike users. Interestingly, I find the probability that a station runs out of bikes is anti proportional to its average occupation. Hence, Nextbike users should avoid small stations when they desperately search for a&nbsp;bike.</p>

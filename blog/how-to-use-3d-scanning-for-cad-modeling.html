@@ -24,7 +24,7 @@
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
         href="http://lellep.xyz/blog/feeds/all.atom.xml">
   <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
-        href="http://lellep.xyz/blog/feeds/%s.atom.xml">  
+        href="http://lellep.xyz/blog/feeds/prototyping.atom.xml">  
   <meta name="description" content="I show how to use 3D scanning for CAD modeling and how I built a custom PC mouse box with the method that I present here. Neither do you need a GPU nor a powerful PC to follow along this tutorial. Also, the 3D scanning software is for free.">
   <script>
   // ===
@@ -63,8 +63,6 @@
   </script>
 
 
-  <script data-goatcounter="https://lellep.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
   <!-- Mathjax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
@@ -182,7 +180,9 @@ does not cope well with hard&nbsp;shadows.</p>
 scan of the <span class="caps">PC</span> mouse, see Fig. 1 for a screenshot of Meshroom. There are great tutorials on Meshroom out there. I used, for example, this one:
 <a class="reference external" href="https://www.youtube.com/watch?v=k4NTf0hMjtY">https://www.youtube.com/watch?v=k4NTf0hMjtY</a>.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/meshroom_2019.2.0.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/meshroom_2019.2.0.png" style="width: 500px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/meshroom_2019.2.0.png">
+<img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/meshroom_2019.2.0.png" style="width: 500px;" />
+</a>
 <p class="caption">Figure 1: Meshroom version 2019.2.0 <span class="caps">GUI</span> screenshot. The whole computation performed by Meshroom is defined by the &#8220;Graph Editor&#8221;
 in the bottom and consumes pictures imported into the &#8220;Images&#8221; area. The final result is shown in the &#8220;3D&nbsp;Viewer&#8221;.</p>
 </div>
@@ -211,7 +211,9 @@ notebook off publicly available information, such as <a class="reference externa
 <p>The 3D scan is saved by Meshroom as an <span class="caps">OBJ</span> file that includes both 3D mesh information as well as the texture of the object. Figure 2 shows the results
 of the 3D scan for both of the approaches, with and without <span class="caps">GPU</span>,&nbsp;respectively.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png" style="width: 700px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png">
+<img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png" style="width: 700px;" />
+</a>
 <p class="caption">Figure 2: 3D scans of my <span class="caps">PC</span> mouse using Meshroom. (a) Scan result using a cloud <span class="caps">GPU</span> to enable the full computation pipeline <span class="amp">&amp;</span> highest quality of Meshroom.
 (b) Scan result using Meshroom&#8217;s <span class="caps">CPU</span>-only computation&nbsp;steps.</p>
 </div>
@@ -229,7 +231,9 @@ scene in which the scan is created. I used a <a class="reference external" href=
 to ensure that there are enough distinct features. Figure 3 (a) shows the raw
 scan that comes out of Meshroom using the <span class="caps">GPU</span>-enabled computation pipeline executed on Google Colab and Fig. 3 (b) shows the same scan but a manually tidied up version of it. I used <a class="reference external" href="https://www.blender.org/">Blender</a> to remove all excess parts of the scan that are not of&nbsp;relevance.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/raw_scan_vs_trimmed.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/raw_scan_vs_trimmed.png" style="width: 700px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/raw_scan_vs_trimmed.png">
+<img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/raw_scan_vs_trimmed.png" style="width: 700px;" />
+</a>
 <p class="caption">Figure 3: Cleaned 3D scan. (a) The model as computed by Meshroom. (b) Manually trimmed model to only consist of the mouse itself and no more scene&nbsp;parts.</p>
 </div>
 <p>Clearly, removing the artefacts is a mandatory step here. Depending on what you want to do with your scanned model, there is another mandatory step:
@@ -238,7 +242,9 @@ model in Fig. 3 (b) consists of only 423,706 faces without reducing the model qu
 For many applications though, even these 400k faces are too many. One such application being (consumer-grade) CADs (on a consumer-grade <span class="caps">PC</span>), I removed
 the number of faces even further before exporting the model to an <span class="caps">STL</span> file. Figure 4 shows exactly&nbsp;that.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png" style="width: 800px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png">
+<img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png" style="width: 800px;" />
+</a>
 <p class="caption">Figure 4: <span class="caps">STL</span> models of my scanned <span class="caps">PC</span> mouse after reducing the number of faces. (a) The original file as shown in Fig. 3 (b) after exporting it
 to <span class="caps">STL</span> (and, hence, without texture) with 423,706 faces. (b) <span class="caps">STL</span> with the number of faces reduced to 15% of the original model. (c) <span class="caps">STL</span> with the
 number of faces reduced to 0.15% of the original model. Subfigures (b) and (c) were generated with Blender by using its
@@ -278,7 +284,9 @@ I fabricated on my small hobby laser&nbsp;cutter.</p>
 <p>The assembly is achieved step-wise: First, I glued the 3D printed plastic pieces to the wooden sides of the box, see Fig. 5 (a). Subsequently,
 I glued these wooden sides together with painter&#8217;s tape, see Fig. 5 (b), to ensure that everything fits together before doing the final&nbsp;glue-up.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png" style="width: 700px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png">
+<img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png" style="width: 700px;" />
+</a>
 <p class="caption">Figure 5: First two steps of assembly process. (a) Plastic pieces are glued to the wooden box sides and pads are attached to
 the 3D printed pieces to minimise the slag of the mouse inside the box and to avoid scratches on the mouse.
 (b) The wooden box as assembled temporarily with painter&#8217;s tape to ensure proper&nbsp;fitting.</p>
@@ -286,7 +294,9 @@ the 3D printed pieces to minimise the slag of the mouse inside the box and to av
 <p>Only after these two steps, I glued the wooden box sides into place with wood glue to achieve a permanently assembled wooden box, see
 Fig. 6 (a). Lastly, I applied clear coat to all of the wooden pieces, see Fig. 6&nbsp;(b).</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step3_and_step4.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step3_and_step4.png" style="width: 700px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step3_and_step4.png">
+<img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step3_and_step4.png" style="width: 700px;" />
+</a>
 <p class="caption">Figure 6: Next two steps of assembly process. (a) The permanent box glue-up with wood glue. (b) Application of liquid clear coat as
 finish and to make the box more&nbsp;sturdy.</p>
 </div>
@@ -295,7 +305,9 @@ attach the lid to the main box body. There are three places that make use of the
 the strap to secure the lid to the box with a velcro and lastly another leather piece is placed symmetrically to leather hinge for aesthetic
 reasons. Figure 7 shows the finished leather&nbsp;parts.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step5_and_step6.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step5_and_step6.png" style="width: 700px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step5_and_step6.png">
+<img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step5_and_step6.png" style="width: 700px;" />
+</a>
 <p class="caption">Figure 7: Mouse box with attached leather pieces. (a) Bottom view of the box to see all leather pieces installed. Going from left to right,
 the leather pieces serve as closing mechanism of the lid that uses a velcro, hinging mechanism of the lid and aesthetic sugar to the box.
 (b) Top view of the box with installed lid and leather&nbsp;pieces.</p>
@@ -306,7 +318,9 @@ the leather pieces serve as closing mechanism of the lid that uses a velcro, hin
 <h2>Final&nbsp;product</h2>
 <p>The finished product is shown in Fig.&nbsp;8.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg" style="width: 500px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg">
+<img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg" style="width: 500px;" />
+</a>
 <p class="caption">Figure 8: My <span class="caps">PC</span> mouse next to its new custom box. This is what I will use daily in my backpack from now&nbsp;on.</p>
 </div>
 <p>Lastly, let&#8217;s check out how the mouse itself likes its new box - see Vid.&nbsp;3.</p>
@@ -334,7 +348,9 @@ My demonstration use case was a transportation box for my <span class="caps">PC<
 <p>The steps for obtaining a 3D scan that can be used for <span class="caps">CAD</span> modeling are shown in Fig. 9. While I explain the <span class="caps">CAD</span>-specific steps with
 <em>Autodesk Fusion 360</em>, similar steps apply for most <span class="caps">CAD</span> software that are on the&nbsp;market.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png"><img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png">
+<img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png" style="width: 600px;" />
+</a>
 <p class="caption">Figure 9: 3D scanning pipeline for obtaining a 3D model that can be used in <span class="caps">CAD</span>.</p>
 </div>
 <p>Particularly useful is the 3D scanning script for <em>Google Colab</em> that I provided. With that, you are not required to own a <span class="caps">GPU</span>-enabled <span class="caps">PC</span> anymore.

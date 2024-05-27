@@ -24,7 +24,7 @@
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
         href="http://lellep.xyz/blog/feeds/all.atom.xml">
   <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
-        href="http://lellep.xyz/blog/feeds/%s.atom.xml">  
+        href="http://lellep.xyz/blog/feeds/data.atom.xml">  
   <meta name="description" content="I use quantitative analyses to derive social and environmental benefits of the Nextbike system in Marburg. Also, I investigate which routes in Marburg are popular among Nextbike users. Hence, I offer quantitative arguments as to why bikes are good for Marburg and how to improve the biking experience in Marburg even further.">
   <script>
   // ===
@@ -63,8 +63,6 @@
   </script>
 
 
-  <script data-goatcounter="https://lellep.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
   <!-- Mathjax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
@@ -133,36 +131,50 @@
 </div>
 <br/><p>Let&#8217;s first get our head around some numbers that express how actively the Nextbikes are used in Marburg. There are 36 stations and 196 bikes in the Nextbike ecosystem in&nbsp;Marburg.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/0_station_and_bike_nrs.svg"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/0_station_and_bike_nrs.png" style="width: 400px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/0_station_and_bike_nrs.svg">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/0_station_and_bike_nrs.png" style="width: 400px;" />
+</a>
 </div>
 <p>Are these numbers large or not? Let&#8217;s compare the Marburg numbers to those of New York City (<span class="caps">NYC</span>)! In <span class="caps">NYC</span>, they have 605 stations and 10,000 bikes (source: Sobolevsky, Stanislav, et al. &#8220;Impact Of Bike Sharing In New York City.&#8221; <em>arXiv preprint arXiv:1808.06606</em> (2018); see <a class="reference external" href="https://arxiv.org/abs/1808.06606">here</a>). To make the numbers comparable to the 36 stations and 196 bikes in Marburg, I divide these numbers by the respective population&nbsp;sizes.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/1__marburg_vs_nyc.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/1__marburg_vs_nyc.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/1__marburg_vs_nyc.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/1__marburg_vs_nyc.png" style="width: 600px;" />
+</a>
 </div>
 <p>Relative to the population size, Marburg has more bikes and bike stations than the glorious (&amp; beloved!) New York&nbsp;City!</p>
 <p>In order to make progress towards the results regarding the social and environmental benefits of having a bike sharing system in the city, we need to know a few details about how the bikes are set up in Marburg and how they are&nbsp;used.</p>
 <p>First, we need the distances between the stations. For that, I used the coordinates of the stations together with the <a class="reference external" href="https://en.wikipedia.org/wiki/OpenStreetMap">OpenStreetMap</a> (&amp; <a class="reference external" href="https://github.com/MKuranowski/pyroutelib3">this</a>) <span class="amp">&amp;</span> the <a class="reference external" href="https://developers.google.com/maps/documentation/distance-matrix/start">Google Distance Matrix <span class="caps">API</span></a> to compute the pairwise distances between all 36 stations. The following figure shows the pairwise distances plotted as a&nbsp;matrix.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/2__distance_matrix.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/2__distance_matrix.png" style="width: 700px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/2__distance_matrix.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/2__distance_matrix.png" style="width: 700px;" />
+</a>
 </div>
 <p>Second, we need the number of bike trips between the stations. Luckily, the data that I colleced, as described in <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html">a previous article</a>, allows to track individual bikes at stations. Hence, I can detect when bikes transition from one to another station. From this, I can compute a 36x36 dimensional matrix that stores the transitions between the stations. The following figure shows exactly this&nbsp;matrix.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/3__transition_matrix.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/3__transition_matrix.png" style="width: 700px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/3__transition_matrix.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/3__transition_matrix.png" style="width: 700px;" />
+</a>
 </div>
 <p>Summing up all entries, we can determine the number of overall bike trips that have been performed with Nextbikes in Marburg. It is a stunning <strong>107,428</strong> bike&nbsp;trips!</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/1_trips.svg"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/1_trips.png" style="width: 400px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/1_trips.svg">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/1_trips.png" style="width: 400px;" />
+</a>
 </div>
 <p>When weighted with the distances between the stations, this number translates into the overall number of kilometers covered by Nextbike trips in Marburg: Nextbikes traveled <strong>169424</strong> kilometers in&nbsp;Marburg!</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/2_distance_covered.svg"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/2_distance_covered.png" style="width: 400px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/2_distance_covered.svg">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/2_distance_covered.png" style="width: 400px;" />
+</a>
 </div>
 <p>This makes an average of <strong>1.58</strong> km per&nbsp;trip.</p>
 <p>When we assume a relaxed average velocity of <strong>15</strong> km/h, then this distance translates into an overall travel time of <strong>11,295</strong> hours in Marburg with the Nextbike&nbsp;system.</p>
 <p>Now we can turn towards the social and environmental benefits of the Nextbike system in&nbsp;Marburg!</p>
 <p>I quantify the social benefit of the system by estimating the calories burned through people cycling on Nextbikes. The calorie consumption of cycling is taken from <a class="reference external" href="https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-of-leisure-and-routine-activities">this study</a> (see &#8220;Bicycling, Stationary: moderate&#8221;). With these values, <strong>4,517,974</strong> kilocalories have been burned in Marburg through cycling on&nbsp;Nextbikes.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/3_kcal_burned.svg"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/3_kcal_burned.png" style="width: 400px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/3_kcal_burned.svg">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/3_kcal_burned.png" style="width: 400px;" />
+</a>
 </div>
 <p>This corresponds to around <strong>1,670</strong> jars of Nutella - a unit we are all familiar&nbsp;with.</p>
 <p>Next, I come to the environmental benefit. For that, I compute the fuel and <span class="caps">CO2</span> that has been saved compared to when the trips would have been taken with a car. Also, I compute the cost of the fuel that has been&nbsp;saved.</p>
@@ -179,7 +191,9 @@
 <li>The amount of money saved in fuel through Nextbikes in Euro is <strong>17,620</strong>.</li>
 </ul>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/4_ecological_benefits.svg"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/4_ecological_benefits.png" style="width: 400px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/4_ecological_benefits.svg">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/4_ecological_benefits.png" style="width: 400px;" />
+</a>
 </div>
 <p>These social and environmental benefits are significant. They not only increase the public health but also reduce the environmental foot print of&nbsp;Marburg.</p>
 <p>We can do even more with the transition matrix. For cities, it is important to know the load of streets as to adapt their capacities appropriately. I will answer the question&nbsp;here:</p>
@@ -187,12 +201,16 @@
     <b>What are the routes that are used the most by bikes (as measured by Nextbikes)?</b>
 </div><p>We find the most used routes by determining the entries in the transition matrix that are the largest. The following figure shows the most popular bike routes in&nbsp;Marburg.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/4__popular_routes.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/4__popular_routes.png" style="width: 800px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/4__popular_routes.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/4__popular_routes.png" style="width: 800px;" />
+</a>
 </div>
 <p>We can see that the <em>Hauptbahnhof</em> is involved in most of the popular routes. Hence, it should be ensured that the <em>Hauptbahnhof</em> offers suitable bike lane capacities. Also, the <em>Neue Universitaetsbibliothek</em> and <em>Elisabeth-Blochmann-Platz</em> are stations that belong to popular routes. Therefore, it is also worth setting up more and better bike lanes&nbsp;there.</p>
 <p>Lastly, with this matrix I can also determine the activity of each station. For that, I define the activity of a station as the sum of incoming and outgoing bikes. The following figure shows the activities against the stations and also how the activity is composed of incoming and outgoing&nbsp;bikes.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/5__station_activity.png"><img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/5__station_activity.png" style="width: 600px;" /></a>
+<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_3/5__station_activity.png">
+<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_3/5__station_activity.png" style="width: 600px;" />
+</a>
 </div>
 <p>We can see that the <em>Hauptbahnhof</em> and <em>Elisabeth-Blochmann-Platz</em> are the most active bike stations by a large margin. This is in agreement with <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html">my previous finding that these two are also the largest stations</a>. The second plot shows how much of the station&#8217;s activity comes through incoming bikes. This number is relevant because when it differs significantly from 50%, this indicates that a station could either fill up or run emtpy. The fact that they do not overflow or run out of bikes (see <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html">the previous blog post</a> to find out which do!), respectively, might indicate that Nextbike transports bikes manually to and from these stations. Note the <em>Uferstrasse</em> as outlier - this is because that station has been introduced only&nbsp;recently.</p>
 <div class="section" id="summary-for-the-city-council">
