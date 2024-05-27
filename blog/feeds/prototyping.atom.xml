@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - prototyping</title><link href="http://lellep.xyz/blog/" rel="alternate"></link><link href="http://lellep.xyz/blog/feeds/prototyping.atom.xml" rel="self"></link><id>http://lellep.xyz/blog/</id><updated>2024-01-12T00:00:00+01:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>Custom Case for your Digital Stylus</title><link href="http://lellep.xyz/blog/custom-stylus-case.html" rel="alternate"></link><published>2024-01-12T00:00:00+01:00</published><updated>2024-01-12T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-01-12:/blog/custom-stylus-case.html</id><summary type="html">&lt;p class="first last"&gt;Design of a custom case for your digital stylus. I use it every day and created it with&amp;nbsp;FreeCAD.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - prototyping</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/prototyping.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2024-01-12T00:00:00+01:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>Custom Case for your Digital Stylus</title><link href="https://lellep.xyz/blog/custom-stylus-case.html" rel="alternate"></link><published>2024-01-12T00:00:00+01:00</published><updated>2024-01-12T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-01-12:/blog/custom-stylus-case.html</id><summary type="html">&lt;p class="first last"&gt;Design of a custom case for your digital stylus. I use it every day and created it with&amp;nbsp;FreeCAD.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Note: If you&amp;#8217;re interested in downloading the customisable &lt;span class="caps"&gt;STEP&lt;/span&gt; file, then scroll down to the solution&amp;nbsp;section.&lt;/p&gt;
 &lt;div class="contents topic" id="table-of-contents"&gt;
 &lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Table of&amp;nbsp;Contents:&lt;/a&gt;&lt;/p&gt;
@@ -24,31 +24,31 @@
 &lt;p&gt;Instead of relying on the magnetic mechanism of my laptop, I will store the stylus in a custom case that I put in my backpack&amp;nbsp;separately.&lt;/p&gt;
 &lt;p&gt;For that purpose, I designed a 3D printed case with an integrated thread, an attachment hole and stylus stand using &lt;a class="reference external" href="https://www.freecad.org/"&gt;FreeCAD&lt;/a&gt;. This is a &lt;a class="reference external" href="https://www.blender.org/"&gt;Blender&lt;/a&gt; render of the 3D&amp;nbsp;model:&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/custom_stylus_case/model_render.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/custom_stylus_case/model_render.jpg" style="width: 100%;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/custom_stylus_case/model_render.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/custom_stylus_case/model_render.jpg" style="width: 100%;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Render of the 3D model. Left panel shows the main body and right panel shows the top cap. The colours are merely for visual&amp;nbsp;guidance.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;This is the final&amp;nbsp;product:&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/custom_stylus_case/model_printed.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/custom_stylus_case/model_printed.jpg" style="width: 60%;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/custom_stylus_case/model_printed.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/custom_stylus_case/model_printed.jpg" style="width: 60%;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Picture of the final product. Left panel shows the main body and right panel shows the top cap that also features a stylus stand. I printed the model in green &lt;span class="caps"&gt;PLA&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The case is super sturdy and the integrated 3D printed thread is very practical! The printed model has served me well so far and I use it every&amp;nbsp;day!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Attention&lt;/strong&gt;: Download the &lt;span class="caps"&gt;CAD&lt;/span&gt; file shown in the first figure in form of a &lt;span class="caps"&gt;STEP&lt;/span&gt; file &lt;a class="reference external" href="http://lellep.xyz/blog/cad_file.step"&gt;by clicking here&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Attention&lt;/strong&gt;: Download the &lt;span class="caps"&gt;CAD&lt;/span&gt; file shown in the first figure in form of a &lt;span class="caps"&gt;STEP&lt;/span&gt; file &lt;a class="reference external" href="https://lellep.xyz/blog/cad_file.step"&gt;by clicking here&lt;/a&gt;!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="conclusions"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Conclusions&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I have used this case daily for the last few months, so that I am happy to confirm that 3D printing has proven itself to be very useful for a niche problem yet another&amp;nbsp;time!&lt;/p&gt;
-&lt;p&gt;Another example of such a solution for a niche problem is my &lt;a class="reference external" href="http://lellep.xyz/blog/3d-printed-bike-lock-mount.html"&gt;3D printed bike lock mount&lt;/a&gt; 🚲, where I mounted a lock to my bike using 3D&amp;nbsp;printing!&lt;/p&gt;
+&lt;p&gt;Another example of such a solution for a niche problem is my &lt;a class="reference external" href="https://lellep.xyz/blog/3d-printed-bike-lock-mount.html"&gt;3D printed bike lock mount&lt;/a&gt; 🚲, where I mounted a lock to my bike using 3D&amp;nbsp;printing!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="acknowledgements"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Acknowledgements&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Thanks a lot to &lt;a class="reference external" href="https://www.ucreatestudio.is.ed.ac.uk/"&gt;University of Edinburgh&amp;#8217;s uCreateStudio&lt;/a&gt; for letting me use their&amp;nbsp;printers!&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="prototyping"></category><category term="3d printing"></category><category term="FreeCAD"></category></entry><entry><title>My small hobby laser cutter</title><link href="http://lellep.xyz/blog/my-small-hobby-laser-cutter.html" rel="alternate"></link><published>2020-08-31T00:00:00+02:00</published><updated>2020-08-31T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-08-31:/blog/my-small-hobby-laser-cutter.html</id><summary type="html">&lt;p class="first last"&gt;I show my small K40-based hobby laser cutter setup. I include one bonus tip: How to make money with a laser&amp;nbsp;cutter.&lt;/p&gt;
+</content><category term="prototyping"></category><category term="3d printing"></category><category term="FreeCAD"></category></entry><entry><title>My small hobby laser cutter</title><link href="https://lellep.xyz/blog/my-small-hobby-laser-cutter.html" rel="alternate"></link><published>2020-08-31T00:00:00+02:00</published><updated>2020-08-31T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-08-31:/blog/my-small-hobby-laser-cutter.html</id><summary type="html">&lt;p class="first last"&gt;I show my small K40-based hobby laser cutter setup. I include one bonus tip: How to make money with a laser&amp;nbsp;cutter.&lt;/p&gt;
 </summary><content type="html">&lt;div style="margin: 0px auto; text-align: center; border: 4px solid #d93200; border-radius: 10px; padding: 10px; width: 100%;"&gt;
     Did you come here for learning how to make money with a laser cutter? Then scroll down to the bonus tip of this article!
 &lt;/div&gt;
@@ -59,8 +59,8 @@
 &lt;p&gt;After having been attached to 3D printing for around 3 years at the time of 2017 when I was introduced to laser cutting, I was used to production cycles of multiple hours to finish a single 3D printed part. I always found that this is quite a long time for the impatient hobby-ist. Suddenly, there was a method to produce parts from flat surfaces in only minutes. I was amazed and knew that I needed access to such a machine in the future as to get deeper into rapid prototyping and small batch manufacturing with it. Since in Marburg there was no such machine anywhere close, I decided to build my own laser cutter at the end of&amp;nbsp;2018.&lt;/p&gt;
 &lt;p&gt;I based my small hobby laser off a Chinese laser cutter, commonly referred to as &lt;em&gt;K40 laser cutter&lt;/em&gt;. Finally, my laser cutter setup is shown in Fig. 1 with my laser cutter itself and some of the additional major modifications. The modifications will be explained later in this article with texts and pictures. This part makes up most of the article. The table of contents is given at the end of this section to make it easier for you to&amp;nbsp;navigate.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/overview_explained.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/overview_explained.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/overview_explained.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/overview_explained.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 1: My laser cutter setup. Some of my modifications are annotated with text. These modifications are explained later in this&amp;nbsp;article.&lt;/p&gt;
 &lt;/div&gt;
@@ -106,8 +106,8 @@
 &lt;/ul&gt;
 &lt;p&gt;I bought my laser off eBay from a local reseller located in Germany. This helps to avoid any difficulties with import regulations compared to buying directly from China. Interesting enough, I did not even pay more than what I would have paid when ordered from China directly. Figure 2 shows a representative offer of the K40 laser&amp;nbsp;cutter.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/ebay_listing.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/ebay_listing.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/ebay_listing.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/ebay_listing.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 2: Screenshot of a typical eBay listing of the K40 laser&amp;nbsp;cutter.&lt;/p&gt;
 &lt;/div&gt;
@@ -120,8 +120,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Laser&amp;nbsp;bed&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I replaced the mechanism to mount work pieces with a custom made laser bed from aluminium profiles. It features replaceable inlays that fit A4-sized wooden sheets and allows for around 4cm of z travel up and down. This travel is necessary to properly focus the laser beam onto the work piece. The z travel is realised by threaded rods. The bed is assembled with 3D printed parts. The knobs to adjust the z height are laser cut. The laser bed is mounted to the laser cutter frame with metal&amp;nbsp;screws.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/laser_bed.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/laser_bed.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/laser_bed.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/laser_bed.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 3: Custom laser bed. (a) Laser bed with inlay inserted. (b) Laser bed without inlay to see the frame structure that is mounted to the machine frame. (c) Close-up of the inlay. The dirt comes from many hours of operation. (d) Connector piece for inlay assembly. (e) Mechanism to adjust the z&amp;nbsp;height.&lt;/p&gt;
 &lt;/div&gt;
@@ -130,8 +130,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Drag&amp;nbsp;chain&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I bought a drag chain to reduce the chance of burning freely dangling cables inside the laser cutter. It is installed with a small 3D printed mount for the laser head and one from wood for the&amp;nbsp;frame.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/drag_chain.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/drag_chain.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/drag_chain.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/drag_chain.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 4: The drag chain as indicated by the arrow. Electrical wires can be guided through it to reach the laser head. The drag chain is mounted to the frame of the machine and to the custom laser&amp;nbsp;head.&lt;/p&gt;
 &lt;/div&gt;
@@ -140,8 +140,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Air&amp;nbsp;assist&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;An air assist is a mechanism that pushes air onto the spot where the laser beam hits the work piece. It kills flames, adds oxygen to the cutting operation and typically also guides the fumes to be extracted out of the laser cutter. Normally, an air assist is realised by a compressor and a tube that guides the air to the work piece. Instead, I use a radial fan mounted to the laser head to serve the same purpose. This solution is powerful enough and comes with the benefit of being very silent. The mounting for the radial fan is 3D printed and guides the air right onto the spot where the laser hits the work piece. The electrical wire to drive the fan is routed to through the drag&amp;nbsp;chain.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/air_assist.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/air_assist.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/air_assist.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/air_assist.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 5: Air assist. (a) Radial fan mounted to the laser head to serve as air assist. The attached tape makes the assembly air-tight. (b) View from below to show the nozzle where the air is released onto the work&amp;nbsp;piece.&lt;/p&gt;
 &lt;/div&gt;
@@ -150,8 +150,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Mirror&amp;nbsp;head&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;In the process of aligning the laser beam with the mirrors, I had to realise that the fixed-angle laser head that comes with the laser cutter is not sufficient for my purposes. This was because the linear motion system was not mounted properly into the frame, I believe. Luckily, the solution was easy: I needed a fully adjustable mirror in the laser head. For that, I turned towards &lt;span class="caps"&gt;CAD&lt;/span&gt; to model a fully featured laser head. The result is a laser head from 3D printed pieces, springs and metal screws. The assembly turned out to work beautifully and I used it ever&amp;nbsp;since.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/mirror_head.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/mirror_head.lr.png" style="width: 400px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/mirror_head.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/mirror_head.lr.png" style="width: 400px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 6: Fully adjustable laser head. (a) Overview of the laser head that includes the adjustable mirror, the air assist mounting and the drag chain mounting. (b) Close-up of the adjustable mirror. It follows the general rule of pre-tensioning the mirror mount with springs and three screws to fine tune the position against the pre-tensioning. (c) Top view of the mirror head. The three tensioning springs and three adjustment screws can be&amp;nbsp;seen.&lt;/p&gt;
 &lt;/div&gt;
@@ -160,8 +160,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;First mirror&amp;nbsp;mount&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;During the alignment process of the laser beam it turned out that the maximal travel distance of the first mirror was not sufficiently large to properly align the laser beam. Hence, I replaced it with a fully adjustable mirror mount platform to allow for proper beam&amp;nbsp;alignment.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/first_mirror_mount.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/first_mirror_mount.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/first_mirror_mount.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/first_mirror_mount.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 7: Fully adjustable mirror platform indicated by the arrow. It is a piece of steel that is cut to size and has holes for the mirror mount as well as the adjustment knobs. The adjustment is achieved by two nuts that are screwed against the steel plate, one from the top and one from the bottom, in order to set the height of the plate. The lower nut is turned by a 3D printed knob that is shown in white. There are three of these height adjustment mechanisms. Also, the mirror bracket can be shifted backwards and forwards. After these rough adjustments, the mirror can be fine tuned with the adjustment knobs of the mirror mount itself. The path of the laser beam is shown by a dashed red line and points into the work area of the laser&amp;nbsp;cutter.&lt;/p&gt;
 &lt;/div&gt;
@@ -170,8 +170,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Adjustable laser tube&amp;nbsp;mounts&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;During the alignment process it turned out that the fixed laser tube mounts in the back of the machine where problematic as I couldn&amp;#8217;t adjust the position of the laser tube. Hence, I built my own fully adjustable laser tube mounts from 3D prints, metal screws and aluminium&amp;nbsp;profiles.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/laser_tube_mounts.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/laser_tube_mounts.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/laser_tube_mounts.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/laser_tube_mounts.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 8: Fully adjustable laser tube mount. A C bracket from aluminium profiles is the main structure of the mount. It is installed into the laser cutter with metal screws. A 3D printed plastic piece attaches to the laser tube using zip ties and mounts to the C bracket. Two slots in the C bracket together with screws as linear motion system provide the possibility to adjust the position of the tube. The positions are adjusted with 3D printed knobs. The inset shows how the laser tube is mounted inside the laser cutter using two of my fully adjustable laser tube&amp;nbsp;mounts.&lt;/p&gt;
 &lt;/div&gt;
@@ -180,8 +180,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;LEDs&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;It is essential to see what the laser cutter does while in operation. Opening the lid while the laser is in operation is a bad idea because the machine does &lt;em&gt;not&lt;/em&gt; come with an interlock system and happily continues its job when you open the lid. Since the lid of the laser cutter has an built-in window, adding LEDs was the best approach to make the inner operations&amp;nbsp;visible.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/LEDs.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/LEDs.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/LEDs.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/LEDs.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 9: &lt;span class="caps"&gt;LED&lt;/span&gt; strip glued inside the machine to the front. The &lt;span class="caps"&gt;LED&lt;/span&gt; strip is connected with a detachable connector. The inset shows this connection in greater&amp;nbsp;detail.&lt;/p&gt;
 &lt;/div&gt;
@@ -190,8 +190,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Control&amp;nbsp;panel&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I left the control panel of the laser cutter mostly untouched. Make sure to get the K40 version with the analogue ampere meter as it is more reliable than the digital versions that come with some of the K40 variations. An accurate current measurement is crucial because if the current is too high, the laser tube is damaged and you need to replace it. This can be quite a pain as the tube is one of the most expensive components of a laser&amp;nbsp;cutter.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/control_panel.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/control_panel.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/control_panel.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/control_panel.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 10: The control panel of the laser cutter. From top to bottom, the arrows indicate the analogue ampere meter, the current dial and the laser test switch. I attached a gauge to the current dial to get the power levels right and had to replace the laser test switch as the original&amp;nbsp;broke.&lt;/p&gt;
 &lt;/div&gt;
@@ -200,8 +200,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Electronics&amp;nbsp;panel&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I introduced an electronics panel to add a few convenience features to the laser cutter and its operation. These features include &lt;span class="caps"&gt;LED&lt;/span&gt; lights to illuminate the work area as well as an air assist. The electronics panel allows to switch all of these features&amp;nbsp;easily.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/electronics_panel.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/electronics_panel.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/electronics_panel.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/electronics_panel.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 11: Electronics panel. (a) Front view. The third switch is currently not used and provides room for future upgrades. (b) The inner wiring of the electronics panel. It distributes 12V to the&amp;nbsp;switches.&lt;/p&gt;
 &lt;/div&gt;
@@ -210,8 +210,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Water&amp;nbsp;cooling&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;While the laser tube produces around 30 to 40W of output power, it produces around 10x as much heat in that process. If the laser tube is not cooled, it gets too warm and is destroyed. Hence, water cooling is necessary. The machine came with a small aquarium pump which worked flawlessly in my case. I added a bucket of distilled water with a chemical to reduce algae growth in a low concentration. Also, I added a thermometer to monitor the water temperature. The bucket has a custom lid with holes for the water tubes that reach to the laser. Also, the lid enables me to easily insert a bottle with frozen water in it in case the cooling water gets too warm. This is typically the case in summer. Using this strategy, I am able to operate the machine below a cooling water temperature of 20 degree&amp;nbsp;Celsius.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/water_cooling.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/water_cooling.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/water_cooling.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/water_cooling.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 12: Water cooling. (a) Water cooling solution as realised by a bucket of distilled water. (b) Close-up of the setup to show how the custom lid allows the insertion of a bottle of frozen water, the thermometer and the water tubes to the laser cutter. The wooden piece that is attached to the plastic lid provides extra stability for the custom&amp;nbsp;lid.&lt;/p&gt;
 &lt;/div&gt;
@@ -220,8 +220,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Air exhaust&amp;nbsp;system&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The laser cutter evaporates material to perform the cutting. The fumes that stem from this process, while not being toxic when using the correct materials, smell very bad and need to be extracted from within the laser cutter out into the free. The air exhaust fan that comes with the laser cutter and its mechanism to mount it to the machine are pretty bad and should be replaced. I did so by building a custom air exhaust fan from an old 300W motor I had laying around. The power is reduced to around 200W with a power resistor that is mounted inside the wooden fan box to get sufficient cooling for the resistor. The 200W system is absolutely sufficient and still much stronger than the 25W stock air exhaust fan. Also, I made a custom attachment for the air extraction hose to the back of the machine from wood. The laser cutter is placed close to a window so that the extracted air is blown out of the&amp;nbsp;workshop.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/air_exhaust_system.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/air_exhaust_system.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/air_exhaust_system.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/air_exhaust_system.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 13: Air exhaust system. The two insets from left to right show the custom air exhaust fan and the custom attachment for the air extraction hose to the laser, respectively. The blue hose came with the machine and is quite stiff. I bought the white one to connect the fan to the attachment on the laser cutter. The air exhaust fan features a custom laser cut control box that is visible in the left of the left inset. The fan is sealed with black tape. The hose connection pieces for both, the fan and the box, are 3D printed pieces but they are not visible&amp;nbsp;here.&lt;/p&gt;
 &lt;/div&gt;
@@ -230,8 +230,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Monitor&amp;nbsp;mount&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;A laser cutter is typically controlled from a &lt;span class="caps"&gt;PC&lt;/span&gt;. After around 2 weeks I had enough of flimsy laptop setups next to the machine and installed a workshop &lt;span class="caps"&gt;PC&lt;/span&gt; with a proper monitor mount. The mount allows for easy rotations with two degrees of freedom. It is a super simple design made from wood but very sturdy and incredibly useful in the daily operation of the machine. The monitor mount is attached to a shelf that is located next to the laser cutter. The attached monitor connects to the workshop &lt;span class="caps"&gt;PC&lt;/span&gt;. This modification is one of the most useful&amp;nbsp;ones.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/monitor_mount.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/monitor_mount.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/monitor_mount.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/monitor_mount.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 14: Unfolded monitor mount, showing the wooden construction. The monitor is mounted with its &lt;span class="caps"&gt;VESA&lt;/span&gt; connections and can be folded in when not in operation, see the inset. The blue arrow marks the WiFi &lt;span class="caps"&gt;USB&lt;/span&gt; adapter of the workshop &lt;span class="caps"&gt;PC&lt;/span&gt; to connect it to the&amp;nbsp;internet.&lt;/p&gt;
 &lt;/div&gt;
@@ -240,8 +240,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Rolling&amp;nbsp;cart&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The laser cutter stands on a rolling cart. This rolling cart used to be a simple shelf that I put on wheels with a strong metal frame. Also, I added a solid top work plate to it to place the laser cutter on. The rolls allow me to move the machine easily. The drawers store all the tools and accessories that I need to operate the laser&amp;nbsp;cutter.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/rolling_cart.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/rolling_cart.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/rolling_cart.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/rolling_cart.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 15: The rolling cart. (a) Overview with all drawers closed. (b) to (e) show each of the drawers with the different accessories I use. Most frequently, I use the keyboard and mouse in the top drawer shown in (b) to operate the workshop &lt;span class="caps"&gt;PC&lt;/span&gt;. The drawer shown in (c) holds all the tools. The drawers (d) and (e) accommodate some of the wood that I laser cut as well as past&amp;nbsp;projects.&lt;/p&gt;
 &lt;/div&gt;
@@ -250,8 +250,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Self made&amp;nbsp;tools&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;During the installation and calibration process of the laser cutter, I made a few tools that made my life easier. The more interesting ones are shown in Fig.&amp;nbsp;16.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/self_made_tools.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/self_made_tools.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/self_made_tools.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/self_made_tools.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 16: Self made tools. (a) Laser beam alignment helper. In order to align the laser beam, one needs to check if it hits the centers of the mirrors. In order to judge if it does, I developed a small 3D printed magnetic stand that accepts pieces of paper and that can be mounted right in front of the mirrors. The laser beam burns the piece of paper that is installed in the alignment helper so that one can see where the infrared (and therefore invisible) laser beam hit the mirror. Once the piece of paper is burned too much, it can be replaced easily. (b) Laser beam alignment helper for vertical direction when the laser beam hits the work piece. With this tool, I can ensure that the laser beam hits the work piece in a 90 degree angle. Again, a piece of paper can be attached to it. To properly align the vertical beam direction, the piece of paper can be moved up and down guided by the two short screws. (c) Laser tube rack. When doing work on the laser tube, I hook these holders in the back of the laser cutter and place the tube onto them temporarily. With that, I don&amp;#8217;t need to disconnect the tube from its electrical wires and the water cooling tubes. (d) Nut screwing helper. When working with metal screws in hard-to-reach places, I can place the nut at the end of this helper. It holds the nut in place, avoids any spinning of the nut and is thinner than my fingers so that I can reach places I could not&amp;nbsp;otherwise.&lt;/p&gt;
 &lt;/div&gt;
@@ -260,8 +260,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Wood pressing&amp;nbsp;machines&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;My favourite plywood tends to warp. Hence, I place the wood, that is to be used with the laser cutter, in a machine that makes sure the wood does not warp over&amp;nbsp;time.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/wood_pressing_machines.hr.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/wood_pressing_machines.lr.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/wood_pressing_machines.hr.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/wood_pressing_machines.lr.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 17: Versions 1 and 2 of the wood pressing machine. (a) The first version used threaded rods to fix the wood between two thick wooden pieces. As it was quite cumbersome to use this version, it has been retired and replaced by a second version. (b) The second version is just a piece of wood and a very heavy anvil that compresses the pile of wooden pieces beneath it. It works&amp;nbsp;great.&lt;/p&gt;
 &lt;/div&gt;
@@ -270,8 +270,8 @@
 &lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Software&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The stock software that comes with the laser cutter neither worked well nor did it run on Linux. However, there is a beautiful open source implementation of a control software: &lt;a class="reference external" href="https://www.scorchworks.com/K40whisperer/k40whisperer.html"&gt;K40 whisperer&lt;/a&gt;, which works well and runs on&amp;nbsp;Linux.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/k40_whisperer.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/my_small_hobby_laser_cutter/k40_whisperer.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/k40_whisperer.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/my_small_hobby_laser_cutter/k40_whisperer.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 18: Screenshot of K40 whisperer. Picture taken from &lt;a class="reference external" href="https://www.scorchworks.com/K40whisperer/k40whisperer.html"&gt;the K40 whisperer website&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -307,7 +307,7 @@
 &lt;p&gt;If you do not have any commercial interest in laser cutting, I fully recommend the K40 laser cutter. If you do but you&amp;#8217;re not sure, yet, then still get the K40 machine as you can upgrade later if necessary. Only get a larger machine if you really know that you are seriously interested in getting in the business of laser&amp;nbsp;cutting.&lt;/p&gt;
 &lt;p&gt;Feel free to reach out to me if you have any more questions regarding laser cutting. I am happy to help makers with some advice to get their laser&amp;nbsp;cutter!&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="prototyping"></category></entry><entry><title>Running list of designs</title><link href="http://lellep.xyz/blog/running-list-of-designs.html" rel="alternate"></link><published>2020-05-24T00:00:00+02:00</published><updated>2020-05-24T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-24:/blog/running-list-of-designs.html</id><summary type="html">&lt;p class="first last"&gt;A list of small designs like 3D prints, laser cuts and other constructions. Most of them serve a functional purpose. This list is continuously&amp;nbsp;updated.&lt;/p&gt;
+</content><category term="prototyping"></category></entry><entry><title>Running list of designs</title><link href="https://lellep.xyz/blog/running-list-of-designs.html" rel="alternate"></link><published>2020-05-24T00:00:00+02:00</published><updated>2020-05-24T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-24:/blog/running-list-of-designs.html</id><summary type="html">&lt;p class="first last"&gt;A list of small designs like 3D prints, laser cuts and other constructions. Most of them serve a functional purpose. This list is continuously&amp;nbsp;updated.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Here, I show a continuously updated list of small constructions. Most of them solve a specific problem so that the majority of the designs can be considered &lt;em&gt;functional designs&lt;/em&gt;.
 Each section starts with the functional design&amp;#8217;s name as headline and documents the design with a short description, a date and&amp;nbsp;pictures.&lt;/p&gt;
 &lt;p&gt;If you are interested in any of construction files, e.g. &lt;span class="caps"&gt;STL&lt;/span&gt;, &lt;span class="caps"&gt;SVG&lt;/span&gt; or any other format, then please contact me. I am happy to look for the files and to send them to&amp;nbsp;you!&lt;/p&gt;
@@ -328,8 +328,8 @@ Each section starts with the functional design&amp;#8217;s name as headline and 
 &lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;03/13/2021&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A wooden box to safely store my bluetooth speaker. The box is made from (cheap) wood, covered with wood filler and painted with brown colour. Fleece pads have been added to the inner compartment to ensure that the bluetooth speaker is not&amp;nbsp;damaged.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/bluetooth_speaker_box/overview.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/bluetooth_speaker_box/overview.jpg" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/bluetooth_speaker_box/overview.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/bluetooth_speaker_box/overview.jpg" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -338,18 +338,18 @@ Each section starts with the functional design&amp;#8217;s name as headline and 
 &lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;Q1/2021&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A small rack to store spray paint cans under a sink in my wood workshop. The rack is made from scrap wood that is older than&amp;nbsp;me!&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/spray_paint_rack/overview.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/spray_paint_rack/overview.jpg" style="width: 300px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/spray_paint_rack/overview.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/spray_paint_rack/overview.jpg" style="width: 300px;" /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="key-hanging-board"&gt;
 &lt;h2&gt;Key hanging&amp;nbsp;board&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;12/24/2020&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A custom-made board from recycled wood for hanging keys. The engraving and small ornaments have been fabricated on my &lt;a class="reference external" href="http://lellep.xyz/blog/my-small-hobby-laser-cutter.html"&gt;laser cutter&lt;/a&gt;. The board is used daily when leaving and entering the&amp;nbsp;appartment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A custom-made board from recycled wood for hanging keys. The engraving and small ornaments have been fabricated on my &lt;a class="reference external" href="https://lellep.xyz/blog/my-small-hobby-laser-cutter.html"&gt;laser cutter&lt;/a&gt;. The board is used daily when leaving and entering the&amp;nbsp;appartment.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/key_hanging_board/overview.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/key_hanging_board/overview.jpg" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/key_hanging_board/overview.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/key_hanging_board/overview.jpg" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -358,8 +358,8 @@ Each section starts with the functional design&amp;#8217;s name as headline and 
 &lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;Q4/2020&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: Laser-cut box that has been treated with wood stain to place a bit of green onto my home office&amp;nbsp;desk.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/green_office_accent/overview.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/green_office_accent/overview.png" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/green_office_accent/overview.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/green_office_accent/overview.png" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -368,8 +368,8 @@ Each section starts with the functional design&amp;#8217;s name as headline and 
 &lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;05/23/2020&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A light constructed around 12V &lt;span class="caps"&gt;LED&lt;/span&gt; strips and controlled with a simple switch. This light will help me to illuminate videos and photos better. It is driven by a 12V power source. To diffuse the set of discrete light sources of the &lt;span class="caps"&gt;LED&lt;/span&gt; strip, a sanded piece of transparent acrylic is attached to the front. It turns out that the light quality is very decent and the brightness is very&amp;nbsp;good.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/diy_video_light/overview.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/diy_video_light/overview.jpg" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/diy_video_light/overview.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/diy_video_light/overview.jpg" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;&lt;span class="caps"&gt;DIY&lt;/span&gt; video light. (a) Front picture of the &lt;span class="caps"&gt;DIY&lt;/span&gt; video light. (b) Close-up of the switch and 12V plug&amp;nbsp;adapter.&lt;/p&gt;
 &lt;/div&gt;
@@ -387,8 +387,8 @@ Each section starts with the functional design&amp;#8217;s name as headline and 
 &lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;05/23/2020&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A mount for attaching a smartphone to a tripod for photo and video purposes. The mount comes with a standard 1/4 inch photo screw and uses a spring loaded clamping mechanism to cover a wide range of phone widths. Fleece and small stop blocks ensure that the phone is not&amp;nbsp;damaged.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/wooden_phone_tripod_mount/summary.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/wooden_phone_tripod_mount/summary.jpg" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/wooden_phone_tripod_mount/summary.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/wooden_phone_tripod_mount/summary.jpg" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Wooden phone tripod mount. (a) Project overview. (b) Adjustment screw to set the desired phone mounting width. (c) The fleece pads and stop blocks to protect the phone from being damaged. Also, view on the spring loaded adjustment mechanism. (d) 1/4 inch photo thread in the top and functional part of the spring loaded adjustment mechanism in the&amp;nbsp;bottom.&lt;/p&gt;
 &lt;/div&gt;
@@ -406,8 +406,8 @@ Each section starts with the functional design&amp;#8217;s name as headline and 
 &lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;05/20/2020&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: Although the video quality of modern smartphones is very good, the resulting shots can be shaky. This wooden camera rig adds proper handles and weight to the phone in its role as video camera and thereby solves the issue of shaky phone videos. Of course, it can be used with any camera as it offers the standard 1/4 inch screw. I got information on these standard photography parts &lt;a class="reference external" href="https://www.fotoschraubenshop.de/info-1/"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/wooden_camera_rig/summary.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/wooden_camera_rig/summary.jpg" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/wooden_camera_rig/summary.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/wooden_camera_rig/summary.jpg" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Wooden camera rig. (a) Project overview. The holes in the top can be used to mount extra video gear, such as video lights or microphones. (b) 3D printed assembly that uses the 1/4 inch screw from a cheap 1€ tripod with a screwing mechanism to ensure a tight bond between camera rig and video camera. (c) Holes in the bottom of the rig allow extra weight to be added as to make the shots even more smooth. (d) Fleece pads on the&amp;nbsp;bottom.&lt;/p&gt;
 &lt;/div&gt;
@@ -426,20 +426,20 @@ Each section starts with the functional design&amp;#8217;s name as headline and 
 &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: A place that can be used to take pictures with proper illumination. The box consists of 1cm diameter &lt;span class="caps"&gt;PVC&lt;/span&gt; pipes that are connected with 3D printed corner
 pieces. The sides are covered by cardboard with baking paper insert that serves as&amp;nbsp;diffusor.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/1.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/1.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/photo_box/1.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/photo_box/1.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Finished photo box with installed &amp;#8220;infinity background&amp;#8221;, the three lamps and side panels that include the&amp;nbsp;diffusors.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/2.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/2.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/photo_box/2.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/photo_box/2.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Photo box without side panels in order to show the &lt;span class="caps"&gt;PVC&lt;/span&gt; pipe frame. Surprisingly, it is quite&amp;nbsp;rigid.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/3.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/photo_box/3.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/photo_box/3.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/photo_box/3.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Close-up of the 3D printed corners that hold together the &lt;span class="caps"&gt;PVC&lt;/span&gt; pipe edges. The corners are attached to the pipes with 3mm metal&amp;nbsp;screws.&lt;/p&gt;
 &lt;/div&gt;
@@ -449,20 +449,20 @@ pieces. The sides are covered by cardboard with baking paper insert that serves 
 &lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;:&amp;nbsp;2018/2019&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: This plastic hook, which screws into the office desk with an M6 screw, provides a place for me to hang my headphones at work. This helps to avoid damaging my headphones as they fell on the ground&amp;nbsp;previously.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/running_list_of_designs/office_headphone_hook/overview.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/running_list_of_designs/office_headphone_hook/overview.jpg" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/running_list_of_designs/office_headphone_hook/overview.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/running_list_of_designs/office_headphone_hook/overview.jpg" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Office headphone hook. (a) Headphones hanged to the hook while I don&amp;#8217;t use the headphones. (b) Hook as I use the headphones so that they are not hanging&amp;nbsp;there.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="prototyping"></category></entry><entry><title>Xournal++ Community Gift</title><link href="http://lellep.xyz/blog/xournalpp-community-gift.html" rel="alternate"></link><published>2020-05-23T00:00:00+02:00</published><updated>2020-05-23T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-23:/blog/xournalpp-community-gift.html</id><summary type="html">&lt;p class="first last"&gt;A laser cut community gift for Xournal++&amp;nbsp;developers.&lt;/p&gt;
+</content><category term="prototyping"></category></entry><entry><title>Xournal++ Community Gift</title><link href="https://lellep.xyz/blog/xournalpp-community-gift.html" rel="alternate"></link><published>2020-05-23T00:00:00+02:00</published><updated>2020-05-23T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-23:/blog/xournalpp-community-gift.html</id><summary type="html">&lt;p class="first last"&gt;A laser cut community gift for Xournal++&amp;nbsp;developers.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;I really like open-source software! Daily, I use amazing open-source software for all kinds of&amp;nbsp;tasks.&lt;/p&gt;
 &lt;p&gt;Two such applications are &lt;a class="reference external" href="http://xournal.sourceforge.net/"&gt;Xournal&lt;/a&gt; and its successor &lt;a class="reference external" href="https://github.com/xournalpp/xournalpp"&gt;Xournal++&lt;/a&gt;. I use it for taking handwritten notes on my &lt;span class="caps"&gt;PC&lt;/span&gt; for many of my professional and private projects. Already Xournal is amazing but Xournal++ adds on top of that many useful&amp;nbsp;features.&lt;/p&gt;
 &lt;p&gt;Back in 2017, when I was trying to install Xournal++ from its &lt;a class="reference external" href="https://github.com/xournalpp/xournalpp"&gt;git repository&lt;/a&gt;, there was little development going on for the Xournal++ project. Over the course of the last two to three years, Xournal++ regained popularity and the open-source community continued to develop Xournal++ very actively. I think that&amp;#8217;s a great community effort and I hope that this will&amp;nbsp;continue!&lt;/p&gt;
 &lt;p&gt;Let&amp;#8217;s make it short: I used Xournal++ to build a laser cutter. Hence, I figured out that giving back to the community by providing a small laser cut gift would be necessary. I designed two small designs that you can see in the figure&amp;nbsp;below:&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/xournalpp_community_gift/designs.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/xournalpp_community_gift/designs.jpg" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/xournalpp_community_gift/designs.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/xournalpp_community_gift/designs.jpg" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;p&gt;Also, I rendered a small 360 degree video to fully show what the small key chain looks like. I laser cut it from 3mm &lt;span class="caps"&gt;MDF&lt;/span&gt; and it is 8cm by 2cm in size so that it should fit on any key&amp;nbsp;easily:&lt;/p&gt;
@@ -477,10 +477,10 @@ pieces. The sides are covered by cardboard with baking paper insert that serves 
     &lt;/iframe&gt;
 &lt;/div&gt;&lt;p&gt;This is a gift to the community without any strings attached - except maybe that I would like the community to continue to develop the amazing software Xournal++&amp;nbsp;:-).&lt;/p&gt;
 &lt;p&gt;The laser cut gift is genuinely for free. However, I need to ship it. I live in Germany, so that I restrict my gift to Germany-only. My budget for the shipping costs is 10€. Assuming a &amp;#8220;standard letter&amp;#8221; as shipping method, which is 0.8€, the 10€ in budget translate into 13 key chain gifts that I will ship to Xournal++ developers in Germany. I won&amp;#8217;t include the key rings but anticipate that everybody has one&amp;nbsp;already.&lt;/p&gt;
-&lt;p&gt;I am sorry for non-German Xournal++ developers. Here you can find the design: &lt;a class="reference external" href="http://lellep.xyz/blog/xournalpp_community_gift.05232020.svg"&gt;click&lt;/a&gt;. Using blue lines for vector engraving and red lines for vector cutting, you can fabricate your own key chains with this&amp;nbsp;design.&lt;/p&gt;
+&lt;p&gt;I am sorry for non-German Xournal++ developers. Here you can find the design: &lt;a class="reference external" href="https://lellep.xyz/blog/xournalpp_community_gift.05232020.svg"&gt;click&lt;/a&gt;. Using blue lines for vector engraving and red lines for vector cutting, you can fabricate your own key chains with this&amp;nbsp;design.&lt;/p&gt;
 &lt;p&gt;Finally, contact me here if you would like to receive one of the key chains: &lt;a class="reference external" href="mailto:martin.lellep.blog&amp;#64;gmail.com"&gt;martin.lellep.blog&amp;#64;gmail.com&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Thanks for developing&amp;nbsp;Xournal++!&lt;/p&gt;
-</content><category term="prototyping"></category></entry><entry><title>How to use 3D scanning for CAD modeling</title><link href="http://lellep.xyz/blog/how-to-use-3d-scanning-for-cad-modeling.html" rel="alternate"></link><published>2020-05-10T00:00:00+02:00</published><updated>2020-05-10T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-10:/blog/how-to-use-3d-scanning-for-cad-modeling.html</id><summary type="html">&lt;p class="first last"&gt;I show how to use 3D scanning for &lt;span class="caps"&gt;CAD&lt;/span&gt; modeling and how I built a custom &lt;span class="caps"&gt;PC&lt;/span&gt; mouse box with the method that I present here.
+</content><category term="prototyping"></category></entry><entry><title>How to use 3D scanning for CAD modeling</title><link href="https://lellep.xyz/blog/how-to-use-3d-scanning-for-cad-modeling.html" rel="alternate"></link><published>2020-05-10T00:00:00+02:00</published><updated>2020-05-10T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2020-05-10:/blog/how-to-use-3d-scanning-for-cad-modeling.html</id><summary type="html">&lt;p class="first last"&gt;I show how to use 3D scanning for &lt;span class="caps"&gt;CAD&lt;/span&gt; modeling and how I built a custom &lt;span class="caps"&gt;PC&lt;/span&gt; mouse box with the method that I present here.
 Neither do you need a &lt;span class="caps"&gt;GPU&lt;/span&gt; nor a powerful &lt;span class="caps"&gt;PC&lt;/span&gt; to follow along this tutorial. Also, the 3D scanning software is for&amp;nbsp;free.&lt;/p&gt;
 </summary><content type="html">&lt;div style="margin: 0px auto; text-align: center; border: 4px solid #d93200; border-radius: 25px; padding: 20px; width: 80%;"&gt;
     &lt;h3&gt;Teaser&amp;nbsp;trailer&lt;/h3&gt;
@@ -542,7 +542,7 @@ distinct features that can be matched throughout the set of&amp;nbsp;pictures.&l
 &lt;/div&gt;&lt;p&gt;The animation in Vid. 1 shows a video of all the images that I used for the photogrammetry procedure. As you can see in Vid. 1,
 I made sure to cover the object in all possible angles, even multiple times and including close-ups of sections that might
 need additional coverage. To ensure enough distinct features in the scene, I designed an A4 sheet printout with random symbols
-on it: You can download it &lt;a class="reference external" href="http://lellep.xyz/blog/3D_scanning_print_out.pdf"&gt;here&lt;/a&gt; to print
+on it: You can download it &lt;a class="reference external" href="https://lellep.xyz/blog/3D_scanning_print_out.pdf"&gt;here&lt;/a&gt; to print
 the &lt;span class="caps"&gt;PDF&lt;/span&gt;&amp;nbsp;yourself.&lt;/p&gt;
 &lt;p&gt;For the whole set of images I used a phone camera. I shot it outside on a cloudy day to guarantee an even lighting as photogrammetry
 does not cope well with hard&amp;nbsp;shadows.&lt;/p&gt;
@@ -553,8 +553,8 @@ does not cope well with hard&amp;nbsp;shadows.&lt;/p&gt;
 scan of the &lt;span class="caps"&gt;PC&lt;/span&gt; mouse, see Fig. 1 for a screenshot of Meshroom. There are great tutorials on Meshroom out there. I used, for example, this one:
 &lt;a class="reference external" href="https://www.youtube.com/watch?v=k4NTf0hMjtY"&gt;https://www.youtube.com/watch?v=k4NTf0hMjtY&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/meshroom_2019.2.0.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/meshroom_2019.2.0.png" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/meshroom_2019.2.0.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/meshroom_2019.2.0.png" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 1: Meshroom version 2019.2.0 &lt;span class="caps"&gt;GUI&lt;/span&gt; screenshot. The whole computation performed by Meshroom is defined by the &amp;#8220;Graph Editor&amp;#8221;
 in the bottom and consumes pictures imported into the &amp;#8220;Images&amp;#8221; area. The final result is shown in the &amp;#8220;3D&amp;nbsp;Viewer&amp;#8221;.&lt;/p&gt;
@@ -573,19 +573,19 @@ with this technique is shown in Fig. 2&amp;nbsp;(b).&lt;/p&gt;
 &lt;p&gt;Next, we look into how to run Meshroom in the cloud on a &lt;span class="caps"&gt;GPU&lt;/span&gt; - for free. The scan of my mouse with this technique is shown in Fig. 2 (a). The procedure is as follows: You start a Google Colab instance, add a &lt;span class="caps"&gt;GPU&lt;/span&gt; runtime,
 upload your images and start the Meshroom commandline binary after downloading it. Since Google Colab runs with Jupyter Notebooks, all these tasks can
 be performed easily. Please check out the following notebook that I put together for you in order to start using Google Colab for 3D scanning right now:
-&lt;a class="reference external" href="http://lellep.xyz/blog/3D_scanning_colab_notebook.ipynb"&gt;click&lt;/a&gt;. I based my
+&lt;a class="reference external" href="https://lellep.xyz/blog/3D_scanning_colab_notebook.ipynb"&gt;click&lt;/a&gt;. I based my
 notebook off publicly available information, such as &lt;a class="reference external" href="https://github.com/alicevision/meshroom/wiki/Meshroom-in-Google-Colab-(cloud)"&gt;this&lt;/a&gt;. My notebook works as&amp;nbsp;follows:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;The pictures must be uploaded to the Colab instance as&amp;nbsp;&amp;#8220;my_dataset.zip&amp;#8221;.&lt;/li&gt;
 &lt;li&gt;Subsequently, they are automatically unzipped, processed and finally the 3D scan is zipped to be&amp;nbsp;downloaded.&lt;/li&gt;
 &lt;li&gt;My notebook is quite straightforward and well documented. Therefore, check out my comments and texts in
-&lt;a class="reference external" href="http://lellep.xyz/blog/3D_scanning_colab_notebook.ipynb"&gt;the Jupyter notebook&lt;/a&gt;.&lt;/li&gt;
+&lt;a class="reference external" href="https://lellep.xyz/blog/3D_scanning_colab_notebook.ipynb"&gt;the Jupyter notebook&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The 3D scan is saved by Meshroom as an &lt;span class="caps"&gt;OBJ&lt;/span&gt; file that includes both 3D mesh information as well as the texture of the object. Figure 2 shows the results
 of the 3D scan for both of the approaches, with and without &lt;span class="caps"&gt;GPU&lt;/span&gt;,&amp;nbsp;respectively.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/with_vs_without_GPU.png" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 2: 3D scans of my &lt;span class="caps"&gt;PC&lt;/span&gt; mouse using Meshroom. (a) Scan result using a cloud &lt;span class="caps"&gt;GPU&lt;/span&gt; to enable the full computation pipeline &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; highest quality of Meshroom.
 (b) Scan result using Meshroom&amp;#8217;s &lt;span class="caps"&gt;CPU&lt;/span&gt;-only computation&amp;nbsp;steps.&lt;/p&gt;
@@ -600,12 +600,12 @@ faces than the &lt;span class="caps"&gt;CPU&lt;/span&gt;-only model using the ex
 &lt;div class="section" id="d-model-post-processing"&gt;
 &lt;h2&gt;3D model post&amp;nbsp;processing&lt;/h2&gt;
 &lt;p&gt;As photogrammetry identifies features in the images that are used in order to derive the camera perspectives, the scans might pick up parts of the
-scene in which the scan is created. I used a &lt;a class="reference external" href="http://lellep.xyz/blog/3D_scanning_print_out.pdf"&gt;custom-made printout&lt;/a&gt;
+scene in which the scan is created. I used a &lt;a class="reference external" href="https://lellep.xyz/blog/3D_scanning_print_out.pdf"&gt;custom-made printout&lt;/a&gt;
 to ensure that there are enough distinct features. Figure 3 (a) shows the raw
 scan that comes out of Meshroom using the &lt;span class="caps"&gt;GPU&lt;/span&gt;-enabled computation pipeline executed on Google Colab and Fig. 3 (b) shows the same scan but a manually tidied up version of it. I used &lt;a class="reference external" href="https://www.blender.org/"&gt;Blender&lt;/a&gt; to remove all excess parts of the scan that are not of&amp;nbsp;relevance.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/raw_scan_vs_trimmed.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/raw_scan_vs_trimmed.png" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/raw_scan_vs_trimmed.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/raw_scan_vs_trimmed.png" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 3: Cleaned 3D scan. (a) The model as computed by Meshroom. (b) Manually trimmed model to only consist of the mouse itself and no more scene&amp;nbsp;parts.&lt;/p&gt;
 &lt;/div&gt;
@@ -615,8 +615,8 @@ model in Fig. 3 (b) consists of only 423,706 faces without reducing the model qu
 For many applications though, even these 400k faces are too many. One such application being (consumer-grade) CADs (on a consumer-grade &lt;span class="caps"&gt;PC&lt;/span&gt;), I removed
 the number of faces even further before exporting the model to an &lt;span class="caps"&gt;STL&lt;/span&gt; file. Figure 4 shows exactly&amp;nbsp;that.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png" style="width: 800px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/stl_resolutions.png" style="width: 800px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 4: &lt;span class="caps"&gt;STL&lt;/span&gt; models of my scanned &lt;span class="caps"&gt;PC&lt;/span&gt; mouse after reducing the number of faces. (a) The original file as shown in Fig. 3 (b) after exporting it
 to &lt;span class="caps"&gt;STL&lt;/span&gt; (and, hence, without texture) with 423,706 faces. (b) &lt;span class="caps"&gt;STL&lt;/span&gt; with the number of faces reduced to 15% of the original model. (c) &lt;span class="caps"&gt;STL&lt;/span&gt; with the
@@ -657,8 +657,8 @@ I fabricated on my small hobby laser&amp;nbsp;cutter.&lt;/p&gt;
 &lt;p&gt;The assembly is achieved step-wise: First, I glued the 3D printed plastic pieces to the wooden sides of the box, see Fig. 5 (a). Subsequently,
 I glued these wooden sides together with painter&amp;#8217;s tape, see Fig. 5 (b), to ensure that everything fits together before doing the final&amp;nbsp;glue-up.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step1_and_step2.png" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 5: First two steps of assembly process. (a) Plastic pieces are glued to the wooden box sides and pads are attached to
 the 3D printed pieces to minimise the slag of the mouse inside the box and to avoid scratches on the mouse.
@@ -667,8 +667,8 @@ the 3D printed pieces to minimise the slag of the mouse inside the box and to av
 &lt;p&gt;Only after these two steps, I glued the wooden box sides into place with wood glue to achieve a permanently assembled wooden box, see
 Fig. 6 (a). Lastly, I applied clear coat to all of the wooden pieces, see Fig. 6&amp;nbsp;(b).&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step3_and_step4.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step3_and_step4.png" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step3_and_step4.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step3_and_step4.png" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 6: Next two steps of assembly process. (a) The permanent box glue-up with wood glue. (b) Application of liquid clear coat as
 finish and to make the box more&amp;nbsp;sturdy.&lt;/p&gt;
@@ -678,8 +678,8 @@ attach the lid to the main box body. There are three places that make use of the
 the strap to secure the lid to the box with a velcro and lastly another leather piece is placed symmetrically to leather hinge for aesthetic
 reasons. Figure 7 shows the finished leather&amp;nbsp;parts.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step5_and_step6.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step5_and_step6.png" style="width: 700px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step5_and_step6.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/assembly_step5_and_step6.png" style="width: 700px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 7: Mouse box with attached leather pieces. (a) Bottom view of the box to see all leather pieces installed. Going from left to right,
 the leather pieces serve as closing mechanism of the lid that uses a velcro, hinging mechanism of the lid and aesthetic sugar to the box.
@@ -691,8 +691,8 @@ the leather pieces serve as closing mechanism of the lid that uses a velcro, hin
 &lt;h2&gt;Final&amp;nbsp;product&lt;/h2&gt;
 &lt;p&gt;The finished product is shown in Fig.&amp;nbsp;8.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/final_product.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 8: My &lt;span class="caps"&gt;PC&lt;/span&gt; mouse next to its new custom box. This is what I will use daily in my backpack from now&amp;nbsp;on.&lt;/p&gt;
 &lt;/div&gt;
@@ -715,14 +715,14 @@ the leather pieces serve as closing mechanism of the lid that uses a velcro, hin
 &lt;div class="section" id="summary"&gt;
 &lt;h2&gt;Summary&lt;/h2&gt;
 &lt;p&gt;In this article, I presented how the open-source 3D scanning software &lt;em&gt;Meshroom&lt;/em&gt; can be used to produce 3D scans without a &lt;span class="caps"&gt;GPU&lt;/span&gt; using
-&lt;a class="reference external" href="http://lellep.xyz/blog/3D_scanning_colab_notebook.ipynb"&gt;this Jupyter notebook&lt;/a&gt;
+&lt;a class="reference external" href="https://lellep.xyz/blog/3D_scanning_colab_notebook.ipynb"&gt;this Jupyter notebook&lt;/a&gt;
 and &lt;em&gt;Google Colab&lt;/em&gt;. Subsequently, I showed how the 3D model can be used for &lt;span class="caps"&gt;CAD&lt;/span&gt; modeling.
 My demonstration use case was a transportation box for my &lt;span class="caps"&gt;PC&lt;/span&gt; mouse because it is a suitable object to be scanned and used in &lt;span class="caps"&gt;CAD&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;The steps for obtaining a 3D scan that can be used for &lt;span class="caps"&gt;CAD&lt;/span&gt; modeling are shown in Fig. 9. While I explain the &lt;span class="caps"&gt;CAD&lt;/span&gt;-specific steps with
 &lt;em&gt;Autodesk Fusion 360&lt;/em&gt;, similar steps apply for most &lt;span class="caps"&gt;CAD&lt;/span&gt; software that are on the&amp;nbsp;market.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/how_to_use_3D_scanning_for_CAD_modeling/scanning_pipeline.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Figure 9: 3D scanning pipeline for obtaining a 3D model that can be used in &lt;span class="caps"&gt;CAD&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
@@ -734,14 +734,14 @@ Hence, the only thing you need to do to get your own 3D scan is to capture a set
 &lt;h2&gt;Acknowledgments&lt;/h2&gt;
 &lt;p&gt;Thanks to Jens Wienkamp for letting me run my first Meshroom experiments on his &lt;span class="caps"&gt;GPU&lt;/span&gt;!&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="prototyping"></category></entry><entry><title>Internet-capable wooden lamp</title><link href="http://lellep.xyz/blog/internet-capable-wooden-lamp.html" rel="alternate"></link><published>2019-11-03T00:00:00+01:00</published><updated>2019-11-03T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2019-11-03:/blog/internet-capable-wooden-lamp.html</id><summary type="html">&lt;p class="first last"&gt;I built a wooden lamp around the Sonoff Basic IoT&amp;nbsp;module.&lt;/p&gt;
+</content><category term="prototyping"></category></entry><entry><title>Internet-capable wooden lamp</title><link href="https://lellep.xyz/blog/internet-capable-wooden-lamp.html" rel="alternate"></link><published>2019-11-03T00:00:00+01:00</published><updated>2019-11-03T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2019-11-03:/blog/internet-capable-wooden-lamp.html</id><summary type="html">&lt;p class="first last"&gt;I built a wooden lamp around the Sonoff Basic IoT&amp;nbsp;module.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;This article describes how I built an internet-capable lamp. The housing and mechanical parts were made with wood working tools, a 3D printer and a laser cutter. The electrical control unit is realised with a &lt;a class="reference external" href="https://sonoff.tech/product/wifi-diy-smart-switches/basicr2"&gt;Sonoff Basic&lt;/a&gt; IoT module that can be controlled through an&amp;nbsp;app.&lt;/p&gt;
 &lt;div class="section" id="the-result"&gt;
 &lt;h2&gt;The&amp;nbsp;result&lt;/h2&gt;
 &lt;p&gt;The final lamp is shown&amp;nbsp;below.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/0_final_result_colorful.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/0_final_result_colorful.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/0_final_result_colorful.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/0_final_result_colorful.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The result of the&amp;nbsp;project.&lt;/p&gt;
 &lt;/div&gt;
@@ -751,86 +751,86 @@ Hence, the only thing you need to do to get your own 3D scan is to capture a set
 &lt;p&gt;In the following, you can find pictures that document the build process in a top-down approach: the finished product is shown at first and the steps backward in time to arrive at the final product are documented subsequently. The last picture shows the final lamp&amp;nbsp;again.&lt;/p&gt;
 &lt;p&gt;Since pictures say more than words, here we go with the&amp;nbsp;pictures:&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/1_perspective_painted.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/1_perspective_painted.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/1_perspective_painted.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/1_perspective_painted.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The final lamp while it is screwed&amp;nbsp;together.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/2_side_view_painted.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/2_side_view_painted.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/2_side_view_painted.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/2_side_view_painted.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Side view of the final lamp with the lid slightly displaced to show how the lid attaches to the&amp;nbsp;bottom.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/3_overview_inner.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/3_overview_inner.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/3_overview_inner.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/3_overview_inner.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Detached lid to show the electrical&amp;nbsp;wiring.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/4_overview.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/4_overview.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/4_overview.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/4_overview.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;All parts of the lamp layed out next to each other. The box to the right was made with wood working tools. The remaining wooden pieces were laser cut and most of the white plastic parts were 3D printed from &lt;span class="caps"&gt;PLA&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/5_switch.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/5_switch.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/5_switch.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/5_switch.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Close up of the 3D printed mechanical switch. A small toggle switch was soldered on a card board and the white 3D printed parts mount around it to provide a mechanism to toggle the switch easily. The small toggle switch is connected in parallel to the existing surface-mounted switch of the Sonoff Basic. The springs provide decent feedback while pressing the&amp;nbsp;switch.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/6_lampshade_mounting.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/6_lampshade_mounting.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/6_lampshade_mounting.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/6_lampshade_mounting.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;This laser cut circle is mounted around the bulb housing with metal screws. The remaining six holes provide an interface to attach different lamp shades to the lamp in the&amp;nbsp;future.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/7_bottom_unpainted.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/7_bottom_unpainted.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/7_bottom_unpainted.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/7_bottom_unpainted.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The wooden base prior to painting. The bottom shows the mounting holes for the 3D printed electronics attachments. The four wider holes on the edges provide a mechanism to attach the&amp;nbsp;lid.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/8_mounting_mechanism.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/8_mounting_mechanism.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/8_mounting_mechanism.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/8_mounting_mechanism.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Close-up of the mounting mechanism of the lid. The wide holes house laser cut wooden pieces with a concentrically aligned M3 nut that has been glued inside these wooden pieces. This way, the lid can be screwed in place, as shown in the second&amp;nbsp;picture.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/9_electronics_bottom.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/9_electronics_bottom.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/9_electronics_bottom.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/9_electronics_bottom.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The electronics mounted to the 3D printed pieces, which, themselves, have been screwed inside the unpainted wooden&amp;nbsp;base.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/10_electronics_top.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/10_electronics_top.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/10_electronics_top.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/10_electronics_top.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The 3D printed switch is mounted to the lid and reaches into the inner volume of the lamp. The orange-white cables of the switch will be connected to the Sonoff unit. The green-yellow wires power the actual light bulb and thereby carry mains&amp;nbsp;voltage.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/11_perspective_unpainted.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/11_perspective_unpainted.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/11_perspective_unpainted.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/11_perspective_unpainted.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Assembly of the lamp prior to&amp;nbsp;painting.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/12_painting.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/12_painting.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/12_painting.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/12_painting.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Painting of the wooden base and the lid. The inner sides are spray-painted in&amp;nbsp;black.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/13_housing_painted.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/13_housing_painted.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/13_housing_painted.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/13_housing_painted.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Finished painting of the outside. It is coloured in&amp;nbsp;brown.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/14_final_result.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/14_final_result.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/14_final_result.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/14_final_result.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The final assembly of the lamp. The power plug goes into the wall and the lamp is connected to the internet via WiFi by using the Sonoff app. After that, it is remotely controllable from anywhere in the&amp;nbsp;world.&lt;/p&gt;
 &lt;/div&gt;
@@ -842,14 +842,14 @@ Hence, the only thing you need to do to get your own 3D scan is to capture a set
 &lt;p&gt;I designed the lamp in &lt;span class="caps"&gt;CAD&lt;/span&gt; and incorporated parts made from solid wood, 3D printed plastic parts and laser cut wooden parts. Solid wood is used for the outer box to provide sufficient stability for the lamp. 3D printed plastic parts are used for mechanical parts and mountings of the electronics. Laser cut wooden parts are used as decoration and mechanical parts. Last but not least, the electronics is wired to mains&amp;nbsp;voltage.&lt;/p&gt;
 &lt;p&gt;The &lt;span class="caps"&gt;CAD&lt;/span&gt; model is shown below in two&amp;nbsp;visualisations.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/15_CAD_realistic.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/15_CAD_realistic.png" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/15_CAD_realistic.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/15_CAD_realistic.png" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Realistic &lt;span class="caps"&gt;CAD&lt;/span&gt; rendering of the 3D model that I drew prior to building the&amp;nbsp;lamp.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/16_CAD_drawing.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/16_CAD_drawing.png" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/16_CAD_drawing.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/16_CAD_drawing.png" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Simpler &lt;span class="caps"&gt;CAD&lt;/span&gt; rendering of the&amp;nbsp;model.&lt;/p&gt;
 &lt;/div&gt;
@@ -867,13 +867,13 @@ Hence, the only thing you need to do to get your own 3D scan is to capture a set
 &lt;p&gt;The build process was good fun and I am very happy with the final outcome. It&amp;#8217;s been in use for three weeks now and works reliably: It is a great comfort to be able to control the light from all over the world as well as to control it through the physical switch. In particular, the 3D printed mechanical switch mechanism turns out to work very&amp;nbsp;well.&lt;/p&gt;
 &lt;p&gt;Last but not least, the following picture shows the lamp in its new&amp;nbsp;habitat:&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/wooden_IoT_lamp/hr/17_lamp_habitat.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/wooden_IoT_lamp/lr/17_lamp_habitat.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/wooden_IoT_lamp/hr/17_lamp_habitat.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/wooden_IoT_lamp/lr/17_lamp_habitat.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;View of how I use the lamp in my&amp;nbsp;room.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="prototyping"></category></entry><entry><title>3D printed bike lock mount</title><link href="http://lellep.xyz/blog/3d-printed-bike-lock-mount.html" rel="alternate"></link><published>2019-09-01T00:00:00+02:00</published><updated>2019-09-01T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2019-09-01:/blog/3d-printed-bike-lock-mount.html</id><summary type="html">&lt;p class="first last"&gt;Over are the days of juggling a bike lock while riding my&amp;nbsp;bike!&lt;/p&gt;
+</content><category term="prototyping"></category></entry><entry><title>3D printed bike lock mount</title><link href="https://lellep.xyz/blog/3d-printed-bike-lock-mount.html" rel="alternate"></link><published>2019-09-01T00:00:00+02:00</published><updated>2019-09-01T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2019-09-01:/blog/3d-printed-bike-lock-mount.html</id><summary type="html">&lt;p class="first last"&gt;Over are the days of juggling a bike lock while riding my&amp;nbsp;bike!&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;I like my bike and want to protect it from evil thieves. For that, I use an old solid
 lock that comes with the downside of being quite bulky to carry while riding my&amp;nbsp;bike.&lt;/p&gt;
 &lt;p&gt;Of course, there are solutions to this such as putting it in a backpack or holding it in
@@ -881,8 +881,8 @@ my hand while riding. But &amp;#8230; where is the fun with these? In particular
 my 3D printer waiting eagerly for jobs. The following figure shows the frame of my bike
 from the side. Clearly, there is space for some 3D printed mounting solution&amp;nbsp;:-).&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/0_picture_of_frame.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/0_picture_of_frame.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/0_picture_of_frame.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/0_picture_of_frame.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Side view of my bike&amp;#8217;s frame. The red arrow indicates available space for
 a 3D printed mounting solution for my bike&amp;nbsp;lock.&lt;/p&gt;
@@ -897,8 +897,8 @@ same is performed for my old&amp;nbsp;lock.&lt;/p&gt;
 to determine the angle between the two major rods accurately. This is shown in the following
 figure. Second, the bike lock is measured and drawn in 3D as&amp;nbsp;well.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/1_measuring_angles.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/1_measuring_angles.png" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/1_measuring_angles.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/1_measuring_angles.png" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Measuring the geometry of my bike&amp;#8217;s&amp;nbsp;frame.&lt;/p&gt;
 &lt;/div&gt;
@@ -914,8 +914,8 @@ and metal screws (not shown) are used to hold all pieces&amp;nbsp;together.&lt;/
 &lt;br/&gt;&lt;p&gt;Additionally, the following figure shows a rendering of the whole setup while being
 mounted to the bike&amp;nbsp;frame.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/2_rendering.png"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/2_rendering.png" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/2_rendering.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/2_rendering.png" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Rendering of the designed 3D&amp;nbsp;model.&lt;/p&gt;
 &lt;/div&gt;
@@ -927,8 +927,8 @@ After the 3D printer finished
 with my final design, it was carefully sanded and tested for proper fitting. The following shows
 the parts layed out on a&amp;nbsp;table.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/3_parts.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/3_parts.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/3_parts.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/3_parts.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;All parts that are necessary for the assembly. The white parts were 3D printed and the remaining
 items are the metal screws and&amp;nbsp;washers.&lt;/p&gt;
@@ -937,14 +937,14 @@ items are the metal screws and&amp;nbsp;washers.&lt;/p&gt;
 designed parts fit together but also that the lock fits inside. With this, the assembly is ready to be mounted
 to the&amp;nbsp;bike.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/4_half_assembly.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/4_half_assembly.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/4_half_assembly.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/4_half_assembly.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Half assembled bike lock mount with inserted metal&amp;nbsp;screws.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/5_test_assembly.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/5_test_assembly.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/5_test_assembly.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/5_test_assembly.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Finished test assembly. The lock does fit inside the&amp;nbsp;design.&lt;/p&gt;
 &lt;/div&gt;
@@ -955,22 +955,22 @@ to the&amp;nbsp;bike.&lt;/p&gt;
 First, a rubber band is wrapped around the bike shaft to improve adhesion of
 the mount to the bike in azimuthal direction. This can be seen in the following&amp;nbsp;figure.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/6_rubber.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/6_rubber.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/6_rubber.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/6_rubber.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Rubber band wrapped around the bike shaft to increase adhesion of the 3D&amp;nbsp;print.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Second, the two identical parts are screwed around the shaft in order to, finally, screw the last 3D
 printed piece to the two identical parts. The following two figures show these steps in&amp;nbsp;detail.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/7_bike_assembly_1.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/7_bike_assembly_1.jpg" style="height: 400px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/7_bike_assembly_1.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/7_bike_assembly_1.jpg" style="height: 400px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The two identical 3D printed pieces are mounted to the&amp;nbsp;frame.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/8_bike_assembly_2.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/8_bike_assembly_2.jpg" style="width: 500px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/8_bike_assembly_2.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/8_bike_assembly_2.jpg" style="width: 500px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;Subsequently, the last piece is mounted to the pieces installed beforehand and the bike lock
 is&amp;nbsp;inserted.&lt;/p&gt;
@@ -1003,19 +1003,19 @@ my&amp;nbsp;model.&lt;/p&gt;
 &lt;p&gt;Last but not least, the obligatory evidence of the bike lock mount in wildlife - as found
 at places that might be familiar to people from&amp;nbsp;Marburg.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/9_evidence_1.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/9_evidence_1.jpg" style="width: 400px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/9_evidence_1.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/9_evidence_1.jpg" style="width: 400px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The first&amp;nbsp;evidence.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/10_evidence_2.jpg"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/10_evidence_2.jpg" style="width: 400px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/hr/10_evidence_2.jpg"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/bike_lock_mount_3d_print/lr/10_evidence_2.jpg" style="width: 400px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The second&amp;nbsp;evidence.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="prototyping"></category></entry><entry><title>Turbulence simulation data in real-life</title><link href="http://lellep.xyz/blog/turbulence-simulation-data-in-real-life.html" rel="alternate"></link><published>2017-12-19T00:00:00+01:00</published><updated>2017-12-19T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2017-12-19:/blog/turbulence-simulation-data-in-real-life.html</id><summary type="html">&lt;p class="first last"&gt;3D print and resin cast of a turbulent flow from 3D simulation&amp;nbsp;data.&lt;/p&gt;
+</content><category term="prototyping"></category></entry><entry><title>Turbulence simulation data in real-life</title><link href="https://lellep.xyz/blog/turbulence-simulation-data-in-real-life.html" rel="alternate"></link><published>2017-12-19T00:00:00+01:00</published><updated>2017-12-19T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2017-12-19:/blog/turbulence-simulation-data-in-real-life.html</id><summary type="html">&lt;p class="first last"&gt;3D print and resin cast of a turbulent flow from 3D simulation&amp;nbsp;data.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Amongst others, I developed a code for simulating Newtonian fluids such as water
 during my Master studies. Choosing proper settings, one can easily generate large
 amounts of 3D data that resembles a turbulent flow in a&amp;nbsp;box.&lt;/p&gt;
@@ -1046,8 +1046,8 @@ coded where red values are large positive values in the flow  direction and blue
 values in the flow direction. The flow direction is the x coordinate. The gray surface at t=0 is the one
 that is 3D printed and resin casted here. The video shows the turbulent evolution of that surface in&amp;nbsp;time.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a class="reference external image-reference" href="http://lellep.xyz/blog/videos/turbulentDataCast/turbulence_isosurfaces.mp4"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/turbulence_isosurfaces_frontPic.png" style="width: 600px;" /&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/videos/turbulentDataCast/turbulence_isosurfaces.mp4"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/turbulentDataCast/turbulence_isosurfaces_frontPic.png" style="width: 600px;" /&gt;
 &lt;/a&gt;
 &lt;p class="caption"&gt;The simulation data that has been used for the&amp;nbsp;cast.&lt;/p&gt;
 &lt;/div&gt;
@@ -1057,19 +1057,19 @@ that is 3D printed and resin casted here. The video shows the turbulent evolutio
 &lt;p&gt;Below, the result of the cast is shown: It is the transparent piece which took
 two days to cure inside the silicone&amp;nbsp;mould.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/0_3d_prints.jpg" style="width: 400px;" /&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/turbulentDataCast/lr/0_3d_prints.jpg" style="width: 400px;" /&gt;
 &lt;p class="caption"&gt;3D prints in two sizes, colors and&amp;nbsp;resolutions.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/1_mould_box.jpg" style="width: 400px;" /&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/turbulentDataCast/lr/1_mould_box.jpg" style="width: 400px;" /&gt;
 &lt;p class="caption"&gt;3D print with white fill primer inside its silicone moulding&amp;nbsp;box.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/2_silicone_mould.jpg" style="width: 400px;" /&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/turbulentDataCast/lr/2_silicone_mould.jpg" style="width: 400px;" /&gt;
 &lt;p class="caption"&gt;Silicone&amp;nbsp;mould.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="" src="http://lellep.xyz/blog/images/turbulentDataCast/lr/3_resin_cast.jpg" style="width: 400px;" /&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/turbulentDataCast/lr/3_resin_cast.jpg" style="width: 400px;" /&gt;
 &lt;p class="caption"&gt;Resin cast and its&amp;nbsp;template.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;

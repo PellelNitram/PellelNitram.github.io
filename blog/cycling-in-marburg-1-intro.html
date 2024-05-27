@@ -8,23 +8,23 @@
 
   <title>  Cycling in Marburg (1/4): Project introduction and data source | Blog
 </title>
-  <link rel="canonical" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html">
+  <link rel="canonical" href="https://lellep.xyz/blog/cycling-in-marburg-1-intro.html">
 
-    <link rel="apple-touch-icon" href="http://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="http://lellep.xyz/blog/manifest.json">
+    <link rel="apple-touch-icon" href="https://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://lellep.xyz/blog/manifest.json">
     <meta name="theme-color" content="#333333">
 
-  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/fontawesome.min.css">
-  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/pygments/default.min.css">
-  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/theme.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/theme.css">
 
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
-        href="http://lellep.xyz/blog/feeds/all.atom.xml">
+        href="https://lellep.xyz/blog/feeds/all.atom.xml">
   <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
-        href="http://lellep.xyz/blog/feeds/data.atom.xml">  
+        href="https://lellep.xyz/blog/feeds/data.atom.xml">  
   <meta name="description" content="I collected Nextbike data in Marburg and introduce my plan to evaluate the data in this article. Also, I present what the data is made up of and how it is obtained in detail. Lastly, a first temporal analysis of the bike usage in Marburg is presented.">
   <script>
   // ===
@@ -72,17 +72,17 @@
     <div class="container">
 <div class="row">
     <div class="col-sm-4">
-      <a href="http://lellep.xyz/blog/">
-        <img class="img-fluid rounded" src=http://lellep.xyz/blog/images/logo.svg alt="Blog">
+      <a href="https://lellep.xyz/blog/">
+        <img class="img-fluid rounded" src=https://lellep.xyz/blog/images/logo.svg alt="Blog">
       </a>
     </div>
   <div class="col-sm-8">
-    <h1 class="title"><a href="http://lellep.xyz/blog/">Blog</a></h1>
+    <h1 class="title"><a href="https://lellep.xyz/blog/">Blog</a></h1>
       <p class="text-muted">by Martin Lellep</p>
       <ul class="list-inline">
           <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">◄ back to my main website</a></li>
               <li class="list-inline-item text-muted">|</li>
-            <li class="list-inline-item"><a href="http://lellep.xyz/blog/pages/about.html">About</a></li>
+            <li class="list-inline-item"><a href="https://lellep.xyz/blog/pages/about.html">About</a></li>
             <li class=" list-inline-item text-muted">|</li>
           <li class="list-inline-item"><a class="fab fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
       </ul>
@@ -104,11 +104,11 @@
         </li>
         <li class="list-inline-item">
           <i class="fas fa-folder-open"></i>
-          <a href="http://lellep.xyz/blog/category/data.html">data</a>
+          <a href="https://lellep.xyz/blog/category/data.html">data</a>
         </li>
           <li class="list-inline-item">
             <i class="fas fa-tag"></i>
-              <a href="http://lellep.xyz/blog/tag/cycling-in-marburg.html">#cycling-in-marburg</a>          </li>
+              <a href="https://lellep.xyz/blog/tag/cycling-in-marburg.html">#cycling-in-marburg</a>          </li>
       </ul>
     </header>
     <div class="content">
@@ -147,8 +147,8 @@ Each word in the previous sentence links to one official news article that is co
 </ul>
 <p>This first blog article introduces the underlying data, i.e. where it comes from, how I obtained it and what kind of data is available. The data is obtained as&nbsp;follows:</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.svg">
-<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.png" style="width: 600px;" />
+<a class="reference external image-reference" href="https://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.svg">
+<img alt="" src="https://lellep.xyz/blog/images/cycling_in_marburg_1/download_structure.png" style="width: 600px;" />
 </a>
 </div>
 <p>I query the Nextbike <span class="caps">API</span> regularly using a scraper written in <a class="reference external" href="https://www.python.org/">Python</a> that runs inside a <a class="reference external" href="https://en.wikipedia.org/wiki/Docker_(software)">Docker container</a>. This data is parsed and saved on disk for subsequent&nbsp;analyses.</p>
@@ -156,15 +156,15 @@ Each word in the previous sentence links to one official news article that is co
 <p>To get a very first impression of the data, let me present two small analyses upfront&nbsp;already.</p>
 <p>First, I show the number of parked bikes across the whole Nextbike system in Marburg against&nbsp;time.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png">
-<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png" style="width: 600px;" />
+<a class="reference external image-reference" href="https://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png">
+<img alt="" src="https://lellep.xyz/blog/images/cycling_in_marburg_1/1__parked_bikes_vs_time.png" style="width: 600px;" />
 </a>
 </div>
 <p>One can see that the number of parked bikes starts out large in the beginning of the year and decreases towards the summer. The smallest number of bikes can be found mid-summer at the end of August. The reasons for this behaviour can be manifold and ultimately not solved solely based on statistics. Let me guess some explanations: The beginning of the Corona crisis in March 2020 has maybe increased the number of parked bikes in the beginning of the year. Then, as Corona became less of an issue in the summer - and also because of the warm temperatures -, the number of parked bikes decreased in the warm months. Lastly, with the cold temperatures and a second Corona wave, the number of parked bikes increases again at the end of&nbsp;2020.</p>
 <p>Now that we know of the yearly behaviour, let&#8217;s focus on how bikes are parked depending on day and hour of the day. The following figure shows the difference to the average number of parked&nbsp;bikes.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png">
-<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png" style="width: 800px;" />
+<a class="reference external image-reference" href="https://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png">
+<img alt="" src="https://lellep.xyz/blog/images/cycling_in_marburg_1/2__day_hour_histogram.png" style="width: 800px;" />
 </a>
 </div>
 <p>Many bikes are parked during the early hours of the day and fewer are parked during the later hours of the day. Also, fewer bikes are parked during weekends in general. Fewest bikes are parked on Saturday afternoon. All these statements are reasonable and make sense at first&nbsp;glance.</p>
@@ -172,10 +172,10 @@ Each word in the previous sentence links to one official news article that is co
 <hr class="docutils" />
 <p>This article belongs to a series of articles. This is the list of all&nbsp;articles:</p>
 <ul class="simple">
-<li>Cycling in Marburg (1/4): <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html">Project introduction and data&nbsp;source</a></li>
-<li>Cycling in Marburg (2/4): <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html">For Nextbike&nbsp;users</a></li>
-<li>Cycling in Marburg (3/4): <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html">For the city&nbsp;council</a></li>
-<li>Cycling in Marburg (4/4): <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html">Machine learning&nbsp;predictions</a></li>
+<li>Cycling in Marburg (1/4): <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-1-intro.html">Project introduction and data&nbsp;source</a></li>
+<li>Cycling in Marburg (2/4): <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-2-users.html">For Nextbike&nbsp;users</a></li>
+<li>Cycling in Marburg (3/4): <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-3-city.html">For the city&nbsp;council</a></li>
+<li>Cycling in Marburg (4/4): <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-4-ml.html">Machine learning&nbsp;predictions</a></li>
 </ul>
 
     </div>
@@ -213,9 +213,9 @@ Each word in the previous sentence links to one official news article that is co
     <div class="container">
 <div class="row">
   <ul class="col-sm-6 list-inline">
-    <li class="list-inline-item"><a href="http://lellep.xyz/blog/archives.html">Archives</a></li>
-    <li class="list-inline-item"><a href="http://lellep.xyz/blog/categories.html">Categories</a></li>
-      <li class="list-inline-item"><a href="http://lellep.xyz/blog/tags.html">Tags</a></li>
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="https://lellep.xyz/blog/tags.html">Tags</a></li>
     <li class="list-inline-item">
         <a href="javascript:gaOptout()">Refuse analytics cookies</a>
     </li>

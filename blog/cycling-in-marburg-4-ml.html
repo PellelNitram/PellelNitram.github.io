@@ -8,23 +8,23 @@
 
   <title>  Cycling in Marburg (4/4): Machine learning predictions | Blog
 </title>
-  <link rel="canonical" href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html">
+  <link rel="canonical" href="https://lellep.xyz/blog/cycling-in-marburg-4-ml.html">
 
-    <link rel="apple-touch-icon" href="http://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="http://lellep.xyz/blog/manifest.json">
+    <link rel="apple-touch-icon" href="https://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://lellep.xyz/blog/manifest.json">
     <meta name="theme-color" content="#333333">
 
-  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/fontawesome.min.css">
-  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/pygments/default.min.css">
-  <link rel="stylesheet" href="http://lellep.xyz/blog/theme/css/theme.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/theme.css">
 
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
-        href="http://lellep.xyz/blog/feeds/all.atom.xml">
+        href="https://lellep.xyz/blog/feeds/all.atom.xml">
   <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
-        href="http://lellep.xyz/blog/feeds/data.atom.xml">  
+        href="https://lellep.xyz/blog/feeds/data.atom.xml">  
   <meta name="description" content="In this article, I use machine learning to predict the number of parked bikes in two ways.">
   <script>
   // ===
@@ -72,17 +72,17 @@
     <div class="container">
 <div class="row">
     <div class="col-sm-4">
-      <a href="http://lellep.xyz/blog/">
-        <img class="img-fluid rounded" src=http://lellep.xyz/blog/images/logo.svg alt="Blog">
+      <a href="https://lellep.xyz/blog/">
+        <img class="img-fluid rounded" src=https://lellep.xyz/blog/images/logo.svg alt="Blog">
       </a>
     </div>
   <div class="col-sm-8">
-    <h1 class="title"><a href="http://lellep.xyz/blog/">Blog</a></h1>
+    <h1 class="title"><a href="https://lellep.xyz/blog/">Blog</a></h1>
       <p class="text-muted">by Martin Lellep</p>
       <ul class="list-inline">
           <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">◄ back to my main website</a></li>
               <li class="list-inline-item text-muted">|</li>
-            <li class="list-inline-item"><a href="http://lellep.xyz/blog/pages/about.html">About</a></li>
+            <li class="list-inline-item"><a href="https://lellep.xyz/blog/pages/about.html">About</a></li>
             <li class=" list-inline-item text-muted">|</li>
           <li class="list-inline-item"><a class="fab fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
       </ul>
@@ -104,19 +104,19 @@
         </li>
         <li class="list-inline-item">
           <i class="fas fa-folder-open"></i>
-          <a href="http://lellep.xyz/blog/category/data.html">data</a>
+          <a href="https://lellep.xyz/blog/category/data.html">data</a>
         </li>
           <li class="list-inline-item">
             <i class="fas fa-tag"></i>
-              <a href="http://lellep.xyz/blog/tag/cycling-in-marburg.html">#cycling-in-marburg</a>          </li>
+              <a href="https://lellep.xyz/blog/tag/cycling-in-marburg.html">#cycling-in-marburg</a>          </li>
       </ul>
     </header>
     <div class="content">
       <p>This article is the last article in the series of articles on Nextbikes in Marburg. So far, I covered the following topics in the&nbsp;series:</p>
 <ul class="simple">
-<li>Article 1 of 4: <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html">Project introduction, data source and first&nbsp;analyses</a></li>
-<li>Article 2 of 4: <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html">Analyses from the perspective of Nextbike&nbsp;users</a></li>
-<li>Article 3 of 4: <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html">Analyses from the perspective of Marburg the city&nbsp;council</a></li>
+<li>Article 1 of 4: <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-1-intro.html">Project introduction, data source and first&nbsp;analyses</a></li>
+<li>Article 2 of 4: <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-2-users.html">Analyses from the perspective of Nextbike&nbsp;users</a></li>
+<li>Article 3 of 4: <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-3-city.html">Analyses from the perspective of Marburg the city&nbsp;council</a></li>
 </ul>
 <p>In this article, I turn towards a slightly more technical perspective: I apply machine learning to predict the number of parked bikes in two ways. In the first way, I fit a Markov chain to the transition matrix and derive the Markov steady state bike distribution. In the second way, I train a <a class="reference external" href="https://en.wikipedia.org/wiki/Random_forest">random forest</a> to predict the number of parked bikes in the Nextbike ecosystem of Marburg based on the hour of the day, day of the week and&nbsp;temperature.</p>
 <div class="contents topic" id="table-of-contents">
@@ -130,7 +130,7 @@
 <div class="section" id="markov-chain-and-steady-state">
 <h2><a class="toc-backref" href="#table-of-contents">Markov chain and steady&nbsp;state</a></h2>
 <p>Here, I will fit a <a class="reference external" href="https://en.wikipedia.org/wiki/Markov_chain">Markov chain</a> to the dynamics of Nextbikes in Marburg and find the steady state of the corresponding dynamical&nbsp;system.</p>
-<p>For that, the corresponding <a class="reference external" href="https://en.wikipedia.org/wiki/Stochastic_matrix">stochastic matrix</a>, \(\mathbf{P}\), is obtained from the transition matrix \(\mathbf{T}\). The transition matrix stores the numbers of transitions between all pairs of stations. The number of transitions between stations \(t\) (for &#8220;to&#8221;) and \(f\) (for &#8220;from&#8221;) is stored as \(T_{f,t}\). The transition matrix has been introduced and shown in <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html">the article intended for the city council</a>.</p>
+<p>For that, the corresponding <a class="reference external" href="https://en.wikipedia.org/wiki/Stochastic_matrix">stochastic matrix</a>, \(\mathbf{P}\), is obtained from the transition matrix \(\mathbf{T}\). The transition matrix stores the numbers of transitions between all pairs of stations. The number of transitions between stations \(t\) (for &#8220;to&#8221;) and \(f\) (for &#8220;from&#8221;) is stored as \(T_{f,t}\). The transition matrix has been introduced and shown in <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-3-city.html">the article intended for the city council</a>.</p>
 <p>With the stochastic matrix \(\mathbf{P}\), the state of Nextbikes in Marburg, \(\vec{x}\), can be advanced in time&nbsp;with</p>
 <p>\[\vec{x}^{(i+1)} = \mathbf{P} \cdot&nbsp;\vec{x}^{(i)}\]</p>
 <p>or in component&nbsp;notation</p>
@@ -145,8 +145,8 @@
 <p>\[\lambda \cdot \vec{x}_{(S)} = \mathbf{P} \cdot&nbsp;\vec{x}_{(S)}\]</p>
 <p>with \(\lambda=1\). After solving the eigenvalue problem and selecting the eigenvector with eigenvalue 1, the steady state is obtained. The steady state yields suggestions for where bikes will accumulate and, potentially, need to be carried around&nbsp;manually.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png">
-<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png" style="width: 700px;" />
+<a class="reference external image-reference" href="https://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png">
+<img alt="" src="https://lellep.xyz/blog/images/cycling_in_marburg_4/1__markov_steady_state.png" style="width: 700px;" />
 </a>
 </div>
 <p>Hence, also the steady state computation confirms that the <em>Hauptbahnhof</em> and <em>Elisabeth-Blochmann-Platz</em> are the largest stations. Note that the steady state is only determined up to a constant due to the linearity of the underlying eigenvalue&nbsp;problem.</p>
@@ -156,17 +156,17 @@
 <p>Now I come to a classical regression machine learning task. The task is to predict the accumulative number of bikes in Marburg given the hour of the day, the day of the week and the&nbsp;temperature.</p>
 <p>Since I was not able to find temperature data for Marburg, I used temperature data from Giessen, which is a city nearby. The data is obtained from the <a class="reference external" href="https://www.dwd.de/DE/Home/home_node.html">German weather service</a> (in German: <span class="caps">DWD</span>). Let&#8217;s see how the temperature varies during the time of data&nbsp;collection.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png">
-<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png" style="width: 600px;" />
+<a class="reference external image-reference" href="https://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png">
+<img alt="" src="https://lellep.xyz/blog/images/cycling_in_marburg_4/2__temperature.png" style="width: 600px;" />
 </a>
 </div>
 <p>The different resamples of the raw data show how the temperature rises towards summer and declines towards&nbsp;winter.</p>
-<p>With the weather and the number of parked bikes in the whole Marburg Nextbike ecosystem (introduced <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html">earlier</a>), the training data can be constructed. The training&nbsp;data,</p>
+<p>With the weather and the number of parked bikes in the whole Marburg Nextbike ecosystem (introduced <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-1-intro.html">earlier</a>), the training data can be constructed. The training&nbsp;data,</p>
 <p>\[(\text{hour}, \text{weekday}, \text{temperature}) \rightarrow \text{number of parked&nbsp;bikes},\]</p>
 <p>maps the triplet of the hour, the weekday and the temperature to the number of parked bikes in the Marburg Nextbike ecosystem. Since the training data here is 3 dimensional, I follow the best practise of visualising the training data prior to training. The target variable, i.e. the number of parked bikes, is colour coded in the following&nbsp;figure.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png">
-<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png" style="width: 800px;" />
+<a class="reference external image-reference" href="https://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png">
+<img alt="" src="https://lellep.xyz/blog/images/cycling_in_marburg_4/3__training_data.png" style="width: 800px;" />
 </a>
 </div>
 <p>The two perspectives of the same underlying data show that there is little variation of the number of bikes parked with day, a little more variation with hour and most variation with temperature. That&#8217;s reasonable: People prefer to ride bikes when it is warm and when it is not too late or early on a&nbsp;day.</p>
@@ -181,8 +181,8 @@
 <p>The classifier reaches a <a class="reference external" href="https://en.wikipedia.org/wiki/Mean_squared_error">mean squared error</a> (<span class="caps">MSE</span>) of around 137 on the test data set. To evaluate if this is a good result, the square root of the <span class="caps">MSE</span> is computed and compared to the average of the target variable: The square root of the <span class="caps">MSE</span> is around 11.7 and the average number of parked bikes is 118 (with minimal value being 62 and maximal value 163). I consider this a decent result because the mean error is a factor of 10 smaller than typical values of the variable that is predicted. There is a multitude of ways to improve this result even further - see the outlook of this article for further&nbsp;information.</p>
 <p>Lastly, let&#8217;s compare the measured data that served as training data and the predicted data side-by-side using a dense covering of the phase&nbsp;space.</p>
 <div class="figure">
-<a class="reference external image-reference" href="http://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png">
-<img alt="" src="http://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png" style="width: 800px;" />
+<a class="reference external image-reference" href="https://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png">
+<img alt="" src="https://lellep.xyz/blog/images/cycling_in_marburg_4/4__regressor_comparison.png" style="width: 800px;" />
 </a>
 </div>
 <p>The predicted data shows the same characteristics as the underlying training data: The warmer it gets, the fewer bikes are parked in the Nextbike ecosystem in Marburg. Hence, I obtained a decent&nbsp;regressor.</p>
@@ -203,16 +203,16 @@
 <li>Predict the number of parked bikes for each station&nbsp;separately.</li>
 <li>Predictive maintenance: When do bikes break? Are there&nbsp;precursors?</li>
 <li>Predict the number of transitions of bikes to find instances when Nextbikes might hinder smooth car traffic in&nbsp;Marburg.</li>
-<li>Spatial interpolation of bike demand. For example with Gaussian Processes - similar to <a class="reference external" href="http://lellep.xyz/blog/parking-in-marburg.html">what I did previously for the parking demand in Marburg</a>.</li>
+<li>Spatial interpolation of bike demand. For example with Gaussian Processes - similar to <a class="reference external" href="https://lellep.xyz/blog/parking-in-marburg.html">what I did previously for the parking demand in Marburg</a>.</li>
 </ul>
 <p>These tasks might be useful for either the cities that host bike sharing systems or even the companies&nbsp;themselves.</p>
 <hr class="docutils" />
 <p>This article belongs to a series of articles. This is the list of all&nbsp;articles:</p>
 <ul class="simple">
-<li>Cycling in Marburg (1/4): <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-1-intro.html">Project introduction and data&nbsp;source</a></li>
-<li>Cycling in Marburg (2/4): <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-2-users.html">For Nextbike&nbsp;users</a></li>
-<li>Cycling in Marburg (3/4): <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-3-city.html">For the city&nbsp;council</a></li>
-<li>Cycling in Marburg (4/4): <a class="reference external" href="http://lellep.xyz/blog/cycling-in-marburg-4-ml.html">Machine learning&nbsp;predictions</a></li>
+<li>Cycling in Marburg (1/4): <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-1-intro.html">Project introduction and data&nbsp;source</a></li>
+<li>Cycling in Marburg (2/4): <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-2-users.html">For Nextbike&nbsp;users</a></li>
+<li>Cycling in Marburg (3/4): <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-3-city.html">For the city&nbsp;council</a></li>
+<li>Cycling in Marburg (4/4): <a class="reference external" href="https://lellep.xyz/blog/cycling-in-marburg-4-ml.html">Machine learning&nbsp;predictions</a></li>
 </ul>
 </div>
 
@@ -251,9 +251,9 @@
     <div class="container">
 <div class="row">
   <ul class="col-sm-6 list-inline">
-    <li class="list-inline-item"><a href="http://lellep.xyz/blog/archives.html">Archives</a></li>
-    <li class="list-inline-item"><a href="http://lellep.xyz/blog/categories.html">Categories</a></li>
-      <li class="list-inline-item"><a href="http://lellep.xyz/blog/tags.html">Tags</a></li>
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="https://lellep.xyz/blog/tags.html">Tags</a></li>
     <li class="list-inline-item">
         <a href="javascript:gaOptout()">Refuse analytics cookies</a>
     </li>
