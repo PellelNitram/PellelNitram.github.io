@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2024-03-24T00:00:00+01:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>Workation as a PhD Student</title><link href="https://lellep.xyz/blog/workation-as-a-phd-student.html" rel="alternate"></link><published>2024-03-24T00:00:00+01:00</published><updated>2024-03-24T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-03-24:/blog/workation-as-a-phd-student.html</id><summary type="html">&lt;p class="first last"&gt;I share all of my learnings about going on a workation as a PhD Student to enhance productivity and creativity, including a cost&amp;nbsp;breakdown.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2024-06-10T00:00:00+02:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>Online HTR PyTorch Model</title><link href="https://lellep.xyz/blog/online-htr.html" rel="alternate"></link><published>2024-06-10T00:00:00+02:00</published><updated>2024-06-10T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-06-10:/blog/online-htr.html</id><summary type="html">&lt;p class="first last"&gt;I implemented an Online Handwritten Text Recognition (&lt;span class="caps"&gt;HTR&lt;/span&gt;) system using PyTorch, based on Google&amp;nbsp;paper.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;⭐ Interested in the model weights? Then please scroll down to &lt;a class="reference internal" href="#the-model-weights"&gt;The model weights&lt;/a&gt;&amp;nbsp;section!&lt;/p&gt;
+&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Table of&amp;nbsp;Contents:&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#summary" id="toc-entry-1"&gt;Summary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#the-model-weights" id="toc-entry-2"&gt;The model&amp;nbsp;weights&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="summary"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Summary&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Using PyTorch, I implemented &lt;a class="reference external" href="https://doi.org/10.1007/s10032-020-00350-4"&gt;this Google paper&lt;/a&gt; by
+Carbune &lt;em&gt;et al.&lt;/em&gt; (2020) to predict handwritten text based on the underlying stroke
+time series data. You can find the code on my GitHub profile
+&lt;a class="reference external" href="https://github.com/PellelNitram/OnlineHTR"&gt;here&lt;/a&gt;. In this article, I share the PyTorch model weights
+so you do not have to train the model&amp;nbsp;yourself!&lt;/p&gt;
+&lt;!-- In this article, I go into a
+few details of the implementation and, most of all, you can download the model weights
+here so you do not have to train the model yourself! --&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://github.com/PellelNitram/OnlineHTR"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/online_htr/demo.gif" style="width: 70%;" /&gt;
+&lt;/a&gt;
+&lt;p class="caption"&gt;A demo showing the transcription of &amp;#8220;Hello World!&amp;#8221; using a custom app,
+that is part of &lt;a class="reference external" href="https://github.com/PellelNitram/OnlineHTR"&gt;my implementation&lt;/a&gt;,
+to capture the stroke time series data as input to the&amp;nbsp;model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-model-weights"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;The model&amp;nbsp;weights&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Download the latest model weights here for&amp;nbsp;free:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://bit.ly/3R4FM8u"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/online_htr/download_model_weights_here.png" style="width: 30%;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- TODOs
+===== --&gt;
+&lt;!-- - maybe show graph of time commitment?
+- more sections between summary and model weights? or maybe after model weights?
+  maybe model structure?
+- better title? --&gt;
+&lt;/div&gt;
+</content><category term="machine-learning"></category><category term="machine-learning"></category><category term="pytorch"></category><category term="data"></category></entry><entry><title>Workation as a PhD Student</title><link href="https://lellep.xyz/blog/workation-as-a-phd-student.html" rel="alternate"></link><published>2024-03-24T00:00:00+01:00</published><updated>2024-03-24T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-03-24:/blog/workation-as-a-phd-student.html</id><summary type="html">&lt;p class="first last"&gt;I share all of my learnings about going on a workation as a PhD Student to enhance productivity and creativity, including a cost&amp;nbsp;breakdown.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;⭐ Interested in the cost breakdown? Then please scroll down to &lt;a class="reference internal" href="#the-cost"&gt;The cost&lt;/a&gt;&amp;nbsp;section!&lt;/p&gt;
 &lt;div class="contents topic" id="table-of-contents"&gt;
 &lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Table of&amp;nbsp;Contents:&lt;/a&gt;&lt;/p&gt;

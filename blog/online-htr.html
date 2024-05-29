@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Online HTR PyTorch Model | Blog
+</title>
+  <link rel="canonical" href="https://lellep.xyz/blog/online-htr.html">
+
+    <link rel="apple-touch-icon" href="https://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://lellep.xyz/blog/manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://lellep.xyz/blog/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://lellep.xyz/blog/feeds/machine-learning.atom.xml">  
+  <meta name="description" content="I implemented an Online Handwritten Text Recognition (HTR) system using PyTorch, based on Google paper.">
+  <script>
+  // ===
+  // Taken from: https://developers.google.com/analytics/devguides/collection/gajs/?hl=de&authuser=0#disable
+  // ===
+
+  // Set to the same value as the web property used on the site
+  var gaProperty = 'UA-142575904-2';
+
+  // Disable tracking if the opt-out cookie exists.
+  var disableStr = 'ga-disable-' + gaProperty;
+  if (document.cookie.indexOf(disableStr + '=true') > -1) {
+    window[disableStr] = true;
+  }
+
+  // Opt-out function
+  function gaOptout() {
+    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+  }
+  </script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-142575904-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+  <script data-goatcounter="https://lellep.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  <!-- Mathjax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="https://lellep.xyz/blog/">
+        <img class="img-fluid rounded" src=https://lellep.xyz/blog/images/logo.svg alt="Blog">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="https://lellep.xyz/blog/">Blog</a></h1>
+      <p class="text-muted">by Martin Lellep</p>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">◄ back to my main website</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="https://lellep.xyz/blog/pages/about.html">About</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Online <span class="caps">HTR</span> PyTorch&nbsp;Model
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2024-06-10T00:00:00+02:00">
+          <i class="fas fa-clock"></i>
+          Mon 10 June 2024
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="https://lellep.xyz/blog/category/machine-learning.html">machine-learning</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="https://lellep.xyz/blog/tag/machine-learning.html">#machine-learning</a>,               <a href="https://lellep.xyz/blog/tag/pytorch.html">#pytorch</a>,               <a href="https://lellep.xyz/blog/tag/data.html">#data</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>⭐ Interested in the model weights? Then please scroll down to <a class="reference internal" href="#the-model-weights">The model weights</a>&nbsp;section!</p>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title"><a class="reference internal" href="#top">Table of&nbsp;Contents:</a></p>
+<ul class="simple">
+<li><a class="reference internal" href="#summary" id="toc-entry-1">Summary</a></li>
+<li><a class="reference internal" href="#the-model-weights" id="toc-entry-2">The model&nbsp;weights</a></li>
+</ul>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#table-of-contents">Summary</a></h2>
+<p>Using PyTorch, I implemented <a class="reference external" href="https://doi.org/10.1007/s10032-020-00350-4">this Google paper</a> by
+Carbune <em>et al.</em> (2020) to predict handwritten text based on the underlying stroke
+time series data. You can find the code on my GitHub profile
+<a class="reference external" href="https://github.com/PellelNitram/OnlineHTR">here</a>. In this article, I share the PyTorch model weights
+so you do not have to train the model&nbsp;yourself!</p>
+<!-- In this article, I go into a
+few details of the implementation and, most of all, you can download the model weights
+here so you do not have to train the model yourself! -->
+<div class="figure">
+<a class="reference external image-reference" href="https://github.com/PellelNitram/OnlineHTR">
+<img alt="" src="https://lellep.xyz/blog/images/online_htr/demo.gif" style="width: 70%;" />
+</a>
+<p class="caption">A demo showing the transcription of &#8220;Hello World!&#8221; using a custom app,
+that is part of <a class="reference external" href="https://github.com/PellelNitram/OnlineHTR">my implementation</a>,
+to capture the stroke time series data as input to the&nbsp;model.</p>
+</div>
+</div>
+<div class="section" id="the-model-weights">
+<h2><a class="toc-backref" href="#table-of-contents">The model&nbsp;weights</a></h2>
+<p>Download the latest model weights here for&nbsp;free:</p>
+<div class="figure">
+<a class="reference external image-reference" href="https://bit.ly/3R4FM8u">
+<img alt="" src="https://lellep.xyz/blog/images/online_htr/download_model_weights_here.png" style="width: 30%;" />
+</a>
+</div>
+<!-- TODOs
+===== -->
+<!-- - maybe show graph of time commitment?
+- more sections between summary and model weights? or maybe after model weights?
+  maybe model structure?
+- better title? -->
+</div>
+
+    </div>
+  </article>
+
+<!-- Mailchimp integration: Start -->
+
+    <hr style="width: 100%; border-width: 2px; margin: auto; padding-bottom: 10px">
+
+    <!-- Begin Mailchimp Signup Form -->
+    <div id="mc_embed_signup" style="border-style: solid; padding: 10px; border-width: 2px; border-radius: 10px; border-color: rgba(0,0,0,.1); text-align: center">
+    <form action="https://gmail.us1.list-manage.com/subscribe/post?u=57bbde295879632bd3d92ea44&amp;id=33caef11bd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+            <i>Subscribe via email to get notified about new blog posts</i>
+            <div class="mc-field-group">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="email address">
+            </div>
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_57bbde295879632bd3d92ea44_33caef11bd" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-light"></div>
+        </div>
+    </form>
+    </div>
+    <!--End mc_embed_signup-->
+
+<!-- Mailchimp integration: End -->
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="https://lellep.xyz/blog/tags.html">Tags</a></li>
+    <li class="list-inline-item">
+        <a href="javascript:gaOptout()">Refuse analytics cookies</a>
+    </li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
