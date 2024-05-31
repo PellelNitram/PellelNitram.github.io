@@ -1,5 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2024-05-29T00:00:00+02:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>Online HTR PyTorch Model</title><link href="https://lellep.xyz/blog/online-htr.html" rel="alternate"></link><published>2024-05-29T00:00:00+02:00</published><updated>2024-05-29T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-05-29:/blog/online-htr.html</id><summary type="html">&lt;p class="first last"&gt;I implemented an Online Handwritten Text Recognition (&lt;span class="caps"&gt;HTR&lt;/span&gt;) system using PyTorch, based on Google&amp;nbsp;paper.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2024-06-04T00:00:00+02:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>Edinburgh Pothole Logger</title><link href="https://lellep.xyz/blog/edinburgh-pothole-logger.html" rel="alternate"></link><published>2024-06-04T00:00:00+02:00</published><updated>2024-06-04T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-06-04:/blog/edinburgh-pothole-logger.html</id><summary type="html">&lt;p class="first last"&gt;I made a mobile app using no-code to capture potholes in Edinburgh to help future&amp;nbsp;cyclists.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;⭐ Interested in my meetup talk slides or the app itself? Then please scroll down to the &lt;a class="reference internal" href="#downloads"&gt;Downloads&lt;/a&gt;&amp;nbsp;section!&lt;/p&gt;
+&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Table of&amp;nbsp;Contents:&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#introduction" id="toc-entry-1"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#the-pothole-problem-in-edinburgh" id="toc-entry-2"&gt;The Pothole Problem in&amp;nbsp;Edinburgh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#a-data-driven-approach-using-no-code" id="toc-entry-3"&gt;A Data-Driven Approach Using&amp;nbsp;No-Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#building-the-pothole-logger-app-results-from-its-usage" id="toc-entry-4"&gt;Building the Pothole Logger App &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Results from its&amp;nbsp;Usage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#conclusion" id="toc-entry-5"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#downloads" id="toc-entry-6"&gt;Downloads&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Introduction&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Edinburgh, with its stunning views of Princess Street and the historic castle, is a city that
+captivates its visitors. Its charm extends to the narrow, cobblestone streets that invite&amp;nbsp;exploration.&lt;/p&gt;
+&lt;p&gt;Among the residents, cycling is a popular mode of transport, supported by an
+extensive network of bike infrastructure. This love for cycling is evident in events like
+Critical Mass, where cyclists come together to promote road&amp;nbsp;safety.&lt;/p&gt;
+&lt;p&gt;Yet, despite its beauty and
+cycling culture, Edinburgh has a notorious problem:&amp;nbsp;potholes!&lt;/p&gt;
+&lt;p&gt;In this blog article I show you how I created a mobile app (using no-code) in an attempt to
+quantify this problem. This quantification of the problem might then help the council to solve the
+Edinburgh pothole&amp;nbsp;problem.&lt;/p&gt;
+&lt;p&gt;The app that I made as part of this personal hobby project allows the user to capture pothole locations.
+You are very much invited to join
+the data capturing process by downloading the app from the &lt;a class="reference internal" href="#downloads"&gt;Downloads&lt;/a&gt; section so that we can all
+crowdsource the necessary data&amp;nbsp;together!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-pothole-problem-in-edinburgh"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;The Pothole Problem in&amp;nbsp;Edinburgh&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Cycling in Edinburgh offers a sense of freedom. The city&amp;#8217;s layout and scenery make it an
+ideal place for biking, often faster and more economical than other modes of transport.
+However, the abundance of potholes presents a significant hazard to cyclists. These potholes
+not only disrupt the smooth flow of travel but also pose safety&amp;nbsp;risks.&lt;/p&gt;
+&lt;p&gt;Edinburgh&amp;#8217;s roads are &lt;a class="reference external" href="https://nen.press/2023/04/19/pothole-plague-what-to-do/"&gt;riddled with potholes&lt;/a&gt;, making it one of the worst cities in the
+&lt;span class="caps"&gt;UK&lt;/span&gt; for road conditions and repair efficiency with news outlets
+frequently &lt;a class="reference external" href="https://www.edinburghnews.scotsman.com/news/edinburgh-roads-capital-named-second-worst-city-in-uk-for-potholes-and-worst-at-fixing-them-4498428"&gt;highlighting this issue&lt;/a&gt;.
+These potholes are not just minor
+inconveniences but can cause significant damage and danger to&amp;nbsp;cyclists.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="a-data-driven-approach-using-no-code"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;A Data-Driven Approach Using&amp;nbsp;No-Code&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In an attempt to address this problem, I worked on a hobby project: creating a no-code mobile app to
+collect data on potholes. The goal is to gather comprehensive data, analyze it, and
+send it to the city council so that they can prioritise repairs based on this&amp;nbsp;analysis.&lt;/p&gt;
+&lt;p&gt;Why did I use no-code for building the app? No-code development allows for rapid app creation without requiring extensive programming
+knowledge. For this project, I used the &lt;a class="reference external" href="https://appinventor.mit.edu/"&gt;&lt;span class="caps"&gt;MIT&lt;/span&gt; App Inventor&lt;/a&gt;, a free and open-source platform
+that simplifies app development through a block-based interface. This approach is like
+assembling Lego pieces, making it accessible for anyone to build functional apps&amp;nbsp;quickly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="building-the-pothole-logger-app-results-from-its-usage"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Building the Pothole Logger App &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Results from its&amp;nbsp;Usage&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I built the app by following these three&amp;nbsp;steps:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Designing the App: Using the &lt;span class="caps"&gt;MIT&lt;/span&gt; App Inventor, I designed the app&amp;#8217;s interface and logic
+directly in a web&amp;nbsp;browser.&lt;/li&gt;
+&lt;li&gt;Implementing Logic: The app&amp;#8217;s logic involves enabling &lt;span class="caps"&gt;GPS&lt;/span&gt;, creating a data file to store the pothole locations, and
+saving coordinates of logged&amp;nbsp;potholes.&lt;/li&gt;
+&lt;li&gt;User Interface: A simple &lt;span class="caps"&gt;UI&lt;/span&gt; with buttons for enabling debug mode, recording coordinates,
+and sending data files for crowdsourcing purposes ensures ease of&amp;nbsp;use.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/edinburgh_pothole_logger/app_logic.png" style="width: 100%;" /&gt;
+&lt;p class="caption"&gt;The logic of the Edinburgh Pothole Logger app that I built with the &lt;span class="caps"&gt;MIT&lt;/span&gt; App&amp;nbsp;Inventor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;This is how the app&amp;nbsp;works:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;span class="caps"&gt;GPS&lt;/span&gt; Data Collection: Users can record the &lt;span class="caps"&gt;GPS&lt;/span&gt; coordinates of&amp;nbsp;potholes.&lt;/li&gt;
+&lt;li&gt;Data Storage: The app saves these coordinates in a &lt;span class="caps"&gt;CSV&lt;/span&gt; file on the&amp;nbsp;phone.&lt;/li&gt;
+&lt;li&gt;Crowdsourcing: Users can send the collected data to me for further&amp;nbsp;analysis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/edinburgh_pothole_logger/app_UI.png" style="width: 40%;" /&gt;
+&lt;p class="caption"&gt;The &lt;span class="caps"&gt;UI&lt;/span&gt; of the Edinburgh Pothole Logger&amp;nbsp;app.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;This is the result of my project as of now:
+Using the app, I mapped 123 potholes along Gorgie Road, highlighting the uneven
+distribution of potholes. Some areas are densely packed with potholes, while others
+are relatively&amp;nbsp;smooth.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/edinburgh_pothole_logger/result.png" style="width: 100%;" /&gt;
+&lt;p class="caption"&gt;Result of my experiment: I found 123 potholes along Gorgie&amp;nbsp;Road!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Conclusion&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Building this app took me without any prior knowledge only a few hours on six days over
+several weekends, proving that no-code tools
+like the &lt;span class="caps"&gt;MIT&lt;/span&gt; App Inventor can significantly accelerate project development. Whether for
+work or personal projects, I encourage you to explore no-code&amp;nbsp;solutions!&lt;/p&gt;
+&lt;p&gt;If you&amp;#8217;re interested in more details, you can find my corresponding meetup presentation slides and
+the app itself below in the &lt;a class="reference internal" href="#downloads"&gt;Downloads&lt;/a&gt;&amp;nbsp;section.&lt;/p&gt;
+&lt;p&gt;If you feel super motivated, please feel free to help capturing potholes data using my app so that
+the data analysis becomes more comprehensive! 🤗 Feel free to get in touch via
+&lt;a class="reference external" href="https://www.linkedin.com/in/martin-lellep-858600152/"&gt;LinkedIn&lt;/a&gt; in this&amp;nbsp;case.&lt;/p&gt;
+&lt;p&gt;Future steps&amp;nbsp;are:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Data Submission: Sending the collected data to the council, for example through the government road defect&amp;nbsp;form.&lt;/li&gt;
+&lt;li&gt;Data Analysis: Further analysis could correlate pothole density with council tax bands, providing additional insights for a cost-effective solution of the pothole&amp;nbsp;problem.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="downloads"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Downloads&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I gave a talk about this project at &lt;a class="reference external" href="https://techmeetup.co.uk/"&gt;Tech Meetup Edinburgh&lt;/a&gt; on 2024-06-04! Find the slides&amp;nbsp;here:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I will add the slides here after my meetup talk on&amp;nbsp;2024-06-04!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;To use the app yourself, download it&amp;nbsp;here:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://bit.ly/4dZ2MzM"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/edinburgh_pothole_logger/download_the_app_here.png" style="width: 50%;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;ZIP&lt;/span&gt; file consists of both the installable &lt;cite&gt;.apk&lt;/cite&gt; file for Android and the &lt;cite&gt;.aia&lt;/cite&gt;
+project file which you can open in &lt;span class="caps"&gt;MIT&lt;/span&gt; App Inventor yourself to, for example, base your app off of&amp;nbsp;mine.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="data"></category><category term="data"></category><category term="no-code"></category><category term="cycling"></category><category term="edinburgh"></category></entry><entry><title>Online HTR PyTorch Model</title><link href="https://lellep.xyz/blog/online-htr.html" rel="alternate"></link><published>2024-05-29T00:00:00+02:00</published><updated>2024-05-29T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-05-29:/blog/online-htr.html</id><summary type="html">&lt;p class="first last"&gt;I implemented an Online Handwritten Text Recognition (&lt;span class="caps"&gt;HTR&lt;/span&gt;) system using PyTorch, based on Google&amp;nbsp;paper.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;⭐ Interested in the model weights? Then please scroll down to &lt;a class="reference internal" href="#the-model-weights"&gt;The model weights&lt;/a&gt;&amp;nbsp;section!&lt;/p&gt;
 &lt;div class="contents topic" id="table-of-contents"&gt;
 &lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Table of&amp;nbsp;Contents:&lt;/a&gt;&lt;/p&gt;
