@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2024-06-04T00:00:00+02:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>Edinburgh Pothole Logger</title><link href="https://lellep.xyz/blog/edinburgh-pothole-logger.html" rel="alternate"></link><published>2024-06-04T00:00:00+02:00</published><updated>2024-06-04T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-06-04:/blog/edinburgh-pothole-logger.html</id><summary type="html">&lt;p class="first last"&gt;I made a mobile app using no-code to capture potholes in Edinburgh to help future&amp;nbsp;cyclists.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;⭐ Interested in my meetup talk slides or the app itself? Then please scroll down to the &lt;a class="reference internal" href="#downloads"&gt;Downloads&lt;/a&gt;&amp;nbsp;section!&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;⭐ Interested in my meetup talk slides or the app itself? Then please scroll down to the &lt;a class="reference internal" href="#downloads"&gt;Downloads&lt;/a&gt;
+section! 📺 &lt;a class="reference external" href="https://youtu.be/4nUBIsIUrpg"&gt;Watch the video here&lt;/a&gt;!&lt;/p&gt;
 &lt;div class="contents topic" id="table-of-contents"&gt;
 &lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Table of&amp;nbsp;Contents:&lt;/a&gt;&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -14,14 +15,14 @@
 &lt;/div&gt;
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Introduction&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Edinburgh, with its stunning views of Princess Street and the historic castle, is a city that
+&lt;p&gt;Edinburgh, with its stunning views of Princes Street and the historic castle, is a city that
 captivates its visitors. Its charm extends to the narrow, cobblestone streets that invite&amp;nbsp;exploration.&lt;/p&gt;
 &lt;p&gt;Among the residents, cycling is a popular mode of transport, supported by an
 extensive network of bike infrastructure. This love for cycling is evident in events like
-Critical Mass, where cyclists come together to promote road&amp;nbsp;safety.&lt;/p&gt;
+&lt;a class="reference external" href="https://edinburghcriticalmass.wordpress.com/"&gt;Critical Mass&lt;/a&gt;, where cyclists come together to promote road&amp;nbsp;safety.&lt;/p&gt;
 &lt;p&gt;Yet, despite its beauty and
 cycling culture, Edinburgh has a notorious problem:&amp;nbsp;potholes!&lt;/p&gt;
-&lt;p&gt;In this blog article I show you how I created a mobile app (using no-code) in an attempt to
+&lt;p&gt;In this blog article, I show you how I created a mobile app (using no-code) in an attempt to
 quantify this problem. This quantification of the problem might then help the council to solve the
 Edinburgh pothole&amp;nbsp;problem.&lt;/p&gt;
 &lt;p&gt;The app that I made as part of this personal hobby project allows the user to capture pothole locations.
@@ -92,8 +93,8 @@ several weekends, proving that no-code tools
 like the &lt;span class="caps"&gt;MIT&lt;/span&gt; App Inventor can significantly accelerate project development. Whether for
 work or personal projects, I encourage you to explore no-code&amp;nbsp;solutions!&lt;/p&gt;
 &lt;p&gt;If you&amp;#8217;re interested in more details, you can find my corresponding meetup presentation slides and
-the app itself below in the &lt;a class="reference internal" href="#downloads"&gt;Downloads&lt;/a&gt;&amp;nbsp;section.&lt;/p&gt;
-&lt;p&gt;If you feel super motivated, please feel free to help capturing potholes data using my app so that
+the app itself below in the &lt;a class="reference internal" href="#downloads"&gt;Downloads&lt;/a&gt; section. &lt;a class="reference external" href="https://youtu.be/4nUBIsIUrpg"&gt;This is a recording of the presentation&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;If you feel super motivated, please feel free to help capturing pothole data using my app so that
 the data analysis becomes more comprehensive! 🤗 Feel free to get in touch via
 &lt;a class="reference external" href="https://www.linkedin.com/in/martin-lellep-858600152/"&gt;LinkedIn&lt;/a&gt; in this&amp;nbsp;case.&lt;/p&gt;
 &lt;p&gt;Future steps&amp;nbsp;are:&lt;/p&gt;
