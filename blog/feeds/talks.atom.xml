@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - talks</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/talks.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2023-07-07T00:00:00+02:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>Datta Lab Machine Learning Course</title><link href="https://lellep.xyz/blog/datta-lab-ml-course.html" rel="alternate"></link><published>2023-07-07T00:00:00+02:00</published><updated>2023-07-07T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2023-07-07:/blog/datta-lab-ml-course.html</id><summary type="html">&lt;p class="first last"&gt;Slides and materials for my mini Machine Learning course at Princeton University&amp;#8217;s Datta&amp;nbsp;Lab.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - talks</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/talks.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2024-09-25T00:00:00+02:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>Slides for my MLOps 2024 talk</title><link href="https://lellep.xyz/blog/slides-for-my-mlops-2024-talk.html" rel="alternate"></link><published>2024-09-25T00:00:00+02:00</published><updated>2024-09-25T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2024-09-25:/blog/slides-for-my-mlops-2024-talk.html</id><summary type="html">&lt;p class="first last"&gt;Slides and materials for my MLOps Scotland 2024 talk about Xournal++ &lt;span class="caps"&gt;HTR&lt;/span&gt;.&lt;/p&gt;
+</summary><content type="html">&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Table of&amp;nbsp;Contents:&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#topic-of-talk" id="toc-entry-1"&gt;Topic of&amp;nbsp;talk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#my-talk-slides" id="toc-entry-2"&gt;My talk&amp;nbsp;slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="topic-of-talk"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Topic of&amp;nbsp;talk&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I talked about my &lt;a class="reference external" href="https://github.com/PellelNitram/xournalpp_htr"&gt;Xournal++ &lt;span class="caps"&gt;HTR&lt;/span&gt;&lt;/a&gt; spare time
+project which channels development of handwritten text recognition for&amp;nbsp;Xournal++.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="my-talk-slides"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;My talk&amp;nbsp;slides&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="caps"&gt;TODO&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="talks"></category><category term="data"></category><category term="machine-learning"></category><category term="talks"></category><category term="xournal++ htr"></category></entry><entry><title>Datta Lab Machine Learning Course</title><link href="https://lellep.xyz/blog/datta-lab-ml-course.html" rel="alternate"></link><published>2023-07-07T00:00:00+02:00</published><updated>2023-07-07T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2023-07-07:/blog/datta-lab-ml-course.html</id><summary type="html">&lt;p class="first last"&gt;Slides and materials for my mini Machine Learning course at Princeton University&amp;#8217;s Datta&amp;nbsp;Lab.&lt;/p&gt;
 </summary><content type="html">&lt;div class="section" id="lecture-1-machine-learning-basics"&gt;
 &lt;h2&gt;Lecture 1: Machine Learning&amp;nbsp;Basics&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;(Presented on&amp;nbsp;2023-06-29.)&lt;/em&gt;&lt;/p&gt;
