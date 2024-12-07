@@ -96,11 +96,11 @@ negative topics of &lt;span class="caps"&gt;COVID&lt;/span&gt; and a&amp;nbsp;wa
 &lt;li&gt;Get first analyses results out quickly based on a small dataset and don&amp;#8217;t just collect data
 up front to &amp;#8220;analyse it later&amp;#8221; - this is what I did here and it&amp;#8217;s bad. Data postprocessing and
 releasing some results as teasers are mostly important for you as after all, quick results keep
-us motivated; e.g. for me, the present Tagesschau projet was very interesting in the beginning
-but I lost intest over time because of mindless data collecting. Ideally, given these first
+us motivated; e.g. for me, the present Tagesschau project was very interesting in the beginning
+but I lost interest over time because of mindless data collecting. Ideally, given these first
 results follow &amp;#8220;&lt;a class="reference external" href="https://austinkleon.com/show-your-work/"&gt;Show Your Work&lt;/a&gt;&amp;#8221; approach by making
 the results public; this is super difficult for&amp;nbsp;perfectionists.&lt;/li&gt;
-&lt;li&gt;Automatise the h*ll out of your data science project (in particular the data acquisition part)
+&lt;li&gt;Automate the h*ll out of your data science project (in particular the data acquisition part)
 to reduce daily friction. If the automation process takes considerable work, then perceive it as a separate
 topic to speak about online, again following the &amp;#8220;&lt;a class="reference external" href="https://austinkleon.com/show-your-work/"&gt;Show Your Work&lt;/a&gt;&amp;#8221; approach. For example,
 the manual step in the process of my project could have been a beautiful and innovative machine
@@ -122,7 +122,7 @@ real-life employability skills (&lt;em&gt;I am looking at you, University, that 
 &lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Conclusion&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Go out and build&amp;nbsp;something!&lt;/p&gt;
 &lt;p&gt;A failed data science project is part of the learning experience and contributes
-to your battle scar tissue; battle scar tissue through projects is a great concept from Andrey Kaparthy
+to your battle scar tissue; battle scar tissue through projects is a great concept from Andrej Karpathy
 (see &lt;a class="reference external" href="https://youtu.be/I2ZK3ngNvvI?si=MkoLkVLl34ChHdW0&amp;amp;t=111"&gt;here&lt;/a&gt; and &lt;a class="reference external" href="https://stevengong.co/notes/Scar-Tissue"&gt;there&lt;/a&gt;)
 &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; certainly makes us better data&amp;nbsp;practitioners.&lt;/p&gt;
 &lt;p&gt;Personally, I would have loved to use the beautiful applied &lt;span class="caps"&gt;ML&lt;/span&gt; opportunity of identifying the right
