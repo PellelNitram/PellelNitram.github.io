@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vape Trash Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.4/luxon.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #45a049;
+            --error-color: #f44336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        .logged-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .logged-title {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="datetime-local"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .location-buttons {
+            margin-bottom: 1rem;
+        }
+
+        .error {
+            color: var(--error-color);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .success {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .log-entry {
+            background-color: #f8f8f8;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .location-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vape Trash Tracker</h1>
+        <form id="vapeForm">
+            <div class="location-buttons">
+                <button type="button" id="getLocation">Get Current Location</button>
+            </div>
+
+            <div class="form-group">
+                <label for="latitude">Latitude</label>
+                <input type="number" id="latitude" step="any" required>
+                <div class="error" id="latitudeError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="longitude">Longitude</label>
+                <input type="number" id="longitude" step="any" required>
+                <div class="error" id="longitudeError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="datetime">Date and Time</label>
+                <input type="datetime-local" id="datetime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="label">Label</label>
+                <input type="text" id="label" placeholder="Enter a description or notes (optional)">
+            </div>
+
+            <button type="submit">Log Location</button>
+        </form>
+
+        <div id="message" class="success"></div>
+    </div>
+    
+    <div class="logged-container">
+        <h2 class="logged-title">Currently Logged Location</h2>
+        <div id="logs" class="logs"></div>
+    </div>
+
+    <script>
+        const DateTime = luxon.DateTime;
+
+        // Set current datetime as default
+        document.getElementById('datetime').value = DateTime.now().toFormat("yyyy-MM-dd'T'HH:mm");
+
+        // Initialize storage
+        let currentLog = JSON.parse(localStorage.getItem('currentVapeLog')) || null;
+
+        // Get location button
+        document.getElementById('getLocation').addEventListener('click', () => {
+            if (!navigator.geolocation) {
+                alert('Geolocation is not supported by your browser');
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    document.getElementById('latitude').value = position.coords.latitude;
+                    document.getElementById('longitude').value = position.coords.longitude;
+                },
+                () => {
+                    alert('Unable to retrieve your location');
+                }
+            );
+        });
+
+        // Form submission
+        document.getElementById('vapeForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const latitude = parseFloat(document.getElementById('latitude').value);
+            const longitude = parseFloat(document.getElementById('longitude').value);
+            const datetime = document.getElementById('datetime').value;
+            const label = document.getElementById('label').value;
+
+            // Validate coordinates
+            let hasError = false;
+            if (latitude < -90 || latitude > 90) {
+                document.getElementById('latitudeError').textContent = 'Latitude must be between -90 and 90';
+                hasError = true;
+            } else {
+                document.getElementById('latitudeError').textContent = '';
+            }
+
+            if (longitude < -180 || longitude > 180) {
+                document.getElementById('longitudeError').textContent = 'Longitude must be between -180 and 180';
+                hasError = true;
+            } else {
+                document.getElementById('longitudeError').textContent = '';
+            }
+
+            if (hasError) return;
+
+            // Save to storage
+            const log = {
+                latitude,
+                longitude,
+                datetime,
+                label,
+                loggedAt: DateTime.now().toISO()
+            };
+
+            currentLog = log;
+            localStorage.setItem('currentVapeLog', JSON.stringify(currentLog));
+
+            // Format the data for clipboard
+            const formattedData = `Location: ${log.latitude}, ${log.longitude}
+Found on: ${DateTime.fromISO(log.datetime).toLocaleString(DateTime.DATETIME_FULL)}
+Logged on: ${DateTime.fromISO(log.loggedAt).toLocaleString(DateTime.DATETIME_FULL)}
+Label: ${log.label || '(No label)'}`;
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(formattedData)
+                .then(() => {
+                    document.getElementById('message').textContent = 'Location logged and copied to clipboard!';
+                })
+                .catch(() => {
+                    document.getElementById('message').textContent = 'Location logged (failed to copy to clipboard)';
+                })
+                .finally(() => {
+                    setTimeout(() => {
+                        document.getElementById('message').textContent = '';
+                    }, 3000);
+                });
+
+            // Clear all form fields
+            document.getElementById('latitude').value = '';
+            document.getElementById('longitude').value = '';
+            document.getElementById('datetime').value = DateTime.now().toFormat("yyyy-MM-dd'T'HH:mm");
+            document.getElementById('label').value = '';
+            
+            updateDisplay();
+        });
+
+        function updateDisplay() {
+            const logsContainer = document.getElementById('logs');
+            if (currentLog) {
+                logsContainer.innerHTML = `
+                    <div class="log-entry">
+                        <strong>Location:</strong> ${currentLog.latitude}, ${currentLog.longitude}<br>
+                        <strong>Found on:</strong> ${DateTime.fromISO(currentLog.datetime).toLocaleString(DateTime.DATETIME_FULL)}<br>
+                        <strong>Logged on:</strong> ${DateTime.fromISO(currentLog.loggedAt).toLocaleString(DateTime.DATETIME_FULL)}<br>
+                        <strong>Label:</strong> ${currentLog.label || '(No label)'}
+                    </div>
+                `;
+            } else {
+                logsContainer.innerHTML = '<p>No location logged yet.</p>';
+            }
+        }
+
+        // Initial display
+        updateDisplay();
+    </script>
+    <script data-goatcounter="https://vapetracker.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
