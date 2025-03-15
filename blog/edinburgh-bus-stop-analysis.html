@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  The Stop-and-Go City: Buses in Edinburgh | Blog
+</title>
+  <link rel="canonical" href="https://lellep.xyz/blog/edinburgh-bus-stop-analysis.html">
+
+    <link rel="apple-touch-icon" href="https://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://lellep.xyz/blog/manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://lellep.xyz/blog/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://lellep.xyz/blog/feeds/data.atom.xml">  
+  <meta name="description" content="Edinburgh buses are great but slow. I analyzed the data and found the issue - bus stops are too frequent, averaging just 323 meters apart!">
+  <script>
+  // ===
+  // Taken from: https://developers.google.com/analytics/devguides/collection/gajs/?hl=de&authuser=0#disable
+  // ===
+
+  // Set to the same value as the web property used on the site
+  var gaProperty = 'UA-142575904-2';
+
+  // Disable tracking if the opt-out cookie exists.
+  var disableStr = 'ga-disable-' + gaProperty;
+  if (document.cookie.indexOf(disableStr + '=true') > -1) {
+    window[disableStr] = true;
+  }
+
+  // Opt-out function
+  function gaOptout() {
+    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+  }
+  </script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-142575904-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+  <script data-goatcounter="https://lellep.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  <!-- Mathjax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="https://lellep.xyz/blog/">
+        <img class="img-fluid rounded" src=https://lellep.xyz/blog/images/logo.svg alt="Blog">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="https://lellep.xyz/blog/">Blog</a></h1>
+      <p class="text-muted">by Martin Lellep</p>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">◄ back to my main website</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="https://lellep.xyz/blog/pages/about.html">About</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  The Stop-and-Go City: Buses in&nbsp;Edinburgh
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2025-03-14T00:00:00+01:00">
+          <i class="fas fa-clock"></i>
+          Fri 14 March 2025
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="https://lellep.xyz/blog/category/data.html">data</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="https://lellep.xyz/blog/tag/data.html">#data</a>,               <a href="https://lellep.xyz/blog/tag/edinburgh.html">#edinburgh</a>,               <a href="https://lellep.xyz/blog/tag/analytics.html">#analytics</a>,               <a href="https://lellep.xyz/blog/tag/transport.html">#transport</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p><em>Why does a 3-mile journey from Leith to Morningside in Edinburgh take almost an hour by bus? I crunched the numbers to find&nbsp;out.</em></p>
+<p><a class="reference external" href="mailto:blog.ma.lel&#64;gmail.com?subject=Feedback%20for%20Edinburgh%20Bus%20Stop%20Analysis&amp;body=Drop%20your%20feedback%20here.%20Thanks%20a%20lot!%20%3A-)">💬 Send me feedback about this&nbsp;article</a></p>
+<p><a class="reference external" href="mailto:blog.ma.lel&#64;gmail.com?subject=Code%20for%20Edinburgh%20Bus%20Stop%20Analysis&amp;body=I%20want%20the%20code!%20%3C3">💻 Get code used for this&nbsp;article</a></p>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/edinburgh_bus_stop_analysis/20250311_175435_edited.jpg" style="width: 80%;" />
+<p class="caption">Bus in Edinburgh at Shandwick&nbsp;Place.</p>
+</div>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title"><a class="reference internal" href="#top">Table of&nbsp;Contents:</a></p>
+<ul class="simple">
+<li><a class="reference internal" href="#the-daily-edinburgh-bus-experience-requires-patience" id="toc-entry-1">The daily Edinburgh bus experience requires&nbsp;patience</a></li>
+<li><a class="reference internal" href="#the-investigation" id="toc-entry-2">The&nbsp;investigation</a></li>
+<li><a class="reference internal" href="#all-105-bus-routes-2-475-bus-stops-in-edinburgh-on-a-map" id="toc-entry-3">All 105 bus routes <span class="amp">&amp;</span> 2,475 bus stops in Edinburgh on a&nbsp;map</a></li>
+<li><a class="reference internal" href="#median-distance-between-bus-stops-is-273m" id="toc-entry-4">Median distance between bus stops is&nbsp;273m</a></li>
+<li><a class="reference internal" href="#one-bus-halts-at-a-stop-but-sometimes-many-more" id="toc-entry-5">One bus halts at a stop, but sometimes many&nbsp;more</a></li>
+<li><a class="reference internal" href="#driving-orientation-of-buses-in-edinburgh-aligns-with-princes-street" id="toc-entry-6">Driving orientation of buses in Edinburgh aligns with Princes&nbsp;Street</a></li>
+<li><a class="reference internal" href="#conclusions-next-steps" id="toc-entry-7">Conclusions <span class="amp">&amp;</span> next&nbsp;steps</a></li>
+</ul>
+</div>
+<div class="section" id="the-daily-edinburgh-bus-experience-requires-patience">
+<h2><a class="toc-backref" href="#table-of-contents">The daily Edinburgh bus experience requires&nbsp;patience</a></h2>
+<p>If you live in Edinburgh, you know the routine. You hop on the bus, settle in with your coffee, and then - stop. Then start again. Then stop. And again. And&nbsp;again.</p>
+<p>That 20-minute journey ends up taking 40 minutes, and you find yourself wondering if walking might have been faster. Sound&nbsp;familiar?</p>
+<p>As an Edinburgh resident who relies on Lothian Buses daily, I&#8217;ve often wondered: <strong>why are our buses so slow despite an extensive&nbsp;network?</strong></p>
+<p>Don&#8217;t get me wrong, I like the Edinburgh bus system a lot. It&#8217;s just that it&#8217;s a wee bit slow sometimes. We have one of the best-connected public transport systems in the <span class="caps">UK</span>, with routes covering every corner of the city. Yet journeys that should be quick often drag on&nbsp;interminably.</p>
+<p>Is it the traffic? The hills? The medieval street layout? Or something else&nbsp;entirely?</p>
+</div>
+<div class="section" id="the-investigation">
+<h2><a class="toc-backref" href="#table-of-contents">The&nbsp;investigation</a></h2>
+<p>To answer this, I undertook a data-driven investigation and explored related aspects of Edinburgh&#8217;s bus&nbsp;system:</p>
+<ol class="arabic simple">
+<li>Collected data on <strong>every single bus route</strong> and <strong>every single bus stop</strong> in&nbsp;Edinburgh.</li>
+<li>Mapped all 150 bus routes and their 2,475 stops to visualize bus stop locations and&nbsp;density.</li>
+<li>Calculated distances between consecutive stops on each route to analyze spacing across the&nbsp;network.</li>
+<li>Examined the average number of buses stopping at each bus&nbsp;stop.</li>
+<li>Analyzed the directional orientations of buses throughout the&nbsp;city.</li>
+</ol>
+<p>In the following sections, I go into each of these analyses with explanations where&nbsp;necessary.</p>
+<p><strong>tl;dr: Buses in Edinburgh are slow because they stop every 323m on&nbsp;average!</strong></p>
+</div>
+<div class="section" id="all-105-bus-routes-2-475-bus-stops-in-edinburgh-on-a-map">
+<h2><a class="toc-backref" href="#table-of-contents">All 105 bus routes <span class="amp">&amp;</span> 2,475 bus stops in Edinburgh on a&nbsp;map</a></h2>
+<p>Edinburgh has a large number of bus routes and an even larger number of stops - 105 routes and 2,475 stops, to be&nbsp;precise.</p>
+<p>The following figure shows a representative bus&nbsp;route:</p>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/edinburgh_bus_stop_analysis/img.jpg" style="width: 100%;" />
+<p class="caption">Bus route number 1 (direction Seafield) with 57 bus stops as an&nbsp;example.</p>
+</div>
+<p>Compiling the stops of all bus routes results in a complete list of bus stops. The next figure visualizes both the locations and density of bus stops in&nbsp;Edinburgh.</p>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/edinburgh_bus_stop_analysis/bus_stops_in_edinburgh.jpg" style="width: 100%;" />
+<p class="caption">Map of Edinburgh bus stops. (Left) All bus stops plotted as markers. (Right) Density map of bus stops in&nbsp;Edinburgh.</p>
+</div>
+</div>
+<div class="section" id="median-distance-between-bus-stops-is-273m">
+<h2><a class="toc-backref" href="#table-of-contents">Median distance between bus stops is&nbsp;273m</a></h2>
+<p>I suspected that the issue of slow buses is due to very close bus&nbsp;stops.</p>
+<p>To test this, I calculated distances between consecutive stops on each route - not the pairwise distance between all stops, but only between stops that are directly connected by a bus&nbsp;route.</p>
+<p>Given that, I computed the distribution of these distances and annotated the&nbsp;results:</p>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/edinburgh_bus_stop_analysis/1_distribution_improved.png" style="width: 100%;" />
+<p class="caption">Distribution of distances to the next bus stop in&nbsp;Edinburgh.</p>
+</div>
+<p>This figure is complex, so here&#8217;s a breakdown. The solid line represents the continuous density of distances. The bars show the same data binned into understandable ranges: up to 200m, 200m-400m, 400m-600m, etc. The blue boxes highlight distances corresponding to 5, 10, and 20-minute walking distances. Lastly, the colored dashed lines show the median (red), mean (green), and 75th percentile (yellow). These values indicate that 50% of stops are within 273m, the average distance is 323m, and 75% are within 365m. Most stops are closely spaced (&lt;800m), with a long tail of outliers in more rural&nbsp;areas.</p>
+<p><strong>This is the main finding: Buses are slow because stops are placed too close&nbsp;together!</strong></p>
+<p>A bus traveling at an average of 20 mph stops approximately <strong>every 35 seconds</strong> due to the mean stop distance of 323m - this is&nbsp;wild!</p>
+</div>
+<div class="section" id="one-bus-halts-at-a-stop-but-sometimes-many-more">
+<h2><a class="toc-backref" href="#table-of-contents">One bus halts at a stop, but sometimes many&nbsp;more</a></h2>
+<p>Next, I examined how many different buses stop at each stop. Below is the resulting&nbsp;distribution:</p>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/edinburgh_bus_stop_analysis/image.png" style="width: 100%;" />
+<p class="caption">Histogram of the number of buses stopping at each bus&nbsp;stop.</p>
+</div>
+<p>Most stops serve only one route. The distribution follows an approximately exponential decline up to 11 routes per stop. Interestingly, there&#8217;s a small peak at 12-13 routes, meaning more stops serve 12 or 13 buses than&nbsp;11.</p>
+</div>
+<div class="section" id="driving-orientation-of-buses-in-edinburgh-aligns-with-princes-street">
+<h2><a class="toc-backref" href="#table-of-contents">Driving orientation of buses in Edinburgh aligns with Princes&nbsp;Street</a></h2>
+<p>Lastly, I analyzed the orientation of bus routes to identify Edinburgh&#8217;s main traffic&nbsp;axes.</p>
+<p>Orientation is measured using a bearing, which describes the direction something travels (e.g., 0° for north, 90° for east). This analysis reveals the predominant travel directions in&nbsp;Edinburgh.</p>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/edinburgh_bus_stop_analysis/polar_histogram.png" style="width: 100%;" />
+<p class="caption">Polar histogram of bus route orientations in&nbsp;Edinburgh.</p>
+</div>
+<p>The most frequent travel direction is roughly <span class="caps">SW</span>-<span class="caps">NE</span>, followed by <span class="caps">NW</span>-<span class="caps">SE</span>, forming a cross-like&nbsp;pattern.</p>
+<p>Interestingly, the most common direction closely aligns with the <a class="reference external" href="https://en.wikipedia.org/wiki/Princes_Street">Princes Street</a>, one of Edinburgh’s main&nbsp;streets:</p>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/edinburgh_bus_stop_analysis/polar_histogram_comparison.png" style="width: 100%;" />
+<p class="caption">Comparison of most frequent bus travel orientation with Princes&nbsp;Street.</p>
+</div>
+</div>
+<div class="section" id="conclusions-next-steps">
+<h2><a class="toc-backref" href="#table-of-contents">Conclusions <span class="amp">&amp;</span> next&nbsp;steps</a></h2>
+<p>Buses in Edinburgh are slow because they stop too often. My data shows that 75% of all stop distances are under&nbsp;365m!</p>
+<p>Additionally:</p>
+<ol class="arabic simple">
+<li>The number of routes serving each stop follows an exponential distribution, with most stops serving just one&nbsp;route.</li>
+<li>The most common bus travel orientation matches the direction of the Princes&nbsp;Street.</li>
+</ol>
+<p><strong>Next steps:</strong> The key question now is whether stops are <em>too</em> close - for passengers, traffic flow, wear on vehicles, or fuel efficiency. To study that, further modeling could be considered, for example, by modeling bus velocity as a function of the distance between two stops and determining how removing bus stops would affect door-to-door travel&nbsp;times.</p>
+<p>💾 Get the dataset <a class="reference external" href="https://2025-03-15-edinburgh-bus-stop-analysis.s3.eu-central-1.amazonaws.com/TransportForEdinburghOpenData.dat">here</a>!</p>
+<p>🫶 I’d love your feedback - <a class="reference external" href="mailto:blog.ma.lel&#64;gmail.com?subject=Feedback%20for%20Edinburgh%20Bus%20Stop%20Analysis&amp;body=Drop%20your%20feedback%20here.%20Thanks%20a%20lot!%20%3A-)">email me here</a>.</p>
+<hr class="docutils" />
+<p><em>Methodology note:</em> Data was collected from <a class="reference external" href="https://transportforedinburgh.com/">Transport for Edinburgh</a> on 2024-12-17 using <a class="reference external" href="https://tfe-opendata.com/api/v1/services">this <span class="caps">API</span></a>. Distances were calculated based on actual routing information instead of straight-line measurements to ensure&nbsp;accuracy.</p>
+</div>
+
+    </div>
+  </article>
+
+<!-- Mailchimp integration: Start -->
+
+    <hr style="width: 100%; border-width: 2px; margin: auto; padding-bottom: 10px">
+
+    <!-- Begin Mailchimp Signup Form -->
+    <div id="mc_embed_signup" style="border-style: solid; padding: 10px; border-width: 2px; border-radius: 10px; border-color: rgba(0,0,0,.1); text-align: center">
+    <form action="https://gmail.us1.list-manage.com/subscribe/post?u=57bbde295879632bd3d92ea44&amp;id=33caef11bd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+            <i>Subscribe via email to get notified about new blog posts</i>
+            <div class="mc-field-group">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="email address">
+            </div>
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_57bbde295879632bd3d92ea44_33caef11bd" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-light"></div>
+        </div>
+    </form>
+    </div>
+    <!--End mc_embed_signup-->
+
+<!-- Mailchimp integration: End -->
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="https://lellep.xyz/blog/tags.html">Tags</a></li>
+    <li class="list-inline-item">
+        <a href="javascript:gaOptout()">Refuse analytics cookies</a>
+    </li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
