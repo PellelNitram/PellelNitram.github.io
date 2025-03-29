@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPTX Audio Transcriber</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PPTX Audio Transcriber</h1>
+            <p>Upload your PowerPoint presentation to extract and transcribe audio.</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <h2>Upload</h2>
+                <label for="fileInput" class="upload-button">Choose File</label>
+                <input type="file" id="fileInput" accept=".pptx" hidden>
+                <p class="file-info" id="fileInfo">No file selected</p>
+            </section>
+
+            <section>
+                <h2>Settings</h2>
+                <p>
+                    <label for="nrSlides">Number of slides (0 for all slides):</label>
+                    <input
+                        type="number"
+                        id="nrSlides"
+                        name="nrSlides"
+                        min="0"
+                        step="1"
+                        required
+                        value="0"
+                    >
+                </p>
+                <p>
+                    <label for="openAIapiKey">OpenAI API Key:</label>
+                    <input
+                        type="text"
+                        id="openAIapiKey"
+                        name="openAIapiKey"
+                        required
+                        placeholder="Enter your OpenAI API key here"
+                        value=""
+                    >
+                </p>
+            </section>
+
+            <section>
+                <h2>Transcriptions</h2>
+                <button id="startProcessingBtn" class="button">Start Transcribing</button>
+                <!-- Transcription results will be added here dynamically -->
+                <button id="exportTxt" class="export-button">Export as TXT</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made by <a href="https://lellep.xyz/?ref=pptxToText">Martin Lellep</a> for his mom ❤️</p>
+        </footer>
+    </div>
+
+    <!-- Load JSZip library for handling PPTX files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+    <script data-goatcounter="https://lellep.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
