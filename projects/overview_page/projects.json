@@ -1,0 +1,100 @@
+{
+  "projects": [
+    {
+      "title": "Project 1",
+      "hidden": false,
+      "description": "A cool project description",
+      "image": "https://picsum.photos/seed/project1/800/600",
+      "tags": ["python", "web"],
+      "impact": "This project helped accomplish X and Y",
+      "demo_link": "https://demo.example.com",
+      "code_link": "https://github.com/example/project1",
+      "writeup_link": "https://blog.example.com/project1",
+      "date": "2024-03"
+    },
+    {
+      "title": "Project 2",
+      "hidden": true,
+      "description": "Another amazing project",
+      "image": "https://picsum.photos/seed/project2/800/600",
+      "tags": ["javascript", "frontend"],
+      "impact": "Improved workflow efficiency by 50%",
+      "demo_link": null,
+      "code_link": "https://github.com/example/project2",
+      "writeup_link": null,
+      "date": "2024-02"
+    },
+    {
+      "title": "AI Image Generator",
+      "hidden": false,
+      "description": "A deep learning model that generates artistic images from text descriptions",
+      "image": "https://picsum.photos/seed/ai-gen/800/600",
+      "tags": ["python", "machine-learning", "ai"],
+      "impact": "Generated over 10,000 unique artworks for digital artists",
+      "demo_link": "https://ai-image-gen.example.com",
+      "code_link": "https://github.com/example/ai-image-gen",
+      "writeup_link": "https://blog.example.com/ai-image-gen",
+      "date": "2024-01"
+    },
+    {
+      "title": "Mobile Weather App",
+      "hidden": false,
+      "description": "Cross-platform mobile app providing real-time weather forecasts with beautiful visualizations",
+      "image": "https://picsum.photos/seed/weather/800/600",
+      "tags": ["react-native", "mobile", "api"],
+      "impact": "Reached 50,000+ downloads on app stores",
+      "demo_link": "https://weather.example.com",
+      "code_link": "https://github.com/example/weather-app",
+      "writeup_link": null,
+      "date": "2023-12"
+    },
+    {
+      "title": "Database Migration Tool",
+      "hidden": false,
+      "description": "CLI tool for automated database schema migrations and data transfer",
+      "image": "https://picsum.photos/seed/database/800/600",
+      "tags": ["python", "database", "cli"],
+      "impact": "Reduced migration time from 4 hours to 30 minutes for large databases",
+      "demo_link": null,
+      "code_link": "https://github.com/example/db-migrator",
+      "writeup_link": "https://blog.example.com/db-migration-tool",
+      "date": "2023-11"
+    },
+    {
+      "title": "E-commerce Platform",
+      "hidden": false,
+      "description": "Full-stack e-commerce solution with inventory management and payment processing",
+      "image": "https://picsum.photos/seed/ecommerce/800/600",
+      "tags": ["javascript", "nodejs", "database"],
+      "impact": "Powers 15 small business online stores",
+      "demo_link": "https://shop.example.com",
+      "code_link": "https://github.com/example/ecommerce",
+      "writeup_link": "https://blog.example.com/ecommerce-platform",
+      "date": "2023-10"
+    },
+    {
+      "title": "Game Development Framework",
+      "hidden": true,
+      "description": "Lightweight 2D game development framework with physics engine",
+      "image": "https://picsum.photos/seed/gamedev/800/600",
+      "tags": ["c++", "opengl", "game-dev"],
+      "impact": "Used by 200+ indie game developers",
+      "demo_link": "https://gameframework.example.com",
+      "code_link": "https://github.com/example/game-framework",
+      "writeup_link": null,
+      "date": "2023-09"
+    },
+    {
+      "title": "Smart Home Dashboard",
+      "hidden": false,
+      "description": "IoT dashboard for monitoring and controlling smart home devices",
+      "image": "https://picsum.photos/seed/smarthome/800/600",
+      "tags": ["react", "iot", "frontend"],
+      "impact": "Manages 1000+ connected devices across 100 households",
+      "demo_link": "https://smart.example.com",
+      "code_link": "https://github.com/example/smart-home",
+      "writeup_link": "https://blog.example.com/smart-home-dashboard",
+      "date": "2023-08"
+    }
+  ]
+} 
