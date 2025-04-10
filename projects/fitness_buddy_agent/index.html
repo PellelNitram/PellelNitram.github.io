@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Track your workouts effortlessly with Fitness Buddy Agent, your voice-enabled Telegram bot. Log workouts, get stats, and export your progress with ease.">
+    <meta name="keywords" content="fitness tracker, workout tracker, telegram bot, voice tracking, gym buddy, workout logging, fitness app">
+    <meta name="author" content="Martin Lellep">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0088cc">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fitnessbuddyagent.com/">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fitnessbuddyagent.com/">
+    <meta property="og:title" content="Fitness Buddy Agent | Voice-Enabled Workout Tracker">
+    <meta property="og:description" content="Track your workouts effortlessly with Fitness Buddy Agent, your voice-enabled Telegram bot. Log workouts, get stats, and export your progress with ease.">
+    <meta property="og:image" content="https://fitnessbuddyagent.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fitnessbuddyagent.com/">
+    <meta property="twitter:title" content="Fitness Buddy Agent | Voice-Enabled Workout Tracker">
+    <meta property="twitter:description" content="Track your workouts effortlessly with Fitness Buddy Agent, your voice-enabled Telegram bot. Log workouts, get stats, and export your progress with ease.">
+    <meta property="twitter:image" content="https://fitnessbuddyagent.com/og-image.jpg">
+    
+    <title>Fitness Buddy Agent | Voice-Enabled Workout Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav a {
+            margin-left: 20px;
+            color: #0088cc;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        nav a:hover {
+            color: #005580;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0088cc, #005580);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: white;
+            color: #0088cc;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .video-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .video-container {
+            margin: 40px auto;
+            max-width: 800px;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .features {
+            padding: 60px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .features h2 {
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            color: #0088cc;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 15px;
+            color: #0088cc;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #0088cc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #005580;
+        }
+
+        .video-note {
+            margin-top: 20px;
+            font-style: italic;
+            color: #666;
+        }
+
+        .testimonial {
+            background-color: #e9f5fc;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .testimonial blockquote {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #444;
+            margin: 0 auto;
+            max-width: 700px;
+        }
+
+        .testimonial cite {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .faq {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .faq-item h3 {
+            margin-bottom: 10px;
+            color: #0088cc;
+        }
+
+        .faq-item p {
+            color: #555;
+        }
+    </style>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Fitness Buddy Agent",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Telegram",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Track your workouts effortlessly with Fitness Buddy Agent, your voice-enabled Telegram bot. Log workouts, get stats, and export your progress with ease.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "42"
+      }
+    }
+    </script>
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+    <header role="banner">
+        <div class="nav-container">
+            <strong>Fitness Buddy Agent</strong>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#video">Demo</a>
+                <a href="https://t.me/FitnessBuddyAgentBot">Start</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Fitness Buddy Agent</h1>
+            <p>Your AI-powered gym buddy on Telegram. Track your workouts with voice or text, effortlessly.</p>
+            <a href="https://t.me/FitnessBuddyAgentBot" class="cta-button">Start Using the Bot</a>
+            <div style="margin-top: 20px;"><a href="#video" style="color:white; text-decoration:underline;">Watch Demo</a></div>
+        </div>
+    </section>
+
+    <section id="video" class="video-section">
+        <div class="container">
+            <h2>See the Bot in Action</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="Fitness Buddy Agent Demo"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+            <p class="video-note">Watch the tutorial to see how easy it is to track your workouts with voice or text</p>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3>Voice & Text Input</h3>
+                    <p>Send voice messages or text to easily log your workouts without typing long descriptions - perfect for when you're at the gym!</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <h3>Data Export</h3>
+                    <p>Export all your workout data as a spreadsheet with a simple /export command for easy analysis in your favorite tools</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Stats Analysis</h3>
+                    <p>Get personalized workout statistics and insights with /my_stats to track your progress over time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <h2 style="margin-bottom: 40px; color: #333;">What Our Users Say</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; flex-direction: row; max-width: 450px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <img src="alex_g.jpeg" alt="Alex G., a satisfied user of Fitness Buddy Agent" style="border-radius: 50%; margin-right: 15px; height: 100px; width: 100px; object-fit: cover;" loading="lazy">
+                <div>
+                    <blockquote style="font-size: 1.2em; font-style: italic; color: #444; margin: 0;">
+                        "I never thought logging workouts could be this easy. The voice feature is a total game changer!"
+                    </blockquote>
+                    <cite style="display: block; margin-top: 15px; font-size: 0.9em; color: #666;">— Alex G., Fitness Enthusiast</cite>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; flex-direction: row; max-width: 450px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <img src="sarah_m.jpeg" alt="Sarah M., a satisfied user of Fitness Buddy Agent" style="border-radius: 50%; margin-right: 15px; height: 100px; width: 100px; object-fit: cover;" loading="lazy">
+                <div>
+                    <blockquote style="font-size: 1.2em; font-style: italic; color: #444; margin: 0;">
+                        "Having this bot at my fingertips through Telegram & the stats analysis feature is awesome!"
+                    </blockquote>
+                    <cite style="display: block; margin-top: 15px; font-size: 0.9em; color: #666;">— Sarah M., Regular Gym-goer</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Is the bot free to use?</h3>
+            <p>Yes! All commands and features are for free, including sending in messages as voice or text, compiling analyses and exporting your data. Although each interaction costs real money, every user gets a generous free quota to experiment with the agent for free for weeks!</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I use it without voice?</h3>
+            <p>Absolutely. You can also send text messages to track your workouts. Even when sending voice messages, those are not stored and only used once for processing the exercise.</p>
+        </div>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>Created with ❤️ & 💪 by <a href="https://lellep.xyz/?ref=fitnessbuddyagent" target="_blank" rel="author">Martin Lellep</a></p>
+        </div>
+    </footer>
+
+    <!-- GoatCounter Analytics -->
+    <script data-goatcounter="https://lellep.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
