@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - ai-safety</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/ai-safety.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2025-04-22T00:00:00+02:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>AI Red Teaming Apple Image Playground</title><link href="https://lellep.xyz/blog/red-teaming-apple-image-playground.html" rel="alternate"></link><published>2025-04-22T00:00:00+02:00</published><updated>2025-04-22T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2025-04-22:/blog/red-teaming-apple-image-playground.html</id><summary type="html">&lt;p class="first last"&gt;A small red teaming experiment reveals how a single word can bypass content filters in Apple’s &lt;span class="caps"&gt;AI&lt;/span&gt; image&amp;nbsp;generator.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="mailto:blog.ma.lel&amp;#64;gmail.com?subject=Feedback%20for%20AI%20Red%20Teaming%20Apple%20Image%20Playground&amp;amp;body=Drop%20your%20feedback%20here.%20Thanks%20a%20lot!%20%3A-)"&gt;💬 Send me feedback about this&amp;nbsp;article&lt;/a&gt;&lt;/p&gt;
+&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Table of&amp;nbsp;Contents:&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#what-is-image-playground" id="toc-entry-1"&gt;What is &amp;#8220;Image&amp;nbsp;Playground?&amp;#8221;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#the-red-team-moment" id="toc-entry-2"&gt;The Red Team&amp;nbsp;Moment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#why-it-matters" id="toc-entry-3"&gt;Why It&amp;nbsp;Matters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#final-thoughts" id="toc-entry-4"&gt;Final&amp;nbsp;Thoughts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;While playing around with Apple’s Image Playground — the image generation app that comes pre-installed on modern macOS devices — I stumbled across a subtle but interesting behavior: it refuses to generate an image for the prompt “A bomb”, but happily produces one for&amp;nbsp;“bomb.”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;At first glance, this might seem like a minor quirk. But to anyone thinking about &lt;span class="caps"&gt;AI&lt;/span&gt; safety, prompt engineering, or system guardrails, it’s a revealing example of how sensitive content filters can&amp;nbsp;be.&lt;/em&gt;&lt;/p&gt;
+&lt;div class="section" id="what-is-image-playground"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;What is &amp;#8220;Image&amp;nbsp;Playground?&amp;#8221;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Image Playground is Apple’s native text-to-image generator that quietly appeared as part of recent
+macOS updates. It allows users to type in natural language prompts and receive generated images in
+return — similar to tools like &lt;span class="caps"&gt;DALL&lt;/span&gt;·E or Midjourney, but with Apple’s signature polish and tight
+&lt;span class="caps"&gt;OS&lt;/span&gt;&amp;nbsp;integration.&lt;/p&gt;
+&lt;p&gt;I’ve been using it frequently and it&amp;#8217;s great: It’s easy to use, fast, and generally feels safe and
+well-designed — exactly what you’d expect from&amp;nbsp;Apple.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-red-team-moment"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;The Red Team&amp;nbsp;Moment&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;While testing its boundaries, I tried entering “A bomb” as
+a prompt. The app declined to generate an image. Fair enough — it&amp;#8217;s a potentially sensitive&amp;nbsp;subject.&lt;/p&gt;
+&lt;p&gt;But then I tried “bomb” on its own. This time, the app did produce an&amp;nbsp;image.&lt;/p&gt;
+&lt;p&gt;That tiny difference — the inclusion of the article “A” — was enough to flip the system’s&amp;nbsp;filter.&lt;/p&gt;
+&lt;p&gt;See the demo of my tiny red teaming attempt in the video&amp;nbsp;below:&lt;/p&gt;
+&lt;div&gt;
+    &lt;iframe width="80%"
+            height="450"
+            src="https://www.youtube.com/embed/4sW9rijwDaM"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+    &lt;p class="caption"&gt;
+        Demo of how the Apple &amp;#8220;Image Playground&amp;#8221; application does not allow to produce an image for
+        the prompt &amp;#8220;A bomb&amp;#8221; but does produce an image for the prompt&amp;nbsp;&amp;#8220;bomb&amp;#8221;.
+    &lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="why-it-matters"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Why It&amp;nbsp;Matters&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This isn’t about trying to break the system for fun. It’s about understanding the nuances
+of &lt;span class="caps"&gt;AI&lt;/span&gt; safety in real-world applications. For developers, designers, and anyone working on
+prompt-driven &lt;span class="caps"&gt;AI&lt;/span&gt; tools, these kinds of edge cases&amp;nbsp;matter.&lt;/p&gt;
+&lt;p&gt;If a simple change in wording can bypass a filter, that raises questions about how prompts
+are parsed and&amp;nbsp;evaluated:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Are the filters&amp;nbsp;keyword-based?&lt;/li&gt;
+&lt;li&gt;Are they using contextual&amp;nbsp;analysis?&lt;/li&gt;
+&lt;li&gt;Is there a moderation model sitting between the prompt and the image generation engine (e.g.
+an &lt;span class="caps"&gt;LLM&lt;/span&gt; routing to a diffusion-based&amp;nbsp;model)?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The fact that filters are present
+at all is a good thing. This example shows just how tricky it is to build robust and
+consistent safety mechanisms for generative &lt;span class="caps"&gt;AI&lt;/span&gt; even with large tech budgets. The line between
+acceptable and restricted content is thin — and language is full of edge&amp;nbsp;cases.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="final-thoughts"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Final&amp;nbsp;Thoughts&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I’m just a curious user poking at a
+powerful new tool. But moments like these are a reminder that red teaming doesn’t have
+to be formal to be valuable. Anyone can test the limits of &lt;span class="caps"&gt;AI&lt;/span&gt; systems, and those little
+experiments often tell us a lot about how these &lt;span class="caps"&gt;AI&lt;/span&gt; systems are&amp;nbsp;built.&lt;/p&gt;
+&lt;p&gt;Image Playground remains a great product, and I’ll keep using it. But I’ll also keep
+exploring — because sometimes, one word makes all the difference (&lt;a class="reference external" href="https://www.youtube.com/watch?v=82ANkjVEpYk"&gt;pun intended&lt;/a&gt;).&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="ai-safety"></category></entry></feed>

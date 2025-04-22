@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  AI Red Teaming Apple Image Playground | Blog
+</title>
+  <link rel="canonical" href="https://lellep.xyz/blog/red-teaming-apple-image-playground.html">
+
+    <link rel="apple-touch-icon" href="https://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://lellep.xyz/blog/manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://lellep.xyz/blog/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://lellep.xyz/blog/feeds/ai-safety.atom.xml">  
+  <meta name="description" content="A small red teaming experiment reveals how a single word can bypass content filters in Apple’s AI image generator.">
+  <script>
+  // ===
+  // Taken from: https://developers.google.com/analytics/devguides/collection/gajs/?hl=de&authuser=0#disable
+  // ===
+
+  // Set to the same value as the web property used on the site
+  var gaProperty = 'UA-142575904-2';
+
+  // Disable tracking if the opt-out cookie exists.
+  var disableStr = 'ga-disable-' + gaProperty;
+  if (document.cookie.indexOf(disableStr + '=true') > -1) {
+    window[disableStr] = true;
+  }
+
+  // Opt-out function
+  function gaOptout() {
+    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+  }
+  </script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-142575904-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+  <script data-goatcounter="https://lellep.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  <!-- Mathjax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="https://lellep.xyz/blog/">
+        <img class="img-fluid rounded" src=https://lellep.xyz/blog/images/logo.svg alt="Blog">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="https://lellep.xyz/blog/">Blog</a></h1>
+      <p class="text-muted">by Martin Lellep</p>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">◄ back to my main website</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="https://lellep.xyz/blog/pages/about.html">About</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  <span class="caps">AI</span> Red Teaming Apple Image&nbsp;Playground
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2025-04-22T00:00:00+02:00">
+          <i class="fas fa-clock"></i>
+          Tue 22 April 2025
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="https://lellep.xyz/blog/category/ai-safety.html">ai-safety</a>
+        </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p><a class="reference external" href="mailto:blog.ma.lel&#64;gmail.com?subject=Feedback%20for%20AI%20Red%20Teaming%20Apple%20Image%20Playground&amp;body=Drop%20your%20feedback%20here.%20Thanks%20a%20lot!%20%3A-)">💬 Send me feedback about this&nbsp;article</a></p>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title"><a class="reference internal" href="#top">Table of&nbsp;Contents:</a></p>
+<ul class="simple">
+<li><a class="reference internal" href="#what-is-image-playground" id="toc-entry-1">What is &#8220;Image&nbsp;Playground?&#8221;</a></li>
+<li><a class="reference internal" href="#the-red-team-moment" id="toc-entry-2">The Red Team&nbsp;Moment</a></li>
+<li><a class="reference internal" href="#why-it-matters" id="toc-entry-3">Why It&nbsp;Matters</a></li>
+<li><a class="reference internal" href="#final-thoughts" id="toc-entry-4">Final&nbsp;Thoughts</a></li>
+</ul>
+</div>
+<p><em>While playing around with Apple’s Image Playground — the image generation app that comes pre-installed on modern macOS devices — I stumbled across a subtle but interesting behavior: it refuses to generate an image for the prompt “A bomb”, but happily produces one for&nbsp;“bomb.”</em></p>
+<p><em>At first glance, this might seem like a minor quirk. But to anyone thinking about <span class="caps">AI</span> safety, prompt engineering, or system guardrails, it’s a revealing example of how sensitive content filters can&nbsp;be.</em></p>
+<div class="section" id="what-is-image-playground">
+<h2><a class="toc-backref" href="#table-of-contents">What is &#8220;Image&nbsp;Playground?&#8221;</a></h2>
+<p>Image Playground is Apple’s native text-to-image generator that quietly appeared as part of recent
+macOS updates. It allows users to type in natural language prompts and receive generated images in
+return — similar to tools like <span class="caps">DALL</span>·E or Midjourney, but with Apple’s signature polish and tight
+<span class="caps">OS</span>&nbsp;integration.</p>
+<p>I’ve been using it frequently and it&#8217;s great: It’s easy to use, fast, and generally feels safe and
+well-designed — exactly what you’d expect from&nbsp;Apple.</p>
+</div>
+<div class="section" id="the-red-team-moment">
+<h2><a class="toc-backref" href="#table-of-contents">The Red Team&nbsp;Moment</a></h2>
+<p>While testing its boundaries, I tried entering “A bomb” as
+a prompt. The app declined to generate an image. Fair enough — it&#8217;s a potentially sensitive&nbsp;subject.</p>
+<p>But then I tried “bomb” on its own. This time, the app did produce an&nbsp;image.</p>
+<p>That tiny difference — the inclusion of the article “A” — was enough to flip the system’s&nbsp;filter.</p>
+<p>See the demo of my tiny red teaming attempt in the video&nbsp;below:</p>
+<div>
+    <iframe width="80%"
+            height="450"
+            src="https://www.youtube.com/embed/4sW9rijwDaM"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            style="border: 0; margin: 0 auto; display:block; margin-bottom: 10px; max-width: 100%"
+            allowfullscreen>
+    </iframe>
+</div>
+<div class="figure">
+    <p class="caption">
+        Demo of how the Apple &#8220;Image Playground&#8221; application does not allow to produce an image for
+        the prompt &#8220;A bomb&#8221; but does produce an image for the prompt&nbsp;&#8220;bomb&#8221;.
+    </p>
+</div></div>
+<div class="section" id="why-it-matters">
+<h2><a class="toc-backref" href="#table-of-contents">Why It&nbsp;Matters</a></h2>
+<p>This isn’t about trying to break the system for fun. It’s about understanding the nuances
+of <span class="caps">AI</span> safety in real-world applications. For developers, designers, and anyone working on
+prompt-driven <span class="caps">AI</span> tools, these kinds of edge cases&nbsp;matter.</p>
+<p>If a simple change in wording can bypass a filter, that raises questions about how prompts
+are parsed and&nbsp;evaluated:</p>
+<ul class="simple">
+<li>Are the filters&nbsp;keyword-based?</li>
+<li>Are they using contextual&nbsp;analysis?</li>
+<li>Is there a moderation model sitting between the prompt and the image generation engine (e.g.
+an <span class="caps">LLM</span> routing to a diffusion-based&nbsp;model)?</li>
+</ul>
+<p>The fact that filters are present
+at all is a good thing. This example shows just how tricky it is to build robust and
+consistent safety mechanisms for generative <span class="caps">AI</span> even with large tech budgets. The line between
+acceptable and restricted content is thin — and language is full of edge&nbsp;cases.</p>
+</div>
+<div class="section" id="final-thoughts">
+<h2><a class="toc-backref" href="#table-of-contents">Final&nbsp;Thoughts</a></h2>
+<p>I’m just a curious user poking at a
+powerful new tool. But moments like these are a reminder that red teaming doesn’t have
+to be formal to be valuable. Anyone can test the limits of <span class="caps">AI</span> systems, and those little
+experiments often tell us a lot about how these <span class="caps">AI</span> systems are&nbsp;built.</p>
+<p>Image Playground remains a great product, and I’ll keep using it. But I’ll also keep
+exploring — because sometimes, one word makes all the difference (<a class="reference external" href="https://www.youtube.com/watch?v=82ANkjVEpYk">pun intended</a>).</p>
+</div>
+
+    </div>
+  </article>
+
+<!-- Mailchimp integration: Start -->
+
+    <hr style="width: 100%; border-width: 2px; margin: auto; padding-bottom: 10px">
+
+    <!-- Begin Mailchimp Signup Form -->
+    <div id="mc_embed_signup" style="border-style: solid; padding: 10px; border-width: 2px; border-radius: 10px; border-color: rgba(0,0,0,.1); text-align: center">
+    <form action="https://gmail.us1.list-manage.com/subscribe/post?u=57bbde295879632bd3d92ea44&amp;id=33caef11bd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+            <i>Subscribe via email to get notified about new blog posts</i>
+            <div class="mc-field-group">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="email address">
+            </div>
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_57bbde295879632bd3d92ea44_33caef11bd" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-light"></div>
+        </div>
+    </form>
+    </div>
+    <!--End mc_embed_signup-->
+
+<!-- Mailchimp integration: End -->
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="https://lellep.xyz/blog/tags.html">Tags</a></li>
+    <li class="list-inline-item">
+        <a href="javascript:gaOptout()">Refuse analytics cookies</a>
+    </li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
