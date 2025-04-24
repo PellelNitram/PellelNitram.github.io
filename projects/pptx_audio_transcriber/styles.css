@@ -222,49 +222,82 @@ h2 {
     border-color: var(--primary-color);
 }
 
-/* Tutorial Video Section Styles */
-.tutorial-section {
-    margin-bottom: 1em;
-    background: #f8f9fa;
-    border-radius: 6px;
-    padding: 0.4em 0.8em;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.02);
-}
-.tutorial-section summary {
-    font-size: 0.98em;
-    padding: 0.2em 0;
-}
-.tutorial-video-container {
-    margin-top: 0.5em;
-}
-.tutorial-video-container p {
-    font-size: 0.95em;
-    margin-bottom: 0.3em;
-}
-.tutorial-video-container .video-responsive {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 380px;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-}
-.tutorial-video-container .video-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    border-radius: 6px;
-}
 footer {
     text-align: center;
     margin-top: 2rem;
     color: #666;
     font-size: 0.9rem;
+}
+
+/* Tutorial Section */
+.tutorial-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.tutorial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tutorial-header h2 {
+    margin-bottom: 0;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon.collapsed {
+    transform: rotate(-90deg);
+}
+
+.tutorial-content {
+    max-height: 500px;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.tutorial-content.collapsed {
+    max-height: 0;
+    margin-top: 0;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
 }
 
 /* Utility Classes */

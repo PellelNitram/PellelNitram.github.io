@@ -11,21 +11,27 @@
         <header>
             <h1>PPTX Audio Transcriber</h1>
             <p>Upload your PowerPoint presentation to extract and transcribe audio.</p>
+            <p><i><a href="mailto:blog.ma.lel@gmail.com?subject=Project%20Feedback%3A%20PPTX%20Audio%20Transcriber&body=(%20Please%20drop%20your%20feedback%20here%20%3A-)%20)">( Click to send me feedback )</a></i></p>
         </header>
 
-        <main>
-            <section>
-                <details class="tutorial-section">
-                    <summary><strong>📺 Tutorial Video (click to expand)</strong></summary>
-                    <div class="tutorial-video-container">
-                        <p>Watch this quick tutorial to learn how to use the PPTX Audio Transcriber:</p>
-                        <div class="video-responsive">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Tutorial Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </details>
-            </section>
+        <section class="tutorial-section">
+            <div class="tutorial-header">
+                <h2>Video Tutorial</h2>
+                <button id="toggleTutorial" class="toggle-button">
+                    <span class="toggle-icon">▼</span>
+                </button>
+            </div>
+            <div id="tutorialContent" class="tutorial-content">
+                <div class="video-container">
+                    <iframe width="560" height="550" src="https://www.youtube.com/embed/0rHdcEpYJD0"
+                        title="Video Tutorial" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
 
+        <main>
             <section class="upload-section">
                 <h2>Upload</h2>
                 <label for="fileInput" class="upload-button">Choose File</label>
@@ -69,7 +75,7 @@
         </main>
 
         <footer>
-            <p>Made by <a href="https://lellep.xyz/?ref=pptxToText">Martin Lellep</a> for his mom ❤️ at <a href="https://mgmmmmm.com/">Makers Gonna Make Episode 6</a> in Edinburgh</p>
+            <p>Made by <a href="https://lellep.xyz/?ref=pptxToText">Martin Lellep</a> for his mom ❤️ at <a href="https://mgmmmmm.com/?ref=lellep.xyz">Makers Gonna Make Episode 6</a> in Edinburgh</p>
         </footer>
     </div>
 

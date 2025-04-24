@@ -168,12 +168,41 @@ function exportTranscriptionsAsTxt() {
     }, 100);
 }
 
+// Function to toggle the tutorial section
+function toggleTutorial() {
+    const tutorialContent = document.getElementById('tutorialContent');
+    const toggleIcon = document.querySelector('.toggle-icon');
+    
+    // Toggle the collapsed class
+    tutorialContent.classList.toggle('collapsed');
+    toggleIcon.classList.toggle('collapsed');
+}
+
 // Function to display the selected filename
 document.addEventListener('DOMContentLoaded', function() {
     const fileInput = document.getElementById('fileInput');
     const fileInfo = document.getElementById('fileInfo');
     const startProcessingBtn = document.getElementById('startProcessingBtn');
     const exportTxtBtn = document.getElementById('exportTxt');
+    const toggleTutorialBtn = document.getElementById('toggleTutorial');
+    const tutorialHeader = document.querySelector('.tutorial-header');
+    
+    // Initialize tutorial section as collapsed
+    const tutorialContent = document.getElementById('tutorialContent');
+    const toggleIcon = document.querySelector('.toggle-icon');
+    tutorialContent.classList.add('collapsed');
+    toggleIcon.classList.add('collapsed');
+    
+    // Add event listener for the tutorial toggle button
+    toggleTutorialBtn.addEventListener('click', toggleTutorial);
+    
+    // Also allow clicking on the header to toggle
+    tutorialHeader.addEventListener('click', function(event) {
+        // Prevent toggling when clicking on the button itself (it has its own listener)
+        if (!event.target.closest('#toggleTutorial')) {
+            toggleTutorial();
+        }
+    });
     
     fileInput.addEventListener('change', function() {
         if (fileInput.files.length > 0) {
