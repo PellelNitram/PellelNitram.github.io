@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  An AI App for my Mom | Blog
+</title>
+  <link rel="canonical" href="https://lellep.xyz/blog/ai-app-for-my-mom.html">
+
+    <link rel="apple-touch-icon" href="https://lellep.xyz/blog/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://lellep.xyz/blog/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://lellep.xyz/blog/manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://lellep.xyz/blog/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://lellep.xyz/blog/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://lellep.xyz/blog/feeds/ai.atom.xml">  
+  <meta name="description" content="I built an AI app to help my mom transcribe audio embedded in PowerPoint slides.">
+  <script>
+  // ===
+  // Taken from: https://developers.google.com/analytics/devguides/collection/gajs/?hl=de&authuser=0#disable
+  // ===
+
+  // Set to the same value as the web property used on the site
+  var gaProperty = 'UA-142575904-2';
+
+  // Disable tracking if the opt-out cookie exists.
+  var disableStr = 'ga-disable-' + gaProperty;
+  if (document.cookie.indexOf(disableStr + '=true') > -1) {
+    window[disableStr] = true;
+  }
+
+  // Opt-out function
+  function gaOptout() {
+    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+  }
+  </script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-142575904-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+  <script data-goatcounter="https://lellep.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  <!-- Mathjax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="https://lellep.xyz/blog/">
+        <img class="img-fluid rounded" src=https://lellep.xyz/blog/images/logo.svg alt="Blog">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="https://lellep.xyz/blog/">Blog</a></h1>
+      <p class="text-muted">by Martin Lellep</p>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="http://lellep.xyz/" target="_blank">◄ back to my main website</a></li>
+              <li class="list-inline-item text-muted">|</li>
+            <li class="list-inline-item"><a href="https://lellep.xyz/blog/pages/about.html">About</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-bitbucket" href="https://bitbucket.org/Mc_M/" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  An <span class="caps">AI</span> App for my&nbsp;Mom
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2025-04-26T00:00:00+02:00">
+          <i class="fas fa-clock"></i>
+          Sat 26 April 2025
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="https://lellep.xyz/blog/category/ai.html">ai</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="https://lellep.xyz/blog/tag/ai.html">#ai</a>,               <a href="https://lellep.xyz/blog/tag/data.html">#data</a>,               <a href="https://lellep.xyz/blog/tag/useful.html">#useful</a>,               <a href="https://lellep.xyz/blog/tag/gen-ai.html">#gen-ai</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p><a class="reference external" href="https://lellep.xyz/projects/pptx_audio_transcriber/?utm_campaign=fromBlogArticle1">🔗 Link to <span class="caps">AI</span> app for my&nbsp;mom</a></p>
+<p><a class="reference external" href="mailto:blog.ma.lel&#64;gmail.com?subject=Feedback%20for%20An%20AI%20App%20for%20my%20Mom&amp;body=Drop%20your%20feedback%20here.%20Thanks%20a%20lot!%20%3A-)">💬 Send me feedback about this&nbsp;article</a></p>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title"><a class="reference internal" href="#top">Table of&nbsp;Contents:</a></p>
+<ul class="simple">
+<li><a class="reference internal" href="#the-problem-transcribing-audio-in-powerpoint" id="toc-entry-1">The Problem: Transcribing Audio in&nbsp;PowerPoint</a></li>
+<li><a class="reference internal" href="#the-task-use-ai-to-help-my-mom" id="toc-entry-2">The Task: Use <span class="caps">AI</span> to Help my&nbsp;Mom</a></li>
+<li><a class="reference internal" href="#v1-a-quick-python-app-using-reflex-whisper" id="toc-entry-3">V1: A Quick Python App Using Reflex +&nbsp;Whisper</a></li>
+<li><a class="reference internal" href="#v2-going-fully-client-side-with-vanilla-js" id="toc-entry-4">V2: Going Fully Client-Side with Vanilla <span class="caps">JS</span></a></li>
+<li><a class="reference internal" href="#results-and-reflection" id="toc-entry-5">Results and&nbsp;Reflection</a></li>
+</ul>
+</div>
+<p><em>My mom occasionally needs to transcribe the audio embedded in PowerPoint slides for her job. Each slide often contains a voiceover, and the manual transcription process used to take her weeks. I built a small tool — first in Python with Reflex, then later as a pure client-side JavaScript app — that automates the entire process using OpenAI’s Whisper <span class="caps">API</span>. In this post, I’ll break down the problem, my approach, the two iterations of the system, and a few lessons&nbsp;learned.</em></p>
+<div class="section" id="the-problem-transcribing-audio-in-powerpoint">
+<h2><a class="toc-backref" href="#table-of-contents">The Problem: Transcribing Audio in&nbsp;PowerPoint</a></h2>
+<p>My mom often works with PowerPoint presentations that have embedded audio — one clip per slide (see the figure below). The goal: transcribe all the audio into editable&nbsp;text.</p>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/ai_app_for_my_mom/slide_explanation.png" style="width: 80%;" />
+<p class="caption">Schematic diagram showing two PowerPoint slide decks, one with and one without&nbsp;audio.</p>
+</div>
+<p>PowerPoint doesn’t expose this audio cleanly, and there’s no built-in way to transcribe it. The manual workflow involved opening each slide, playing the audio, and typing it out by hand. For decks with 30–40 slides, this could easily take a week or&nbsp;more.</p>
+<p>The real bottleneck was that each clip required multiple listen–type–rewind passes, with no way to batch the&nbsp;work.</p>
+</div>
+<div class="section" id="the-task-use-ai-to-help-my-mom">
+<h2><a class="toc-backref" href="#table-of-contents">The Task: Use <span class="caps">AI</span> to Help my&nbsp;Mom</a></h2>
+<p>Watching this unfold, it was obvious that most of the effort was mechanical — listen, type, rewind, repeat. A machine could do&nbsp;that.</p>
+<p>That’s when I started thinking: <em><span class="caps">AI</span> should be able to help here</em>. Speech recognition has come a long way, and models like OpenAI’s Whisper had recently become accessible via <span class="caps">API</span>. The idea was simple: extract the audio from each slide, feed it into Whisper, and return clean text grouped by&nbsp;slide.</p>
+<p>From a technical standpoint, the task broke down into three&nbsp;parts:</p>
+<ol class="arabic simple">
+<li>Parse the <tt class="docutils literal">.pptx</tt> file and extract all embedded&nbsp;audio.</li>
+<li>Transcribe each audio clip using an <span class="caps">AI</span>&nbsp;model.</li>
+<li>Present the output in a way that&#8217;s easy to edit or&nbsp;reuse.</li>
+</ol>
+<p>This seemed very doable with off-the-shelf tools. My goal was to build the <em>simplest possible version</em> to reduce my mom’s manual workload — and avoid becoming her permanent tech&nbsp;support.</p>
+</div>
+<div class="section" id="v1-a-quick-python-app-using-reflex-whisper">
+<h2><a class="toc-backref" href="#table-of-contents">V1: A Quick Python App Using Reflex +&nbsp;Whisper</a></h2>
+<p>The first version of the app used <a class="reference external" href="https://reflex.dev/">Reflex</a> (formerly Pynecone), a Python framework that compiles into a React frontend. Since I was already comfortable in Python and wanted to move fast, it was a great&nbsp;fit.</p>
+<p><strong>Tech Stack for&nbsp;V1:</strong></p>
+<ul class="simple">
+<li>Frontend: Reflex (Python, compiles to&nbsp;React)</li>
+<li>Backend: Dockerized FastAPI (local&nbsp;only)</li>
+<li>Transcription: OpenAI Whisper <span class="caps">API</span></li>
+<li>Input: <tt class="docutils literal">.pptx</tt> files uploaded&nbsp;manually</li>
+<li>Output: plain-text transcripts grouped by&nbsp;slide</li>
+</ul>
+<p><strong>How it&nbsp;worked:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal">.pptx</tt> files are just <span class="caps">ZIP</span>&nbsp;archives.</li>
+<li>Audio files (typically <tt class="docutils literal">.m4a</tt> or <tt class="docutils literal">.mp3</tt>) are extracted from the <tt class="docutils literal">ppt/media</tt> folder.</li>
+<li>Each audio file is passed to Whisper for&nbsp;transcription.</li>
+<li>Transcripts are grouped by slide and returned as a downloadable <tt class="docutils literal">.txt</tt> file.</li>
+</ul>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/ai_app_for_my_mom/system_design_v1.png" style="width: 100%;" />
+<p class="caption">System design diagram for version 1. The user uploads a PowerPoint deck through the frontend; the backend extracts audio, sends it to OpenAI Whisper for transcription, and returns the text to the&nbsp;frontend.</p>
+</div>
+<p>This worked well as a proof-of-concept — but the workflow was clunky. My mom had to send me the file, I ran the app locally in Docker, then sent her the results. Definitely not&nbsp;ideal.</p>
+</div>
+<div class="section" id="v2-going-fully-client-side-with-vanilla-js">
+<h2><a class="toc-backref" href="#table-of-contents">V2: Going Fully Client-Side with Vanilla <span class="caps">JS</span></a></h2>
+<p>For the second version, I removed the backend&nbsp;completely.</p>
+<p><strong>Why?</strong></p>
+<ul class="simple">
+<li>I didn’t want to host or maintain a&nbsp;server.</li>
+<li>The Whisper <span class="caps">API</span> could be called directly from the&nbsp;browser.</li>
+<li>The only &#8220;secret&#8221; needed was the OpenAI <span class="caps">API</span> key, which I could hand over manually. (My mom doesn&#8217;t know what an <span class="caps">API</span> key is, but she&#8217;s fine pasting it in if I give it to&nbsp;her.)</li>
+</ul>
+<p><strong>Tech Stack for&nbsp;V2:</strong></p>
+<ul class="simple">
+<li>Pure <span class="caps">HTML</span> + JavaScript (no&nbsp;frameworks)</li>
+<li>Deployed as a static&nbsp;site</li>
+<li>Transcription via Whisper, called from the&nbsp;frontend</li>
+<li>User supplies their own <span class="caps">API</span>&nbsp;key</li>
+</ul>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/ai_app_for_my_mom/system_design_v2.png" style="width: 100%;" />
+<p class="caption">System design diagram for version 2. Everything happens client-side: the user uploads a PowerPoint deck, the browser parses and extracts audio, sends it to Whisper, and displays the results — no server&nbsp;required.</p>
+</div>
+<p>Here’s what the app looks like (or <a class="reference external" href="https://lellep.xyz/projects/pptx_audio_transcriber/?utm_campaign=fromBlogArticle2">try it here</a>):</p>
+<div class="figure">
+<img alt="" src="https://lellep.xyz/blog/images/ai_app_for_my_mom/app_screenshot.png" style="width: 100%;" />
+<p class="caption">Screenshot of the deployed app. Upload your PowerPoint deck, paste your OpenAI <span class="caps">API</span> key, and start transcribing — all in a few&nbsp;clicks.</p>
+</div>
+<p>In this version, my mom uploads a <tt class="docutils literal">.pptx</tt> file, the browser (using <tt class="docutils literal">JSZip</tt>) unpacks it, extracts audio clips, and sends them to Whisper one by one. Transcriptions appear inline and are available for&nbsp;download.</p>
+<p><strong>Security note:</strong>
+The <span class="caps">API</span> key is never stored or logged. Everything happens in-browser.
+It’s not perfect <span class="caps">UX</span>, but for a one-user internal tool, it’s good&nbsp;enough.</p>
+</div>
+<div class="section" id="results-and-reflection">
+<h2><a class="toc-backref" href="#table-of-contents">Results and&nbsp;Reflection</a></h2>
+<p>Today, my mom completes what used to take <strong>a week</strong> in <strong>a couple of hours</strong>. The app is reliable, simple, and basically&nbsp;maintenance-free.</p>
+<p>A few quick lessons from the&nbsp;project:</p>
+<ul class="simple">
+<li><tt class="docutils literal">.pptx</tt> files are just ZIPs with predictable structure — very&nbsp;convenient.</li>
+<li>Client-side-only apps are underrated for small tools like&nbsp;this.</li>
+<li>Whisper is impressively robust, even with low-quality or mumbled&nbsp;audio.</li>
+<li>Reflex is a fun and productive way to build full-stack apps in&nbsp;Python.</li>
+</ul>
+<p>This was a super satisfying project: practical, personal, and technically interesting without ballooning in&nbsp;scope.</p>
+<p><strong>Next steps:</strong> None. Mission accomplished.&nbsp;🫶</p>
+<p>🔗 <a class="reference external" href="https://lellep.xyz/projects/pptx_audio_transcriber/?utm_campaign=fromBlogArticle3">Try the app&nbsp;yourself</a></p>
+<p>💬 <a class="reference external" href="mailto:blog.ma.lel&#64;gmail.com?subject=Feedback%20for%20An%20AI%20App%20for%20my%20Mom&amp;body=Drop%20your%20feedback%20here.%20Thanks%20a%20lot!%20%3A-)">Feedback? I&#8217;d love to hear&nbsp;it</a></p>
+</div>
+
+    </div>
+  </article>
+
+<!-- Mailchimp integration: Start -->
+
+    <hr style="width: 100%; border-width: 2px; margin: auto; padding-bottom: 10px">
+
+    <!-- Begin Mailchimp Signup Form -->
+    <div id="mc_embed_signup" style="border-style: solid; padding: 10px; border-width: 2px; border-radius: 10px; border-color: rgba(0,0,0,.1); text-align: center">
+    <form action="https://gmail.us1.list-manage.com/subscribe/post?u=57bbde295879632bd3d92ea44&amp;id=33caef11bd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+            <i>Subscribe via email to get notified about new blog posts</i>
+            <div class="mc-field-group">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="email address">
+            </div>
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_57bbde295879632bd3d92ea44_33caef11bd" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-light"></div>
+        </div>
+    </form>
+    </div>
+    <!--End mc_embed_signup-->
+
+<!-- Mailchimp integration: End -->
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="https://lellep.xyz/blog/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="https://lellep.xyz/blog/tags.html">Tags</a></li>
+    <li class="list-inline-item">
+        <a href="javascript:gaOptout()">Refuse analytics cookies</a>
+    </li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
