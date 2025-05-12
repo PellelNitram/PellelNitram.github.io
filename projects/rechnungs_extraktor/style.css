@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="file"],
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+#statusMessages {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    min-height: 50px;
+    white-space: pre-wrap; /* Allows line breaks */
+    word-wrap: break-word; /* Prevents overflow */
+    font-size: 0.9em;
+}
+
+small {
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #bbb;
+    border-top: 1px solid #eee;
+}
