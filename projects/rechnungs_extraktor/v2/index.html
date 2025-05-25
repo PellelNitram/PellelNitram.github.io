@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Changed lang to "de" -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechnungs-Extraktor v1</title> <!-- Translated -->
+    <link rel="stylesheet" href="style.css">
+    <!-- JSZip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        // Required for pdf.js
+        pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    </script>
+    <!-- SheetJS (xlsx) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Rechnungsdaten-Extraktor</h1> <!-- Translated -->
+
+        <div class="section" id="input-section">
+            <h2>1. Eingabe</h2> <!-- Translated -->
+            <label for="zipFile">ZIP-Datei mit PDF-Rechnungen hochladen:</label> <!-- Translated -->
+            <input type="file" id="zipFile" accept=".zip">
+        </div>
+
+        <div class="section" id="settings-section">
+            <h2>2. Einstellungen</h2> <!-- Translated -->
+            <label for="apiKey">OpenAI API-Schlüssel:</label> <!-- Translated -->
+            <input type="text" id="apiKey" placeholder="sk-..."> <!-- Placeholder format is universal -->
+            <small>Ihr API-Schlüssel wird lokal in Ihrem Browser verwendet und nicht an andere Server als die von OpenAI gesendet.</small> <!-- Translated -->
+        </div>
+
+        <div class="section" id="action-section">
+            <h2>3. Verarbeiten</h2> <!-- Translated -->
+            <button id="processButton" disabled>Rechnungen verarbeiten</button> <!-- Translated -->
+        </div>
+
+        <div class="section" id="output-section">
+            <h2>4. Ausgabe</h2> <!-- Translated -->
+            <button id="downloadButton" style="display:none;">Excel herunterladen (XLSX)</button> <!-- Translated -->
+        </div>
+
+        <div class="section" id="status-section">
+            <h2>Status</h2> <!-- "Status" is fine in German -->
+            <pre id="statusMessages"></pre>
+        </div>
+    </div>
+
+    <footer class="footer">
+        v2
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
