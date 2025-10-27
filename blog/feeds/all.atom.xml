@@ -1,5 +1,411 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2025-04-26T00:00:00+02:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>An AI App for my Mom</title><link href="https://lellep.xyz/blog/ai-app-for-my-mom.html" rel="alternate"></link><published>2025-04-26T00:00:00+02:00</published><updated>2025-04-26T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2025-04-26:/blog/ai-app-for-my-mom.html</id><summary type="html">&lt;p class="first last"&gt;I built an &lt;span class="caps"&gt;AI&lt;/span&gt; app to help my mom transcribe audio embedded in PowerPoint&amp;nbsp;slides.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog</title><link href="https://lellep.xyz/blog/" rel="alternate"></link><link href="https://lellep.xyz/blog/feeds/all.atom.xml" rel="self"></link><id>https://lellep.xyz/blog/</id><updated>2025-10-27T00:00:00+01:00</updated><subtitle>by Martin Lellep</subtitle><entry><title>WordDetectorNet Visually Explained</title><link href="https://lellep.xyz/blog/worddetectornet-visually-explained.html" rel="alternate"></link><published>2025-10-27T00:00:00+01:00</published><updated>2025-10-27T00:00:00+01:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2025-10-27:/blog/worddetectornet-visually-explained.html</id><summary type="html">&lt;p class="first last"&gt;A visual explanation of the WordDetectorNet model, which combines a neural network with &lt;span class="caps"&gt;DBSCAN&lt;/span&gt; clustering to find handwritten words on a&amp;nbsp;page.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="https://huggingface.co/spaces/PellelNitram/xournalpp_htr_WordDetectorNN"&gt;Try 🤗 HuggingFace demo&lt;/a&gt; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;a class="reference external" href="https://github.com/PellelNitram/xournalpp_htr/tree/master/xournalpp_htr/training/WordDetectorNN"&gt;👩‍💻 Code on Github&lt;/a&gt; &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;a class="reference external" href="mailto:blog.ma.lel&amp;#64;gmail.com?subject=Feedback%20for%20WordDetectorNet%20Visually%20Explained&amp;amp;body=Drop%20your%20feedback%20here.%20Thanks%20a%20lot!"&gt;💬 Send me&amp;nbsp;feedback&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ever wished your handwritten &lt;a class="reference external" href="https://github.com/xournalpp/xournalpp"&gt;Xournal++&lt;/a&gt; notes were searchable like typed documents?
+That&amp;#8217;s exactly what my tiny open-source &lt;a class="reference external" href="https://github.com/PellelNitram/xournalpp_htr"&gt;Xournal++ &lt;span class="caps"&gt;HTR&lt;/span&gt; project&lt;/a&gt;
+aims to solve using modern machine&amp;nbsp;learning.&lt;/p&gt;
+&lt;p&gt;As part of professionalising &lt;a class="reference external" href="https://github.com/PellelNitram/xournalpp_htr"&gt;Xournal++ &lt;span class="caps"&gt;HTR&lt;/span&gt;&lt;/a&gt;,
+I re-implemented &lt;a class="reference external" href="https://github.com/githubharald"&gt;Harald Scheidl&amp;#8217;s&lt;/a&gt; fantastic
+&lt;a class="reference external" href="https://github.com/githubharald/WordDetectorNN"&gt;WordDetectorNet&lt;/a&gt; model for detecting handwritten text on pages using PyTorch.
+Finding where words are located on a page is the first crucial step in making handwritten notes&amp;nbsp;searchable.&lt;/p&gt;
+&lt;p&gt;I really liked the idea behind WordDetectorNet. I want to share a visual explanation of how WordDetectorNet works in this blog
+article because I learned quite a bit while re-implementing&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;Useful details outside the direct explanation of WordDetectorNet are covered in expandable excursion boxes denoted by the ⭐️&amp;nbsp;emoji.&lt;/p&gt;
+&lt;div class="contents topic" id="table-of-contents"&gt;
+&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Table of&amp;nbsp;Contents:&lt;/a&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#problem-setting" id="toc-entry-1"&gt;Problem&amp;nbsp;Setting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#solution-overview" id="toc-entry-2"&gt;Solution&amp;nbsp;Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#step-by-step-explanation" id="toc-entry-3"&gt;Step-by-step Explanation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#background" id="toc-entry-4"&gt;Background&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#worddetectornet-modeling-approach" id="toc-entry-5"&gt;WordDetectorNet Modeling&amp;nbsp;Approach&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#neural-network-architecture" id="toc-entry-6"&gt;Neural Network&amp;nbsp;Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#conclusions" id="toc-entry-7"&gt;Conclusions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#references" id="toc-entry-8"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="problem-setting"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Problem&amp;nbsp;Setting&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Given an image with handwritten text on, we want to use the WordDetectorNet to predict the bounding boxes around all words as a&amp;nbsp;list.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig1.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig1.png" style="width: 600px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;This list of bounding boxes can then conviently be used to draw the bounding boxes around&amp;nbsp;words.&lt;/p&gt;
+&lt;p&gt;The WordDetectorNet is the first part of the machine learning pipeline in the
+&lt;a class="reference external" href="https://github.com/PellelNitram/xournalpp_htr"&gt;Xournal++ &lt;span class="caps"&gt;HTR&lt;/span&gt;&lt;/a&gt; project to make handwritten notes searchable.
+WordDetectorNet finds all words on a page and forwards them to a subsequent model which transcribes the actual text from images of
+words to strings. Although I don&amp;#8217;t cover the transcription part in this blog article, you can try a full end-to-end open-source demo
+of the Xournal++ &lt;span class="caps"&gt;HTR&lt;/span&gt; project for text recognition using this &lt;a class="reference external" href="https://huggingface.co/spaces/PellelNitram/xournalpp_htr"&gt;🤗 HuggingFace demo&lt;/a&gt;.&lt;/p&gt;
+&lt;details style="margin-top: 1rem; margin-bottom: 1rem; border: 2px solid #ccc; padding: 1rem; border-radius: 15px;"&gt;
+
+   &lt;summary&gt;
+      ⭐️ &lt;b&gt;Excursion: What is a bounding box?&lt;/b&gt;
+   &lt;/summary&gt;
+
+   &lt;p&gt;
+      A bounding box represents a rectangular
+      region on an image that contains an object of interest.
+      We follow the standard computer vision convention where
+      the coordinate system has its origin (0, 0) at the top-left&amp;nbsp;corner.
+   &lt;/p&gt;
+
+   &lt;figure style="text-align: center;"&gt;
+   &lt;img
+      src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig2.png"
+      style="width: 300px; max-width: 100%; height: auto;"&gt;
+   &lt;/figure&gt;
+
+   &lt;p&gt;
+      Every bounding box is defined by exactly 4 values.
+      These can be represented in different ways: either as
+      a top-left point plus width and height, or as minimum
+      and maximum coordinates for each dimension.
+      Throughout this article, I use the latter format: (xmin, xmax, ymin,&amp;nbsp;ymax).
+   &lt;/p&gt;
+
+&lt;/details&gt;&lt;/div&gt;
+&lt;div class="section" id="solution-overview"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Solution&amp;nbsp;Overview&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;WordDetectorNet solves finding words on pages using a two-stage pipeline:
+a deep learning model followed by a clustering step. The deep learning component
+does most of the heavy lifting, while the clustering helps refine the final results,
+see the overview figure&amp;nbsp;below.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/overview.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/overview.png" style="width: 800px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;This article is structured in two main parts. First, I&amp;#8217;ll walk you through the
+complete pipeline, explaining how the deep learning and clustering steps work
+together - this is where most of the interesting modeling happens. Then, we&amp;#8217;ll
+take a deeper look into the neural network architecture itself, which uses a
+ResNet18-based encoder combined with a Feature Pyramid Network decoder to generate
+pixel-wise&amp;nbsp;predictions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="step-by-step-explanation"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Step-by-step&amp;nbsp;Explanation&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Before looking at the complete pipeline that uses deep learning and clustering,
+it&amp;#8217;s worth to mention some background to bring everyone on the same&amp;nbsp;page.&lt;/p&gt;
+&lt;div class="section" id="background"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Background&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;An image, like a scan of handwritten text, consists of pixels; denoted by gray boxes in
+the following&amp;nbsp;image.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig3.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig3.png" style="width: 400px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Handwritten text on a page therefore lives in this pixel space. The example shows handwritten
+text &amp;#8220;We love bikes&amp;#8221;. Of course, normally there are many more pixels so that they actually
+make up the strokes and can resolve&amp;nbsp;them.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig4.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig4.png" style="width: 400px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;After training, the WordDetectorNet will find the bounding boxes around the words and, as is the
+case in the &lt;a class="reference external" href="https://github.com/PellelNitram/xournalpp_htr"&gt;Xournal++ &lt;span class="caps"&gt;HTR&lt;/span&gt;&lt;/a&gt; setup, return them
+as a list for&amp;nbsp;transcription.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig5.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig5.png" style="width: 400px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="worddetectornet-modeling-approach"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;WordDetectorNet Modeling&amp;nbsp;Approach&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Each pixel on the page is assigned a class. This is called a &amp;#8220;segmentation task&amp;#8221;. In the following
+figure, red denotes &amp;#8220;word pixel&amp;#8221; and white &amp;#8220;background&amp;nbsp;pixel&amp;#8221;.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig6.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig6.png" style="width: 400px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;details style="margin-top: 1rem; margin-bottom: 1rem; border: 2px solid #ccc; padding: 1rem; border-radius: 15px;"&gt;
+
+   &lt;summary&gt;
+      ⭐️ &lt;b&gt;Excursion: Classification with deep learning&lt;/b&gt;
+   &lt;/summary&gt;
+
+   &lt;p&gt;
+      Classification in deep learning is
+      typically done by predicting a
+      probability distribution. Here,
+      there are two possible outcomes for each pixel:
+      &amp;#8220;is background&amp;#8221; and &amp;#8220;is word&amp;#8221;. Therefore, the model
+      predicts two probability values for each pixel that sum to 1.
+      When the prediction is performed for all pixels across the image,
+      it creates two output maps that contain these&amp;nbsp;probabilities.
+   &lt;/p&gt;
+
+   &lt;figure style="text-align: center;"&gt;
+   &lt;img
+      src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig7.png"
+      style="width: 600px; max-width: 100%; height: auto;"&gt;
+   &lt;/figure&gt;
+
+&lt;/details&gt;&lt;p&gt;Now we have bounding boxes as a segmentation mask. But we actually want a list of
+bounding boxes, not a pixel-wise segmentation. We&amp;#8217;ll need a post-processing&amp;nbsp;step.&lt;/p&gt;
+&lt;p&gt;To solve this, we assign each pixel not only a class, but also its relative position within the bounding box
+if it is a &amp;#8220;word&amp;#8221; pixel. The following figure shows how a &amp;#8220;word&amp;#8221; pixel is assigned relative distances
+of 1 to the top of the bounding box, 2 to the right, 1 to the bottom, and 1 to the&amp;nbsp;left.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig8.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig8.png" style="width: 400px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;This is the core output of the deep learning step: every pixel is assigned 6 values by the neural network.
+Specifically, 2 values for one-hot encoded segmentation (i.e. the pixel-wise classification
+explained above) and 4 values for relative position
+within the bounding box through distance measurements. This transforms one input image
+into 6 predicted output&amp;nbsp;maps.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig9.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig9.png" style="width: 900px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;From each word pixel, we can use its distance values (top, bottom, left, right) to reconstruct
+a complete bounding box. This means we generate as many bounding boxes as there are word pixels.
+In our example there are 12 word pixels for the word &amp;#8220;bikes&amp;#8221; and therefore we get 12 predicted bounding
+boxes for this word. Ideally, all these
+bounding boxes would be identical, but in practice they vary slightly while having significant&amp;nbsp;overlap.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/bbox_for_each_pixel.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/bbox_for_each_pixel.png" style="width: 500px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;Using the output of the deep learning model, we have now reconstructed a list of many parametric
+bounding boxes - one for each word pixel on the page.
+The bounding boxes that correspond to the same word overlap significantly while bounding boxes for different words
+have no&amp;nbsp;overlap.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig10.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig10.png" style="width: 400px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;All that is great but there&amp;#8217;s still one issue:
+we have multiple bounding boxes for each word when we only want one per&amp;nbsp;word!&lt;/p&gt;
+&lt;p&gt;This is where clustering comes to the rescue. Since we don&amp;#8217;t know how many final bounding boxes
+we should have (i.e., how many words are on the page), we use
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/DBSCAN"&gt;&lt;span class="caps"&gt;DBSCAN&lt;/span&gt;&lt;/a&gt; as our clustering&amp;nbsp;algorithm.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;DBSCAN&lt;/span&gt; requires a &amp;#8220;distance metric&amp;#8221; to measure how similar objects are for clustering purposes.
+We define the distance between two bounding boxes based on their overlap: specifically,
+the distance equals 1 minus their Intersection over Union (IoU). With this metric,
+overlapping boxes get assigned small distances (close to zero) while separated boxes
+get large distances (close to&amp;nbsp;one).&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig11.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig11.png" style="width: 400px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;details style="margin-top: 1rem; margin-bottom: 1rem; border: 2px solid #ccc; padding: 1rem; border-radius: 15px;"&gt;
+
+   &lt;summary&gt;
+      ⭐️ &lt;b&gt;Excursion: Intersection over Union (IoU)&lt;/b&gt;
+   &lt;/summary&gt;
+
+   &lt;p&gt;
+      Intersection over Union (IoU) is a common metric used in object detection and image segmentation that measures
+      the overlap between two shapes like bounding boxes. It&amp;#8217;s calculated as the area of intersection divided by the area
+      of union between two&amp;nbsp;shapes.
+   &lt;/p&gt;
+
+   &lt;figure style="text-align: center;"&gt;
+   &lt;img
+      src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig12.png"
+      style="width: 800px; max-width: 100%; height: auto;"&gt;
+   &lt;/figure&gt;
+
+&lt;/details&gt;&lt;p&gt;We compute the distance between all pairs of bounding boxes and store the
+results in a distance matrix, which serves as input to the &lt;span class="caps"&gt;DBSCAN&lt;/span&gt; algorithm.
+In the distance matrix visualization below, brighter colors represent bounding box pairs that
+are closer to each other because of&amp;nbsp;overlap.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig13.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig13.png" style="width: 400px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;We can clearly recognise the three distinct clusters in our example that correspond
+to the three words on the page (see the dashed red boxes and corresponding words next to matrix for extra clarity),
+with the diagonal values being 0 because the distance of a bounding
+box to itself is 0.
+Interestingly, the pairwise distance calculation is currently the computational bottleneck of the model
+because it scales quadratically with the number of predicted bounding boxes (which can be quite&amp;nbsp;large).&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;DBSCAN&lt;/span&gt; then assigns each bounding box to a cluster. For each cluster, we compute the final bounding box by taking the median
+of all bounding box coordinates within that&amp;nbsp;cluster.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig14.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig14.png" style="width: 400px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;That&amp;#8217;s it! We have successfully obtained a list of parametric bounding boxes on a page,
+one for each&amp;nbsp;word.&lt;/p&gt;
+&lt;p&gt;What&amp;#8217;s particularly interesting is that most of the modeling approach isn&amp;#8217;t purely
+deep learning - it&amp;#8217;s actually a clever combination of a neural network with a
+traditional clustering algorithm. Now let&amp;#8217;s explore how the neural network component
+generates those pixel-wise segmentation masks and bounding box&amp;nbsp;parameters.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="neural-network-architecture"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Neural Network&amp;nbsp;Architecture&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The deep learning step takes an input image and produces 6 output maps at lower resolution,
+each containing different types of information about the words on the&amp;nbsp;page.&lt;/p&gt;
+&lt;p&gt;You&amp;#8217;ve seen this visualization before - it&amp;#8217;s the high-level overview of what the
+neural network&amp;nbsp;accomplishes:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig9.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/fig9.png" style="width: 900px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;details style="margin-top: 1rem; margin-bottom: 1rem; border: 2px solid #ccc; padding: 1rem; border-radius: 15px;"&gt;
+
+   &lt;summary&gt;
+      ⭐️ &lt;b&gt;Excursion: The ResNet18 architecture&lt;/b&gt;
+   &lt;/summary&gt;
+
+   &lt;p&gt;
+      The ResNet18 is part of the ResNet family of
+      networks introduced by He et al in 2015 [ResNets].
+      They are convolutional neural networks
+      that introduce skip connections to overcome
+      performance degradation in deep&amp;nbsp;networks.
+   &lt;/p&gt;
+
+   &lt;p&gt;
+      The following
+      image shows the high-level architecture of ResNet18, which
+      consists of 5 convolutional blocks and a classification head at the&amp;nbsp;end.
+   &lt;/p&gt;
+
+   &lt;figure style="text-align: center;"&gt;
+   &lt;img
+      src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/resnet18_architecture.png"
+      style="width: 800px; max-width: 100%; height: auto;"&gt;
+   &lt;/figure&gt;
+
+&lt;/details&gt;&lt;p&gt;The deep learning part model uses the ResNet18 model as its backbone. In computer vision, a backbone is the
+foundational feature-extraction part of a deep learning model, typically a
+pre-trained network, that converts a raw input image into high-level
+feature maps for specific tasks like detection or&amp;nbsp;classification.&lt;/p&gt;
+&lt;p&gt;The WordDetectorNet uses this ResNet18 backbone to extract features and then applies
+the Feature Pyramid Networks [&lt;span class="caps"&gt;FPN&lt;/span&gt;] concept to create high-dimensional,
+semantically rich maps that are used to compute the 6 output&amp;nbsp;maps.&lt;/p&gt;
+&lt;p&gt;The WordDetectorNet architecture removes the original classification head of the ResNet18 architecture
+and instead up-scales and concatenates the features from all convolutional blocks of the ResNet18 to obtain
+scale-invariant features that ultimately produce the 6 output maps.
+Therefore, the ResNet18 part of the WordDetectorNet acts as encoder and is followed by a decoder to obtain the
+6 output&amp;nbsp;maps.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a class="reference external image-reference" href="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/WDNN_architecture.png"&gt;
+&lt;img alt="" src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/WDNN_architecture.png" style="width: 900px;" /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;details style="margin-top: 1rem; margin-bottom: 1rem; border: 2px solid #ccc; padding: 1rem; border-radius: 15px;"&gt;
+
+   &lt;summary&gt;
+      ⭐️ &lt;b&gt;Excursion: Full architecture with convolutional shapes&lt;/b&gt;
+   &lt;/summary&gt;
+
+   &lt;p&gt;
+      I provide two depths of architecture explanations, one with less and the other with
+      more&amp;nbsp;details.
+   &lt;/p&gt;
+
+   &lt;p&gt;
+      The WordDetectorNet architecture comprises of an encoder-decoder
+      architecture based on the Feature Pyramid Networks [&lt;span class="caps"&gt;FPN&lt;/span&gt;] idea with a modified
+      ResNet18 as feature encoder and simple upscaling and
+      concatenations as decoder. A final head then maps
+      the features into the desired shape of 6 output&amp;nbsp;maps.
+   &lt;/p&gt;
+
+   &lt;figure style="text-align: center;"&gt;
+   &lt;img
+      src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/WDNN_architecture_in_depth_1.png"
+      style="width: 300px; max-width: 100%; height: auto;"&gt;
+   &lt;/figure&gt;
+
+   &lt;p&gt;
+      Now in more detail: The backbone is a modified ResNet18 with two changes.
+      First, the number of input
+      channels is changed from 3 to 1 in order to accept grayscale
+      images natively rather than &lt;span class="caps"&gt;RGB&lt;/span&gt; images.
+      Second, the
+      forward implementation has been changed to
+      return the features after each residual block
+      to obtain features at different scales.
+      These features are then used in the decoder part of the&amp;nbsp;architecture.
+   &lt;/p&gt;
+
+   &lt;figure style="text-align: center;"&gt;
+   &lt;img
+      src="https://lellep.xyz/blog/images/WordDetectorNet_visually_explained/WDNN_architecture_in_depth_2.png"
+      style="width: 500px; max-width: 100%; height: auto;"&gt;
+   &lt;/figure&gt;
+
+&lt;/details&gt;&lt;p&gt;To complete the explanation of the neural network, I still need to discuss two key aspects:
+the loss function and the dataset&amp;nbsp;used.&lt;/p&gt;
+&lt;p&gt;The loss function has two equally weighted parts, namely
+a segmentation loss (using cross-entropy) and
+a geometric loss (using the Intersection
+over Union measure presented earlier). The segmentation loss makes sure
+that pixels are classified correctly and the geometric loss makes sure
+that the WordDetectorNet can predict relative positions of
+word pixels inside bounding&amp;nbsp;boxes.&lt;/p&gt;
+&lt;p&gt;The whole system was trained using the &lt;span class="caps"&gt;IAM&lt;/span&gt; Handwriting Database [&lt;span class="caps"&gt;IAM&lt;/span&gt;].
+This dataset is reformatted into a list of tuples with grayscale images as input to the network
+and a list of bounding boxes as target output. The input images are resized
+to a size of 448x448 pixels and the target output is converted into a 6-channel image of size 224x224.
+&lt;a class="reference external" href="https://github.com/githubharald/WordDetectorNN"&gt;Harald&amp;#8217;s implementation&lt;/a&gt; added image
+augmentations to improve performance but I have not done so&amp;nbsp;yet.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusions"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;Conclusions&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;WordDetectorNet demonstrates an elegant hybrid approach to find handwritten words on a page by combining deep learning with
+traditional&amp;nbsp;clustering.&lt;/p&gt;
+&lt;p&gt;The main limitation of its approach is, however, the clustering step because it introduces
+additional hyperparameters that prevent end-to-end learning and because of the quadratic
+complexity to compute pairwise distances between all bounding boxes.
+A good alternative might be &lt;a class="reference external" href="https://huggingface.co/Ultralytics/YOLOv8"&gt;YOLOv8s&lt;/a&gt;, which has more weights and FLOPs
+than WordDetectorNet but can be trained end-to-end &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; doesn&amp;#8217;t require a costly clustering step
+at the end of a pipeline forward&amp;nbsp;pass.&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a class="reference external" href="https://github.com/githubharald"&gt;Harald Scheidl&lt;/a&gt; for this excellent architecture and making it open&amp;nbsp;source!&lt;/p&gt;
+&lt;div style="margin-top: 1rem; margin-bottom: 1rem; border: 3px solid red; padding: 1rem; border-radius: 15px;"&gt;
+
+   &lt;p&gt;
+      This explanation of &lt;strong&gt;WordDetectorNet&lt;/strong&gt; is just one part of the broader open-source
+      &lt;a href="https://github.com/PellelNitram/xournalpp_htr"&gt;Xournal++ &lt;span class="caps"&gt;HTR&lt;/span&gt; project&lt;/a&gt;.
+   &lt;/p&gt;
+
+   &lt;p&gt;
+      If you&amp;#8217;d like to support the work, consider
+      &lt;a href="https://github.com/PellelNitram/xournalpp_htr"&gt;starring the repository on GitHub&lt;/a&gt; to help increase its visibility,
+      contributing code or ideas, or exploring the
+      &lt;a href="https://huggingface.co/spaces/PellelNitram/xournalpp_htr"&gt;Xournal++ &lt;span class="caps"&gt;HTR&lt;/span&gt; demo on Hugging Face&lt;/a&gt;.
+      You can even choose to donate handwriting samples to help improve the underlying machine learning models for&amp;nbsp;everyone.
+   &lt;/p&gt;
+
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;A brief clarification: there are actually three segmentation classes, not two. The third class
+corresponds to boundary pixels, resulting in seven output maps. I omitted this in the present
+blog article to keep the explanation&amp;nbsp;focused.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="references"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#table-of-contents"&gt;References&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;[ResNets] He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. “Deep Residual Learning for Image Recognition.” 2016 &lt;span class="caps"&gt;IEEE&lt;/span&gt; Conference on Computer Vision and Pattern Recognition (&lt;span class="caps"&gt;CVPR&lt;/span&gt;), &lt;span class="caps"&gt;IEEE&lt;/span&gt;, June 2016, 770–78. &lt;a class="reference external" href="https://doi.org/10.1109/CVPR.2016.90"&gt;https://doi.org/10.1109/&lt;span class="caps"&gt;CVPR&lt;/span&gt;.2016.90&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;[&lt;span class="caps"&gt;FPN&lt;/span&gt;] Lin, Tsung-Yi, Piotr Dollár, Ross Girshick, Kaiming He, Bharath Hariharan, and Serge Belongie. “Feature Pyramid Networks for Object Detection.” arXiv:1612.03144. Preprint, arXiv, April 19, 2017.&amp;nbsp;https://doi.org/10.48550/arXiv.1612.03144.&lt;/li&gt;
+&lt;li&gt;[&lt;span class="caps"&gt;IAM&lt;/span&gt;] &lt;a class="reference external" href="https://fki.tic.heia-fr.ch/databases/iam-handwriting-database"&gt;&lt;span class="caps"&gt;IAM&lt;/span&gt; Handwriting&amp;nbsp;Database&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;Thanks to &lt;a class="reference external" href="https://www.linkedin.com/in/linda-ng/"&gt;Linda Nguyen&lt;/a&gt; for early review of this blog&amp;nbsp;article.&lt;/p&gt;
+&lt;p&gt;Please hit me up on &lt;a class="reference external" href="https://www.linkedin.com/in/martin-lellep-858600152/"&gt;LinkedIn&lt;/a&gt;
+or &lt;a class="reference external" href="mailto:blog.ma.lel&amp;#64;gmail.com"&gt;email&lt;/a&gt; for any corrections or&amp;nbsp;feedback.&lt;/p&gt;
+&lt;/div&gt;
+</content><category term="machine-learning"></category><category term="ai"></category><category term="data"></category><category term="machine-learning"></category><category term="pytorch"></category><category term="xournalpp-htr"></category><category term="visual"></category><category term="didactical"></category><category term="computer-vision"></category><category term="segmentation"></category><category term="clustering"></category></entry><entry><title>An AI App for my Mom</title><link href="https://lellep.xyz/blog/ai-app-for-my-mom.html" rel="alternate"></link><published>2025-04-26T00:00:00+02:00</published><updated>2025-04-26T00:00:00+02:00</updated><author><name>Martin Lellep</name></author><id>tag:lellep.xyz,2025-04-26:/blog/ai-app-for-my-mom.html</id><summary type="html">&lt;p class="first last"&gt;I built an &lt;span class="caps"&gt;AI&lt;/span&gt; app to help my mom transcribe audio embedded in PowerPoint&amp;nbsp;slides.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;&lt;a class="reference external" href="https://lellep.xyz/projects/pptx_audio_transcriber/?utm_campaign=fromBlogArticle1"&gt;🔗 Link to &lt;span class="caps"&gt;AI&lt;/span&gt; app for my&amp;nbsp;mom&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="mailto:blog.ma.lel&amp;#64;gmail.com?subject=Feedback%20for%20An%20AI%20App%20for%20my%20Mom&amp;amp;body=Drop%20your%20feedback%20here.%20Thanks%20a%20lot!%20%3A-)"&gt;💬 Send me feedback about this&amp;nbsp;article&lt;/a&gt;&lt;/p&gt;
 &lt;div class="contents topic" id="table-of-contents"&gt;
